@@ -12,17 +12,14 @@ CREATE TABLE Room (
 	roomnumber INT NOT NULL,
 	roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
 	numbed INT NOT NULL,
-	date_ci DATETIME NOT NULL,
-	date_co DATETIME,
+	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
 	price INT NOT NULL CHECK (price > 0),
 )
 GO
-CREATE TABLE Other_detail (
+CREATE TABLE Update_room (
 	maphong INT,
 	status_room NVARCHAR(200) NOT NULL CHECK(status_room IN ('Reserved', 'Occupied', 'Available', 'Check Out')),
 	house_keeping NVARCHAR(200) NOT NULL CHECK(house_keeping IN ('Clean', 'Not Clean', 'In Progress', 'Repair')),
-	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
-	group_customer INT DEFAULT 0,
 	PRIMARY KEY (maphong),
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
 )
@@ -35,6 +32,18 @@ CREATE TABLE Customer (
 	email NVARCHAR(200) NOT NULL,
 	gioitinh NVARCHAR(200) CHECK (gioitinh IN ('Nam', 'Nu')),
 	ngaysinh DATETIME CHECK (DATEDIFF(y, ngaysinh, GETDATE()) >= 18),
+	address_cus NVARCHAR(200) NOT NULL,
+)
+GO 
+CREATE TABLE Bookings (
+	cccd_cus NVARCHAR(200),
+	date_ci DATETIME NOT NULL,
+	date_co DATETIME NOT NULL,
+	maphong INT,
+	group_customer INT DEFAULT 0,
+	PRIMARY KEY (maphong, cccd_cus),
+	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 CREATE TABLE Employee (
@@ -70,13 +79,13 @@ CREATE TABLE Serve (
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
-CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @date_ci DATETIME, @date_co DATETIME, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Room
 					WHERE maphong = @maphong)
 	BEGIN
-		INSERT INTO Room(maphong, roomnumber, roomtype, numbed, date_ci, date_co, price) VALUES (@maphong, @roomnumber, @roomtype, @numbed, @date_ci, @date_co, @price)
+		INSERT INTO Room(maphong, roomnumber, roomtype, numbed, view_room, price) VALUES (@maphong, @roomnumber, @roomtype, @numbed, @view_room, @price)
 		SET @ErrorMessage = 'Them phong thanh cong'
 	END
 	ELSE
@@ -100,7 +109,7 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_updateroom @maphong INT = NULL, @roomnumber INT = NULL, @roomtype NVARCHAR(200) = NULL, @numbed INT = NULL, @date_ci DATETIME = NULL, @date_co DATETIME = NULL, @price INT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_updateroom @maphong INT = NULL, @roomnumber INT = NULL, @roomtype NVARCHAR(200) = NULL, @numbed INT = NULL, @view_room NVARCHAR(200) = NULL, @price INT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN 
 	BEGIN TRY
@@ -110,8 +119,7 @@ BEGIN
 			roomnumber = COALESCE(@roomnumber, roomnumber),
 			roomtype = COALESCE(@roomtype, roomtype),
 			numbed = COALESCE(@numbed, numbed),
-			date_ci = COALESCE(@date_ci, date_ci),
-			date_co = COALESCE(@date_co, date_co),
+			view_room = COALESCE(@view_room, view_room),
 			price = COALESCE(@price, price)
 		WHERE maphong = @maphong;
 
@@ -122,13 +130,13 @@ BEGIN
 	END CATCH
 END
 GO
-CREATE OR ALTER PROC sp_addcustomer @cccd_cus NVARCHAR(200), @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addcustomer @cccd_cus NVARCHAR(200), @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @address_cus NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Customer
 					WHERE cccd_cus = @cccd_cus)
 	BEGIN
-		INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh) VALUES (@cccd_cus, @first_name, @last_name, @sdt, @email, @gioitinh, @ngaysinh)
+		INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh, address_cus) VALUES (@cccd_cus, @first_name, @last_name, @sdt, @email, @gioitinh, @ngaysinh, @address_cus)
 		SET @ErrorMessage = 'Them customer thanh cong'
 	END
 	ELSE
@@ -137,7 +145,7 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_updatecustomer @cccd_cus NVARCHAR(200) = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_updatecustomer @cccd_cus NVARCHAR(200) = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @address_cus NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	BEGIN TRY
@@ -149,7 +157,8 @@ BEGIN
 			sdt = COALESCE(@sdt, sdt),
 			email = COALESCE(@email, email), 
 			gioitinh = COALESCE(@gioitinh, gioitinh),
-			ngaysinh = COALESCE(@ngaysinh, ngaysinh)
+			ngaysinh = COALESCE(@ngaysinh, ngaysinh),
+			address_cus = COALESCE(@address_cus, address_cus)
 		WHERE cccd_cus = @cccd_cus;
 
 		SET @ErrorMessage = 'Update Successful'

@@ -15,5 +15,6 @@ namespace WindowsForm_Project.Models
         public string email { get; set; }
         public string gioitinh { get; set; }
         public DateTime ngaysinh { get; set; }
+        public string address_cus { get; set; }
     }
 }

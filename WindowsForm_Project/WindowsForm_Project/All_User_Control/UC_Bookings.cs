@@ -18,14 +18,10 @@ namespace WindowsForm_Project.All_User_Control
         {
             InitializeComponent();
         }
-        /// btn addroom <summary>
-        /// btn addroom
-        /// sadasddsdasdsadddddddddddddddddddddddddddddddddddd
-        /// </summary>
-        /// <returns></returns>
+
         private bool ValidateInput()
         {
-            if(txtmaphong.Text == "" || txtsophong.Text == "" || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || inputdateci.Value == null || inputdateco.Value == null || txtgia.Text == "")
+            if(txtmaphong.Text == "" || txtsophong.Text == "" || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtgia.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -43,8 +39,7 @@ namespace WindowsForm_Project.All_User_Control
                     roomnumber = int.Parse(txtsophong.Text),
                     roomtype = txtloaiphong.SelectedItem.ToString(),
                     numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),
-                    date_ci = inputdateci.Value,
-                    date_co = inputdateco.Value,
+                    view_room = txtviewroom.SelectedItem.ToString(),
                     price = int.Parse(txtgia.Text)
                 };
 
@@ -74,8 +69,7 @@ namespace WindowsForm_Project.All_User_Control
             txtsophong.Clear();
             txtloaiphong.SelectedIndex = -1;
             txtloaigiuong.SelectedIndex = -1;
-            inputdateci.Value = DateTime.Now;
-            inputdateco.Value = DateTime.Now;
+            txtviewroom.SelectedIndex = -1;
             txtgia.Clear();
         }
 
@@ -132,7 +126,8 @@ namespace WindowsForm_Project.All_User_Control
                     sdt = txtsdt_cus.Text,
                     email = txtemail_cus.Text,
                     gioitinh = txtgioitinh_cus.SelectedItem.ToString(),
-                    ngaysinh = txtngaysinh_cus.Value
+                    ngaysinh = txtngaysinh_cus.Value,
+                    address_cus = txtaddress.Text,
                 };
 
                 DAL dal = new DAL();
@@ -151,7 +146,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private bool ValidateInput_Cus()
         {
-            if (txtcccd_cus.Text == "" || txtfirstname_cus.Text == "" || txtlastname_cus.Text == "" || txtsdt_cus.Text == "" || txtemail_cus.Text == "" || txtgioitinh_cus.SelectedItem == null || txtngaysinh_cus.Value == null)
+            if (txtcccd_cus.Text == "" || txtfirstname_cus.Text == "" || txtlastname_cus.Text == "" || txtsdt_cus.Text == "" || txtemail_cus.Text == "" || txtgioitinh_cus.SelectedItem == null || txtngaysinh_cus.Value == null || txtaddress.Text == null)
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -194,6 +189,7 @@ namespace WindowsForm_Project.All_User_Control
             txtemail_cus.Clear();
             txtgioitinh_cus.SelectedIndex = -1;
             txtngaysinh_cus.Value = DateTime.Now;
+            txtaddress.Clear();
         }
         /// -------------------------------------------------------------------
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)

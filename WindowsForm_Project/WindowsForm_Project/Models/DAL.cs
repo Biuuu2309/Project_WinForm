@@ -22,8 +22,7 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@roomnumber", room.roomnumber);
                 cmd.Parameters.AddWithValue("@roomtype", room.roomtype);
                 cmd.Parameters.AddWithValue("@numbed", room.numbed);
-                cmd.Parameters.AddWithValue("@date_ci", room.date_ci);
-                cmd.Parameters.AddWithValue("@date_co", room.date_co);
+                cmd.Parameters.AddWithValue("@view_room", room.view_room);
                 cmd.Parameters.AddWithValue("@price", room.price);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
@@ -59,8 +58,7 @@ namespace WindowsForm_Project.Models
                                 roomnumber = int.Parse(reader["roomnumber"].ToString()),
                                 roomtype = reader["roomtype"].ToString(),
                                 numbed = int.Parse(reader["numbed"].ToString()),
-                                date_ci = DateTime.Parse(reader["date_ci"].ToString()),
-                                date_co = DateTime.Parse(reader["date_co"].ToString()),
+                                view_room = reader["view_room"].ToString(),
                                 price = int.Parse(reader["price"].ToString()),
                             };
                             list.Add(room);
@@ -95,6 +93,7 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@email", customer.email);
                 cmd.Parameters.AddWithValue("@gioitinh", customer.gioitinh);
                 cmd.Parameters.AddWithValue("@ngaysinh", customer.ngaysinh);
+                cmd.Parameters.AddWithValue("@address_cus", customer.address_cus);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
@@ -132,6 +131,7 @@ namespace WindowsForm_Project.Models
                                 email = reader["email"].ToString(),
                                 gioitinh = reader["gioitinh"].ToString(),
                                 ngaysinh = DateTime.Parse(reader["ngaysinh"].ToString()),
+                                address_cus = reader["address_cus"].ToString(),
                             };
                             list.Add(customer);
                         }
