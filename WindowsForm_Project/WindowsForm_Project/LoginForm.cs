@@ -17,6 +17,7 @@ namespace WindowsForm_Project
         {
             InitializeComponent();
             this.BackgroundImage = Properties.Resources.Pic8;
+            textpassword.KeyDown += new KeyEventHandler(textpassword_KeyDown); // Subscribe to KeyDown event
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -68,6 +69,14 @@ namespace WindowsForm_Project
         private void textpassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button1_Click(this, new EventArgs()); // Trigger login button click event
+            }
         }
     }
 }

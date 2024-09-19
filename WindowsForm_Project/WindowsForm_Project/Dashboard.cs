@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,14 +13,38 @@ namespace WindowsForm_Project
 {
     public partial class Dashboard : Form
     {
+        private DateTime currentDate;
+
         public Dashboard()
         {
             InitializeComponent();
+            currentDate = DateTime.Now; // Initialize with the current date
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            UpdateDateLabel();
+        }
 
+        private void UpdateDateLabel()
+        {
+            // Create and configure the label
+            Label dateLabel = new Label();
+            dateLabel.Text = currentDate.ToString("dd MMMM yyyy"); // Format: day month year
+            dateLabel.AutoSize = true;
+            dateLabel.Font = new Font("Arial", 20, FontStyle.Bold); // Adjust font as needed
+            dateLabel.BackColor = Color.Transparent;
+            dateLabel.ForeColor = Color.MediumOrchid;
+
+            // Center the label in the panel
+            dateLabel.Location = new Point(
+                (dashboardpaneldate.Width - dateLabel.Width) / 2,
+                (dashboardpaneldate.Height - dateLabel.Height) / 2
+            );
+
+            // Clear previous controls and add the new label to the panel
+            dashboardpaneldate.Controls.Clear();
+            dashboardpaneldate.Controls.Add(dateLabel);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -336,9 +361,30 @@ namespace WindowsForm_Project
             MovePanel(btncheckout);
         }
 
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            btnnext.Visible = true;
+            btnnext.Click += new EventHandler(guna2ImageButton1_Click);
+            currentDate = currentDate.AddDays(-1); // Subtract one day
+            UpdateDateLabel();
+        }
+
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
+            btnback.Visible = true;
+            btnback.Click += new EventHandler(guna2ImageButton2_Click);
+            currentDate = currentDate.AddDays(1); // Add one day
+            UpdateDateLabel();
+        }
 
+        private void btnaddroom_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnaddroom);
         }
     }
 }
