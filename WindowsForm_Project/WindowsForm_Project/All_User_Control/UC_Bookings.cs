@@ -18,7 +18,11 @@ namespace WindowsForm_Project.All_User_Control
         {
             InitializeComponent();
         }
+        /// btn addroom <summary>
         /// btn addroom
+        /// sadasddsdasdsadddddddddddddddddddddddddddddddddddd
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateInput()
         {
             if(txtmaphong.Text == "" || txtsophong.Text == "" || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || inputdateci.Value == null || inputdateco.Value == null || txtgia.Text == "")
