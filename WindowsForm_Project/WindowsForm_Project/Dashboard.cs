@@ -315,5 +315,30 @@ namespace WindowsForm_Project
         {
             MovePanel(btncustomer);
         }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnserve);
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnreport);
+        }
+
+        private void btnemployee_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btnemployee);
+        }
+
+        private void btncheckout_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btncheckout);
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
