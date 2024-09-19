@@ -68,6 +68,8 @@
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
+            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -621,12 +623,28 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1920, 57);
             this.guna2GradientPanel1.TabIndex = 5;
             // 
+            // uC_Dashboard2
+            // 
+            this.uC_Dashboard2.Location = new System.Drawing.Point(239, 114);
+            this.uC_Dashboard2.Name = "uC_Dashboard2";
+            this.uC_Dashboard2.Size = new System.Drawing.Size(1681, 966);
+            this.uC_Dashboard2.TabIndex = 6;
+            // 
+            // uC_Bookings2
+            // 
+            this.uC_Bookings2.Location = new System.Drawing.Point(239, 114);
+            this.uC_Bookings2.Name = "uC_Bookings2";
+            this.uC_Bookings2.Size = new System.Drawing.Size(1681, 966);
+            this.uC_Bookings2.TabIndex = 7;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.uC_Bookings2);
+            this.Controls.Add(this.uC_Dashboard2);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2Panel1);
@@ -682,5 +700,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnbookings;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private All_User_Control.UC_Bookings uC_Bookings1;
+        private All_User_Control.UC_Bookings uC_Bookings2;
+        private All_User_Control.UC_Dashboard uC_Dashboard2;
     }
 }

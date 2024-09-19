@@ -80,20 +80,20 @@ namespace WindowsForm_Project
         private void btndashboard_Click(object sender, EventArgs e)
         {
             MovePanel(btndashboard);
-            uC_Dashboard1.Visible = true;
-            uC_Dashboard1.BringToFront();
+            uC_Dashboard2.Visible = true;
+            uC_Dashboard2.BringToFront();
             // Hide other user controls
-            uC_Bookings1.Visible = false;
+            uC_Bookings2.Visible = false;
             // ... hide other user controls
         }
 
         private void btnBookings_Click(object sender, EventArgs e)
         {
             MovePanel(btnbookings);
-            uC_Bookings1.Visible = true;
-            uC_Bookings1.BringToFront();
+            uC_Bookings2.Visible = true;
+            uC_Bookings2.BringToFront();
             // Hide other user controls
-            uC_Dashboard1.Visible = false;
+            uC_Dashboard2.Visible = false;
             // ... hide other user controls
         }
 
@@ -127,21 +127,21 @@ namespace WindowsForm_Project
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             Panelmoving.Left = btndashboard.Left + 223;
-            uC_Dashboard1.Visible = false;
-            uC_Bookings1.Visible = true;
-            uC_Bookings1.BringToFront();
+            uC_Dashboard2.Visible = false;
+            uC_Bookings2.Visible = true;
+            uC_Bookings2.BringToFront();
         }
 
         private void uC_Dashboard1_Load(object sender, EventArgs e)
         {
-            uC_Dashboard1.Visible = false;
+            uC_Dashboard2.Visible = false;
             btndashboard.PerformClick();
             Panelmoving.Left = btndashboard.Left;
         }
 
         private void uC_Bookings1_Load(object sender, EventArgs e)
         {
-            uC_Dashboard1.Visible = false;
+            uC_Dashboard2.Visible = false;
             btndashboard.PerformClick();
             Panelmoving.Left = btndashboard.Left;
         }
