@@ -57,19 +57,17 @@
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_Dashboard1 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.btnbookings = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btndashboard = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Panelmoving = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btncheckout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnemployee = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btncustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.uC_Bookings1 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -431,14 +429,6 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
-            // uC_Dashboard1
-            // 
-            this.uC_Dashboard1.Location = new System.Drawing.Point(238, 114);
-            this.uC_Dashboard1.Name = "uC_Dashboard1";
-            this.uC_Dashboard1.Size = new System.Drawing.Size(1681, 966);
-            this.uC_Dashboard1.TabIndex = 3;
-            this.uC_Dashboard1.Load += new System.EventHandler(this.uC_Dashboard1_Load);
-            // 
             // btnbookings
             // 
             this.btnbookings.BackColor = System.Drawing.Color.Snow;
@@ -544,24 +534,25 @@
             this.btnemployee.TabIndex = 28;
             this.btnemployee.Text = "Employee";
             // 
-            // guna2GradientButton1
+            // btncustomer
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Snow;
-            this.guna2GradientButton1.BorderRadius = 10;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(449, 6);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(217, 45);
-            this.guna2GradientButton1.TabIndex = 29;
-            this.guna2GradientButton1.Text = "Customer";
+            this.btncustomer.BackColor = System.Drawing.Color.Snow;
+            this.btncustomer.BorderRadius = 10;
+            this.btncustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btncustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btncustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btncustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btncustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btncustomer.FillColor = System.Drawing.Color.Transparent;
+            this.btncustomer.FillColor2 = System.Drawing.Color.Transparent;
+            this.btncustomer.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncustomer.ForeColor = System.Drawing.Color.Black;
+            this.btncustomer.Location = new System.Drawing.Point(449, 6);
+            this.btncustomer.Name = "btncustomer";
+            this.btncustomer.Size = new System.Drawing.Size(217, 45);
+            this.btncustomer.TabIndex = 29;
+            this.btncustomer.Text = "Customer";
+            this.btncustomer.Click += new System.EventHandler(this.guna2GradientButton1_Click_1);
             // 
             // guna2GradientButton2
             // 
@@ -606,7 +597,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.Controls.Add(this.guna2GradientButton3);
             this.guna2Panel1.Controls.Add(this.guna2GradientButton2);
-            this.guna2Panel1.Controls.Add(this.guna2GradientButton1);
+            this.guna2Panel1.Controls.Add(this.btncustomer);
             this.guna2Panel1.Controls.Add(this.btnemployee);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btncheckout);
@@ -630,23 +621,14 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1920, 57);
             this.guna2GradientPanel1.TabIndex = 5;
             // 
-            // uC_Bookings1
-            // 
-            this.uC_Bookings1.Location = new System.Drawing.Point(239, 114);
-            this.uC_Bookings1.Name = "uC_Bookings1";
-            this.uC_Bookings1.Size = new System.Drawing.Size(1681, 966);
-            this.uC_Bookings1.TabIndex = 32;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.uC_Bookings1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.uC_Dashboard1);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
@@ -691,7 +673,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btncustomer;
         private Guna.UI2.WinForms.Guna2GradientButton btnemployee;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2GradientButton btncheckout;

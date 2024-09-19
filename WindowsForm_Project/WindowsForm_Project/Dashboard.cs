@@ -99,7 +99,7 @@ namespace WindowsForm_Project
 
         private void btnCustomerDetail_Click(object sender, EventArgs e)
         {
-            MovePanel(btncustomerdetail);
+            ///MovePanel(btncustomerdetail);
             // Show Customer Detail user control
             // Hide other user controls
         }
@@ -309,6 +309,11 @@ namespace WindowsForm_Project
         private void guna2HtmlLabel6_Click_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btncustomer);
         }
     }
 }
