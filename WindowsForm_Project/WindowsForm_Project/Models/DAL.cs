@@ -153,7 +153,7 @@ namespace WindowsForm_Project.Models
                         {
                             Employee employee = new Employee
                             {
-                                cccd_em = int.Parse(reader["cccd_em"].ToString()),
+                                cccd_em = reader["cccd_em"].ToString(),
                                 first_name = reader["first_name"].ToString(),
                                 last_name = reader["last_name"].ToString(),
                                 sdt = reader["sdt"].ToString(),

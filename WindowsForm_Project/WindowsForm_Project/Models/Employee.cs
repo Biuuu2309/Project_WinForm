@@ -8,7 +8,7 @@ namespace WindowsForm_Project.Models
 {
     public class Employee
     {
-        public int cccd_em { get; set; }
+        public string cccd_em { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string sdt { get; set;}

@@ -79,6 +79,24 @@ CREATE TABLE Serve (
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
+CREATE TABLE Chamcong (
+	cccd_em NVARCHAR(200),
+	songay INT DEFAULT 0 NOT NULL,
+	tongluong FLOAT NOT NULL,
+	PRIMARY KEY (cccd_em),
+	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
+)
+GO
+CREATE TABLE Account 
+(
+	id INT IDENTITY (1,1) PRIMARY KEY,
+	username NVARCHAR(200) NOT NULL,
+	cccd_em NVARCHAR(200) NOT NULL,
+	password NVARCHAR(200) NOT NULL,
+	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
+)
+GO CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200)
+GO
 CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
