@@ -92,3 +92,5 @@ E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Customer.resources
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Addroom.resources

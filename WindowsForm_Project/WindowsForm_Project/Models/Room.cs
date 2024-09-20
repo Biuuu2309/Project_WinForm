@@ -14,5 +14,7 @@ namespace WindowsForm_Project.Models
         public int numbed { get; set; }
         public string view_room { get; set; }
         public int price { get; set; }
+        public string status_room { get; set; }
+        public string house_keeping { get; set; }
     }
 }

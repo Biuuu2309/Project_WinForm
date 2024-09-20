@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm_Project.All_User_Control;
 
 namespace WindowsForm_Project
 {
@@ -298,6 +299,11 @@ namespace WindowsForm_Project
         private void btnaddroom_Click(object sender, EventArgs e)
         {
             MovePanel(btnaddroom);
+            uC_Addroom1.Visible = true;
+            uC_Addroom1.BringToFront();
+            // Hide other user controls
+            uC_Bookings2.Visible = false;
+            uC_Dashboard2.Visible = false;
         }
 
         private void btndashboard_Click(object sender, EventArgs e)
@@ -307,6 +313,7 @@ namespace WindowsForm_Project
             uC_Dashboard2.BringToFront();
             // Hide other user controls
             uC_Bookings2.Visible = false;
+            uC_Addroom1.Visible = false;
             // ... hide other user controls
         }
 
@@ -317,6 +324,7 @@ namespace WindowsForm_Project
             uC_Bookings2.BringToFront();
             // Hide other user controls
             uC_Dashboard2.Visible = false;
+            uC_Addroom1.Visible = false;
             // ... hide other user controls
         }
 
@@ -345,6 +353,7 @@ namespace WindowsForm_Project
             Panelmoving.Left = btndashboard.Left + 223;
             uC_Dashboard2.Visible = false;
             uC_Bookings2.Visible = true;
+            guna2Panel3.Visible = true;
             uC_Bookings2.BringToFront();
         }
 

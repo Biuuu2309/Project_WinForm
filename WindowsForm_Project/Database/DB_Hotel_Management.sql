@@ -155,7 +155,7 @@ BEGIN
 			first_name = COALESCE(@first_name, first_name),
 			last_name = COALESCE(@last_name, last_name), 
 			sdt = COALESCE(@sdt, sdt),
-			email = COALESCE(@email, email), 
+			email = COALESCE(@email, email),	
 			gioitinh = COALESCE(@gioitinh, gioitinh),
 			ngaysinh = COALESCE(@ngaysinh, ngaysinh),
 			address_cus = COALESCE(@address_cus, address_cus)
@@ -167,6 +167,25 @@ BEGIN
 		SET @ErrorMessage = ERROR_MESSAGE();
 	END CATCH
 END
-	
-SELECT * FROM Customer
-SELECT * FROM Room
+
+GO
+CREATE OR ALTER PROC sp_addroomupdate @maphong INT = NULL, @status_room NVARCHAR(200) = NULL, @house_keeping NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Update_room
+		SET
+			maphong = COALESCE(@maphong, maphong),
+			status_room = COALESCE(@status_room, status_room),
+			house_keeping = COALESCE(@house_keeping, house_keeping)
+		WHERE maphong = @maphong
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE();
+	END CATCH
+END
+
+SELECT Room.maphong, roomnumber, status_room, house_keeping
+FROM Room
+INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+WHERE Room.maphong = Update_room.maphong

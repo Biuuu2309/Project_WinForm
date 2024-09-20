@@ -150,5 +150,69 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addupdateroom(Room room, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addroomupdate", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maphong", room.maphong);
+                cmd.Parameters.AddWithValue("@status_room", room.status_room);
+                cmd.Parameters.AddWithValue("@house_keeping", room.house_keeping);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Getupdateroom(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Room> list = new List<Room>();
+            try
+            {
+                string query = @"   SELECT Room.maphong, roomnumber, status_room, house_keeping
+                                    FROM Room
+                                    INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+                                    WHERE Room.maphong = Update_room.maphong";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Room room = new Room
+                            {
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                status_room = reader["status_room"].ToString(),
+                                house_keeping = reader["house_keeping"].ToString(),
+                            };
+                            list.Add(room);
+                        }
+                    }
+                }
+                response.list = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
     }
 }

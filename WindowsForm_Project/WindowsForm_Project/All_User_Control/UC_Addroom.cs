@@ -37,7 +37,15 @@ namespace WindowsForm_Project.All_User_Control
             }
             return true;
         }
-
+        private bool ValidateInput_update()
+        {
+            if (txtmaphongupdateroom.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null)
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
@@ -80,6 +88,9 @@ namespace WindowsForm_Project.All_User_Control
             txtloaigiuong.SelectedIndex = -1;
             txtviewroom.SelectedIndex = -1;
             txtgia.Clear();
+            txtmaphongupdateroom.Clear();
+            txtstatusroom.SelectedIndex = -1;
+            txthousekeeping.SelectedIndex = -1;
         }
 
         private void UC_Addroom_Leave(object sender, EventArgs e)
@@ -92,6 +103,7 @@ namespace WindowsForm_Project.All_User_Control
             {
                 LoadRoomData();
                 DataGridView1.Refresh();
+                DataGridView2.Refresh();
             }
             catch (Exception ex)
             {
@@ -106,11 +118,15 @@ namespace WindowsForm_Project.All_User_Control
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getroom(conn);
-                if (response.list != null && response.list.Count > 0)
+                Response response2 = dal.Getupdateroom(conn);
+                if ((response.list != null && response.list.Count > 0) || (response2.list != null && response2.list.Count > 0))
                 {
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list;
                     DataGridView1.Refresh(); // Refresh the grid view
+                    DataGridView2.DataSource = null; // Clear previous data
+                    DataGridView2.DataSource = response2.list;
+                    DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
                 {
@@ -122,6 +138,30 @@ namespace WindowsForm_Project.All_User_Control
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnaddupdate_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput_update())
+            {
+                Room room = new Room
+                {
+                    maphong = int.Parse(txtmaphongupdateroom.Text),
+                    status_room = txtstatusroom.SelectedItem.ToString(),
+                    house_keeping = txthousekeeping.SelectedItem.ToString()
+                };
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Addupdateroom(room, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("successfully"))
+                    {
+                        RefreshControl();
+                    }
+                }
+            }
         }
     }
 }
