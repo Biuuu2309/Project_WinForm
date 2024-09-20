@@ -94,6 +94,21 @@ BEGIN
 	END
 END
 GO
+CREATE OR ALTER PROC sp_addemployee @cccd_em INT, @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @luong NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Employee
+					WHERE cccd_em = @cccd_em)
+	BEGIN 
+		INSERT INTO Employee(cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong) VALUES (@cccd_em, @first_name, @last_name, @sdt, @email, @gioitinh, @ngaysinh, @luong)
+		SET @ErrorMessage = 'Them Employee thanh cong'
+	END
+	ELSE
+	BEGIN 
+		SET @ErrorMessage = 'Them Employee khong thanh cong'
+	END
+END
+GO
 CREATE OR ALTER PROC sp_deleteroom @maphong INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
@@ -123,6 +138,44 @@ BEGIN
 			price = COALESCE(@price, price)
 		WHERE maphong = @maphong;
 
+		SET @ErrorMessage = 'Update successful'
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE();
+	END CATCH
+END
+
+GO
+CREATE OR ALTER PROC sp_deleteroom @maphong NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+AS 
+BEGIN
+	IF EXISTS (	SELECT 1 FROM Room WHERE maphong = @maphong)
+	BEGIN
+		DELETE FROM Room WHERE maphong = @maphong
+		SET @ErrorMessage = 'Room deleted successfully'
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = 'Room not exists';
+	END
+END
+
+GO 
+CREATE OR ALTER PROC sp_updateemployee @cccd_em INT = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @luong NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY 
+		UPDATE Employee
+		SET 
+			cccd_em = COALESCE(@cccd_em, cccd_em),
+			first_name = COALESCE(@first_name, first_name), 
+			last_name = COALESCE(@last_name, last_name), 
+			sdt = COALESCE(@sdt, sdt), 
+			email = COALESCE(@email, email), 
+			gioitinh = COALESCE(@gioitinh, gioitinh),
+			ngaysinh = COALESCE(@ngaysinh, ngaysinh), 
+			luong = COALESCE(@luong, luong)
+		WHERE cccd_em = @cccd_em;
 		SET @ErrorMessage = 'Update successful'
 	END TRY
 	BEGIN CATCH
@@ -184,8 +237,3 @@ BEGIN
 		SET @ErrorMessage = ERROR_MESSAGE();
 	END CATCH
 END
-
-SELECT Room.maphong, roomnumber, status_room, house_keeping
-FROM Room
-INNER JOIN Update_room ON Room.maphong = Update_room.maphong
-WHERE Room.maphong = Update_room.maphong
