@@ -15,38 +15,6 @@ namespace WindowsForm_Project
     {
         private DateTime currentDate;
 
-        public Dashboard()
-        {
-            InitializeComponent();
-            currentDate = DateTime.Now; // Initialize with the current date
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            UpdateDateLabel();
-        }
-
-        private void UpdateDateLabel()
-        {
-            // Create and configure the label
-            Label dateLabel = new Label();
-            dateLabel.Text = currentDate.ToString("dd MMMM yyyy"); // Format: day month year
-            dateLabel.AutoSize = true;
-            dateLabel.Font = new Font("Arial", 20, FontStyle.Bold); // Adjust font as needed
-            dateLabel.BackColor = Color.Transparent;
-            dateLabel.ForeColor = Color.MediumOrchid;
-
-            // Center the label in the panel
-            dateLabel.Location = new Point(
-                (dashboardpaneldate.Width - dateLabel.Width) / 2,
-                (dashboardpaneldate.Height - dateLabel.Height) / 2
-            );
-
-            // Clear previous controls and add the new label to the panel
-            dashboardpaneldate.Controls.Clear();
-            dashboardpaneldate.Controls.Add(dateLabel);
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -92,34 +60,9 @@ namespace WindowsForm_Project
 
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void guna2GradientButton4_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btndashboard_Click(object sender, EventArgs e)
-        {
-            MovePanel(btndashboard);
-            uC_Dashboard2.Visible = true;
-            uC_Dashboard2.BringToFront();
-            // Hide other user controls
-            uC_Bookings2.Visible = false;
-            // ... hide other user controls
-        }
-
-        private void btnBookings_Click(object sender, EventArgs e)
-        {
-            MovePanel(btnbookings);
-            uC_Bookings2.Visible = true;
-            uC_Bookings2.BringToFront();
-            // Hide other user controls
-            uC_Dashboard2.Visible = false;
-            // ... hide other user controls
         }
 
         private void btnCustomerDetail_Click(object sender, EventArgs e)
@@ -127,48 +70,6 @@ namespace WindowsForm_Project
             ///MovePanel(btncustomerdetail);
             // Show Customer Detail user control
             // Hide other user controls
-        }
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
-        {
-            MovePanel(btncheckout);
-            // Show Check Out user control
-            // Hide other user controls
-        }
-
-        private void btnEmployee_Click(object sender, EventArgs e)
-        {
-            MovePanel(btnemployee);
-            // Show Employee user control
-            // Hide other user controls
-        }
-
-        private void MovePanel(Guna.UI2.WinForms.Guna2GradientButton clickedButton)
-        {
-            Panelmoving.Left = clickedButton.Left;
-            Panelmoving.Width = clickedButton.Width;
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            Panelmoving.Left = btndashboard.Left + 223;
-            uC_Dashboard2.Visible = false;
-            uC_Bookings2.Visible = true;
-            uC_Bookings2.BringToFront();
-        }
-
-        private void uC_Dashboard1_Load(object sender, EventArgs e)
-        {
-            uC_Dashboard2.Visible = false;
-            btndashboard.PerformClick();
-            Panelmoving.Left = btndashboard.Left;
-        }
-
-        private void uC_Bookings1_Load(object sender, EventArgs e)
-        {
-            uC_Dashboard2.Visible = false;
-            btndashboard.PerformClick();
-            Panelmoving.Left = btndashboard.Left;
         }
 
         private void Panelmoving_Paint(object sender, PaintEventArgs e)
@@ -336,34 +237,46 @@ namespace WindowsForm_Project
 
         }
 
-        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
-        {
-            MovePanel(btncustomer);
-        }
-
-        private void guna2GradientButton2_Click(object sender, EventArgs e)
-        {
-            MovePanel(btnserve);
-        }
-
-        private void guna2GradientButton3_Click(object sender, EventArgs e)
-        {
-            MovePanel(btnreport);
-        }
-
-        private void btnemployee_Click_1(object sender, EventArgs e)
-        {
-            MovePanel(btnemployee);
-        }
-
-        private void btncheckout_Click_1(object sender, EventArgs e)
-        {
-            MovePanel(btncheckout);
-        }
-
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
+        }
+
+        public Dashboard()
+        {
+            InitializeComponent();
+            currentDate = DateTime.Now; // Initialize with the current date
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            UpdateDateLabel();
+        }
+
+        private void UpdateDateLabel()
+        {
+            // Create and configure the label
+            Label dateLabel = new Label();
+            dateLabel.Text = currentDate.ToString("dd MMMM yyyy"); // Format: day month year
+            dateLabel.AutoSize = true;
+            dateLabel.Font = new Font("Arial", 20, FontStyle.Bold); // Adjust font as needed
+            dateLabel.BackColor = Color.Transparent;
+            dateLabel.ForeColor = Color.MediumOrchid;
+
+            // Center the label in the panel
+            dateLabel.Location = new Point(
+                (dashboardpaneldate.Width - dateLabel.Width) / 2,
+                (dashboardpaneldate.Height - dateLabel.Height) / 2
+            );
+
+            // Clear previous controls and add the new label to the panel
+            dashboardpaneldate.Controls.Clear();
+            dashboardpaneldate.Controls.Add(dateLabel);
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -385,6 +298,96 @@ namespace WindowsForm_Project
         private void btnaddroom_Click(object sender, EventArgs e)
         {
             MovePanel(btnaddroom);
+        }
+
+        private void btndashboard_Click(object sender, EventArgs e)
+        {
+            MovePanel(btndashboard);
+            uC_Dashboard2.Visible = true;
+            uC_Dashboard2.BringToFront();
+            // Hide other user controls
+            uC_Bookings2.Visible = false;
+            // ... hide other user controls
+        }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnbookings);
+            uC_Bookings2.Visible = true;
+            uC_Bookings2.BringToFront();
+            // Hide other user controls
+            uC_Dashboard2.Visible = false;
+            // ... hide other user controls
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            MovePanel(btncheckout);
+            // Show Check Out user control
+            // Hide other user controls
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnemployee);
+            // Show Employee user control
+            // Hide other user controls
+        }
+
+        private void MovePanel(Guna.UI2.WinForms.Guna2GradientButton clickedButton)
+        {
+            Panelmoving.Left = clickedButton.Left;
+            Panelmoving.Width = clickedButton.Width;
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            Panelmoving.Left = btndashboard.Left + 223;
+            uC_Dashboard2.Visible = false;
+            uC_Bookings2.Visible = true;
+            uC_Bookings2.BringToFront();
+        }
+
+        private void uC_Dashboard1_Load(object sender, EventArgs e)
+        {
+            uC_Dashboard2.Visible = false;
+            btndashboard.PerformClick();
+            Panelmoving.Left = btndashboard.Left;
+        }
+
+        private void uC_Bookings1_Load(object sender, EventArgs e)
+        {
+            uC_Dashboard2.Visible = false;
+            btndashboard.PerformClick();
+            Panelmoving.Left = btndashboard.Left;
+        }
+
+        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btncustomer);
+            uC_Dashboard2.Visible = false;
+            uC_Bookings2.Visible = true;
+            uC_Bookings2.BringToFront();
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnserve);
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnreport);
+        }
+
+        private void btnemployee_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btnemployee);
+        }
+
+        private void btncheckout_Click_1(object sender, EventArgs e)
+        {
+            MovePanel(btncheckout);
         }
     }
 }

@@ -66,13 +66,13 @@
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnreport = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
+            this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.btnback = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnnext = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
-            this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
-            this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.dashboardpaneldate.SuspendLayout();
@@ -612,6 +612,27 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1920, 57);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // btnaddroom
+            // 
+            this.btnaddroom.BackColor = System.Drawing.Color.Snow;
+            this.btnaddroom.BorderRadius = 10;
+            this.btnaddroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnaddroom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnaddroom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnaddroom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnaddroom.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnaddroom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnaddroom.FillColor = System.Drawing.Color.Transparent;
+            this.btnaddroom.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnaddroom.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaddroom.ForeColor = System.Drawing.Color.Black;
+            this.btnaddroom.Location = new System.Drawing.Point(1341, 6);
+            this.btnaddroom.Name = "btnaddroom";
+            this.btnaddroom.Size = new System.Drawing.Size(217, 45);
+            this.btnaddroom.TabIndex = 32;
+            this.btnaddroom.Text = "Add Room";
+            this.btnaddroom.Click += new System.EventHandler(this.btnaddroom_Click);
+            // 
             // dashboardpaneldate
             // 
             this.dashboardpaneldate.Controls.Add(this.btnback);
@@ -624,6 +645,20 @@
             this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // uC_Bookings2
+            // 
+            this.uC_Bookings2.Location = new System.Drawing.Point(220, 114);
+            this.uC_Bookings2.Name = "uC_Bookings2";
+            this.uC_Bookings2.Size = new System.Drawing.Size(1700, 966);
+            this.uC_Bookings2.TabIndex = 7;
+            // 
+            // uC_Dashboard2
+            // 
+            this.uC_Dashboard2.Location = new System.Drawing.Point(239, 114);
+            this.uC_Dashboard2.Name = "uC_Dashboard2";
+            this.uC_Dashboard2.Size = new System.Drawing.Size(1681, 966);
+            this.uC_Dashboard2.TabIndex = 6;
             // 
             // btnback
             // 
@@ -675,41 +710,6 @@
             this.guna2Button1.Size = new System.Drawing.Size(42, 45);
             this.guna2Button1.TabIndex = 25;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
-            // 
-            // uC_Bookings2
-            // 
-            this.uC_Bookings2.Location = new System.Drawing.Point(220, 114);
-            this.uC_Bookings2.Name = "uC_Bookings2";
-            this.uC_Bookings2.Size = new System.Drawing.Size(1700, 966);
-            this.uC_Bookings2.TabIndex = 7;
-            // 
-            // uC_Dashboard2
-            // 
-            this.uC_Dashboard2.Location = new System.Drawing.Point(239, 114);
-            this.uC_Dashboard2.Name = "uC_Dashboard2";
-            this.uC_Dashboard2.Size = new System.Drawing.Size(1681, 966);
-            this.uC_Dashboard2.TabIndex = 6;
-            // 
-            // btnaddroom
-            // 
-            this.btnaddroom.BackColor = System.Drawing.Color.Snow;
-            this.btnaddroom.BorderRadius = 10;
-            this.btnaddroom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnaddroom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnaddroom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnaddroom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnaddroom.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnaddroom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnaddroom.FillColor = System.Drawing.Color.Transparent;
-            this.btnaddroom.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnaddroom.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaddroom.ForeColor = System.Drawing.Color.Black;
-            this.btnaddroom.Location = new System.Drawing.Point(1341, 6);
-            this.btnaddroom.Name = "btnaddroom";
-            this.btnaddroom.Size = new System.Drawing.Size(217, 45);
-            this.btnaddroom.TabIndex = 32;
-            this.btnaddroom.Text = "Add Room";
-            this.btnaddroom.Click += new System.EventHandler(this.btnaddroom_Click);
             // 
             // Dashboard
             // 
