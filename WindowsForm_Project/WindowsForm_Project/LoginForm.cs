@@ -16,7 +16,6 @@ namespace WindowsForm_Project
         public LoginForm()
         {
             InitializeComponent();
-            this.BackgroundImage = Properties.Resources.Pic8;
             textpassword.KeyDown += new KeyEventHandler(textpassword_KeyDown); // Subscribe to KeyDown event
         }
         private void Form1_Load(object sender, EventArgs e)
