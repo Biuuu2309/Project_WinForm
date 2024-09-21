@@ -75,8 +75,6 @@
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
-            this.nextbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.backbtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.dashboardpaneldate.SuspendLayout();
@@ -658,8 +656,6 @@
             // 
             // dashboardpaneldate
             // 
-            this.dashboardpaneldate.Controls.Add(this.backbtn);
-            this.dashboardpaneldate.Controls.Add(this.nextbtn);
             this.dashboardpaneldate.Controls.Add(this.btnback);
             this.dashboardpaneldate.Controls.Add(this.btnnext);
             this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
@@ -723,36 +719,6 @@
             this.uC_Addroom1.Name = "uC_Addroom1";
             this.uC_Addroom1.Size = new System.Drawing.Size(1920, 966);
             this.uC_Addroom1.TabIndex = 8;
-            // 
-            // nextbtn
-            // 
-            this.nextbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.nextbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.nextbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.nextbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.nextbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nextbtn.ForeColor = System.Drawing.Color.White;
-            this.nextbtn.Location = new System.Drawing.Point(1637, 6);
-            this.nextbtn.Name = "nextbtn";
-            this.nextbtn.Size = new System.Drawing.Size(180, 45);
-            this.nextbtn.TabIndex = 2;
-            this.nextbtn.Text = "guna2Button2";
-            this.nextbtn.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // backbtn
-            // 
-            this.backbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.backbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.backbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.backbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.backbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.backbtn.ForeColor = System.Drawing.Color.White;
-            this.backbtn.Location = new System.Drawing.Point(180, 6);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(180, 45);
-            this.backbtn.TabIndex = 3;
-            this.backbtn.Text = "guna2Button3";
-            this.backbtn.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // Dashboard
             // 
@@ -826,7 +792,5 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnaddroom;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private All_User_Control.UC_Addroom uC_Addroom1;
-        private Guna.UI2.WinForms.Guna2Button backbtn;
-        private Guna.UI2.WinForms.Guna2Button nextbtn;
     }
 }
