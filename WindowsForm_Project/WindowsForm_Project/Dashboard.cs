@@ -282,17 +282,19 @@ namespace WindowsForm_Project
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+            btnnext.BringToFront();
             btnnext.Visible = true;
             btnnext.Click += new EventHandler(guna2ImageButton1_Click);
-            currentDate = currentDate.AddDays(-1); // Subtract one day
+            currentDate = currentDate.AddDays(1); // Subtract one day
             UpdateDateLabel();
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
+            btnback.BringToFront();
             btnback.Visible = true;
             btnback.Click += new EventHandler(guna2ImageButton2_Click);
-            currentDate = currentDate.AddDays(1); // Add one day
+            currentDate = currentDate.AddDays(-1); // Add one day
             UpdateDateLabel();
         }
 
@@ -397,6 +399,24 @@ namespace WindowsForm_Project
         private void btncheckout_Click_1(object sender, EventArgs e)
         {
             MovePanel(btncheckout);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            //nextbtn.BringToFront();
+            //nextbtn.Visible = true;
+            //nextbtn.Click += new EventHandler(guna2Button2_Click);
+            //currentDate = currentDate.AddDays(1); // Subtract one day
+            //UpdateDateLabel();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            //backbtn.BringToFront();
+            //backbtn.Visible = true;
+            //backbtn.Click += new EventHandler(guna2Button3_Click);
+            //currentDate = currentDate.AddDays(-1); // Add one day
+            //UpdateDateLabel();
         }
     }
 }
