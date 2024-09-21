@@ -247,9 +247,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Image\colorful-background-with-blue-purple-background_483537-4244.avif" />
-    <None Include="Image\High_resolution_wallpaper_background_ID_77700443051.webp" />
-    <None Include="Image\vibrant-fluid-gradient-background-with-curvy-shapes_1017-32108.avif" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,39 +273,91 @@
     <None Include="Resources\house-sunset-sky-clouds-scenery-art-hd-wallpaper-uhdpaper.com-219%400%40k.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image\back.png" />
-    <Content Include="Image\check %281%29.png" />
-    <Content Include="Image\check.png" />
-    <Content Include="Image\clock.png" />
-    <Content Include="Image\close.png" />
-    <Content Include="Image\group.png" />
-    <Content Include="Image\left %281%29.png" />
-    <Content Include="Image\left %282%29.png" />
-    <Content Include="Image\left %283%29.png" />
-    <Content Include="Image\left.png" />
-    <Content Include="Image\lock.png" />
-    <Content Include="Image\logout.png" />
-    <Content Include="Image\maintenance.png" />
-    <Content Include="Image\multiple-users-silhouette.png" />
-    <Content Include="Image\next.png" />
-    <Content Include="Image\people.png" />
-    <Content Include="Image\person-fill.svg" />
-    <Content Include="Image\Pic1.jpg" />
-    <Content Include="Image\Pic10.jpg" />
-    <Content Include="Image\Pic2.jpg" />
-    <Content Include="Image\Pic3.png" />
-    <Content Include="Image\Pic4.png" />
-    <Content Include="Image\Pic5.jpg" />
-    <Content Include="Image\Pic6.jpg" />
-    <Content Include="Image\Pic8.jpg" />
-    <Content Include="Image\Pic9.jpg" />
-    <Content Include="Image\right %281%29.png" />
-    <Content Include="Image\right %282%29.png" />
-    <Content Include="Image\right %283%29.png" />
-    <Content Include="Image\right.png" />
-    <Content Include="Image\tools.png" />
-    <Content Include="Image\user.png" />
-    <Content Include="Image\warm-simple-boho-zrwrnxg91lyrjiyx.jpg" />
+    <None Include="Backgrounds\Pic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\Pic10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\multiple-users-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\check %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\left %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\left %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\left %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\right %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backgrounds\right %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
