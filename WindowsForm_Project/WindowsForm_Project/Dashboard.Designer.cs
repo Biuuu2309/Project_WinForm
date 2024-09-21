@@ -85,9 +85,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
-            this.guna2Panel3.Controls.Add(this.nextbtn);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel14);
-            this.guna2Panel3.Controls.Add(this.backbtn);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel13);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel12);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel11);
@@ -660,6 +658,8 @@
             // 
             // dashboardpaneldate
             // 
+            this.dashboardpaneldate.Controls.Add(this.backbtn);
+            this.dashboardpaneldate.Controls.Add(this.nextbtn);
             this.dashboardpaneldate.Controls.Add(this.btnback);
             this.dashboardpaneldate.Controls.Add(this.btnnext);
             this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
@@ -732,7 +732,7 @@
             this.nextbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.nextbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nextbtn.ForeColor = System.Drawing.Color.White;
-            this.nextbtn.Location = new System.Drawing.Point(9, 651);
+            this.nextbtn.Location = new System.Drawing.Point(1637, 6);
             this.nextbtn.Name = "nextbtn";
             this.nextbtn.Size = new System.Drawing.Size(180, 45);
             this.nextbtn.TabIndex = 2;
@@ -747,7 +747,7 @@
             this.backbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.backbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.backbtn.ForeColor = System.Drawing.Color.White;
-            this.backbtn.Location = new System.Drawing.Point(9, 571);
+            this.backbtn.Location = new System.Drawing.Point(180, 6);
             this.backbtn.Name = "backbtn";
             this.backbtn.Size = new System.Drawing.Size(180, 45);
             this.backbtn.TabIndex = 3;
