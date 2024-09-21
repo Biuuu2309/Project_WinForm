@@ -121,9 +121,33 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>66</value>
+    <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnback.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABL0lEQVR4Xu3YQTLFQBSF4UxtgZnCJpTCHjB86YQ9YCWqkG5jVuIxsQAvab0RN6n7FCrJUKnb/1fV
+        k+ROzun0oFMAAAAAAP6RxU3aqnx3UTers9PHtKGP8+DC6sD5duma7q1flY9P2ZTQhy99fFmH/1bCiY7Y
+        NRV+WKGrdcym2fByHOrmY1NH7Skf4r7z8evM/wzfvVY+HeqoPYQnPOEJT3jCE57wJhE+1/C1j9tT4YcL
+        j1x8dNQm17RXY+HN7/yaC3GyAHeXjnTMLhfS7hB2pIQsjkBv/gdHNl8CJVBCjxIEJQhKEJQgKEFQgqAE
+        QQmCEkTddMdD2NES4nJx+76no3bNliBXbB2zbbKE0F7qiH2/SyhD+3x+n3b0dR6Gnyqy65WP11mcfwAA
+        AAD4O0XxCQwmJjDamKmMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnnext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABMElEQVR4Xu3aTUoDQRCG4bmJoKgniIJ6GqHLhCi4cKFHiy68gyDa8+NWZ7rRK9gztGIwmWzcWPU+
+        MBCS2nxfUqETpgAAAAAA/KHGhT3vuptKuutK2p38tA3Ps7BfSrgrXbgfrvS4nr4f55f169/17/AWS1hZ
+        gKUS+p1fWgGLJZQSD0sXb9eV4KU7yaN6PcobJVBCQgnJUILEBSVQAiUUfvp6QAmUQAkDSkgoIUkFjB6W
+        Hk7b7TyqV+PiZN0noXbxIo/pNbYKXuI8j+k0vgJx8TL/2Mqj+mz6Enxy7VEe1YfwVsNv+lFEeK0IP3La
+        I7xWpsOnfSc84a2F/3V/wNKVSknl5FGdaheuzIbvrS7ASPjesAI/978/+VkJ/6U563YrCZde4rnqPzMA
+        AAAA4P8pik/WjXPiuC5oTgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

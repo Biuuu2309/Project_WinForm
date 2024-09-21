@@ -91,11 +91,25 @@ CREATE TABLE Account
 (
 	id INT IDENTITY (1,1) PRIMARY KEY,
 	username NVARCHAR(200) NOT NULL,
-	cccd_em NVARCHAR(200) NOT NULL,
 	password NVARCHAR(200) NOT NULL,
+	cccd_em NVARCHAR(200) NOT NULL,
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
-GO CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200)
+GO 
+CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Account
+					WHERE id = @id)
+	BEGIN 
+		INSERT INTO Account(username, password, cccd_em) VALUES (@username, @password, @cccd_em)
+		SET @ErrorMessage = 'Them Account thanh cong'
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = 'Them Account khong thanh cong'
+	END
+END
 GO
 CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
@@ -254,4 +268,18 @@ BEGIN
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE();
 	END CATCH
+END
+GO
+CREATE OR ALTER PROC sp_deleteaccount @id INT = NULL, @username NVARCHAR(200) = NULL, @password NVARCHAR(200) = NULL, @cccd_em NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF EXISTS (SELECT 1 FROM Account WHERE id = @id)
+	BEGIN
+		DELETE FROM Account WHERE id = @id
+		SET @ErrorMessage = 'Xoa account thanh cong'
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = 'Xoa account khong thanh cong'
+	END
 END

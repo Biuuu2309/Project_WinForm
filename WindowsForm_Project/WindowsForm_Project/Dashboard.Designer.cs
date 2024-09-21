@@ -67,10 +67,10 @@
             this.btnreport = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnback = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnnext = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
@@ -635,6 +635,25 @@
             this.btnaddroom.Text = "Add Room";
             this.btnaddroom.Click += new System.EventHandler(this.btnaddroom_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Snow;
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(1870, 6);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(42, 45);
+            this.guna2Button1.TabIndex = 25;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
             // dashboardpaneldate
             // 
             this.dashboardpaneldate.Controls.Add(this.btnback);
@@ -654,7 +673,7 @@
             this.btnback.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnback.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnback.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnback.Image = global::WindowsForm_Project.Properties.Resources.left__3_;
+            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
             this.btnback.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnback.ImageRotate = 0F;
             this.btnback.Location = new System.Drawing.Point(34, 6);
@@ -670,7 +689,7 @@
             this.btnnext.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnnext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnext.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnnext.Image = global::WindowsForm_Project.Properties.Resources.right__3_;
+            this.btnnext.Image = ((System.Drawing.Image)(resources.GetObject("btnnext.Image")));
             this.btnnext.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnnext.ImageRotate = 0F;
             this.btnnext.Location = new System.Drawing.Point(1852, 6);
@@ -679,25 +698,6 @@
             this.btnnext.Size = new System.Drawing.Size(35, 45);
             this.btnnext.TabIndex = 0;
             this.btnnext.Click += new System.EventHandler(this.guna2ImageButton1_Click);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Snow;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(1870, 6);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(42, 45);
-            this.guna2Button1.TabIndex = 25;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // uC_Bookings2
             // 
@@ -726,12 +726,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.uC_Bookings2);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.dashboardpaneldate);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.uC_Dashboard2);
             this.Controls.Add(this.uC_Addroom1);
+            this.Controls.Add(this.uC_Bookings2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Hotel Management";

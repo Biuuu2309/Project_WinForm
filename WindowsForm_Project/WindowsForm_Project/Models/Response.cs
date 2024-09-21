@@ -12,5 +12,6 @@ namespace WindowsForm_Project.Models
         public List<Room> list { get; set; }
         public List<Customer> list1 { get; set; }
         public List<Employee> list2 { get; set; }
+        public List<Account> list3 { get; set; }
     }
 }
