@@ -38,6 +38,30 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addaccount(Account account, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_account", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@username", account.username);
+                cmd.Parameters.AddWithValue("@cccd_em", account.cccd_em);
+                cmd.Parameters.AddWithValue("@password", account.password);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Getroom(SqlConnection conn)
         {
             Response response = new Response();
@@ -74,6 +98,43 @@ namespace WindowsForm_Project.Models
             finally
             {
                 if(conn.State == ConnectionState.Open) 
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Getaccount(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Account> list = new List<Account>();
+            try
+            {
+                string query = @"SELECT * FROM Account";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Account account = new Account
+                            {
+                                id = int.Parse(reader["id"].ToString()),
+                                username = reader["username"].ToString(),
+                                cccd_em = reader["cccd_em"].ToString(),
+                            };
+                            list.Add(account);
+                        }
+                    }
+                }
+                response.list3 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
             return response;
