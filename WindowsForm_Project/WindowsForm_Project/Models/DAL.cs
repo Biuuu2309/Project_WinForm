@@ -244,7 +244,7 @@ namespace WindowsForm_Project.Models
                                 email = reader["email"].ToString(),
                                 gioitinh = reader["gioitinh"].ToString(),
                                 ngaysinh = DateTime.Parse(reader["ngaysinh"].ToString()),
-                                luong = reader["luong"].ToString(),
+                                luong = float.Parse(reader["luong"].ToString()),
                             };
                             list.Add(employee);
                         }
@@ -427,6 +427,127 @@ namespace WindowsForm_Project.Models
             catch (Exception ex)
             {
                 response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Getemployeework(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<EmployeeWork> list = new List<EmployeeWork>();
+            try
+            {
+                string query = @"   SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
+                                    FROM Chamcong
+                                    INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
+                                    WHERE Chamcong.cccd_em = Employee.cccd_em
+                                    GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmployeeWork employee = new EmployeeWork
+                            {
+                                cccd_em = reader["cccd_em"].ToString(),
+                                first_name = reader["first_name"].ToString(),
+                                last_name = reader["last_name"].ToString(),
+                                sdt = reader["sdt"].ToString(),
+                                email = reader["email"].ToString(),
+                                gioitinh = reader["gioitinh"].ToString(),
+                                ngaysinh = DateTime.Parse(reader["ngaysinh"].ToString()),
+                                ngay = DateTime.Parse(reader["ngay"].ToString()),
+                                ca1 = reader["ca1"].ToString(),
+                                ca2 = reader["ca2"].ToString(),
+                                ca3 = reader["ca3"].ToString(),
+                                ca4 = reader["ca4"].ToString(),
+                                luong = reader["luong"].ToString(),
+                                note = reader["note"].ToString(),
+                                tongca = reader["total_shifts"].ToString(),
+                            };
+                            list.Add(employee);
+                        }
+                    }
+                }
+                response.list4 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Deleteroom(Room room, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deleteroom", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maphong", room.maphong);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Gettotal(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Total> list = new List<Total>();
+            try
+            {
+                string query = @"   SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+                                    FROM Employee
+                                    INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+                                    WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
+                                    GROUP BY Employee.cccd_em, first_name, last_name, luong
+                                    ORDER BY Employee.cccd_em";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Total total = new Total
+                            {
+                                cccd_em = reader["cccd_em"].ToString(),
+                                first_name = reader["first_name"].ToString(),
+                                last_name = reader["last_name"].ToString(),
+                                tongngay = int.Parse(reader["tongngay"].ToString()),
+                                tongca = int.Parse(reader["tongca"].ToString()),
+                                luong = float.Parse(reader["luong"].ToString()),
+                                total = float.Parse(reader["total"].ToString()),
+                            };
+                            list.Add(total);
+                        }
+                    }
+                }
+                response.list5 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
             }
             return response;
         }

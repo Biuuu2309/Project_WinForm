@@ -54,7 +54,7 @@ CREATE TABLE Employee (
 	email NVARCHAR(200) NOT NULL,
 	gioitinh NVARCHAR(200) CHECK (gioitinh IN ('Nam', 'Nu')),
 	ngaysinh DATETIME CHECK (DATEDIFF(y, ngaysinh, GETDATE()) >= 18),
-	luong NVARCHAR(200) CHECK (luong > 0),
+	luong FLOAT CHECK (luong > 0),
 )
 GO
 CREATE TABLE Report (
@@ -131,7 +131,7 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_addemployee @cccd_em INT, @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @luong NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addemployee @cccd_em INT, @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @luong FLOAT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Employee
@@ -183,7 +183,7 @@ BEGIN
 END
 
 GO 
-CREATE OR ALTER PROC sp_updateemployee @cccd_em INT = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @luong NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_updateemployee @cccd_em INT = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @luong FLOAT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	BEGIN TRY 
@@ -287,9 +287,17 @@ BEGIN
 		SET @ErrorMessage = 'Cham cong khong thanh cong'
 	END
 END
-
-SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong, note, ngay, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) * luong AS Tongluong
+GO
+SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
 WHERE Chamcong.cccd_em = Employee.cccd_em
-GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong, note, ngay
+GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note
+
+GO
+SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+FROM Employee
+INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
+GROUP BY Employee.cccd_em, first_name, last_name, luong
+ORDER BY Employee.cccd_em

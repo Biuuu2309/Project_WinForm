@@ -91,6 +91,7 @@ namespace WindowsForm_Project.All_User_Control
             txtmaphongupdateroom.Clear();
             txtstatusroom.SelectedIndex = -1;
             txthousekeeping.SelectedIndex = -1;
+            txtdeletemaphong.Clear();
         }
 
         private void UC_Addroom_Leave(object sender, EventArgs e)
@@ -161,6 +162,32 @@ namespace WindowsForm_Project.All_User_Control
                         RefreshControl();
                     }
                 }
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (txtdeletemaphong.Text != "")
+            {
+                Room room = new Room
+                {
+                    maphong = int.Parse(txtdeletemaphong.Text),
+                };
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Deleteroom(room, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("successfully"))
+                    {
+                        RefreshControl();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields.");
             }
         }
     }

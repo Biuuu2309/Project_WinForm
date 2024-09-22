@@ -37,7 +37,7 @@ namespace WindowsForm_Project.All_User_Control
                     email = txtemail.Text,
                     gioitinh = txtgioitinh.SelectedItem.ToString(),
                     ngaysinh = txtngaysinh.Value,
-                    luong = txtluong.Text
+                    luong = float.Parse(txtluong.Text),
                 };
 
                 DAL dal = new DAL();
@@ -57,6 +57,8 @@ namespace WindowsForm_Project.All_User_Control
         {
             clearAll_Em();
             LoadEmployeeData();
+            LoadEmployeeWorkData();
+            LoadEmployeeTotal();
         }
         private void LoadEmployeeData()
         {
@@ -107,6 +109,10 @@ namespace WindowsForm_Project.All_User_Control
             {
                 LoadEmployeeData();
                 DataGridView1.Refresh();
+                LoadEmployeeWorkData();
+                DataGridView3.Refresh();
+                LoadEmployeeTotal();
+                DataGridView2.Refresh();
             }
             catch (Exception ex)
             {
@@ -126,6 +132,54 @@ namespace WindowsForm_Project.All_User_Control
         private void guna2HtmlLabel11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void LoadEmployeeWorkData()
+        {
+            DAL dal = new DAL();
+            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response = dal.Getemployeework(conn);
+                if (response.list4 != null && response.list4.Count > 0)
+                {
+                    DataGridView3.DataSource = null; // Clear previous data
+                    DataGridView3.DataSource = response.list4;
+                    DataGridView3.Refresh(); // Refresh the grid view
+                }
+                else
+                {
+                    MessageBox.Show("No data available or " + response.statusmessage);
+                }
+            }
+        }
+
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void LoadEmployeeTotal()
+        {
+            DAL dal = new DAL();
+            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response = dal.Gettotal(conn);
+                if (response.list5 != null && response.list5.Count > 0)
+                {
+                    DataGridView2.DataSource = null; // Clear previous data
+                    DataGridView2.DataSource = response.list5;
+                    DataGridView2.Refresh(); // Refresh the grid view
+                }
+                else
+                {
+                    MessageBox.Show("No data available or " + response.statusmessage);
+                }
+            }
         }
     }
 }
