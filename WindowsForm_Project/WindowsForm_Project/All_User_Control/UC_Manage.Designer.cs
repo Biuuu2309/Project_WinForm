@@ -1,6 +1,6 @@
 ﻿namespace WindowsForm_Project.All_User_Control
 {
-    partial class UC_Employee
+    partial class UC_Manage
     {
         /// <summary> 
         /// Required designer variable.
