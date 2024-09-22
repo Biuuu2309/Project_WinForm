@@ -288,6 +288,8 @@ BEGIN
 	END
 END
 
-SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong
+SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong, note, ngay, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) * luong AS Tongluong
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
+WHERE Chamcong.cccd_em = Employee.cccd_em
+GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong, note, ngay
