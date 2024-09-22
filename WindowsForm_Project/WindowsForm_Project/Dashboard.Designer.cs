@@ -73,6 +73,8 @@
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
+            this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
+            this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -683,12 +685,30 @@
             this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
             this.uC_Bookings2.TabIndex = 7;
             // 
+            // uC_Manage1
+            // 
+            this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Manage1.Name = "uC_Manage1";
+            this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Manage1.TabIndex = 9;
+            this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
+            // 
+            // uC_Customer1
+            // 
+            this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Customer1.Name = "uC_Customer1";
+            this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Customer1.TabIndex = 10;
+            this.uC_Customer1.Load += new System.EventHandler(this.uC_Customer1_Load);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.uC_Customer1);
+            this.Controls.Add(this.uC_Manage1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.dashboardpaneldate);
             this.Controls.Add(this.guna2Panel1);
@@ -752,5 +772,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnaddroom;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private All_User_Control.UC_Addroom uC_Addroom1;
+        private All_User_Control.UC_Manage uC_Manage1;
+        private All_User_Control.UC_Customer uC_Customer1;
     }
 }

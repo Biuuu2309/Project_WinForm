@@ -71,12 +71,10 @@ CREATE TABLE Serve (
 	maphong INT,
 	other_booking NVARCHAR(200),
 	anuong NVARCHAR(200),
-	call_serve BIT,
-	cccd_em NVARCHAR(200),
+	call_serve BIT DEFAULT 0,
 	PRIMARY KEY (cccd_cus, maphong),
 	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 CREATE TABLE Chamcong (
@@ -100,6 +98,82 @@ CREATE TABLE Account
 	cccd_em NVARCHAR(200) NOT NULL,
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
+GO
+INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
+VALUES
+	('1', '101', 'STD', '1', 'Good', '1000000'),
+	('2', '102', 'DLX', '2', 'Simple', '2000000'),
+	('3', '103', 'SUP', '3', 'Beautiful', '3000000'),
+	('4', '104', 'SUT', '1', 'Good', '2000000'),
+	('5', '105', 'DLX', '2', 'Beautiful', '3000000')
+
+GO
+INSERT INTO Update_room(maphong, status_room, house_keeping)
+VALUES
+	('1', 'Reserved', 'Clean'),
+	('2', 'Occupied', 'Not Clean'),
+	('3', 'Available', 'In Progress'),
+	('4', 'Check Out', 'Repair'),
+	('5', 'Available', 'Clean')
+GO
+INSERT INTO Employee(cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong)
+VALUES
+	('12012309', 'Biu', 'Biu', '123', 'BiuBiu@gmail.com', 'Nu', '2004-09-23', '200000'),
+	('12012308', 'Biu', 'Biuu', '234', 'BiuBiuu@gmail.com', 'Nam', '2004-09-22', '100000'),
+	('12012307', 'Biu', 'Biuuu', '345', 'BiuBiuuu@gmail.com', 'Nu', '2004-09-21', '300000'),
+	('12012306', 'Biu', 'Biuuuu', '456', 'BiuBiuuuu@gmail.com', 'Nam', '2004-09-20', '400000'),
+	('12012305', 'Biu', 'Biuuuuu', '567', 'BiuBiuuuuu@gmail.com', 'Nu', '2004-09-19', '200000')
+GO
+INSERT INTO Account(id, username, password, cccd_em)
+VALUES
+	('1', 'BiuBiu', 'BiuBiu', '12012309'),
+	('2', 'BiuBiuu', 'BiuBiuu', '12012308'),
+	('3', 'BiuBiuuu', 'BiuBiuuu', '12012307'),
+	('4', 'BiuBiuuuu', 'BiuBiuuuu', '12012306'),
+	('5', 'BiuBiuuuuu', 'BiuBiuuuuu', '12012305')
+GO
+INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh, address_cus)
+VALUES
+	('12022309', 'Haha', 'Hihi', '1234', 'HahaHihi', 'Nam', '2004-09-24', 'HCM'),
+	('12032309', 'Haha', 'Hihii', '2345', 'HahaHihii', 'Nu', '2004-09-25', 'HN'),
+	('12042309', 'Haha', 'Hihiii', '3456', 'HahaHihiii', 'Nam', '2004-09-26', 'DN'),
+	('12052309', 'Haha', 'Hihiiii', '4567', 'HahaHihiiii', 'Nu', '2004-09-27', 'BD'),
+	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
+GO
+INSERT INTO Bookings(cccd_cus, date_ci, date_co, maphong, group_customer)
+VALUES
+	('12022309', '2024-09-20', '2024-09-21', '1', '0'),
+	('12032309', '2024-09-19', '2024-09-22', '2', '1'),
+	('12042309', '2024-09-18', '2024-09-20', '3', '2'),
+	('12052309', '2024-09-17', '2024-09-21', '4', '1'),
+	('12062309', '2024-09-16', '2024-09-20', '5', '2')
+GO
+INSERT INTO Report(cccd_cus, maphong, ghichu)
+VALUES
+	('12022309', '1', 'Biuuuuuuuuuu'),
+	('12032309', '2', 'Beoooooooo'),
+	('12052309', '4', 'Bemmmmmmm')
+GO
+INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note, tongluong)
+VALUES
+	('12012309', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
+	('12012308', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
+	('12012307', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
+	('12012306', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
+	('12012305', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
+	('12012309', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
+	('12012308', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
+	('12012307', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
+	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
+	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', '')
+GO
+INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve)
+VALUES
+	('12022309', '1', 'Khong', 'Khong', '0'),
+	('12032309', '2', 'Khong', 'Khong', '0'),
+	('12042309', '3', 'Khong', 'Khong', '0'),
+	('12052309', '4', 'Khong', 'Khong', '0'),
+	('12062309', '5', 'Khong', 'Khong', '0')
 GO 
 CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
 AS

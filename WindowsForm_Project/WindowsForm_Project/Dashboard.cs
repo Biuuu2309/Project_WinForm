@@ -333,6 +333,8 @@ namespace WindowsForm_Project
             // Hide other user controls
             uC_Bookings2.Visible = false;
             uC_Dashboard2.Visible = false;
+            uC_Customer1.Visible = false;
+            uC_Manage1.Visible = false;
         }
 
         private void btndashboard_Click(object sender, EventArgs e)
@@ -343,6 +345,8 @@ namespace WindowsForm_Project
             // Hide other user controls
             uC_Bookings2.Visible = false;
             uC_Addroom1.Visible = false;
+            uC_Customer1.Visible = false;
+            uC_Manage1.Visible = false;
             // ... hide other user controls
         }
 
@@ -354,6 +358,8 @@ namespace WindowsForm_Project
             // Hide other user controls
             uC_Dashboard2.Visible = false;
             uC_Addroom1.Visible = false;
+            uC_Customer1.Visible = false;
+            uC_Manage1.Visible = false;
             // ... hide other user controls
         }
 
@@ -403,9 +409,13 @@ namespace WindowsForm_Project
         private void guna2GradientButton1_Click_1(object sender, EventArgs e)
         {
             MovePanel(btncustomer);
+            uC_Customer1.Visible = true;
+            uC_Customer1.BringToFront();
+            // Hide other user controls
             uC_Dashboard2.Visible = false;
-            uC_Bookings2.Visible = true;
-            uC_Bookings2.BringToFront();
+            uC_Addroom1.Visible = false;
+            uC_Bookings2.Visible = false;
+            uC_Manage1.Visible = false;
         }
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
@@ -421,11 +431,28 @@ namespace WindowsForm_Project
         private void btnemployee_Click_1(object sender, EventArgs e)
         {
             MovePanel(btnmanage);
+            uC_Manage1.Visible = true;
+            uC_Manage1.BringToFront();
+            // Hide other user controls
+            uC_Dashboard2.Visible = false;
+            uC_Addroom1.Visible = false;
+            uC_Bookings2.Visible = false;
+            uC_Customer1.Visible = false;
         }
 
         private void btncheckout_Click_1(object sender, EventArgs e)
         {
             MovePanel(btncheckout);
+        }
+
+        private void uC_Manage1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uC_Customer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
