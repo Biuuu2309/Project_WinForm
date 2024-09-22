@@ -366,7 +366,7 @@ namespace WindowsForm_Project
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            MovePanel(btnemployee);
+            MovePanel(btnmanage);
             // Show Employee user control
             // Hide other user controls
         }
@@ -420,7 +420,7 @@ namespace WindowsForm_Project
 
         private void btnemployee_Click_1(object sender, EventArgs e)
         {
-            MovePanel(btnemployee);
+            MovePanel(btnmanage);
         }
 
         private void btncheckout_Click_1(object sender, EventArgs e)

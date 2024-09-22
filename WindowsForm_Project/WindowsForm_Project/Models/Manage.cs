@@ -17,4 +17,10 @@ namespace WindowsForm_Project.Models
         public DateTime ngaysinh { get; set; }
         public string luong { get; set; }
     }
+    public class Chamcong
+    {
+        public string cccd_em { get; set; }
+        public string ngay { get; set; }
+
+    }
 }

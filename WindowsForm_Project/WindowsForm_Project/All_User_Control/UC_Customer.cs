@@ -99,6 +99,15 @@ namespace WindowsForm_Project.All_User_Control
             txtgioitinh_cus.SelectedIndex = -1;
             txtngaysinh_cus.Value = DateTime.Now;
             txtaddress.Clear();
+
+            txtcccd_cusup.Clear();
+            txtfirst_nameup.Clear();
+            txtlast_nameup.Clear();
+            txtsdt_cusup.Clear();
+            txtemail_cusup.Clear();
+            txtgioitinh_cusup.SelectedIndex = -1;
+            txtngaysinh_cusup.Value = DateTime.Now;
+            txtaddressup.Clear();
         }
         private void UC_Bookings_Leave(object sender, EventArgs e)
         {
@@ -115,6 +124,45 @@ namespace WindowsForm_Project.All_User_Control
             {
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput_Cus_Up())
+            {
+                Customer customer = new Customer
+                {
+                    cccd_cus = txtcccd_cusup.Text,
+                    first_name = txtfirst_nameup.Text,
+                    last_name = txtlast_nameup.Text,
+                    sdt = txtsdt_cusup.Text,
+                    email = txtemail_cusup.Text,
+                    gioitinh = txtgioitinh_cusup.SelectedItem.ToString(),
+                    ngaysinh = txtngaysinh_cusup.Value,
+                    address_cus = txtaddressup.Text,
+                };
+
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Updatecustomer(customer, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("Update customer thanh cong"))
+                    {
+                        RefreshControl_Cus();
+                    }
+                }
+            }
+        }
+        private bool ValidateInput_Cus_Up()
+        {
+            if (txtcccd_cusup.Text == "" || txtfirst_nameup.Text == "" || txtlast_nameup.Text == "" || txtsdt_cusup.Text == "" || txtemail_cusup.Text == "" || txtgioitinh_cusup.SelectedItem == null || txtngaysinh_cusup.Value == null || txtaddressup.Text == null)
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
         }
     }
 }

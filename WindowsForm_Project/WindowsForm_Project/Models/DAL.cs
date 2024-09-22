@@ -1,3 +1,4 @@
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,6 +49,28 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@username", account.username);
                 cmd.Parameters.AddWithValue("@cccd_em", account.cccd_em);
                 cmd.Parameters.AddWithValue("@password", account.password);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Deleteaccount(Account account, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deleteaccount", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", account.id);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
@@ -343,6 +366,67 @@ namespace WindowsForm_Project.Models
             {
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
+            }
+            return response;
+        }
+        public Response Updatecustomer(Customer customer, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updatecustomer", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_cus", customer.cccd_cus);
+                cmd.Parameters.AddWithValue("@first_name", customer.first_name);
+                cmd.Parameters.AddWithValue("@last_name", customer.last_name);
+                cmd.Parameters.AddWithValue("@sdt", customer.sdt);
+                cmd.Parameters.AddWithValue("@email", customer.email);
+                cmd.Parameters.AddWithValue("@gioitinh", customer.gioitinh);
+                cmd.Parameters.AddWithValue("@ngaysinh", customer.ngaysinh);
+                cmd.Parameters.AddWithValue("@address_cus", customer.address_cus);
+                if (!string.IsNullOrEmpty(customer.cccd_cus))
+                {
+                    cmd.Parameters.AddWithValue("@cccd_cus", customer.cccd_cus);
+                }
+                if (!string.IsNullOrEmpty(customer.first_name))
+                {
+                    cmd.Parameters.AddWithValue("@first_name", customer.first_name);
+                }
+                if (!string.IsNullOrEmpty(customer.last_name))
+                {
+                    cmd.Parameters.AddWithValue("@last_name", customer.last_name);
+                }
+                if (!string.IsNullOrEmpty(customer.sdt))
+                {
+                    cmd.Parameters.AddWithValue("@sdt", customer.sdt);
+                }
+                if (!string.IsNullOrEmpty(customer.email))
+                {
+                    cmd.Parameters.AddWithValue("@email", customer.email);
+                }
+                if (!string.IsNullOrEmpty(customer.gioitinh))
+                {
+                    cmd.Parameters.AddWithValue("@gioitinh", customer.gioitinh);
+                }
+                if (!string.IsNullOrEmpty(customer.ngaysinh.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@ngaysinh", customer.ngaysinh);
+                }
+                if (!string.IsNullOrEmpty(customer.address_cus))
+                {
+                    cmd.Parameters.AddWithValue("@address_cus", customer.address_cus);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
             }
             return response;
         }

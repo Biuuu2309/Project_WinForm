@@ -61,7 +61,7 @@
             this.btndashboard = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Panelmoving = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btncheckout = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnemployee = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnmanage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btncustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnreport = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -507,26 +507,26 @@
             this.btncheckout.Text = "Check Out";
             this.btncheckout.Click += new System.EventHandler(this.btncheckout_Click_1);
             // 
-            // btnemployee
+            // btnmanage
             // 
-            this.btnemployee.BackColor = System.Drawing.Color.Snow;
-            this.btnemployee.BorderRadius = 10;
-            this.btnemployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnemployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnemployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnemployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnemployee.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnemployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnemployee.FillColor = System.Drawing.Color.Transparent;
-            this.btnemployee.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnemployee.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnemployee.ForeColor = System.Drawing.Color.Black;
-            this.btnemployee.Location = new System.Drawing.Point(1118, 6);
-            this.btnemployee.Name = "btnemployee";
-            this.btnemployee.Size = new System.Drawing.Size(217, 45);
-            this.btnemployee.TabIndex = 28;
-            this.btnemployee.Text = "Employee";
-            this.btnemployee.Click += new System.EventHandler(this.btnemployee_Click_1);
+            this.btnmanage.BackColor = System.Drawing.Color.Snow;
+            this.btnmanage.BorderRadius = 10;
+            this.btnmanage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmanage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnmanage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnmanage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnmanage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnmanage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnmanage.FillColor = System.Drawing.Color.Transparent;
+            this.btnmanage.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnmanage.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanage.ForeColor = System.Drawing.Color.Black;
+            this.btnmanage.Location = new System.Drawing.Point(1118, 6);
+            this.btnmanage.Name = "btnmanage";
+            this.btnmanage.Size = new System.Drawing.Size(217, 45);
+            this.btnmanage.TabIndex = 28;
+            this.btnmanage.Text = "Manage";
+            this.btnmanage.Click += new System.EventHandler(this.btnemployee_Click_1);
             // 
             // btncustomer
             // 
@@ -599,7 +599,7 @@
             this.guna2Panel1.Controls.Add(this.btncheckout);
             this.guna2Panel1.Controls.Add(this.btnserve);
             this.guna2Panel1.Controls.Add(this.btncustomer);
-            this.guna2Panel1.Controls.Add(this.btnemployee);
+            this.guna2Panel1.Controls.Add(this.btnmanage);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.Panelmoving);
             this.guna2Panel1.Controls.Add(this.btndashboard);
@@ -739,7 +739,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnreport;
         private Guna.UI2.WinForms.Guna2GradientButton btnserve;
         private Guna.UI2.WinForms.Guna2GradientButton btncustomer;
-        private Guna.UI2.WinForms.Guna2GradientButton btnemployee;
+        private Guna.UI2.WinForms.Guna2GradientButton btnmanage;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2GradientButton btncheckout;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel Panelmoving;

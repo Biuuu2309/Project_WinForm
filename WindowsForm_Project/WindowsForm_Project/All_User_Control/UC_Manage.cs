@@ -12,9 +12,9 @@ using WindowsForm_Project.Models;
 
 namespace WindowsForm_Project.All_User_Control
 {
-    public partial class UC_Employee : UserControl
+    public partial class UC_Manage : UserControl
     {
-        public UC_Employee()
+        public UC_Manage()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             if (ValidateInput())
             {
-                Employee employee = new Employee
+                Manage employee = new Manage
                 {
                     cccd_em = txtcccd_em.Text,
                     first_name = txtfirstname.Text,
@@ -119,6 +119,11 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel11_Click(object sender, EventArgs e)
         {
 
         }

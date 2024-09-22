@@ -81,7 +81,12 @@ CREATE TABLE Serve (
 GO
 CREATE TABLE Chamcong (
 	cccd_em NVARCHAR(200),
-	songay INT DEFAULT 0 NOT NULL,
+	ngay DATETIME NOT NULL,
+	ca1 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca1 IN ('Co', 'Khong')),
+	ca2 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca2 IN ('Co', 'Khong')),
+	ca3 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca3 IN ('Co', 'Khong')),
+	ca4 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca4 IN ('Co', 'Khong')),
+	note NTEXT,
 	tongluong FLOAT NOT NULL,
 	PRIMARY KEY (cccd_em),
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -177,21 +182,6 @@ BEGIN
 	END CATCH
 END
 
-GO
-CREATE OR ALTER PROC sp_deleteroom @maphong NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
-AS 
-BEGIN
-	IF EXISTS (	SELECT 1 FROM Room WHERE maphong = @maphong)
-	BEGIN
-		DELETE FROM Room WHERE maphong = @maphong
-		SET @ErrorMessage = 'Room deleted successfully'
-	END
-	ELSE
-	BEGIN
-		SET @ErrorMessage = 'Room not exists';
-	END
-END
-
 GO 
 CREATE OR ALTER PROC sp_updateemployee @cccd_em INT = NULL, @first_name NVARCHAR(200) = NULL, @last_name NVARCHAR(200) = NULL, @sdt NVARCHAR(200) = NULL, @email NVARCHAR(200) = NULL, @gioitinh NVARCHAR(200) = NULL, @ngaysinh DATETIME = NULL, @luong NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
@@ -270,7 +260,7 @@ BEGIN
 	END CATCH
 END
 GO
-CREATE OR ALTER PROC sp_deleteaccount @id INT = NULL, @username NVARCHAR(200) = NULL, @password NVARCHAR(200) = NULL, @cccd_em NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_deleteaccount @id INT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF EXISTS (SELECT 1 FROM Account WHERE id = @id)
@@ -283,3 +273,21 @@ BEGIN
 		SET @ErrorMessage = 'Xoa account khong thanh cong'
 	END
 END
+GO
+CREATE OR ALTER PROC sp_addchamcong @cccd_em NVARCHAR(200), @ngay DATETIME, @ca1 NVARCHAR(200), @ca2 NVARCHAR(200), @ca3 NVARCHAR(200), @ca4 NVARCHAR(200), @note NTEXT, @tongluong FLOAT, @ErrorMessage NVARCHAR(200) OUTPUT 
+AS
+BEGIN
+	IF EXISTS (SELECT 1 FROM Employee WHERE cccd_em = @cccd_em)
+	BEGIN
+		INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note, tongluong) VALUES (@cccd_em, @ngay, @ca1, @ca2, @ca3, @ca4, @note, @tongluong)
+		SET @ErrorMessage = 'Cham cong thanh cong'
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = 'Cham cong khong thanh cong'
+	END
+END
+
+SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong
+FROM Chamcong
+INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em

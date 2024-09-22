@@ -68,6 +68,7 @@ namespace WindowsForm_Project.All_User_Control
             txtusername.Clear();
             txtcccd_em.Clear();
             txtpassword.Clear();
+            txtid.Clear();
         }
         private void LoadRoomData()
         {
@@ -103,6 +104,47 @@ namespace WindowsForm_Project.All_User_Control
             {
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (ValidateInputDelete())
+            {
+                Account account = new Account
+                {
+                    id = int.Parse(txtid.Text),
+                };
+
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Deleteaccount(account, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("successfully"))
+                    {
+                        RefreshControl();
+                    }
+                }
+            }
+        }
+        private bool ValidateInputDelete()
+        {
+            if (txtid.Text == "")
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
+        }
+
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
