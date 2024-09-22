@@ -69,15 +69,12 @@
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnback = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnnext = new Guna.UI2.WinForms.Guna2ImageButton();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
+            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.dashboardpaneldate.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -656,8 +653,6 @@
             // 
             // dashboardpaneldate
             // 
-            this.dashboardpaneldate.Controls.Add(this.btnback);
-            this.dashboardpaneldate.Controls.Add(this.btnnext);
             this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
             this.dashboardpaneldate.FillColor = System.Drawing.Color.Thistle;
             this.dashboardpaneldate.FillColor2 = System.Drawing.Color.CornflowerBlue;
@@ -666,45 +661,6 @@
             this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.Transparent;
-            this.btnback.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnback.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnback.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
-            this.btnback.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnback.ImageRotate = 0F;
-            this.btnback.Location = new System.Drawing.Point(34, 6);
-            this.btnback.Name = "btnback";
-            this.btnback.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnback.Size = new System.Drawing.Size(35, 45);
-            this.btnback.TabIndex = 1;
-            this.btnback.Click += new System.EventHandler(this.guna2ImageButton2_Click);
-            // 
-            // btnnext
-            // 
-            this.btnnext.BackColor = System.Drawing.Color.Transparent;
-            this.btnnext.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnnext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnnext.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnnext.Image = ((System.Drawing.Image)(resources.GetObject("btnnext.Image")));
-            this.btnnext.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnnext.ImageRotate = 0F;
-            this.btnnext.Location = new System.Drawing.Point(1852, 6);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnnext.Size = new System.Drawing.Size(35, 45);
-            this.btnnext.TabIndex = 0;
-            this.btnnext.Click += new System.EventHandler(this.guna2ImageButton1_Click);
-            // 
-            // uC_Bookings2
-            // 
-            this.uC_Bookings2.Location = new System.Drawing.Point(0, 114);
-            this.uC_Bookings2.Name = "uC_Bookings2";
-            this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Bookings2.TabIndex = 7;
             // 
             // uC_Dashboard2
             // 
@@ -719,6 +675,13 @@
             this.uC_Addroom1.Name = "uC_Addroom1";
             this.uC_Addroom1.Size = new System.Drawing.Size(1920, 966);
             this.uC_Addroom1.TabIndex = 8;
+            // 
+            // uC_Bookings2
+            // 
+            this.uC_Bookings2.Location = new System.Drawing.Point(0, 114);
+            this.uC_Bookings2.Name = "uC_Bookings2";
+            this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Bookings2.TabIndex = 7;
             // 
             // Dashboard
             // 
@@ -739,7 +702,6 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.dashboardpaneldate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -787,8 +749,6 @@
         private All_User_Control.UC_Bookings uC_Bookings1;
         private All_User_Control.UC_Bookings uC_Bookings2;
         private All_User_Control.UC_Dashboard uC_Dashboard2;
-        private Guna.UI2.WinForms.Guna2ImageButton btnnext;
-        private Guna.UI2.WinForms.Guna2ImageButton btnback;
         private Guna.UI2.WinForms.Guna2GradientButton btnaddroom;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private All_User_Control.UC_Addroom uC_Addroom1;

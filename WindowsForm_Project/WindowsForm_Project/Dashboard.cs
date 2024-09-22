@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -269,10 +271,37 @@ namespace WindowsForm_Project
                 (dashboardpaneldate.Width - dateLabel.Width) / 2,
                 (dashboardpaneldate.Height - dateLabel.Height) / 2
             );
-
+            Guna2ImageButton imageButton1 = new Guna2ImageButton();
+            Guna2ImageButton imageButton2 = new Guna2ImageButton();
+            imageButton1.Image = Properties.Resources.left__3_;
+            imageButton1.Size = new Size(35, 45);
+            imageButton1.ImageSize = new Size(64, 64);
+            imageButton1.Location = new Point(37, 6);
+            imageButton1.BackColor = Color.Transparent;
+            imageButton2.Image = Properties.Resources.right__3_;
+            imageButton2.Size = new Size(35, 45);
+            imageButton2.ImageSize = new Size(64, 64);
+            imageButton2.Location = new Point(1844, 6);
+            imageButton2.BackColor = Color.Transparent;
+            imageButton1.BringToFront();
+            imageButton2.BringToFront();
+            imageButton1.Visible = true;
+            imageButton2.Visible = true;
+            imageButton1.Click += (sender, e) =>
+            {
+                currentDate = currentDate.AddDays(-1); // Subtract one day
+                UpdateDateLabel();
+            };
+            imageButton2.Click += (sender, e) =>
+            {
+                currentDate = currentDate.AddDays(1); // Add one day
+                UpdateDateLabel();
+            };
             // Clear previous controls and add the new label to the panel
             dashboardpaneldate.Controls.Clear();
             dashboardpaneldate.Controls.Add(dateLabel);
+            dashboardpaneldate.Controls.Add(imageButton1);
+            dashboardpaneldate.Controls.Add(imageButton2);
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -282,18 +311,18 @@ namespace WindowsForm_Project
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            btnnext.Visible = true;
-            btnnext.Click += new EventHandler(guna2ImageButton1_Click);
-            currentDate = currentDate.AddDays(-1); // Subtract one day
-            UpdateDateLabel();
+            //btnnext.BringToFront();
+            //btnnext.Visible = true;
+            //currentDate = currentDate.AddDays(1); // Subtract one day
+            //UpdateDateLabel();
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            btnback.Visible = true;
-            btnback.Click += new EventHandler(guna2ImageButton2_Click);
-            currentDate = currentDate.AddDays(1); // Add one day
-            UpdateDateLabel();
+            //btnback.BringToFront();
+            //btnback.Visible = true;
+            //currentDate = currentDate.AddDays(-1); // Add one day
+            //UpdateDateLabel();
         }
 
         private void btnaddroom_Click(object sender, EventArgs e)
