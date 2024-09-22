@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsForm_Project.Models
 {
-    public class Employee
+    public class Manage
     {
         public string cccd_em { get; set; }
         public string first_name { get; set; }

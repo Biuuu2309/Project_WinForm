@@ -169,7 +169,7 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        public Response Addemployee(Employee employee, SqlConnection conn)
+        public Response Addemployee(Manage employee, SqlConnection conn)
         {
             Response response = new Response();
             try
@@ -201,7 +201,7 @@ namespace WindowsForm_Project.Models
         public Response Getemployee(SqlConnection conn)
         {
             Response response = new Response();
-            List<Employee> list = new List<Employee>();
+            List<Manage> list = new List<Manage>();
             try
             {
                 string query = @"SELECT * FROM Employee";
@@ -212,7 +212,7 @@ namespace WindowsForm_Project.Models
                     {
                         while (reader.Read())
                         {
-                            Employee employee = new Employee
+                            Manage employee = new Manage
                             {
                                 cccd_em = reader["cccd_em"].ToString(),
                                 first_name = reader["first_name"].ToString(),
