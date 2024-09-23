@@ -95,7 +95,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView2.Location = new System.Drawing.Point(45, 62);
+            this.DataGridView2.Location = new System.Drawing.Point(1087, 29);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
             this.DataGridView2.Size = new System.Drawing.Size(482, 255);
@@ -125,6 +125,7 @@
             // 
             // txtaddress
             // 
+            this.txtaddress.BorderRadius = 6;
             this.txtaddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaddress.DefaultText = "";
             this.txtaddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -134,10 +135,10 @@
             this.txtaddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtaddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtaddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtaddress.Location = new System.Drawing.Point(624, 530);
+            this.txtaddress.Location = new System.Drawing.Point(32, 513);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.PasswordChar = '\0';
-            this.txtaddress.PlaceholderText = "";
+            this.txtaddress.PlaceholderText = "Address";
             this.txtaddress.SelectedText = "";
             this.txtaddress.Size = new System.Drawing.Size(200, 36);
             this.txtaddress.TabIndex = 56;
@@ -145,7 +146,7 @@
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(626, 509);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(34, 492);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(41, 15);
             this.guna2HtmlLabel8.TabIndex = 55;
@@ -159,7 +160,7 @@
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1196, 660);
+            this.guna2Button2.Location = new System.Drawing.Point(604, 643);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 54;
@@ -171,18 +172,18 @@
             this.txtngaysinh_cus.Checked = true;
             this.txtngaysinh_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtngaysinh_cus.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtngaysinh_cus.Location = new System.Drawing.Point(626, 463);
+            this.txtngaysinh_cus.Location = new System.Drawing.Point(34, 446);
             this.txtngaysinh_cus.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtngaysinh_cus.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtngaysinh_cus.Name = "txtngaysinh_cus";
-            this.txtngaysinh_cus.Size = new System.Drawing.Size(200, 36);
+            this.txtngaysinh_cus.Size = new System.Drawing.Size(214, 36);
             this.txtngaysinh_cus.TabIndex = 53;
             this.txtngaysinh_cus.Value = new System.DateTime(2024, 9, 16, 14, 22, 22, 423);
             // 
             // guna2HtmlLabel15
             // 
             this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(624, 442);
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(32, 425);
             this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
             this.guna2HtmlLabel15.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel15.TabIndex = 52;
@@ -191,6 +192,7 @@
             // txtgioitinh_cus
             // 
             this.txtgioitinh_cus.BackColor = System.Drawing.Color.Transparent;
+            this.txtgioitinh_cus.BorderRadius = 6;
             this.txtgioitinh_cus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.txtgioitinh_cus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtgioitinh_cus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -201,7 +203,7 @@
             this.txtgioitinh_cus.Items.AddRange(new object[] {
             "Nam",
             "Nu"});
-            this.txtgioitinh_cus.Location = new System.Drawing.Point(626, 393);
+            this.txtgioitinh_cus.Location = new System.Drawing.Point(34, 376);
             this.txtgioitinh_cus.Name = "txtgioitinh_cus";
             this.txtgioitinh_cus.Size = new System.Drawing.Size(140, 36);
             this.txtgioitinh_cus.TabIndex = 51;
@@ -209,7 +211,7 @@
             // guna2HtmlLabel14
             // 
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(628, 372);
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(36, 355);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             this.guna2HtmlLabel14.Size = new System.Drawing.Size(39, 15);
             this.guna2HtmlLabel14.TabIndex = 50;
@@ -217,6 +219,7 @@
             // 
             // txtemail_cus
             // 
+            this.txtemail_cus.BorderRadius = 6;
             this.txtemail_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtemail_cus.DefaultText = "";
             this.txtemail_cus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -226,16 +229,17 @@
             this.txtemail_cus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtemail_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtemail_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtemail_cus.Location = new System.Drawing.Point(624, 321);
+            this.txtemail_cus.Location = new System.Drawing.Point(32, 304);
             this.txtemail_cus.Name = "txtemail_cus";
             this.txtemail_cus.PasswordChar = '\0';
-            this.txtemail_cus.PlaceholderText = "";
+            this.txtemail_cus.PlaceholderText = "Email";
             this.txtemail_cus.SelectedText = "";
             this.txtemail_cus.Size = new System.Drawing.Size(200, 36);
             this.txtemail_cus.TabIndex = 49;
             // 
             // txtsdt_cus
             // 
+            this.txtsdt_cus.BorderRadius = 6;
             this.txtsdt_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsdt_cus.DefaultText = "";
             this.txtsdt_cus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -245,10 +249,10 @@
             this.txtsdt_cus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsdt_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtsdt_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsdt_cus.Location = new System.Drawing.Point(624, 258);
+            this.txtsdt_cus.Location = new System.Drawing.Point(32, 241);
             this.txtsdt_cus.Name = "txtsdt_cus";
             this.txtsdt_cus.PasswordChar = '\0';
-            this.txtsdt_cus.PlaceholderText = "";
+            this.txtsdt_cus.PlaceholderText = "SĐT";
             this.txtsdt_cus.SelectedText = "";
             this.txtsdt_cus.Size = new System.Drawing.Size(200, 36);
             this.txtsdt_cus.TabIndex = 48;
@@ -256,7 +260,7 @@
             // guna2HtmlLabel12
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(626, 300);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(34, 283);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(27, 15);
             this.guna2HtmlLabel12.TabIndex = 47;
@@ -265,7 +269,7 @@
             // guna2HtmlLabel13
             // 
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(624, 237);
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(32, 220);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(17, 15);
             this.guna2HtmlLabel13.TabIndex = 46;
@@ -273,6 +277,7 @@
             // 
             // txtlastname_cus
             // 
+            this.txtlastname_cus.BorderRadius = 6;
             this.txtlastname_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtlastname_cus.DefaultText = "";
             this.txtlastname_cus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -282,10 +287,10 @@
             this.txtlastname_cus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtlastname_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtlastname_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtlastname_cus.Location = new System.Drawing.Point(622, 195);
+            this.txtlastname_cus.Location = new System.Drawing.Point(30, 178);
             this.txtlastname_cus.Name = "txtlastname_cus";
             this.txtlastname_cus.PasswordChar = '\0';
-            this.txtlastname_cus.PlaceholderText = "";
+            this.txtlastname_cus.PlaceholderText = "Last name";
             this.txtlastname_cus.SelectedText = "";
             this.txtlastname_cus.Size = new System.Drawing.Size(200, 36);
             this.txtlastname_cus.TabIndex = 45;
@@ -293,7 +298,7 @@
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(622, 41);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(30, 24);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(32, 15);
             this.guna2HtmlLabel9.TabIndex = 44;
@@ -301,6 +306,7 @@
             // 
             // txtfirstname_cus
             // 
+            this.txtfirstname_cus.BorderRadius = 6;
             this.txtfirstname_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfirstname_cus.DefaultText = "";
             this.txtfirstname_cus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -310,10 +316,10 @@
             this.txtfirstname_cus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfirstname_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtfirstname_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfirstname_cus.Location = new System.Drawing.Point(622, 132);
+            this.txtfirstname_cus.Location = new System.Drawing.Point(30, 115);
             this.txtfirstname_cus.Name = "txtfirstname_cus";
             this.txtfirstname_cus.PasswordChar = '\0';
-            this.txtfirstname_cus.PlaceholderText = "";
+            this.txtfirstname_cus.PlaceholderText = "First name";
             this.txtfirstname_cus.SelectedText = "";
             this.txtfirstname_cus.Size = new System.Drawing.Size(200, 36);
             this.txtfirstname_cus.TabIndex = 43;
@@ -321,7 +327,7 @@
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(624, 174);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(32, 157);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel10.TabIndex = 42;
@@ -329,6 +335,7 @@
             // 
             // txtcccd_cus
             // 
+            this.txtcccd_cus.BorderRadius = 6;
             this.txtcccd_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcccd_cus.DefaultText = "";
             this.txtcccd_cus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -338,10 +345,10 @@
             this.txtcccd_cus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcccd_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcccd_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcccd_cus.Location = new System.Drawing.Point(622, 62);
+            this.txtcccd_cus.Location = new System.Drawing.Point(30, 45);
             this.txtcccd_cus.Name = "txtcccd_cus";
             this.txtcccd_cus.PasswordChar = '\0';
-            this.txtcccd_cus.PlaceholderText = "";
+            this.txtcccd_cus.PlaceholderText = "CCCD";
             this.txtcccd_cus.SelectedText = "";
             this.txtcccd_cus.Size = new System.Drawing.Size(303, 43);
             this.txtcccd_cus.TabIndex = 41;
@@ -349,7 +356,7 @@
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(622, 111);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(30, 94);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel11.TabIndex = 40;
@@ -370,7 +377,7 @@
             this.txtaddressup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtaddressup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtaddressup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtaddressup.Location = new System.Drawing.Point(1192, 579);
+            this.txtaddressup.Location = new System.Drawing.Point(600, 562);
             this.txtaddressup.Name = "txtaddressup";
             this.txtaddressup.PasswordChar = '\0';
             this.txtaddressup.PlaceholderText = "";
@@ -381,7 +388,7 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(1194, 558);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(602, 541);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(41, 15);
             this.guna2HtmlLabel1.TabIndex = 72;
@@ -395,7 +402,7 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(622, 605);
+            this.guna2Button1.Location = new System.Drawing.Point(30, 588);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 71;
@@ -407,7 +414,7 @@
             this.txtngaysinh_cusup.Checked = true;
             this.txtngaysinh_cusup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtngaysinh_cusup.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtngaysinh_cusup.Location = new System.Drawing.Point(1194, 512);
+            this.txtngaysinh_cusup.Location = new System.Drawing.Point(602, 495);
             this.txtngaysinh_cusup.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtngaysinh_cusup.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtngaysinh_cusup.Name = "txtngaysinh_cusup";
@@ -418,7 +425,7 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(1192, 491);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(600, 474);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel2.TabIndex = 69;
@@ -437,7 +444,7 @@
             this.txtgioitinh_cusup.Items.AddRange(new object[] {
             "Nam",
             "Nu"});
-            this.txtgioitinh_cusup.Location = new System.Drawing.Point(1194, 442);
+            this.txtgioitinh_cusup.Location = new System.Drawing.Point(602, 425);
             this.txtgioitinh_cusup.Name = "txtgioitinh_cusup";
             this.txtgioitinh_cusup.Size = new System.Drawing.Size(140, 36);
             this.txtgioitinh_cusup.TabIndex = 68;
@@ -445,7 +452,7 @@
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(1196, 421);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(604, 404);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(39, 15);
             this.guna2HtmlLabel3.TabIndex = 67;
@@ -462,7 +469,7 @@
             this.txtemail_cusup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtemail_cusup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtemail_cusup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtemail_cusup.Location = new System.Drawing.Point(1192, 370);
+            this.txtemail_cusup.Location = new System.Drawing.Point(600, 353);
             this.txtemail_cusup.Name = "txtemail_cusup";
             this.txtemail_cusup.PasswordChar = '\0';
             this.txtemail_cusup.PlaceholderText = "";
@@ -481,7 +488,7 @@
             this.txtsdt_cusup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsdt_cusup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtsdt_cusup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsdt_cusup.Location = new System.Drawing.Point(1192, 307);
+            this.txtsdt_cusup.Location = new System.Drawing.Point(600, 290);
             this.txtsdt_cusup.Name = "txtsdt_cusup";
             this.txtsdt_cusup.PasswordChar = '\0';
             this.txtsdt_cusup.PlaceholderText = "";
@@ -492,7 +499,7 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(1194, 349);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(602, 332);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(27, 15);
             this.guna2HtmlLabel4.TabIndex = 64;
@@ -501,7 +508,7 @@
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(1192, 286);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(600, 269);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(17, 15);
             this.guna2HtmlLabel5.TabIndex = 63;
@@ -509,6 +516,7 @@
             // 
             // txtlast_nameup
             // 
+            this.txtlast_nameup.Animated = true;
             this.txtlast_nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtlast_nameup.DefaultText = "";
             this.txtlast_nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -518,10 +526,10 @@
             this.txtlast_nameup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtlast_nameup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtlast_nameup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtlast_nameup.Location = new System.Drawing.Point(1190, 244);
+            this.txtlast_nameup.Location = new System.Drawing.Point(598, 227);
             this.txtlast_nameup.Name = "txtlast_nameup";
             this.txtlast_nameup.PasswordChar = '\0';
-            this.txtlast_nameup.PlaceholderText = "";
+            this.txtlast_nameup.PlaceholderText = "Last name";
             this.txtlast_nameup.SelectedText = "";
             this.txtlast_nameup.Size = new System.Drawing.Size(200, 36);
             this.txtlast_nameup.TabIndex = 62;
@@ -529,7 +537,7 @@
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(1190, 90);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(598, 73);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(32, 15);
             this.guna2HtmlLabel6.TabIndex = 61;
@@ -537,6 +545,7 @@
             // 
             // txtfirst_nameup
             // 
+            this.txtfirst_nameup.Animated = true;
             this.txtfirst_nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfirst_nameup.DefaultText = "";
             this.txtfirst_nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -546,10 +555,10 @@
             this.txtfirst_nameup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfirst_nameup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtfirst_nameup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfirst_nameup.Location = new System.Drawing.Point(1190, 181);
+            this.txtfirst_nameup.Location = new System.Drawing.Point(598, 164);
             this.txtfirst_nameup.Name = "txtfirst_nameup";
             this.txtfirst_nameup.PasswordChar = '\0';
-            this.txtfirst_nameup.PlaceholderText = "";
+            this.txtfirst_nameup.PlaceholderText = "First name";
             this.txtfirst_nameup.SelectedText = "";
             this.txtfirst_nameup.Size = new System.Drawing.Size(200, 36);
             this.txtfirst_nameup.TabIndex = 60;
@@ -557,7 +566,7 @@
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(1192, 223);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(600, 206);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel7.TabIndex = 59;
@@ -565,6 +574,8 @@
             // 
             // txtcccd_cusup
             // 
+            this.txtcccd_cusup.Animated = true;
+            this.txtcccd_cusup.BorderRadius = 6;
             this.txtcccd_cusup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcccd_cusup.DefaultText = "";
             this.txtcccd_cusup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -574,10 +585,10 @@
             this.txtcccd_cusup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcccd_cusup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcccd_cusup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcccd_cusup.Location = new System.Drawing.Point(1190, 111);
+            this.txtcccd_cusup.Location = new System.Drawing.Point(598, 94);
             this.txtcccd_cusup.Name = "txtcccd_cusup";
             this.txtcccd_cusup.PasswordChar = '\0';
-            this.txtcccd_cusup.PlaceholderText = "";
+            this.txtcccd_cusup.PlaceholderText = "CCCD";
             this.txtcccd_cusup.SelectedText = "";
             this.txtcccd_cusup.Size = new System.Drawing.Size(303, 43);
             this.txtcccd_cusup.TabIndex = 58;
@@ -585,7 +596,7 @@
             // guna2HtmlLabel16
             // 
             this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel16.Location = new System.Drawing.Point(1190, 160);
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(598, 143);
             this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
             this.guna2HtmlLabel16.Size = new System.Drawing.Size(48, 15);
             this.guna2HtmlLabel16.TabIndex = 57;
@@ -594,7 +605,7 @@
             // guna2HtmlLabel17
             // 
             this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(1190, 69);
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(598, 52);
             this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
             this.guna2HtmlLabel17.Size = new System.Drawing.Size(38, 15);
             this.guna2HtmlLabel17.TabIndex = 74;
