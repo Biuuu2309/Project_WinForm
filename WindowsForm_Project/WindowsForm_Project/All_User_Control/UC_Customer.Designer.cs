@@ -76,10 +76,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-<<<<<<< Updated upstream
             this.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-=======
->>>>>>> Stashed changes
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

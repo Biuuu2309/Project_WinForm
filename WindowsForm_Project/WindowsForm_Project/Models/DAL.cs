@@ -502,11 +502,11 @@ namespace WindowsForm_Project.Models
             List<EmployeeWork> list = new List<EmployeeWork>();
             try
             {
-                string query = @"   SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
+                string query = @"   SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, CAST(note AS NVARCHAR(MAX)) AS note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
                                     FROM Chamcong
                                     INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
                                     WHERE Chamcong.cccd_em = Employee.cccd_em
-                                    GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note";
+                                    GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, CAST(note AS NVARCHAR(MAX))";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
@@ -595,10 +595,10 @@ namespace WindowsForm_Project.Models
                                 cccd_em = reader["cccd_em"].ToString(),
                                 first_name = reader["first_name"].ToString(),
                                 last_name = reader["last_name"].ToString(),
-                                tongngay = int.Parse(reader["tongngay"].ToString()),
-                                tongca = int.Parse(reader["tongca"].ToString()),
+                                tongngay = int.Parse(reader["days_since_start"].ToString()),
+                                tongca = int.Parse(reader["total_shifts"].ToString()),
                                 luong = float.Parse(reader["luong"].ToString()),
-                                total = float.Parse(reader["total"].ToString()),
+                                total = float.Parse(reader["total_salary"].ToString()),
                             };
                             list.Add(total);
                         }
