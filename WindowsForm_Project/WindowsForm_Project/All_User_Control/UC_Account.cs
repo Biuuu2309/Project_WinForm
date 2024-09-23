@@ -46,7 +46,8 @@ namespace WindowsForm_Project.All_User_Control
                 };
 
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                //string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addaccount(account, conn);
@@ -73,7 +74,8 @@ namespace WindowsForm_Project.All_User_Control
         private void LoadRoomData()
         {
             DAL dal = new DAL();
-            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+            //string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+            string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getaccount(conn);
@@ -120,7 +122,9 @@ namespace WindowsForm_Project.All_User_Control
                 };
 
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                //string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Deleteaccount(account, conn);

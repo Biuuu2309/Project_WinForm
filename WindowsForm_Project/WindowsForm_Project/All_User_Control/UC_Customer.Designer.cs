@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtaddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -74,26 +74,26 @@
             // 
             // DataGridView2
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.DataGridView2.ColumnHeadersHeight = 4;
             this.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle18;
             this.DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView2.Location = new System.Drawing.Point(1087, 29);
             this.DataGridView2.Name = "DataGridView2";
@@ -125,6 +125,7 @@
             // 
             // txtaddress
             // 
+            this.txtaddress.Animated = true;
             this.txtaddress.BorderRadius = 6;
             this.txtaddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaddress.DefaultText = "";
@@ -154,6 +155,9 @@
             // 
             // guna2Button2
             // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 10;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -165,6 +169,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 54;
             this.guna2Button2.Text = "guna2Button2";
+            this.guna2Button2.UseTransparentBackground = true;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // txtngaysinh_cus
@@ -219,6 +224,7 @@
             // 
             // txtemail_cus
             // 
+            this.txtemail_cus.Animated = true;
             this.txtemail_cus.BorderRadius = 6;
             this.txtemail_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtemail_cus.DefaultText = "";
@@ -236,9 +242,11 @@
             this.txtemail_cus.SelectedText = "";
             this.txtemail_cus.Size = new System.Drawing.Size(200, 36);
             this.txtemail_cus.TabIndex = 49;
+            this.txtemail_cus.TextChanged += new System.EventHandler(this.txtemail_cus_TextChanged);
             // 
             // txtsdt_cus
             // 
+            this.txtsdt_cus.Animated = true;
             this.txtsdt_cus.BorderRadius = 6;
             this.txtsdt_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsdt_cus.DefaultText = "";
@@ -277,6 +285,7 @@
             // 
             // txtlastname_cus
             // 
+            this.txtlastname_cus.Animated = true;
             this.txtlastname_cus.BorderRadius = 6;
             this.txtlastname_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtlastname_cus.DefaultText = "";
@@ -306,6 +315,7 @@
             // 
             // txtfirstname_cus
             // 
+            this.txtfirstname_cus.Animated = true;
             this.txtfirstname_cus.BorderRadius = 6;
             this.txtfirstname_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfirstname_cus.DefaultText = "";
@@ -335,6 +345,7 @@
             // 
             // txtcccd_cus
             // 
+            this.txtcccd_cus.Animated = true;
             this.txtcccd_cus.BorderRadius = 6;
             this.txtcccd_cus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcccd_cus.DefaultText = "";
@@ -368,6 +379,7 @@
             // 
             // txtaddressup
             // 
+            this.txtaddressup.BorderRadius = 6;
             this.txtaddressup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaddressup.DefaultText = "";
             this.txtaddressup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -396,6 +408,9 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -407,6 +422,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 71;
             this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.UseTransparentBackground = true;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtngaysinh_cusup
@@ -418,7 +434,7 @@
             this.txtngaysinh_cusup.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtngaysinh_cusup.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtngaysinh_cusup.Name = "txtngaysinh_cusup";
-            this.txtngaysinh_cusup.Size = new System.Drawing.Size(200, 36);
+            this.txtngaysinh_cusup.Size = new System.Drawing.Size(209, 36);
             this.txtngaysinh_cusup.TabIndex = 70;
             this.txtngaysinh_cusup.Value = new System.DateTime(2024, 9, 16, 14, 22, 22, 423);
             // 
@@ -434,6 +450,7 @@
             // txtgioitinh_cusup
             // 
             this.txtgioitinh_cusup.BackColor = System.Drawing.Color.Transparent;
+            this.txtgioitinh_cusup.BorderRadius = 6;
             this.txtgioitinh_cusup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.txtgioitinh_cusup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtgioitinh_cusup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -460,6 +477,8 @@
             // 
             // txtemail_cusup
             // 
+            this.txtemail_cusup.Animated = true;
+            this.txtemail_cusup.BorderRadius = 6;
             this.txtemail_cusup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtemail_cusup.DefaultText = "";
             this.txtemail_cusup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -472,13 +491,16 @@
             this.txtemail_cusup.Location = new System.Drawing.Point(600, 353);
             this.txtemail_cusup.Name = "txtemail_cusup";
             this.txtemail_cusup.PasswordChar = '\0';
-            this.txtemail_cusup.PlaceholderText = "";
+            this.txtemail_cusup.PlaceholderText = "Email";
             this.txtemail_cusup.SelectedText = "";
             this.txtemail_cusup.Size = new System.Drawing.Size(200, 36);
             this.txtemail_cusup.TabIndex = 66;
+            this.txtemail_cusup.TextChanged += new System.EventHandler(this.txtemail_cusup_TextChanged);
             // 
             // txtsdt_cusup
             // 
+            this.txtsdt_cusup.Animated = true;
+            this.txtsdt_cusup.BorderRadius = 6;
             this.txtsdt_cusup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsdt_cusup.DefaultText = "";
             this.txtsdt_cusup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -491,7 +513,7 @@
             this.txtsdt_cusup.Location = new System.Drawing.Point(600, 290);
             this.txtsdt_cusup.Name = "txtsdt_cusup";
             this.txtsdt_cusup.PasswordChar = '\0';
-            this.txtsdt_cusup.PlaceholderText = "";
+            this.txtsdt_cusup.PlaceholderText = "SĐT";
             this.txtsdt_cusup.SelectedText = "";
             this.txtsdt_cusup.Size = new System.Drawing.Size(200, 36);
             this.txtsdt_cusup.TabIndex = 65;
@@ -517,6 +539,7 @@
             // txtlast_nameup
             // 
             this.txtlast_nameup.Animated = true;
+            this.txtlast_nameup.BorderRadius = 6;
             this.txtlast_nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtlast_nameup.DefaultText = "";
             this.txtlast_nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -546,6 +569,7 @@
             // txtfirst_nameup
             // 
             this.txtfirst_nameup.Animated = true;
+            this.txtfirst_nameup.BorderRadius = 6;
             this.txtfirst_nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfirst_nameup.DefaultText = "";
             this.txtfirst_nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
