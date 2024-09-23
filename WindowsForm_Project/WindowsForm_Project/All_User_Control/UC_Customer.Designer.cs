@@ -76,7 +76,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,10 +96,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView2.Location = new System.Drawing.Point(1021, 73);
+            this.DataGridView2.Location = new System.Drawing.Point(1087, 29);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(635, 297);
+            this.DataGridView2.Size = new System.Drawing.Size(553, 297);
             this.DataGridView2.TabIndex = 36;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -156,9 +156,7 @@
             // 
             // guna2Button2
             // 
-            this.guna2Button2.Animated = true;
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 10;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -170,13 +168,10 @@
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 54;
             this.guna2Button2.Text = "guna2Button2";
-            this.guna2Button2.UseTransparentBackground = true;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // txtngaysinh_cus
             // 
-            this.txtngaysinh_cus.Animated = true;
-            this.txtngaysinh_cus.BorderRadius = 6;
             this.txtngaysinh_cus.Checked = true;
             this.txtngaysinh_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtngaysinh_cus.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -430,8 +425,6 @@
             // 
             // txtngaysinh_cusup
             // 
-            this.txtngaysinh_cusup.Animated = true;
-            this.txtngaysinh_cusup.BorderRadius = 6;
             this.txtngaysinh_cusup.Checked = true;
             this.txtngaysinh_cusup.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtngaysinh_cusup.Format = System.Windows.Forms.DateTimePickerFormat.Long;
