@@ -15,6 +15,8 @@ namespace WindowsForm_Project
         public LoginFormNew()
         {
             InitializeComponent();
+            this.textusername.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
+            this.textpassword.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -30,6 +32,14 @@ namespace WindowsForm_Project
             {
                 errormess.Visible = true;
                 textpassword.Clear();
+            }
+        }
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button1_Click(sender, e);
+                e.SuppressKeyPress = true;
             }
         }
 
