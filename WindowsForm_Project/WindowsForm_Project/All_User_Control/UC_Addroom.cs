@@ -61,7 +61,7 @@ namespace WindowsForm_Project.All_User_Control
                 };
 
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addroom(room, conn);
@@ -115,8 +115,7 @@ namespace WindowsForm_Project.All_User_Control
         private void LoadRoomData()
         {
             DAL dal = new DAL();
-            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-            //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+            string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getroom(conn);
@@ -153,8 +152,7 @@ namespace WindowsForm_Project.All_User_Control
                     house_keeping = txthousekeeping.SelectedItem.ToString()
                 };
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-                //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+            string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addupdateroom(room, conn);
@@ -176,8 +174,7 @@ namespace WindowsForm_Project.All_User_Control
                     maphong = int.Parse(txtdeletemaphong.Text),
                 };
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-                //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+            string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Deleteroom(room, conn);

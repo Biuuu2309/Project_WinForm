@@ -43,8 +43,7 @@ namespace WindowsForm_Project.All_User_Control
                 };
 
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-                //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addemployee(employee, conn);
@@ -66,8 +65,7 @@ namespace WindowsForm_Project.All_User_Control
         private void LoadEmployeeData()
         {
             DAL dal = new DAL();
-            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-            //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+            string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getemployee(conn);
@@ -145,8 +143,7 @@ namespace WindowsForm_Project.All_User_Control
         private void LoadChamCong()
         {
             DAL dal = new DAL();
-            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-            //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+                string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getchamcong(conn);
@@ -170,8 +167,7 @@ namespace WindowsForm_Project.All_User_Control
         private void LoadEmployeeTotal()
         {
             DAL dal = new DAL();
-            string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-            //string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
+                string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getemployeework(conn);
@@ -204,7 +200,7 @@ namespace WindowsForm_Project.All_User_Control
                 };
 
                 DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addchamcong(employee, conn);
