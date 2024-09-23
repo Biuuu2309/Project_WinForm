@@ -17,6 +17,8 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Customer()
         {
             InitializeComponent();
+            this.Leave += new EventHandler(UC_Customer_Leave);
+            this.Enter += new EventHandler(UC_Customer_Enter);
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -25,32 +27,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (ValidateInput_Cus())
-            {
-                Customer customer = new Customer
-                {
-                    cccd_cus = txtcccd_cus.Text,
-                    first_name = txtfirstname_cus.Text,
-                    last_name = txtlastname_cus.Text,
-                    sdt = txtsdt_cus.Text,
-                    email = txtemail_cus.Text,
-                    gioitinh = txtgioitinh_cus.SelectedItem.ToString(),
-                    ngaysinh = txtngaysinh_cus.Value,
-                    address_cus = txtaddress.Text,
-                };
-
-                DAL dal = new DAL();
-                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    Response response = dal.Addcustomer(customer, conn);
-                    MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("Them customer thanh cong"))
-                    {
-                        RefreshControl_Cus();
-                    }
-                }
-            }
+            
         }
 
         private bool ValidateInput_Cus()
@@ -128,7 +105,32 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
+            if (ValidateInput_Cus())
+            {
+                Customer customer = new Customer
+                {
+                    cccd_cus = txtcccd_cus.Text,
+                    first_name = txtfirstname_cus.Text,
+                    last_name = txtlastname_cus.Text,
+                    sdt = txtsdt_cus.Text,
+                    email = txtemail_cus.Text,
+                    gioitinh = txtgioitinh_cus.SelectedItem.ToString(),
+                    ngaysinh = txtngaysinh_cus.Value,
+                    address_cus = txtaddress.Text,
+                };
+
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Addcustomer(customer, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("Them customer thanh cong"))
+                    {
+                        RefreshControl_Cus();
+                    }
+                }
+            }
         }
         private bool ValidateInput_Cus_Up()
         {
