@@ -78,6 +78,7 @@ CREATE TABLE Serve (
 )
 GO
 CREATE TABLE Chamcong (
+	maphieu INT IDENTITY(1,1) PRIMARY KEY,
 	cccd_em NVARCHAR(200),
 	ngay DATETIME NOT NULL,
 	ca1 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca1 IN ('Co', 'Khong')),
@@ -86,7 +87,6 @@ CREATE TABLE Chamcong (
 	ca4 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca4 IN ('Co', 'Khong')),
 	note NTEXT,
 	tongluong FLOAT NOT NULL,
-	PRIMARY KEY (cccd_em),
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
@@ -124,13 +124,13 @@ VALUES
 	('12012306', 'Biu', 'Biuuuu', '456', 'BiuBiuuuu@gmail.com', 'Nam', '2004-09-20', '400000'),
 	('12012305', 'Biu', 'Biuuuuu', '567', 'BiuBiuuuuu@gmail.com', 'Nu', '2004-09-19', '200000')
 GO
-INSERT INTO Account(id, username, password, cccd_em)
+INSERT INTO Account(username, password, cccd_em)
 VALUES
-	('1', 'BiuBiu', 'BiuBiu', '12012309'),
-	('2', 'BiuBiuu', 'BiuBiuu', '12012308'),
-	('3', 'BiuBiuuu', 'BiuBiuuu', '12012307'),
-	('4', 'BiuBiuuuu', 'BiuBiuuuu', '12012306'),
-	('5', 'BiuBiuuuuu', 'BiuBiuuuuu', '12012305')
+	('BiuBiu', 'BiuBiu', '12012309'),
+	('BiuBiuu', 'BiuBiuu', '12012308'),
+	('BiuBiuuu', 'BiuBiuuu', '12012307'),
+	('BiuBiuuuu', 'BiuBiuuuu', '12012306'),
+	('BiuBiuuuuu', 'BiuBiuuuuu', '12012305')
 GO
 INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh, address_cus)
 VALUES
@@ -362,6 +362,7 @@ BEGIN
 	END
 END
 GO
+
 SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em

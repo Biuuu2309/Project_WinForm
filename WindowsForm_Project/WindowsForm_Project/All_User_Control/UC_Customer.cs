@@ -109,11 +109,11 @@ namespace WindowsForm_Project.All_User_Control
             txtngaysinh_cusup.Value = DateTime.Now;
             txtaddressup.Clear();
         }
-        private void UC_Bookings_Leave(object sender, EventArgs e)
+        private void UC_Customer_Leave(object sender, EventArgs e)
         {
             clearAll_Cus();
         }
-        private void UC_Bookings_Enter(object sender, EventArgs e)
+        private void UC_Customer_Enter(object sender, EventArgs e)
         {
             try
             {
@@ -127,6 +127,20 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private bool ValidateInput_Cus_Up()
+        {
+            if (txtcccd_cusup.Text == "" || txtfirst_nameup.Text == "" || txtlast_nameup.Text == "" || txtsdt_cusup.Text == "" || txtemail_cusup.Text == "" || txtgioitinh_cusup.SelectedItem == null || txtngaysinh_cusup.Value == null || txtaddressup.Text == null)
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
         {
             if (ValidateInput_Cus_Up())
             {
@@ -155,14 +169,10 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
         }
-        private bool ValidateInput_Cus_Up()
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (txtcccd_cusup.Text == "" || txtfirst_nameup.Text == "" || txtlast_nameup.Text == "" || txtsdt_cusup.Text == "" || txtemail_cusup.Text == "" || txtgioitinh_cusup.SelectedItem == null || txtngaysinh_cusup.Value == null || txtaddressup.Text == null)
-            {
-                MessageBox.Show("Please fill in all the fields.");
-                return false;
-            }
-            return true;
+
         }
     }
 }

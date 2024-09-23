@@ -195,3 +195,4 @@ C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\o
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsF.03FC5B76.Up2Date
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.exe
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.pdb
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.LoginFormNew.resources

@@ -181,5 +181,10 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

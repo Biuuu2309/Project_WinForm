@@ -72,7 +72,6 @@ namespace WindowsForm_Project.All_User_Control
             txtviewroom.SelectedIndex = -1;
             txtgia.Clear();
         }
-
         private void UC_Bookings_Leave(object sender, EventArgs e)
         {
             clearAll();

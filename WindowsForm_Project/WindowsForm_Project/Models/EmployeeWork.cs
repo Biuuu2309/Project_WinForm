@@ -8,6 +8,7 @@ namespace WindowsForm_Project.Models
 {
     public class EmployeeWork
     {
+        public int maphieu { get; set; }
         public string cccd_em { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
