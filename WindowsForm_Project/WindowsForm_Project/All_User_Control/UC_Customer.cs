@@ -96,6 +96,8 @@ namespace WindowsForm_Project.All_User_Control
             try
             {
                 LoadCustomerData();
+                DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+                DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 DataGridView2.Refresh();
             }
             catch (Exception ex)

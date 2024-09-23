@@ -39,6 +39,34 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addchamcong(EmployeeWork chamcong, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addchamcong", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_em", chamcong.cccd_em);
+                cmd.Parameters.AddWithValue("@ngay", chamcong.ngay);
+                cmd.Parameters.AddWithValue("@ca1", chamcong.ca1);
+                cmd.Parameters.AddWithValue("@ca2", chamcong.ca2);
+                cmd.Parameters.AddWithValue("@ca3", chamcong.ca3);
+                cmd.Parameters.AddWithValue("@ca4", chamcong.ca4);
+                cmd.Parameters.AddWithValue("@note", chamcong.note);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addaccount(Account account, SqlConnection conn)
         {
             Response response = new Response();
@@ -125,6 +153,53 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Getchamcong(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<EmployeeWork> list = new List<EmployeeWork>();
+            try
+            {
+                string query = @"   SELECT 
+                                    Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX)) AS note
+                                    FROM Chamcong
+                                    INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
+                                    GROUP BY Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX))";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmployeeWork employee = new EmployeeWork
+                            {
+                                cccd_em = reader["cccd_em"].ToString(),
+                                first_name = reader["first_name"].ToString(),
+                                last_name = reader["last_name"].ToString(),
+                                ngay = DateTime.Parse(reader["ngay"].ToString()),
+                                ca1 = reader["ca1"].ToString(),
+                                ca2 = reader["ca2"].ToString(),
+                                ca3 = reader["ca3"].ToString(),
+                                ca4 = reader["ca4"].ToString(),
+                                note = reader["note"].ToString(),
+                            };
+                            list.Add(employee);
+                        }
+                    }
+                }
+                response.list4 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
         public Response Getaccount(SqlConnection conn)
         {
             Response response = new Response();
@@ -162,7 +237,6 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        ///DELETE Room
         public Response Addcustomer(Customer customer, SqlConnection conn)
         {
             Response response = new Response();

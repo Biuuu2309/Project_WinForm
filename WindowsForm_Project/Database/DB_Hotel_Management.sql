@@ -348,12 +348,12 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_addchamcong @cccd_em NVARCHAR(200), @ngay DATETIME, @ca1 NVARCHAR(200), @ca2 NVARCHAR(200), @ca3 NVARCHAR(200), @ca4 NVARCHAR(200), @note NTEXT, @tongluong FLOAT, @ErrorMessage NVARCHAR(200) OUTPUT 
+CREATE OR ALTER PROC sp_addchamcong @cccd_em NVARCHAR(200), @ngay DATETIME, @ca1 NVARCHAR(200), @ca2 NVARCHAR(200), @ca3 NVARCHAR(200), @ca4 NVARCHAR(200), @note NTEXT, @ErrorMessage NVARCHAR(200) OUTPUT 
 AS
 BEGIN
 	IF EXISTS (SELECT 1 FROM Employee WHERE cccd_em = @cccd_em)
 	BEGIN
-		INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note, tongluong) VALUES (@cccd_em, @ngay, @ca1, @ca2, @ca3, @ca4, @note, @tongluong)
+		INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note) VALUES (@cccd_em, @ngay, @ca1, @ca2, @ca3, @ca4, @note)
 		SET @ErrorMessage = 'Cham cong thanh cong'
 	END
 	ELSE
@@ -362,7 +362,6 @@ BEGIN
 	END
 END
 GO
-
 SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
@@ -376,3 +375,10 @@ INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
 WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
 GROUP BY Employee.cccd_em, first_name, last_name, luong
 ORDER BY Employee.cccd_em
+
+GO
+SELECT 
+    Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX)) AS note
+FROM Chamcong
+INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
+GROUP BY Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX))

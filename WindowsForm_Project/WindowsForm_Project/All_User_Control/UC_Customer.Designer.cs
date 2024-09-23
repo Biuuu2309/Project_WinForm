@@ -76,7 +76,10 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+<<<<<<< Updated upstream
             this.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+=======
+>>>>>>> Stashed changes
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -441,9 +444,9 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(600, 474);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(48, 15);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(96, 15);
             this.guna2HtmlLabel2.TabIndex = 69;
-            this.guna2HtmlLabel2.Text = "ngay sinh";
+            this.guna2HtmlLabel2.Text = "ngay sinh(bat buoc)";
             // 
             // txtgioitinh_cusup
             // 
@@ -469,9 +472,9 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(604, 404);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(39, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(90, 15);
             this.guna2HtmlLabel3.TabIndex = 67;
-            this.guna2HtmlLabel3.Text = "gioi tinh";
+            this.guna2HtmlLabel3.Text = "gioi tinh (bat buoc)";
             // 
             // txtemail_cusup
             // 

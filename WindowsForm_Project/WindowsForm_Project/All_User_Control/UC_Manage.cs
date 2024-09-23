@@ -17,6 +17,8 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Manage()
         {
             InitializeComponent();
+            this.Leave += new EventHandler(UC_Manage_Enter);
+            this.Enter += new EventHandler(UC_Manage_Leave);
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             clearAll_Em();
             LoadEmployeeData();
-            LoadEmployeeWorkData();
+            LoadChamCong();
             LoadEmployeeTotal();
         }
         private void LoadEmployeeData()
@@ -101,17 +103,17 @@ namespace WindowsForm_Project.All_User_Control
             }
             return true;
         }
-        private void UC_Bookings_Leave(object sender, EventArgs e)
+        private void UC_Manage_Leave(object sender, EventArgs e)
         {
             clearAll_Em();
         }
-        private void UC_Bookings_Enter(object sender, EventArgs e)
+        private void UC_Manage_Enter(object sender, EventArgs e)
         {
             try
             {
                 LoadEmployeeData();
                 DataGridView1.Refresh();
-                LoadEmployeeWorkData();
+                LoadChamCong();
                 DataGridView3.Refresh();
                 LoadEmployeeTotal();
                 DataGridView2.Refresh();
@@ -140,14 +142,14 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
-        private void LoadEmployeeWorkData()
+        private void LoadChamCong()
         {
             DAL dal = new DAL();
             //string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
             string connectionString = "Server=ZAN\\ZAN;Initial Catalog=Hotel_Management;User ID=sa;Password=123;TrustServerCertificate=True;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Response response = dal.Getemployeework(conn);
+                Response response = dal.Getchamcong(conn);
                 if (response.list4 != null && response.list4.Count > 0)
                 {
                     DataGridView3.DataSource = null; // Clear previous data
@@ -188,7 +190,40 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            if (ValidateInput_ChamCong())
+            {
+                EmployeeWork employee = new EmployeeWork
+                {
+                    cccd_em = txtcccdcc.Text,
+                    ngay = txtngaycc.Value,
+                    ca1 = txtca1cc.SelectedItem.ToString(),
+                    ca2 = txtca2cc.SelectedItem.ToString(),
+                    ca3 = txtca3cc.SelectedItem.ToString(),
+                    ca4 = txtca4cc.SelectedItem.ToString(),
+                    note = txtnotecc.Text,
+                };
 
+                DAL dal = new DAL();
+                string connectionString = "Server=BIUUUBIUUU\\MSSQLSERVER02;Initial Catalog=Hotel_Management;User ID=sa;Password=1201;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Addchamcong(employee, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("successfully"))
+                    {
+                        RefreshControl_Em();
+                    }
+                }
+            }
+        }
+        private bool ValidateInput_ChamCong()
+        {
+            if (txtcccdcc.Text == "" || txtngaycc.Value == null || txtca1cc.SelectedItem == null || txtca2cc.SelectedItem == null || txtca3cc.SelectedItem == null || txtca4cc.SelectedItem == null || txtnotecc.Text == "")
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
         }
     }
 }
