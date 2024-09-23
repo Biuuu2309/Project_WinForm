@@ -376,14 +376,6 @@ namespace WindowsForm_Project.Models
             {
                 SqlCommand cmd = new SqlCommand("sp_updatecustomer", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cccd_cus", customer.cccd_cus);
-                cmd.Parameters.AddWithValue("@first_name", customer.first_name);
-                cmd.Parameters.AddWithValue("@last_name", customer.last_name);
-                cmd.Parameters.AddWithValue("@sdt", customer.sdt);
-                cmd.Parameters.AddWithValue("@email", customer.email);
-                cmd.Parameters.AddWithValue("@gioitinh", customer.gioitinh);
-                cmd.Parameters.AddWithValue("@ngaysinh", customer.ngaysinh);
-                cmd.Parameters.AddWithValue("@address_cus", customer.address_cus);
                 if (!string.IsNullOrEmpty(customer.cccd_cus))
                 {
                     cmd.Parameters.AddWithValue("@cccd_cus", customer.cccd_cus);

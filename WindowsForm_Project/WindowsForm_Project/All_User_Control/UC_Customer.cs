@@ -134,9 +134,9 @@ namespace WindowsForm_Project.All_User_Control
         }
         private bool ValidateInput_Cus_Up()
         {
-            if (txtcccd_cusup.Text == "" || txtfirst_nameup.Text == "" || txtlast_nameup.Text == "" || txtsdt_cusup.Text == "" || txtemail_cusup.Text == "" || txtgioitinh_cusup.SelectedItem == null || txtngaysinh_cusup.Value == null || txtaddressup.Text == null)
+            if (txtcccd_cusup.Text == "")
             {
-                MessageBox.Show("Please fill in all the fields.");
+                MessageBox.Show("Please fill in the CCCD fields.");
                 return false;
             }
             return true;
