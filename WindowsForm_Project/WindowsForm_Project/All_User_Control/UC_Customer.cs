@@ -188,5 +188,10 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
+
+        private void guna2HtmlLabel17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
