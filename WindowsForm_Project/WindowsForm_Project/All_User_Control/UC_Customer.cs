@@ -194,5 +194,30 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
+
+        private void txtcccd_cus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtfirstname_cus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtaddressup_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcccd_cusup_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
