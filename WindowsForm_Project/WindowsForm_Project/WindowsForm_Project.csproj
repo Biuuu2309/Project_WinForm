@@ -255,11 +255,9 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DAL.cs" />
-    <Compile Include="Models\EmployeeWork.cs" />
-    <Compile Include="Models\Manage.cs" />
+    <Compile Include="Models\ManageEmployee.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\Total.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="All_User_Control\UC_Account.resx">
