@@ -17,8 +17,8 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Manage()
         {
             InitializeComponent();
-            this.Leave += new EventHandler(UC_Manage_Enter);
-            this.Enter += new EventHandler(UC_Manage_Leave);
+            this.Enter += new EventHandler(UC_Manage_Enter); // Ensure this is set to load data
+            // Remove the Leave event if not needed
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -72,7 +72,10 @@ namespace WindowsForm_Project.All_User_Control
                 if (response.list2 != null && response.list2.Count > 0)
                 {
                     DataGridView1.DataSource = null; // Clear previous data
-                    DataGridView1.DataSource = response.list2;
+                    DataGridView1.DataSource = response.list2; // Set the data source
+                    DataGridView1.ColumnHeadersVisible = false;
+                    DataGridView1.ColumnHeadersVisible = true;
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -116,20 +119,16 @@ namespace WindowsForm_Project.All_User_Control
             }
             return true;
         }
-        private void UC_Manage_Leave(object sender, EventArgs e)
-        {
-            clearAll_Em();
-        }
         private void UC_Manage_Enter(object sender, EventArgs e)
         {
             try
             {
-                LoadEmployeeData();
-                LoadChamCong();
-                LoadEmployeeTotal();
-                DataGridView1.Refresh();
-                DataGridView3.Refresh();
-                DataGridView2.Refresh();
+                LoadEmployeeData(); // Load employee data when entering the control
+                LoadChamCong(); // Load attendance data
+                LoadEmployeeTotal(); // Load total employee data
+                DataGridView1.Refresh(); // Refresh the grid view
+                DataGridView23.Refresh(); // Refresh the grid view
+                DataGridView3.Refresh(); // Refresh the grid view
             }
             catch (Exception ex)
             {
@@ -188,9 +187,9 @@ namespace WindowsForm_Project.All_User_Control
                 Response response = dal.Gettotal(conn);
                 if (response.list5 != null && response.list5.Count > 0)
                 {
-                    DataGridView2.DataSource = null; // Clear previous data
-                    DataGridView2.DataSource = response.list5;
-                    DataGridView2.Refresh(); // Refresh the grid view
+                    DataGridView23.DataSource = null; // Clear previous data
+                    DataGridView23.DataSource = response.list5;
+                    DataGridView23.Refresh(); // Refresh the grid view
                 }
                 else
                 {
@@ -274,6 +273,11 @@ namespace WindowsForm_Project.All_User_Control
                 return false;
             }
             return true;
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
