@@ -656,8 +656,8 @@
             // dashboardpaneldate
             // 
             this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dashboardpaneldate.FillColor = System.Drawing.Color.Thistle;
-            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.CornflowerBlue;
+            this.dashboardpaneldate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(101)))), ((int)(((byte)(67)))));
+            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.dashboardpaneldate.Location = new System.Drawing.Point(0, 57);
             this.dashboardpaneldate.Name = "dashboardpaneldate";
             this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
@@ -695,6 +695,8 @@
             // 
             // uC_Customer1
             // 
+            this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
+            this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
             this.uC_Customer1.Name = "uC_Customer1";
             this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
