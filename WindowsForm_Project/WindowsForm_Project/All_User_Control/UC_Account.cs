@@ -18,6 +18,10 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Account()
         {
             InitializeComponent();
+            this.Enter += new EventHandler(UC_Account_Enter);
+            this.Leave += new EventHandler(UC_Account_Leave); // Ensure this is set to load data
+            // Ensure this is set to load data
+            // Remove the Leave event if not needed
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
@@ -82,7 +86,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list3;
                     DataGridView1.ColumnHeadersHeight = 25;
-
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -107,11 +110,6 @@ namespace WindowsForm_Project.All_User_Control
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (ValidateInputDelete())

@@ -454,5 +454,17 @@ namespace WindowsForm_Project
         {
 
         }
+
+        private void guna2GradientButton1_Click_2(object sender, EventArgs e)
+        {
+            MovePanel(btnmanage);
+            uC_Manage1.Visible = true;
+            uC_Manage1.BringToFront();
+            // Hide other user controls
+            uC_Dashboard2.Visible = false;
+            uC_Addroom1.Visible = false;
+            uC_Bookings2.Visible = false;
+            uC_Customer1.Visible = false;
+        }
     }
 }

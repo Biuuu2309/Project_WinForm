@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WindowsForm_Project.Models;
 
@@ -277,6 +279,28 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnaccount_Click(object sender, EventArgs e)
+        {
+            uC_Account1.Visible = !uC_Account1.Visible;
+            if (uC_Account1.Visible)
+            {
+                btnaccount.Image = Properties.Resources.logout;
+                btnaccount.Text = "";
+            }
+            else
+            {
+                btnaccount.Text = "Account";
+                btnaccount.Image = null;
+            }
+            uC_Account1.BringToFront();
+            // Hide other user controls
+        }
+
+        private void UC_Manage_Load(object sender, EventArgs e)
         {
 
         }

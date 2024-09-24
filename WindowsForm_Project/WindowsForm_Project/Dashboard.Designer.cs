@@ -70,11 +70,11 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
+            this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
-            this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
-            this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -664,6 +664,24 @@
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
+            // uC_Customer1
+            // 
+            this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
+            this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Customer1.Name = "uC_Customer1";
+            this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Customer1.TabIndex = 10;
+            this.uC_Customer1.Load += new System.EventHandler(this.uC_Customer1_Load);
+            // 
+            // uC_Manage1
+            // 
+            this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Manage1.Name = "uC_Manage1";
+            this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Manage1.TabIndex = 9;
+            this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
+            // 
             // uC_Dashboard2
             // 
             this.uC_Dashboard2.Location = new System.Drawing.Point(220, 114);
@@ -684,24 +702,6 @@
             this.uC_Bookings2.Name = "uC_Bookings2";
             this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
             this.uC_Bookings2.TabIndex = 7;
-            // 
-            // uC_Manage1
-            // 
-            this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Manage1.Name = "uC_Manage1";
-            this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Manage1.TabIndex = 9;
-            this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
-            // 
-            // uC_Customer1
-            // 
-            this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
-            this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Customer1.Name = "uC_Customer1";
-            this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Customer1.TabIndex = 10;
-            this.uC_Customer1.Load += new System.EventHandler(this.uC_Customer1_Load);
             // 
             // Dashboard
             // 
