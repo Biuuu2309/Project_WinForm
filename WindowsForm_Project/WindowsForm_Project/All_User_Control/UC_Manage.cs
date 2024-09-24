@@ -268,7 +268,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private bool ValidateInput_Update()
         {
-            if (txtcccdup.Text == "" || txtfirstnameup.Text == "" || txtlastnameup.Text == "" || txtsdtup.Text == "" || txtemailup.Text == "" || txtgioitinhup.SelectedItem == null || txtngaysinhup.Value == null || txtluongup.Text == "")
+            if (txtcccdup.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
