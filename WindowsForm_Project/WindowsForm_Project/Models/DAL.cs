@@ -39,7 +39,7 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        public Response Addchamcong(EmployeeWork chamcong, SqlConnection conn)
+        public Response Addemployeework(EmployeeWork chamcong, SqlConnection conn)
         {
             Response response = new Response();
             try
@@ -266,7 +266,7 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        public Response Addemployee(Manage employee, SqlConnection conn)
+        public Response Addemployee(ManageEmployee employee, SqlConnection conn)
         {
             Response response = new Response();
             try
@@ -298,7 +298,7 @@ namespace WindowsForm_Project.Models
         public Response Getemployee(SqlConnection conn)
         {
             Response response = new Response();
-            List<Manage> list = new List<Manage>();
+            List<ManageEmployee> list = new List<ManageEmployee>();
             try
             {
                 string query = @"SELECT * FROM Employee";
@@ -309,7 +309,7 @@ namespace WindowsForm_Project.Models
                     {
                         while (reader.Read())
                         {
-                            Manage employee = new Manage
+                            ManageEmployee employee = new ManageEmployee
                             {
                                 cccd_em = reader["cccd_em"].ToString(),
                                 first_name = reader["first_name"].ToString(),
@@ -502,11 +502,11 @@ namespace WindowsForm_Project.Models
             List<EmployeeWork> list = new List<EmployeeWork>();
             try
             {
-                string query = @"   SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, CAST(note AS NVARCHAR(MAX)) AS note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
+                string query = @"   SELECT Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX)) AS note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
                                     FROM Chamcong
                                     INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
                                     WHERE Chamcong.cccd_em = Employee.cccd_em
-                                    GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, CAST(note AS NVARCHAR(MAX))";
+                                    GROUP BY Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX))";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
@@ -519,16 +519,11 @@ namespace WindowsForm_Project.Models
                                 cccd_em = reader["cccd_em"].ToString(),
                                 first_name = reader["first_name"].ToString(),
                                 last_name = reader["last_name"].ToString(),
-                                sdt = reader["sdt"].ToString(),
-                                email = reader["email"].ToString(),
-                                gioitinh = reader["gioitinh"].ToString(),
-                                ngaysinh = DateTime.Parse(reader["ngaysinh"].ToString()),
                                 ngay = DateTime.Parse(reader["ngay"].ToString()),
                                 ca1 = reader["ca1"].ToString(),
                                 ca2 = reader["ca2"].ToString(),
                                 ca3 = reader["ca3"].ToString(),
                                 ca4 = reader["ca4"].ToString(),
-                                luong = reader["luong"].ToString(),
                                 note = reader["note"].ToString(),
                                 tongca = reader["total_shifts"].ToString(),
                             };
@@ -577,12 +572,28 @@ namespace WindowsForm_Project.Models
             List<Total> list = new List<Total>();
             try
             {
-                string query = @"   SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+                string query = @"   SELECT 
+                                    Employee.cccd_em, 
+                                    first_name, 
+                                    last_name, 
+                                    DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, 
+                                    SUM(
+                                        CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END
+                                    ) AS total_shifts, 
+                                    luong, 
+                                    luong * SUM(
+                                        CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + 
+                                        CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END
+                                    ) AS total_salary
                                     FROM Employee
                                     INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
-                                    WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
                                     GROUP BY Employee.cccd_em, first_name, last_name, luong
-                                    ORDER BY Employee.cccd_em";
+                                    ORDER BY Employee.cccd_em;";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
@@ -614,6 +625,59 @@ namespace WindowsForm_Project.Models
             {
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
+            }
+            return response;
+        }
+        public Response Updateemployee(ManageEmployee employee, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updateemployee", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(employee.cccd_em))
+                {
+                    cmd.Parameters.AddWithValue("@cccd_cus", employee.cccd_em);
+                }
+                if (!string.IsNullOrEmpty(employee.first_name))
+                {
+                    cmd.Parameters.AddWithValue("@first_name", employee.first_name);
+                }
+                if (!string.IsNullOrEmpty(employee.last_name))
+                {
+                    cmd.Parameters.AddWithValue("@last_name", employee.last_name);
+                }
+                if (!string.IsNullOrEmpty(employee.sdt))
+                {
+                    cmd.Parameters.AddWithValue("@sdt", employee.sdt);
+                }
+                if (!string.IsNullOrEmpty(employee.email))
+                {
+                    cmd.Parameters.AddWithValue("@email", employee.email);
+                }
+                if (!string.IsNullOrEmpty(employee.gioitinh))
+                {
+                    cmd.Parameters.AddWithValue("@gioitinh", employee.gioitinh);
+                }
+                if (!string.IsNullOrEmpty(employee.ngaysinh.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@ngaysinh", employee.ngaysinh);
+                }
+                if (!string.IsNullOrEmpty(employee.luong.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@address_cus", employee.luong);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
             }
             return response;
         }

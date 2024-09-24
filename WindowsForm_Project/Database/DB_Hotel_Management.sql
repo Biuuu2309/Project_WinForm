@@ -382,3 +382,35 @@ SELECT
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
 GROUP BY Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX))
+
+SELECT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+FROM Employee
+INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+WHERE Employee.cccd_em = Chamcong.cccd_em
+GROUP BY Employee.cccd_em, first_name, last_name, luong
+ORDER BY Employee.cccd_em
+
+SELECT 
+    Employee.cccd_em, 
+    first_name, 
+    last_name, 
+    DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, 
+    SUM(
+        CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END
+    ) AS total_shifts, 
+    luong, 
+    luong * SUM(
+        CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + 
+        CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END
+    ) AS total_salary
+FROM Employee
+INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+GROUP BY Employee.cccd_em, first_name, last_name, luong
+ORDER BY Employee.cccd_em;
+
+

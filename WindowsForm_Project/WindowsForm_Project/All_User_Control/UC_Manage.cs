@@ -30,7 +30,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             if (ValidateInput())
             {
-                Manage employee = new Manage
+                ManageEmployee employee = new ManageEmployee
                 {
                     cccd_em = txtcccd_em.Text,
                     first_name = txtfirstname.Text,
@@ -77,7 +77,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else
                 {
-                    MessageBox.Show("No customer data available or " + response.statusmessage);
+                    MessageBox.Show("No data available or " + response.statusmessage);
                 }
             }
         }
@@ -91,6 +91,21 @@ namespace WindowsForm_Project.All_User_Control
             txtgioitinh.SelectedIndex = -1;
             txtngaysinh.Value = DateTime.Now;
             txtluong.Clear();
+            txtcccdcc.Clear();
+            txtngaycc.Value = DateTime.Now;
+            txtca1cc.SelectedIndex = -1;
+            txtca2cc.SelectedIndex = -1;
+            txtca3cc.SelectedIndex = -1;
+            txtca4cc.SelectedIndex = -1;
+            txtnotecc.Clear();
+            txtcccdup.Clear();
+            txtfirstnameup.Clear();
+            txtlastnameup.Clear();
+            txtsdtup.Clear();
+            txtemailup.Clear();
+            txtgioitinhup.SelectedIndex = -1;
+            txtngaysinhup.Value = DateTime.Now;
+            txtluongup.Clear();
         }
         private bool ValidateInput()
         {
@@ -110,10 +125,10 @@ namespace WindowsForm_Project.All_User_Control
             try
             {
                 LoadEmployeeData();
-                DataGridView1.Refresh();
                 LoadChamCong();
-                DataGridView3.Refresh();
                 LoadEmployeeTotal();
+                DataGridView1.Refresh();
+                DataGridView3.Refresh();
                 DataGridView2.Refresh();
             }
             catch (Exception ex)
@@ -170,11 +185,11 @@ namespace WindowsForm_Project.All_User_Control
                 string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Response response = dal.Getemployeework(conn);
-                if (response.list4 != null && response.list4.Count > 0)
+                Response response = dal.Gettotal(conn);
+                if (response.list5 != null && response.list5.Count > 0)
                 {
                     DataGridView2.DataSource = null; // Clear previous data
-                    DataGridView2.DataSource = response.list4;
+                    DataGridView2.DataSource = response.list5;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -203,7 +218,7 @@ namespace WindowsForm_Project.All_User_Control
                 string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    Response response = dal.Addchamcong(employee, conn);
+                    Response response = dal.Addemployeework(employee, conn);
                     MessageBox.Show(response.statusmessage);
                     if (response.statusmessage.Contains("successfully"))
                     {
@@ -215,6 +230,45 @@ namespace WindowsForm_Project.All_User_Control
         private bool ValidateInput_ChamCong()
         {
             if (txtcccdcc.Text == "" || txtngaycc.Value == null || txtca1cc.SelectedItem == null || txtca2cc.SelectedItem == null || txtca3cc.SelectedItem == null || txtca4cc.SelectedItem == null || txtnotecc.Text == "")
+            {
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput_Update())
+            {
+                ManageEmployee employee = new ManageEmployee
+                {
+                    cccd_em = txtcccdup.Text,
+                    first_name = txtfirstnameup.Text,
+                    last_name = txtlastnameup.Text,
+                    sdt = txtsdtup.Text,
+                    email = txtemailup.Text,
+                    gioitinh = txtgioitinhup.SelectedItem.ToString(),
+                    ngaysinh = txtngaysinhup.Value,
+                    luong = float.Parse(txtluongup.Text),
+                };
+
+                DAL dal = new DAL();
+                string connectionString = DatabaseConnection.Connection();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.Updateemployee(employee, conn);
+                    MessageBox.Show(response.statusmessage);
+                    if (response.statusmessage.Contains("successfully"))
+                    {
+                        RefreshControl_Em();
+                    }
+                }
+            }
+        }
+        private bool ValidateInput_Update()
+        {
+            if (txtcccdup.Text == "" || txtfirstnameup.Text == "" || txtlastnameup.Text == "" || txtsdtup.Text == "" || txtemailup.Text == "" || txtgioitinhup.SelectedItem == null || txtngaysinhup.Value == null || txtluongup.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
