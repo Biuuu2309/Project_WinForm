@@ -264,7 +264,7 @@ namespace WindowsForm_Project
             dateLabel.AutoSize = true;
             dateLabel.Font = new Font("Arial", 20, FontStyle.Bold); // Adjust font as needed
             dateLabel.BackColor = Color.Transparent;
-            dateLabel.ForeColor = Color.MediumOrchid;
+                dateLabel.ForeColor = ColorTranslator.FromHtml("#f9abfa");
 
             // Center the label in the panel
             dateLabel.Location = new Point(
