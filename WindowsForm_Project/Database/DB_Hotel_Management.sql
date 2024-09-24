@@ -86,7 +86,6 @@ CREATE TABLE Chamcong (
 	ca3 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca3 IN ('Co', 'Khong')),
 	ca4 NVARCHAR(200) NOT NULL DEFAULT 'Khong' CHECK(ca4 IN ('Co', 'Khong')),
 	note NTEXT,
-	tongluong FLOAT NOT NULL,
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
@@ -154,18 +153,18 @@ VALUES
 	('12032309', '2', 'Beoooooooo'),
 	('12052309', '4', 'Bemmmmmmm')
 GO
-INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note, tongluong)
+INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note)
 VALUES
-	('12012309', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
-	('12012308', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
-	('12012307', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
-	('12012306', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
-	('12012305', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
-	('12012309', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
-	('12012308', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
-	('12012307', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', ''),
-	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good', ''),
-	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good', '')
+	('12012309', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012308', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
+	('12012307', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012306', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
+	('12012305', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012309', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
+	('12012308', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012307', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
+	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good')
 GO
 INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve)
 VALUES
