@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -73,9 +74,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list2; // Set the data source
-                    DataGridView1.ColumnHeadersVisible = false;
-                    DataGridView1.ColumnHeadersVisible = true;
-                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    DataGridView1.ColumnHeadersHeight = 25;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -127,7 +126,7 @@ namespace WindowsForm_Project.All_User_Control
                 LoadChamCong(); // Load attendance data
                 LoadEmployeeTotal(); // Load total employee data
                 DataGridView1.Refresh(); // Refresh the grid view
-                DataGridView23.Refresh(); // Refresh the grid view
+                DataGridView2.Refresh(); // Refresh the grid view
                 DataGridView3.Refresh(); // Refresh the grid view
             }
             catch (Exception ex)
@@ -165,6 +164,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list4;
+                    DataGridView3.ColumnHeadersHeight = 25;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
@@ -187,9 +187,10 @@ namespace WindowsForm_Project.All_User_Control
                 Response response = dal.Gettotal(conn);
                 if (response.list5 != null && response.list5.Count > 0)
                 {
-                    DataGridView23.DataSource = null; // Clear previous data
-                    DataGridView23.DataSource = response.list5;
-                    DataGridView23.Refresh(); // Refresh the grid view
+                    DataGridView2.DataSource = null; // Clear previous data
+                    DataGridView2.DataSource = response.list5;
+                    DataGridView2.ColumnHeadersHeight = 25;
+                    DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
                 {

@@ -124,9 +124,13 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list;
+                    DataGridView1.ColumnHeadersHeight = 25;
+
                     DataGridView1.Refresh(); // Refresh the grid view
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response2.list;
+                    DataGridView2.ColumnHeadersHeight = 25;
+
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else

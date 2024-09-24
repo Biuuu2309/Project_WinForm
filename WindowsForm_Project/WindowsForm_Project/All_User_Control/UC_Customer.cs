@@ -51,6 +51,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list1;
+                    DataGridView2.ColumnHeadersHeight = 25;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
