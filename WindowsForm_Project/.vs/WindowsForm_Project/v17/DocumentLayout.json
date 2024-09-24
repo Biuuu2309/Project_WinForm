@@ -11,8 +11,12 @@
       "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\all_user_control\\uc_customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -31,8 +35,8 @@
       "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\loginformnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|solutionrelative:windowsform_project\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85964563-CEFA-4FA6-8D7C-F13E62F2C7BB}|WindowsForm_Project\\WindowsForm_Project.csproj|C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\windowsform_project\\loginformnew.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -184,7 +184,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "LoginFormNew.cs [Design]",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginFormNew.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\LoginFormNew.cs",
@@ -201,15 +201,88 @@
               "Title": "UC_Customer.cs [Design]",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs [Design]*",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs [Design]*",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T07:15:19.766Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\Resources.resx",
+              "RelativeToolTip": "WindowsForm_Project\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-09-23T10:14:25.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_Account.cs [Design]",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Account.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Account.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Account.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Account.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T10:04:22.92Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T07:15:54.361Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\Dashboard.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T04:55:45.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\LoginForm.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T04:48:21.3Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UC_Customer.cs",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
+              "ViewState": "AQIAAIQAAAAAAAAAAADwv5UAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T04:08:32.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Dashboard.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Dashboard.cs",
@@ -222,68 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\Properties\\Resources.resx",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\Resources.resx",
-              "RelativeToolTip": "WindowsForm_Project\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-09-23T10:14:25.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_Account.cs [Design]",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Account.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Account.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Account.cs [Design]",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Account.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T10:04:22.92Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UC_Dashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs [Design]",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T07:15:54.361Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\Dashboard.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.cs [Design]",
-              "RelativeToolTip": "WindowsForm_Project\\Dashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T04:55:45.962Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_Customer.cs",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Customer.cs*",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Customer.cs*",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAiwG4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T04:08:32.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Connection.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Connection.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Connection.cs",
@@ -296,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Settings.Designer.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\Settings.Designer.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Properties\\Settings.Designer.cs",
@@ -308,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UC_Addroom.cs [Design]",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Addroom.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Addroom.cs",
@@ -319,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ManageEmployee.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Models\\ManageEmployee.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Models\\ManageEmployee.cs",
@@ -331,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UC_Bookings.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Bookings.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Bookings.cs",
@@ -343,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "UC_Addroom.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Addroom.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Addroom.cs",
@@ -355,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "UC_Manage.cs [Design]",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Manage.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Manage.cs",
@@ -366,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "DAL.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Models\\DAL.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Models\\DAL.cs",
@@ -378,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "UC_Dashboard.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Dashboard.cs",
@@ -391,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "UC_Manage.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Manage.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Manage.cs",
@@ -403,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UC_Account.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Account.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Account.cs",
@@ -416,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Properties\\AssemblyInfo.cs",
@@ -428,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Models\\Account.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Models\\Account.cs",
@@ -440,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\LoginForm.cs",
@@ -448,11 +460,12 @@
               "RelativeToolTip": "WindowsForm_Project\\LoginForm.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAAAEAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T04:08:33.045Z"
+              "WhenOpened": "2024-09-23T04:08:33.045Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Models\\Customer.cs",
@@ -464,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Dashboard.Designer.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Dashboard.Designer.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\Dashboard.Designer.cs",
@@ -477,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "LoginFormNew.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginFormNew.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\LoginFormNew.cs",
@@ -490,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\App.config",
               "RelativeDocumentMoniker": "WindowsForm_Project\\App.config",
@@ -513,17 +526,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T04:25:51.324Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\LoginForm.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.cs [Design]",
-              "RelativeToolTip": "WindowsForm_Project\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T04:48:21.3Z"
             },
             {
               "$type": "Document",
@@ -583,7 +585,8 @@
               "RelativeToolTip": "WindowsForm_Project\\LoginForm.Designer.cs",
               "ViewState": "AQIAAHUAAAAAAAAAAAAAAIIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T04:08:33.044Z"
+              "WhenOpened": "2024-09-23T04:08:33.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -631,7 +634,8 @@
               "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\LoginForm.resx",
               "RelativeToolTip": "WindowsForm_Project\\LoginForm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-09-23T04:08:33.049Z"
+              "WhenOpened": "2024-09-23T04:08:33.049Z",
+              "EditorCaption": ""
             }
           ]
         }
