@@ -11,9 +11,14 @@ namespace WindowsForm_Project.Models
         public int maphong {  get; set; }
         public int roomnumber { get; set; }
         public string roomtype { get; set; }
-        public int numbed { get; set; }
+        public string numbed { get; set; }
         public string view_room { get; set; }
         public int price { get; set; }
+    }
+    public class RoomUpdate
+    {
+        public int maphong { get; set; }
+        public int roomnumber { get; set; }
         public string status_room { get; set; }
         public string house_keeping { get; set; }
     }

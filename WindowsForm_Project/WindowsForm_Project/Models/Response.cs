@@ -15,5 +15,7 @@ namespace WindowsForm_Project.Models
         public List<Account> list3 { get; set; }
         public List<EmployeeWork> list4 { get; set; }
         public List<Total> list5 { get; set; }
+        public List<RoomUpdate> list6 { get; set; }
+
     }
 }

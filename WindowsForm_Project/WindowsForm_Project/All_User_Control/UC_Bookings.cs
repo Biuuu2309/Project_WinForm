@@ -38,7 +38,7 @@ namespace WindowsForm_Project.All_User_Control
                     maphong = int.Parse(txtmaphong.Text),
                     roomnumber = int.Parse(txtsophong.Text),
                     roomtype = txtloaiphong.SelectedItem.ToString(),
-                    numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),
+                    numbed = txtloaigiuong.SelectedItem.ToString(),
                     view_room = txtviewroom.SelectedItem.ToString(),
                     price = int.Parse(txtgia.Text)
                 };
@@ -109,7 +109,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else
                 {
-                    MessageBox.Show("No room data available or " + response.statusmessage);
+                    MessageBox.Show("No data available or " + response.statusmessage);
                 }
             }
         }

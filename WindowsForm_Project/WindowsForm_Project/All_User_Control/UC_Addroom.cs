@@ -17,6 +17,8 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Addroom()
         {
             InitializeComponent();
+            this.Leave += new EventHandler(UC_Addroom_Leave);
+            this.Enter += new EventHandler(UC_Addroom_Enter);
         }
 
         private void UC_Addroom_Load(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace WindowsForm_Project.All_User_Control
                     maphong = int.Parse(txtmaphong.Text),
                     roomnumber = int.Parse(txtsophong.Text),
                     roomtype = txtloaiphong.SelectedItem.ToString(),
-                    numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),
+                    numbed = txtloaigiuong.SelectedItem.ToString(),
                     view_room = txtviewroom.SelectedItem.ToString(),
                     price = int.Parse(txtgia.Text)
                 };
@@ -78,6 +80,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             clearAll();
             LoadRoomData();
+            LoadRoomUpData();
         }
 
         public void clearAll()
@@ -103,6 +106,7 @@ namespace WindowsForm_Project.All_User_Control
             try
             {
                 LoadRoomData();
+                LoadRoomUpData();
                 DataGridView1.Refresh();
                 DataGridView2.Refresh();
             }
@@ -119,23 +123,36 @@ namespace WindowsForm_Project.All_User_Control
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 Response response = dal.Getroom(conn);
-                Response response2 = dal.Getupdateroom(conn);
-                if ((response.list != null && response.list.Count > 0) || (response2.list != null && response2.list.Count > 0))
+                if ((response.list != null && response.list.Count > 0))
                 {
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list;
                     DataGridView1.ColumnHeadersHeight = 25;
-
                     DataGridView1.Refresh(); // Refresh the grid view
+                }
+                else
+                {
+                    MessageBox.Show("No data available or " + response.statusmessage);
+                }
+            }
+        }
+        private void LoadRoomUpData()
+        {
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response2 = dal.Getupdateroom(conn);
+                if ((response2.list6 != null && response2.list6.Count > 0))
+                {
                     DataGridView2.DataSource = null; // Clear previous data
-                    DataGridView2.DataSource = response2.list;
+                    DataGridView2.DataSource = response2.list6;
                     DataGridView2.ColumnHeadersHeight = 25;
-
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
                 {
-                    MessageBox.Show("No room data available or " + response.statusmessage);
+                    MessageBox.Show("No data available or " + response2.statusmessage);
                 }
             }
         }
@@ -149,14 +166,14 @@ namespace WindowsForm_Project.All_User_Control
         {
             if (ValidateInput_update())
             {
-                Room room = new Room
+                RoomUpdate room = new RoomUpdate
                 {
                     maphong = int.Parse(txtmaphongupdateroom.Text),
                     status_room = txtstatusroom.SelectedItem.ToString(),
                     house_keeping = txthousekeeping.SelectedItem.ToString()
                 };
                 DAL dal = new DAL();
-            string connectionString = DatabaseConnection.Connection();
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addupdateroom(room, conn);
@@ -178,7 +195,7 @@ namespace WindowsForm_Project.All_User_Control
                     maphong = int.Parse(txtdeletemaphong.Text),
                 };
                 DAL dal = new DAL();
-            string connectionString = DatabaseConnection.Connection();
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Deleteroom(room, conn);

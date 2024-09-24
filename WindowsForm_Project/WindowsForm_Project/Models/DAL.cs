@@ -132,7 +132,7 @@ namespace WindowsForm_Project.Models
                                 maphong = int.Parse(reader["maphong"].ToString()),
                                 roomnumber = int.Parse(reader["roomnumber"].ToString()),
                                 roomtype = reader["roomtype"].ToString(),
-                                numbed = int.Parse(reader["numbed"].ToString()),
+                                numbed = reader["numbed"].ToString(),
                                 view_room = reader["view_room"].ToString(),
                                 price = int.Parse(reader["price"].ToString()),
                             };
@@ -379,7 +379,7 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        public Response Addupdateroom(Room room, SqlConnection conn)
+        public Response Addupdateroom(RoomUpdate room, SqlConnection conn)
         {
             Response response = new Response();
             try
@@ -406,7 +406,7 @@ namespace WindowsForm_Project.Models
         public Response Getupdateroom(SqlConnection conn)
         {
             Response response = new Response();
-            List<Room> list = new List<Room>();
+            List<RoomUpdate> list = new List<RoomUpdate>();
             try
             {
                 string query = @"   SELECT Room.maphong, roomnumber, status_room, house_keeping
@@ -420,9 +420,10 @@ namespace WindowsForm_Project.Models
                     {
                         while (reader.Read())
                         {
-                            Room room = new Room
+                            RoomUpdate room = new RoomUpdate
                             {
                                 maphong = int.Parse(reader["maphong"].ToString()),
+                                roomnumber = int.Parse(reader["roomnumber"].ToString()),
                                 status_room = reader["status_room"].ToString(),
                                 house_keeping = reader["house_keeping"].ToString(),
                             };
@@ -430,7 +431,7 @@ namespace WindowsForm_Project.Models
                         }
                     }
                 }
-                response.list = list;
+                response.list6 = list;
             }
             catch (Exception ex)
             {
