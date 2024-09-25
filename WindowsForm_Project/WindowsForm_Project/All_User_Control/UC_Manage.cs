@@ -304,5 +304,10 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
+
+        private void uC_Account1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

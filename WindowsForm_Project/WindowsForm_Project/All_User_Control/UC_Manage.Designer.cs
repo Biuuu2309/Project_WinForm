@@ -947,6 +947,7 @@
             this.uC_Account1.Size = new System.Drawing.Size(1000, 600);
             this.uC_Account1.TabIndex = 57;
             this.uC_Account1.Visible = false;
+            this.uC_Account1.Load += new System.EventHandler(this.uC_Account1_Load);
             // 
             // UC_Manage
             // 

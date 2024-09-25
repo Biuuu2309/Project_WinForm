@@ -218,6 +218,7 @@ namespace WindowsForm_Project.Models
                             {
                                 id = int.Parse(reader["id"].ToString()),
                                 username = reader["username"].ToString(),
+                                password = reader["password"].ToString(),
                                 cccd_em = reader["cccd_em"].ToString(),
                             };
                             list.Add(account);

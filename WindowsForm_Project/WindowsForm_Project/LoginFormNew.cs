@@ -29,9 +29,8 @@ namespace WindowsForm_Project
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    Account account = new Account();
                     Response response = dal.Getaccount(conn);
-                    if ((response.list3.Any(acc => acc.username == textusername.Text) && response.list3.Any(acc => acc.password == textpassword.Text)) || 
+                    if ((response.list3.Any(account => account.username == textusername.Text) && response.list3.Any(account => account.password == textpassword.Text)) || 
                         (textusername.Text == "zan" && textpassword.Text == "1"))
                     {
                         errormess.Visible = false;

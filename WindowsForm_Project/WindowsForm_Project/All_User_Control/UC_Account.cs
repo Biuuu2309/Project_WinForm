@@ -85,6 +85,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list3;
+                    DataGridView1.Columns["password"].Visible = false;
                     DataGridView1.ColumnHeadersHeight = 25;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
@@ -143,6 +144,11 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
