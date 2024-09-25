@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm_Project.Models;
 
 namespace WindowsForm_Project
 {
@@ -21,18 +23,39 @@ namespace WindowsForm_Project
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (textusername.Text == "BiuBiu" && textpassword.Text == "2309" || textusername.Text == "zan" && textpassword.Text == "1")
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            if (ValidateInput())
             {
-                errormess.Visible = false;
-                Dashboard ds = new Dashboard();
-                this.Hide();
-                ds.Show();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Account account = new Account();
+                    Response response = dal.Getaccount(conn);
+                    if ((response.list3.Any(acc => acc.username == textusername.Text) && response.list3.Any(acc => acc.password == textpassword.Text)) || 
+                        (textusername.Text == "zan" && textpassword.Text == "1"))
+                    {
+                        errormess.Visible = false;
+                        Dashboard ds = new Dashboard();
+                        this.Hide();
+                        ds.Show();
+                    }
+                    else
+                    {
+                        errormess.Visible = true;
+                        textpassword.Clear();
+                    }
+                }
+                    
             }
-            else
+        }
+        private bool ValidateInput()
+        {
+            if (textusername.Text == "" || textpassword.Text == "")
             {
-                errormess.Visible = true;
-                textpassword.Clear();
+                MessageBox.Show("Please fill in all the fields.");
+                return false;
             }
+            return true;
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
