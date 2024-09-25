@@ -434,7 +434,7 @@
             this.btnaddupdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(161)))), ((int)(((byte)(140)))));
             this.btnaddupdate.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnaddupdate.ForeColor = System.Drawing.Color.Black;
-            this.btnaddupdate.Location = new System.Drawing.Point(135, 284);
+            this.btnaddupdate.Location = new System.Drawing.Point(110, 284);
             this.btnaddupdate.Name = "btnaddupdate";
             this.btnaddupdate.Size = new System.Drawing.Size(180, 47);
             this.btnaddupdate.TabIndex = 58;
@@ -537,7 +537,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(161)))), ((int)(((byte)(140)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(135, 134);
+            this.guna2Button2.Location = new System.Drawing.Point(110, 135);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 62;

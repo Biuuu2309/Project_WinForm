@@ -211,6 +211,8 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void UC_Bookings_Load(object sender, EventArgs e)
         {
+            this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
 
         }
 
@@ -250,6 +252,16 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox4_Click(object sender, EventArgs e)
         {
 
         }

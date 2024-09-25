@@ -23,6 +23,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void Customer_Load(object sender, EventArgs e)
         {
+            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
 
         }
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -176,7 +177,6 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void txtemail_cusup_TextChanged(object sender, EventArgs e)
