@@ -22,6 +22,7 @@ namespace WindowsForm_Project.All_User_Control
             this.Leave += new EventHandler(UC_Account_Leave); // Ensure this is set to load data
             // Ensure this is set to load data
             // Remove the Leave event if not needed
+            this.DataGridView1.DefaultCellStyle.ForeColor=Color.Black;
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
@@ -149,6 +150,26 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox2_Click(object sender, EventArgs e)
         {
 
         }
