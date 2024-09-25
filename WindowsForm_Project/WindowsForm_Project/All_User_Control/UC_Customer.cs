@@ -174,10 +174,9 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
         }
-
         private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void txtemail_cusup_TextChanged(object sender, EventArgs e)
