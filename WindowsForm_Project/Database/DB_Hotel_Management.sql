@@ -189,6 +189,27 @@ BEGIN
 	END
 END
 GO
+CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Serve
+			SET 
+				cccd_cus = COALESCE(@cccd_cus,cccd_cus),
+				maphong = COALESCE(@maphong,maphong),
+				other_booking = COALESCE(@other_booking,other_booking),
+				anuong = COALESCE(@anuong,anuong),
+				call_serve = COALESCE(@call_serve,call_serve)
+			WHERE @cccd_cus IN (SELECT cccd_cus
+								FROM Customer) AND @maphong IN (SELECT maphong 
+																FROM Room)
+			SET @ErrorMessage = 'Them thong tin phuc vu thanh cong'
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE()
+	END CATCH
+END
+GO
 CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN

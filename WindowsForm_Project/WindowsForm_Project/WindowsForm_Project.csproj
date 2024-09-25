@@ -233,6 +233,12 @@
     <Compile Include="All_User_Control\UC_Manage.Designer.cs">
       <DependentUpon>UC_Manage.cs</DependentUpon>
     </Compile>
+    <Compile Include="All_User_Control\UC_Serve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All_User_Control\UC_Serve.Designer.cs">
+      <DependentUpon>UC_Serve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -258,6 +264,7 @@
     <Compile Include="Models\ManageEmployee.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Serve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="All_User_Control\UC_Account.resx">
@@ -277,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="All_User_Control\UC_Manage.resx">
       <DependentUpon>UC_Manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All_User_Control\UC_Serve.resx">
+      <DependentUpon>UC_Serve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

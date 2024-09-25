@@ -91,6 +91,32 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Updateserve(Serve serve, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updateserve", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_cus", serve.cccd_cus);
+                cmd.Parameters.AddWithValue("@maphong", serve.maphong);
+                cmd.Parameters.AddWithValue("@other_booking", serve.other_booking);
+                cmd.Parameters.AddWithValue("@anuong", serve.anuong);
+                cmd.Parameters.AddWithValue("@call_serve", serve.call_serve);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Deleteaccount(Account account, SqlConnection conn)
         {
             Response response = new Response();
@@ -110,6 +136,45 @@ namespace WindowsForm_Project.Models
             catch (Exception ex)
             {
                 response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Getserve(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Serve> list = new List<Serve>();
+            try
+            {
+                string query = @"SELECT * FROM Serve";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Serve serve = new Serve
+                            {
+                                cccd_cus = reader["cccd_cus"].ToString(),
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                other_booking = reader["other_booking"].ToString(),
+                                anuong = reader["anuong"].ToString(),
+                                call_serve = bool.Parse(reader["call_serve"].ToString()),
+                            };
+                            list.Add(serve);
+                        }
+                    }
+                }
+                response.list7 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
             }
             return response;
         }
