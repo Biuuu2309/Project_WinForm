@@ -211,5 +211,15 @@ namespace WindowsForm_Project.All_User_Control
                 MessageBox.Show("Please fill in all the fields.");
             }
         }
+
+        private void txtsophong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtstatusroom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
