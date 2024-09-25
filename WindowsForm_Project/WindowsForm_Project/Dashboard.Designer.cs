@@ -64,7 +64,6 @@
             this.btnmanage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btncustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnreport = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -503,7 +502,7 @@
             this.btncheckout.FillColor2 = System.Drawing.Color.Transparent;
             this.btncheckout.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncheckout.ForeColor = System.Drawing.Color.Black;
-            this.btncheckout.Location = new System.Drawing.Point(1564, 6);
+            this.btncheckout.Location = new System.Drawing.Point(1341, 6);
             this.btncheckout.Name = "btncheckout";
             this.btncheckout.Size = new System.Drawing.Size(217, 45);
             this.btncheckout.TabIndex = 26;
@@ -524,7 +523,7 @@
             this.btnmanage.FillColor2 = System.Drawing.Color.Transparent;
             this.btnmanage.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanage.ForeColor = System.Drawing.Color.Black;
-            this.btnmanage.Location = new System.Drawing.Point(1118, 6);
+            this.btnmanage.Location = new System.Drawing.Point(895, 6);
             this.btnmanage.Name = "btnmanage";
             this.btnmanage.Size = new System.Drawing.Size(217, 45);
             this.btnmanage.TabIndex = 28;
@@ -573,32 +572,10 @@
             this.btnserve.Text = "Serve";
             this.btnserve.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
-            // btnreport
-            // 
-            this.btnreport.BackColor = System.Drawing.Color.Snow;
-            this.btnreport.BorderRadius = 10;
-            this.btnreport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnreport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnreport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnreport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnreport.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnreport.FillColor = System.Drawing.Color.Transparent;
-            this.btnreport.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnreport.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreport.ForeColor = System.Drawing.Color.Black;
-            this.btnreport.Location = new System.Drawing.Point(895, 6);
-            this.btnreport.Name = "btnreport";
-            this.btnreport.Size = new System.Drawing.Size(217, 45);
-            this.btnreport.TabIndex = 31;
-            this.btnreport.Text = "Report";
-            this.btnreport.Click += new System.EventHandler(this.guna2GradientButton3_Click);
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.Controls.Add(this.btnaddroom);
-            this.guna2Panel1.Controls.Add(this.btnreport);
             this.guna2Panel1.Controls.Add(this.btncheckout);
             this.guna2Panel1.Controls.Add(this.btnserve);
             this.guna2Panel1.Controls.Add(this.btncustomer);
@@ -628,7 +605,7 @@
             this.btnaddroom.FillColor2 = System.Drawing.Color.Transparent;
             this.btnaddroom.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddroom.ForeColor = System.Drawing.Color.Black;
-            this.btnaddroom.Location = new System.Drawing.Point(1341, 6);
+            this.btnaddroom.Location = new System.Drawing.Point(1118, 6);
             this.btnaddroom.Name = "btnaddroom";
             this.btnaddroom.Size = new System.Drawing.Size(217, 45);
             this.btnaddroom.TabIndex = 32;
@@ -677,6 +654,8 @@
             // 
             // uC_Manage1
             // 
+            this.uC_Manage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Manage1.BackgroundImage")));
+            this.uC_Manage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
             this.uC_Manage1.Name = "uC_Manage1";
             this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
@@ -685,6 +664,8 @@
             // 
             // uC_Dashboard2
             // 
+            this.uC_Dashboard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Dashboard2.BackgroundImage")));
+            this.uC_Dashboard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Dashboard2.Location = new System.Drawing.Point(220, 114);
             this.uC_Dashboard2.Name = "uC_Dashboard2";
             this.uC_Dashboard2.Size = new System.Drawing.Size(1681, 966);
@@ -771,7 +752,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnreport;
         private Guna.UI2.WinForms.Guna2GradientButton btnserve;
         private Guna.UI2.WinForms.Guna2GradientButton btncustomer;
         private Guna.UI2.WinForms.Guna2GradientButton btnmanage;

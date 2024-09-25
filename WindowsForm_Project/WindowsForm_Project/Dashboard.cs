@@ -440,7 +440,7 @@ namespace WindowsForm_Project
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
         {
-            MovePanel(btnreport);
+            //MovePanel(btnreport);
         }
 
         private void btnemployee_Click_1(object sender, EventArgs e)
