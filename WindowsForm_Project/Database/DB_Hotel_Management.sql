@@ -225,6 +225,25 @@ BEGIN
 	END
 END
 GO
+CREATE OR ALTER PROC sp_updatereport @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @ghichu NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Report
+			SET 
+				cccd_cus = COALESCE(@cccd_cus, cccd_cus),
+				maphong = COALESCE(@maphong, maphong),
+				ghichu = COALESCE(@ghichu, ghichu)
+			WHERE @cccd_cus IN (SELECT cccd_cus
+								FROM Customer) AND @maphong IN (SELECT maphong 
+																FROM Room)
+			SET @ErrorMessage = 'Them thong tin report thanh cong'
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE()
+	END CATCH
+END
+GO
 CREATE OR ALTER PROC sp_addemployee @cccd_em INT, @first_name NVARCHAR(200), @last_name NVARCHAR(200), @sdt NVARCHAR(200), @email NVARCHAR(200), @gioitinh NVARCHAR(200), @ngaysinh DATETIME, @luong FLOAT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -154,6 +155,22 @@ namespace WindowsForm_Project.All_User_Control
                     MessageBox.Show("No customer data available or " + response.statusmessage);
                 }
             }
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            uC_Report1.Visible = !uC_Report1.Visible;
+            if (uC_Report1.Visible)
+            {
+                btnsubmit2.Image = Properties.Resources.logout;
+                btnsubmit2.Text = "";
+            }
+            else
+            {
+                btnsubmit2.Text = "Account";
+                btnsubmit2.Image = null;
+            }
+            uC_Report1.BringToFront();
         }
     }
 }

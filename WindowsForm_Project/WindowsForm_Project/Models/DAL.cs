@@ -39,6 +39,30 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addreport(Report report, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updatereport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_cus", report.cccd_cus);
+                cmd.Parameters.AddWithValue("@maphong", report.maphong);
+                cmd.Parameters.AddWithValue("@ghichu", report.ghichu);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addemployeework(EmployeeWork chamcong, SqlConnection conn)
         {
             Response response = new Response();
@@ -166,6 +190,43 @@ namespace WindowsForm_Project.Models
                     }
                 }
                 response.list7 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Getreport(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Report> list = new List<Report>();
+            try
+            {
+                string query = @"SELECT * FROM Report";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Report report = new Report
+                            {
+                                cccd_cus = reader["cccd_cus"].ToString(),
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                ghichu = reader["ghichu"].ToString()
+                            };
+                            list.Add(report);
+                        }
+                    }
+                }
+                response.list8 = list;
             }
             catch (Exception ex)
             {
