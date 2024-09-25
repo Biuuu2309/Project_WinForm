@@ -335,6 +335,7 @@ namespace WindowsForm_Project
             uC_Dashboard2.Visible = false;
             uC_Customer1.Visible = false;
             uC_Manage1.Visible = false;
+            uC_Serve1.Visible = false;
         }
 
         private void btndashboard_Click(object sender, EventArgs e)
@@ -347,6 +348,8 @@ namespace WindowsForm_Project
             uC_Addroom1.Visible = false;
             uC_Customer1.Visible = false;
             uC_Manage1.Visible = false;
+            uC_Serve1.Visible = false;
+
             // ... hide other user controls
         }
 
@@ -360,6 +363,8 @@ namespace WindowsForm_Project
             uC_Addroom1.Visible = false;
             uC_Customer1.Visible = false;
             uC_Manage1.Visible = false;
+            uC_Serve1.Visible = false;
+
             // ... hide other user controls
         }
 
@@ -416,11 +421,21 @@ namespace WindowsForm_Project
             uC_Addroom1.Visible = false;
             uC_Bookings2.Visible = false;
             uC_Manage1.Visible = false;
+            uC_Serve1.Visible = false;
+
         }
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             MovePanel(btnserve);
+            uC_Serve1.Visible = true;
+            uC_Serve1.BringToFront();
+            // Hide other user controls
+            uC_Dashboard2.Visible = false;
+            uC_Addroom1.Visible = false;
+            uC_Bookings2.Visible = false;
+            uC_Manage1.Visible = false;
+            uC_Customer1.Visible = false;
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
@@ -438,6 +453,8 @@ namespace WindowsForm_Project
             uC_Addroom1.Visible = false;
             uC_Bookings2.Visible = false;
             uC_Customer1.Visible = false;
+            uC_Serve1.Visible = false;
+
         }
 
         private void btncheckout_Click_1(object sender, EventArgs e)
@@ -465,6 +482,8 @@ namespace WindowsForm_Project
             uC_Addroom1.Visible = false;
             uC_Bookings2.Visible = false;
             uC_Customer1.Visible = false;
+            uC_Serve1.Visible = false;
+
         }
     }
 }

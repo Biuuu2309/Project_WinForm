@@ -196,4 +196,8 @@ C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\o
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.exe
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.pdb
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.LoginFormNew.resources
+<<<<<<< Updated upstream
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Serve.resources
+=======
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Serve.resources
+>>>>>>> Stashed changes

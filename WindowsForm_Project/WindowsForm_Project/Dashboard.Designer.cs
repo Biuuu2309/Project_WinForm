@@ -75,6 +75,7 @@
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
+            this.uC_Serve1 = new WindowsForm_Project.All_User_Control.UC_Serve();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -691,6 +692,8 @@
             // 
             // uC_Addroom1
             // 
+            this.uC_Addroom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Addroom1.BackgroundImage")));
+            this.uC_Addroom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Addroom1.Location = new System.Drawing.Point(0, 114);
             this.uC_Addroom1.Name = "uC_Addroom1";
             this.uC_Addroom1.Size = new System.Drawing.Size(1920, 966);
@@ -698,10 +701,19 @@
             // 
             // uC_Bookings2
             // 
+            this.uC_Bookings2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Bookings2.BackgroundImage")));
+            this.uC_Bookings2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Bookings2.Location = new System.Drawing.Point(0, 114);
             this.uC_Bookings2.Name = "uC_Bookings2";
             this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
             this.uC_Bookings2.TabIndex = 7;
+            // 
+            // uC_Serve1
+            // 
+            this.uC_Serve1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Serve1.Name = "uC_Serve1";
+            this.uC_Serve1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Serve1.TabIndex = 11;
             // 
             // Dashboard
             // 
@@ -709,6 +721,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.uC_Serve1);
             this.Controls.Add(this.uC_Customer1);
             this.Controls.Add(this.uC_Manage1);
             this.Controls.Add(this.guna2Panel3);
@@ -776,5 +789,6 @@
         private All_User_Control.UC_Addroom uC_Addroom1;
         private All_User_Control.UC_Manage uC_Manage1;
         private All_User_Control.UC_Customer uC_Customer1;
+        private All_User_Control.UC_Serve uC_Serve1;
     }
 }
