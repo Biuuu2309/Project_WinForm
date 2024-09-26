@@ -17,6 +17,7 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Bookings()
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile("C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\Backgrounds\\Pic16.jpg");
         }
 
         private bool ValidateInput()
