@@ -713,7 +713,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(149, 394);
+            this.label1.Location = new System.Drawing.Point(141, 388);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 21);
             this.label1.TabIndex = 40;
@@ -760,7 +760,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic15;
+            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic16;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
