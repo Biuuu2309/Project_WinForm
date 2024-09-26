@@ -23,7 +23,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void Report_Load(object sender, EventArgs e)
         {
-
+            this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
         }
         private bool ValidateInput()
         {
@@ -105,6 +105,11 @@ namespace WindowsForm_Project.All_User_Control
                     MessageBox.Show("No data available or " + response.statusmessage);
                 }
             }
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

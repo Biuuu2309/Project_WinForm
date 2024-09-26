@@ -24,6 +24,9 @@ namespace WindowsForm_Project.All_User_Control
 
         private void UC_Serve_Load(object sender, EventArgs e)
         {
+            this.DataGridView1.DefaultCellStyle.ForeColor=Color.Black;
+            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView3.DefaultCellStyle.ForeColor = Color.Black;
 
         }
 
@@ -159,7 +162,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            uC_Report1.Visible = !uC_Report1.Visible;
+          uC_Report1.Visible = !uC_Report1.Visible;
             if (uC_Report1.Visible)
             {
                 btnsubmit2.Image = Properties.Resources.logout;
@@ -171,6 +174,96 @@ namespace WindowsForm_Project.All_User_Control
                 btnsubmit2.Image = null;
             }
             uC_Report1.BringToFront();
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcccd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcallserve_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtmaphong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtotherbooking_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtanuong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void uC_Report1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
