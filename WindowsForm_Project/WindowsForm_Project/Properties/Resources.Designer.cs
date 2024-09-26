@@ -313,6 +313,16 @@ namespace WindowsForm_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pic16 {
+            get {
+                object obj = ResourceManager.GetObject("Pic16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pic2 {
             get {
                 object obj = ResourceManager.GetObject("Pic2", resourceCulture);
