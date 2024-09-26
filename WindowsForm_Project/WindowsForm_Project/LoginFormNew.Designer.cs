@@ -32,6 +32,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.errormess = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.textpassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.textusername = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.errormess = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel1.SuspendLayout();
@@ -84,6 +84,19 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(340, 651);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // errormess
+            // 
+            this.errormess.AutoSize = true;
+            this.errormess.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.errormess.ForeColor = System.Drawing.Color.Red;
+            this.errormess.Location = new System.Drawing.Point(36, 608);
+            this.errormess.Name = "errormess";
+            this.errormess.Size = new System.Drawing.Size(269, 21);
+            this.errormess.TabIndex = 7;
+            this.errormess.Text = "Username or Password was wrong !!!";
+            this.errormess.Visible = false;
+            this.errormess.Click += new System.EventHandler(this.errormess_Click);
             // 
             // guna2Button1
             // 
@@ -206,19 +219,6 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
-            // errormess
-            // 
-            this.errormess.AutoSize = true;
-            this.errormess.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.errormess.ForeColor = System.Drawing.Color.Red;
-            this.errormess.Location = new System.Drawing.Point(36, 608);
-            this.errormess.Name = "errormess";
-            this.errormess.Size = new System.Drawing.Size(269, 21);
-            this.errormess.TabIndex = 7;
-            this.errormess.Text = "Username or Password was wrong !!!";
-            this.errormess.Visible = false;
-            this.errormess.Click += new System.EventHandler(this.errormess_Click);
             // 
             // guna2Elipse1
             // 
