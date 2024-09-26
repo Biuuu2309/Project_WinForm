@@ -333,9 +333,29 @@ namespace WindowsForm_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pic19 {
+            get {
+                object obj = ResourceManager.GetObject("Pic19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pic2 {
             get {
                 object obj = ResourceManager.GetObject("Pic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pic20 {
+            get {
+                object obj = ResourceManager.GetObject("Pic20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

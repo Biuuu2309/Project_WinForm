@@ -49,27 +49,27 @@
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.metroPanel16 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel17 = new MetroFramework.Controls.MetroPanel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.metroPanel20 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.metroPanel23 = new MetroFramework.Controls.MetroPanel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.metroPanel24 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel17 = new MetroFramework.Controls.MetroPanel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.metroPanel20 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel18.SuspendLayout();
             this.metroPanel21.SuspendLayout();
             this.metroPanel10.SuspendLayout();
@@ -77,14 +77,14 @@
             this.metroPanel6.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
-            this.guna2GroupBox3.SuspendLayout();
-            this.guna2GroupBox4.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
             this.metroPanel7.SuspendLayout();
-            this.metroPanel9.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
             this.metroPanel15.SuspendLayout();
-            this.metroPanel17.SuspendLayout();
+            this.metroPanel9.SuspendLayout();
+            this.guna2GroupBox4.SuspendLayout();
             this.metroPanel23.SuspendLayout();
+            this.metroPanel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel18
@@ -337,94 +337,14 @@
             this.guna2GroupBox1.Controls.Add(this.metroPanel1);
             this.guna2GroupBox1.Controls.Add(this.metroPanel4);
             this.guna2GroupBox1.Controls.Add(this.metroPanel6);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(60)))), ((int)(((byte)(186)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.MistyRose;
             this.guna2GroupBox1.Location = new System.Drawing.Point(26, 15);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(976, 250);
             this.guna2GroupBox1.TabIndex = 45;
             this.guna2GroupBox1.Text = "Single";
-            // 
-            // guna2GroupBox2
-            // 
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(1107, 385);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(8, 8);
-            this.guna2GroupBox2.TabIndex = 46;
-            this.guna2GroupBox2.Text = "guna2GroupBox2";
-            // 
-            // guna2GroupBox3
-            // 
-            this.guna2GroupBox3.Controls.Add(this.metroPanel15);
-            this.guna2GroupBox3.Controls.Add(this.metroPanel9);
-            this.guna2GroupBox3.Controls.Add(this.metroPanel13);
-            this.guna2GroupBox3.Controls.Add(this.metroPanel10);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(26, 294);
-            this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(972, 246);
-            this.guna2GroupBox3.TabIndex = 47;
-            this.guna2GroupBox3.Text = "Double";
-            // 
-            // guna2GroupBox4
-            // 
-            this.guna2GroupBox4.Controls.Add(this.metroPanel23);
-            this.guna2GroupBox4.Controls.Add(this.metroPanel17);
-            this.guna2GroupBox4.Controls.Add(this.metroPanel21);
-            this.guna2GroupBox4.Controls.Add(this.metroPanel18);
-            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(26, 574);
-            this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(972, 278);
-            this.guna2GroupBox4.TabIndex = 48;
-            this.guna2GroupBox4.Text = "Triple";
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.guna2HtmlLabel1);
-            this.metroPanel1.Controls.Add(this.metroPanel2);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.metroPanel1.Location = new System.Drawing.Point(16, 64);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(204, 154);
-            this.metroPanel1.TabIndex = 28;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(37, 18);
-            this.guna2HtmlLabel1.TabIndex = 7;
-            this.guna2HtmlLabel1.Text = "Room";
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(0, 115);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(204, 39);
-            this.metroPanel2.TabIndex = 6;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
             // 
             // metroPanel7
             // 
@@ -466,45 +386,70 @@
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
             // 
-            // metroPanel9
+            // metroPanel1
             // 
-            this.metroPanel9.Controls.Add(this.guna2HtmlLabel3);
-            this.metroPanel9.Controls.Add(this.metroPanel12);
-            this.metroPanel9.HorizontalScrollbarBarColor = true;
-            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.HorizontalScrollbarSize = 10;
-            this.metroPanel9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.metroPanel9.Location = new System.Drawing.Point(708, 65);
-            this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(204, 154);
-            this.metroPanel9.TabIndex = 35;
-            this.metroPanel9.VerticalScrollbarBarColor = true;
-            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel9.VerticalScrollbarSize = 10;
+            this.metroPanel1.Controls.Add(this.guna2HtmlLabel1);
+            this.metroPanel1.Controls.Add(this.metroPanel2);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.metroPanel1.Location = new System.Drawing.Point(16, 64);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(204, 154);
+            this.metroPanel1.TabIndex = 28;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // guna2HtmlLabel3
+            // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 3);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(37, 18);
-            this.guna2HtmlLabel3.TabIndex = 7;
-            this.guna2HtmlLabel3.Text = "Room";
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel1.TabIndex = 7;
+            this.guna2HtmlLabel1.Text = "Room";
             // 
-            // metroPanel12
+            // metroPanel2
             // 
-            this.metroPanel12.HorizontalScrollbarBarColor = true;
-            this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel12.HorizontalScrollbarSize = 10;
-            this.metroPanel12.Location = new System.Drawing.Point(0, 115);
-            this.metroPanel12.Name = "metroPanel12";
-            this.metroPanel12.Size = new System.Drawing.Size(204, 39);
-            this.metroPanel12.TabIndex = 6;
-            this.metroPanel12.VerticalScrollbarBarColor = true;
-            this.metroPanel12.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel12.VerticalScrollbarSize = 10;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(0, 115);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(204, 39);
+            this.metroPanel2.TabIndex = 6;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // guna2GroupBox2
+            // 
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2GroupBox2.Location = new System.Drawing.Point(1107, 385);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.Size = new System.Drawing.Size(8, 8);
+            this.guna2GroupBox2.TabIndex = 46;
+            this.guna2GroupBox2.Text = "guna2GroupBox2";
+            // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.Controls.Add(this.metroPanel15);
+            this.guna2GroupBox3.Controls.Add(this.metroPanel9);
+            this.guna2GroupBox3.Controls.Add(this.metroPanel13);
+            this.guna2GroupBox3.Controls.Add(this.metroPanel10);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(60)))), ((int)(((byte)(186)))));
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.MistyRose;
+            this.guna2GroupBox3.Location = new System.Drawing.Point(26, 294);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.Size = new System.Drawing.Size(972, 246);
+            this.guna2GroupBox3.TabIndex = 47;
+            this.guna2GroupBox3.Text = "Double";
             // 
             // metroPanel15
             // 
@@ -546,45 +491,60 @@
             this.metroPanel16.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel16.VerticalScrollbarSize = 10;
             // 
-            // metroPanel17
+            // metroPanel9
             // 
-            this.metroPanel17.Controls.Add(this.guna2HtmlLabel5);
-            this.metroPanel17.Controls.Add(this.metroPanel20);
-            this.metroPanel17.HorizontalScrollbarBarColor = true;
-            this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel17.HorizontalScrollbarSize = 10;
-            this.metroPanel17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.metroPanel17.Location = new System.Drawing.Point(12, 74);
-            this.metroPanel17.Name = "metroPanel17";
-            this.metroPanel17.Size = new System.Drawing.Size(204, 154);
-            this.metroPanel17.TabIndex = 42;
-            this.metroPanel17.VerticalScrollbarBarColor = true;
-            this.metroPanel17.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel17.VerticalScrollbarSize = 10;
+            this.metroPanel9.Controls.Add(this.guna2HtmlLabel3);
+            this.metroPanel9.Controls.Add(this.metroPanel12);
+            this.metroPanel9.HorizontalScrollbarBarColor = true;
+            this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.HorizontalScrollbarSize = 10;
+            this.metroPanel9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.metroPanel9.Location = new System.Drawing.Point(708, 65);
+            this.metroPanel9.Name = "metroPanel9";
+            this.metroPanel9.Size = new System.Drawing.Size(204, 154);
+            this.metroPanel9.TabIndex = 35;
+            this.metroPanel9.VerticalScrollbarBarColor = true;
+            this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel9.VerticalScrollbarSize = 10;
             // 
-            // guna2HtmlLabel5
+            // guna2HtmlLabel3
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 3);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(37, 18);
-            this.guna2HtmlLabel5.TabIndex = 7;
-            this.guna2HtmlLabel5.Text = "Room";
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 3);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel3.TabIndex = 7;
+            this.guna2HtmlLabel3.Text = "Room";
             // 
-            // metroPanel20
+            // metroPanel12
             // 
-            this.metroPanel20.HorizontalScrollbarBarColor = true;
-            this.metroPanel20.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel20.HorizontalScrollbarSize = 10;
-            this.metroPanel20.Location = new System.Drawing.Point(0, 115);
-            this.metroPanel20.Name = "metroPanel20";
-            this.metroPanel20.Size = new System.Drawing.Size(204, 39);
-            this.metroPanel20.TabIndex = 6;
-            this.metroPanel20.VerticalScrollbarBarColor = true;
-            this.metroPanel20.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel20.VerticalScrollbarSize = 10;
+            this.metroPanel12.HorizontalScrollbarBarColor = true;
+            this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel12.HorizontalScrollbarSize = 10;
+            this.metroPanel12.Location = new System.Drawing.Point(0, 115);
+            this.metroPanel12.Name = "metroPanel12";
+            this.metroPanel12.Size = new System.Drawing.Size(204, 39);
+            this.metroPanel12.TabIndex = 6;
+            this.metroPanel12.VerticalScrollbarBarColor = true;
+            this.metroPanel12.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel12.VerticalScrollbarSize = 10;
+            // 
+            // guna2GroupBox4
+            // 
+            this.guna2GroupBox4.Controls.Add(this.metroPanel23);
+            this.guna2GroupBox4.Controls.Add(this.metroPanel17);
+            this.guna2GroupBox4.Controls.Add(this.metroPanel21);
+            this.guna2GroupBox4.Controls.Add(this.metroPanel18);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(60)))), ((int)(((byte)(186)))));
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.MistyRose;
+            this.guna2GroupBox4.Location = new System.Drawing.Point(26, 574);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.Size = new System.Drawing.Size(972, 278);
+            this.guna2GroupBox4.TabIndex = 48;
+            this.guna2GroupBox4.Text = "Triple";
             // 
             // metroPanel23
             // 
@@ -626,11 +586,51 @@
             this.metroPanel24.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel24.VerticalScrollbarSize = 10;
             // 
+            // metroPanel17
+            // 
+            this.metroPanel17.Controls.Add(this.guna2HtmlLabel5);
+            this.metroPanel17.Controls.Add(this.metroPanel20);
+            this.metroPanel17.HorizontalScrollbarBarColor = true;
+            this.metroPanel17.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel17.HorizontalScrollbarSize = 10;
+            this.metroPanel17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.metroPanel17.Location = new System.Drawing.Point(12, 74);
+            this.metroPanel17.Name = "metroPanel17";
+            this.metroPanel17.Size = new System.Drawing.Size(204, 154);
+            this.metroPanel17.TabIndex = 42;
+            this.metroPanel17.VerticalScrollbarBarColor = true;
+            this.metroPanel17.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel17.VerticalScrollbarSize = 10;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 3);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel5.TabIndex = 7;
+            this.guna2HtmlLabel5.Text = "Room";
+            // 
+            // metroPanel20
+            // 
+            this.metroPanel20.HorizontalScrollbarBarColor = true;
+            this.metroPanel20.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel20.HorizontalScrollbarSize = 10;
+            this.metroPanel20.Location = new System.Drawing.Point(0, 115);
+            this.metroPanel20.Name = "metroPanel20";
+            this.metroPanel20.Size = new System.Drawing.Size(204, 39);
+            this.metroPanel20.TabIndex = 6;
+            this.metroPanel20.VerticalScrollbarBarColor = true;
+            this.metroPanel20.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel20.VerticalScrollbarSize = 10;
+            // 
             // UC_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic14;
+            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic20;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
@@ -651,20 +651,20 @@
             this.metroPanel4.ResumeLayout(false);
             this.metroPanel4.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox3.ResumeLayout(false);
-            this.guna2GroupBox4.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
-            this.metroPanel9.ResumeLayout(false);
-            this.metroPanel9.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
+            this.guna2GroupBox3.ResumeLayout(false);
             this.metroPanel15.ResumeLayout(false);
             this.metroPanel15.PerformLayout();
-            this.metroPanel17.ResumeLayout(false);
-            this.metroPanel17.PerformLayout();
+            this.metroPanel9.ResumeLayout(false);
+            this.metroPanel9.PerformLayout();
+            this.guna2GroupBox4.ResumeLayout(false);
             this.metroPanel23.ResumeLayout(false);
             this.metroPanel23.PerformLayout();
+            this.metroPanel17.ResumeLayout(false);
+            this.metroPanel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
