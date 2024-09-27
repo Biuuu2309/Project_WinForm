@@ -101,6 +101,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list8;
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView1.Columns["maphong"].HeaderText = "Mã Phòng";
+                    DataGridView1.Columns["ghichu"].HeaderText = "Ghi chú";
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else

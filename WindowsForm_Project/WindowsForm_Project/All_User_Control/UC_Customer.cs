@@ -56,6 +56,14 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list1;
                     DataGridView2.ColumnHeadersHeight = 25;
+                    DataGridView2.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView2.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView2.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView2.Columns["sdt"].HeaderText = "Số điện thoại";
+                    DataGridView2.Columns["email"].HeaderText = "Email";
+                    DataGridView2.Columns["gioitinh"].HeaderText = "Giới tính";
+                    DataGridView2.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+                    DataGridView2.Columns["address_cus"].HeaderText = "Địa chỉ";
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
