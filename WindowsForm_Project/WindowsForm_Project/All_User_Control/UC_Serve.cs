@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -120,6 +121,12 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list7;
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView1.Columns["maphong"].HeaderText = "Mã Phòng";
+                    DataGridView1.Columns["other_booking"].HeaderText = "Đặt phòng khác";
+                    DataGridView1.Columns["anuong"].HeaderText = "Ăn uống";
+                    DataGridView1.Columns["call_serve"].HeaderText = "Gọi dịch vụ";
+
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -140,6 +147,14 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list;
                     DataGridView2.ColumnHeadersHeight = 25;
+                    DataGridView2.Columns["maphong"].HeaderText = "ID Phòng";
+                    DataGridView2.Columns["roomnumber"].HeaderText = "Mã Phòng";
+                    DataGridView2.Columns["roomtype"].HeaderText = "Thể loại phòng";
+                    DataGridView2.Columns["numbed"].HeaderText = "Số phòng đặt";
+                    DataGridView2.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView2.Columns["price"].HeaderText = "Giá cả";
+
+
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -160,6 +175,15 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list1;
                     DataGridView3.ColumnHeadersHeight = 25;
+                    DataGridView3.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView3.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView3.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView3.Columns["sdt"].HeaderText = "Số điện thoại";
+                    DataGridView3.Columns["email"].HeaderText = "Email";
+                    DataGridView3.Columns["gioitinh"].HeaderText = "Giới tính";
+                    DataGridView3.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+                    DataGridView3.Columns["address_cus"].HeaderText = "Địa chỉ";
+
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
