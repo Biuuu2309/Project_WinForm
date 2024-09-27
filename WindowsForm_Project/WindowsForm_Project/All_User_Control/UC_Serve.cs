@@ -40,7 +40,7 @@ namespace WindowsForm_Project.All_User_Control
                     maphong = int.Parse(txtmaphong.Text),
                     other_booking = txtotherbooking.Text,
                     anuong = txtanuong.Text,
-                    call_serve = bool.Parse(txtcallserve.Text),
+                    call_serve = txtcallserveee.Checked,
                 };
 
                 DAL dal = new DAL();
@@ -78,6 +78,7 @@ namespace WindowsForm_Project.All_User_Control
             txtmaphong.Clear();
             txtotherbooking.Clear();
             txtanuong.Clear();
+            txtcallserveee.Checked = false;
         }
         private void UC_Serve_Leave(object sender, EventArgs e)
         {

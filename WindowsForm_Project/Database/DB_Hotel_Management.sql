@@ -174,11 +174,11 @@ VALUES
 	('12052309', '4', 'Khong', 'Khong', '0'),
 	('12062309', '5', 'Khong', 'Khong', '0')
 GO 
-CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_account @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Account
-					WHERE id = @id)
+					WHERE cccd_em = @cccd_em)
 	BEGIN 
 		INSERT INTO Account(username, password, cccd_em) VALUES (@username, @password, @cccd_em)
 		SET @ErrorMessage = 'Them Account thanh cong'
@@ -192,6 +192,13 @@ GO
 CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Serve
+					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
+	BEGIN 
+		INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve)
+		SET @ErrorMessage = 'Successful'
+	END
+	ELSE
 	BEGIN TRY
 		UPDATE Serve
 			SET 
@@ -360,6 +367,13 @@ GO
 CREATE OR ALTER PROC sp_addroomupdate @maphong INT = NULL, @status_room NVARCHAR(200) = NULL, @house_keeping NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Update_room
+					WHERE maphong = @maphong)
+	BEGIN 
+		INSERT INTO Update_room(maphong, status_room, house_keeping) VALUES (@maphong, @status_room, @house_keeping)
+		SET @ErrorMessage = 'Successful'
+	END
+	ELSE
 	BEGIN TRY
 		UPDATE Update_room
 		SET

@@ -132,7 +132,7 @@ namespace WindowsForm_Project.Models
                 conn.Open();
                 int i = cmd.ExecuteNonQuery();
                 conn.Close();
-                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                string mess = cmd.Parameters["@ErrorMessage"].Value != DBNull.Value ? (string)cmd.Parameters["@ErrorMessage"].Value : "No message returned.";
                 response.statusmessage = mess;
             }
             catch (Exception ex)
@@ -506,22 +506,31 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-        public Response Addupdateroom(RoomUpdate room, SqlConnection conn)
+                public Response Addupdateroom(RoomUpdate room, SqlConnection conn)
         {
             Response response = new Response();
             try
             {
                 SqlCommand cmd = new SqlCommand("sp_addroomupdate", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@maphong", room.maphong);
-                cmd.Parameters.AddWithValue("@status_room", room.status_room);
-                cmd.Parameters.AddWithValue("@house_keeping", room.house_keeping);
+                if (!string.IsNullOrEmpty(room.maphong.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@maphong", room.maphong);
+                }
+                if (!string.IsNullOrEmpty(room.status_room))
+                {
+                    cmd.Parameters.AddWithValue("@status_room", room.status_room);
+                }
+                if (!string.IsNullOrEmpty(room.house_keeping))
+                {
+                    cmd.Parameters.AddWithValue("@house_keeping", room.house_keeping);
+                }
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
                 int i = cmd.ExecuteNonQuery();
                 conn.Close();
-                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                string mess = cmd.Parameters["@ErrorMessage"].Value != DBNull.Value ? (string)cmd.Parameters["@ErrorMessage"].Value : "No message returned.";
                 response.statusmessage = mess;
             }
             catch (Exception ex)
@@ -765,7 +774,7 @@ namespace WindowsForm_Project.Models
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (!string.IsNullOrEmpty(employee.cccd_em))
                 {
-                    cmd.Parameters.AddWithValue("@cccd_cus", employee.cccd_em);
+                    cmd.Parameters.AddWithValue("@cccd_em", employee.cccd_em);
                 }
                 if (!string.IsNullOrEmpty(employee.first_name))
                 {
@@ -793,7 +802,7 @@ namespace WindowsForm_Project.Models
                 }
                 if (!string.IsNullOrEmpty(employee.luong.ToString()))
                 {
-                    cmd.Parameters.AddWithValue("@address_cus", employee.luong);
+                    cmd.Parameters.AddWithValue("@luong", employee.luong);
                 }
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
