@@ -174,7 +174,12 @@ VALUES
 	('12052309', '4', 'Khong', 'Khong', '0'),
 	('12062309', '5', 'Khong', 'Khong', '0')
 GO 
+<<<<<<< Updated upstream
 CREATE OR ALTER PROC sp_account @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+=======
+
+CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
+>>>>>>> Stashed changes
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Account

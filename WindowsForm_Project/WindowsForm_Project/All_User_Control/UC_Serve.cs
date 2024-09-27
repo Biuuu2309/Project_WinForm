@@ -194,9 +194,46 @@ namespace WindowsForm_Project.All_User_Control
 
         private void txtcccd_TextChanged(object sender, EventArgs e)
         {
+            string cccd = txtcccd.Text;
+            string maPhong=LayMaPhongTuCCCD(cccd);
+            if (!string.IsNullOrEmpty(maPhong))
+            {
+                txtmaphong.Text = maPhong;
+            }
+            else
+            {
+                txtmaphong.Clear();
+            }
 
         }
+        private string LayMaPhongTuCCCD(string cccd)
+        {
+            string maphong = null;
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try 
+                {
+                    conn.Open();
+                    string query = "SELECT maphong FROM Bookings WHERE cccd_cus = @cccd";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@cccd", cccd);
 
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            maphong = reader["maphong"].ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("lỗi khi truy vân cơ sở dữ liệu: " + ex.Message); 
+                }
+            }
+            return maphong;
+        }
         private void txtcallserve_SelectedIndexChanged(object sender, EventArgs e)
         {
 

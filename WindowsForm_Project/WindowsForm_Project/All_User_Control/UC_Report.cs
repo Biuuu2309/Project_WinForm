@@ -111,5 +111,10 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
+
+        private void txtcccd_cus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
