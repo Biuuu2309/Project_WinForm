@@ -23,6 +23,8 @@ namespace WindowsForm_Project.All_User_Control
 
         private void UC_Addroom_Load(object sender, EventArgs e)
         {
+            this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
 
         }
 
