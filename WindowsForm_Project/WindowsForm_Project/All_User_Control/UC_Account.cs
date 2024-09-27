@@ -23,6 +23,9 @@ namespace WindowsForm_Project.All_User_Control
             // Ensure this is set to load data
             // Remove the Leave event if not needed
             this.DataGridView1.DefaultCellStyle.ForeColor=Color.Black;
+            this.DataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            this.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
@@ -88,6 +91,10 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = response.list3;
                     DataGridView1.Columns["password"].Visible = false;
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["id"].HeaderText = "Mã ID";
+                    DataGridView1.Columns["username"].HeaderText = "Tên";
+                    DataGridView1.Columns["cccd_em"].HeaderText = "Mã CCCD";
+
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -170,6 +177,11 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void guna2GroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UC_Account_Load(object sender, EventArgs e)
         {
 
         }

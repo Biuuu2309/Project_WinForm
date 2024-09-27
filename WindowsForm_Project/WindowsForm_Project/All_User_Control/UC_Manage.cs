@@ -77,6 +77,14 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list2; // Set the data source
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["cccd_em"].HeaderText = "Mã CCCD";
+                    DataGridView1.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView1.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView1.Columns["sdt"].HeaderText = "Số điện thoại";
+                    DataGridView1.Columns["email"].HeaderText = "Email";
+                    DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
+                    DataGridView1.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+                    DataGridView1.Columns["luong"].HeaderText = "Lương";
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -167,6 +175,18 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list4;
                     DataGridView3.ColumnHeadersHeight = 25;
+                    DataGridView3.Columns["maphieu"].HeaderText = "Mã Phiếu";
+                    DataGridView3.Columns["cccd_em"].HeaderText = "Mã CCCD";
+                    DataGridView3.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView3.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView3.Columns["ngay"].HeaderText = "Ngày";
+                    DataGridView3.Columns["ca1"].HeaderText = "Ca 1";
+                    DataGridView3.Columns["ca2"].HeaderText = "Ca 2";
+                    DataGridView3.Columns["ca3"].HeaderText = "Ca 3";
+                    DataGridView3.Columns["ca4"].HeaderText = "Ca 4";
+                    DataGridView3.Columns["note"].HeaderText = "Ghi chú";
+                    DataGridView3.Columns["tongca"].HeaderText = "Tổng ca";
+
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
@@ -192,6 +212,14 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list5;
                     DataGridView2.ColumnHeadersHeight = 25;
+                    DataGridView2.Columns["cccd_em"].HeaderText = "Mã CCCD";
+                    DataGridView2.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView2.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView2.Columns["tongngay"].HeaderText = "Tổng ngày";
+                    DataGridView2.Columns["tongca"].HeaderText = "Tổng ca";
+                    DataGridView2.Columns["luong"].HeaderText = "Lương";
+                    DataGridView2.Columns["total"].HeaderText = "Tổng";
+
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
