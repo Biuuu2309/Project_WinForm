@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Updateserve(serve, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
@@ -58,7 +58,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private bool ValidateInput()
         {
-            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserve.Text == null)
+            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserveee.Text == null)
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;

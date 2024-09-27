@@ -186,7 +186,7 @@ BEGIN
 					WHERE cccd_em = @cccd_em)
 	BEGIN 
 		INSERT INTO Account(username, password, cccd_em) VALUES (@username, @password, @cccd_em)
-		SET @ErrorMessage = 'Them Account thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN
@@ -201,26 +201,23 @@ BEGIN
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
 	BEGIN 
 		INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve)
-		SET @ErrorMessage = 'Successful'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN TRY
 		UPDATE Serve
 			SET 
-				cccd_cus = COALESCE(@cccd_cus,cccd_cus),
-				maphong = COALESCE(@maphong,maphong),
 				other_booking = COALESCE(@other_booking,other_booking),
 				anuong = COALESCE(@anuong,anuong),
 				call_serve = COALESCE(@call_serve,call_serve)
-			WHERE @cccd_cus IN (SELECT cccd_cus
-								FROM Customer) AND @maphong IN (SELECT maphong 
-																FROM Room)
-			SET @ErrorMessage = 'Them thong tin phuc vu thanh cong'
+			WHERE cccd_cus = @cccd_cus AND maphong = @maphong
+			SET @ErrorMessage = 'Successfully'
 	END TRY
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE()
 	END CATCH
 END
+SELECT * FROM Serve
 GO
 CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
@@ -229,7 +226,7 @@ BEGIN
 					WHERE maphong = @maphong)
 	BEGIN
 		INSERT INTO Room(maphong, roomnumber, roomtype, numbed, view_room, price) VALUES (@maphong, @roomnumber, @roomtype, @numbed, @view_room, @price)
-		SET @ErrorMessage = 'Them phong thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN
@@ -240,16 +237,19 @@ GO
 CREATE OR ALTER PROC sp_updatereport @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @ghichu NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Report
+					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
+	BEGIN 
+		INSERT INTO Report(cccd_cus, maphong, ghichu) VALUES (@cccd_cus, @maphong, @ghichu)
+		SET @ErrorMessage = 'Successfully'
+	END
+	ELSE
 	BEGIN TRY
 		UPDATE Report
 			SET 
-				cccd_cus = COALESCE(@cccd_cus, cccd_cus),
-				maphong = COALESCE(@maphong, maphong),
 				ghichu = COALESCE(@ghichu, ghichu)
-			WHERE @cccd_cus IN (SELECT cccd_cus
-								FROM Customer) AND @maphong IN (SELECT maphong 
-																FROM Room)
-			SET @ErrorMessage = 'Them thong tin report thanh cong'
+			WHERE cccd_cus = @cccd_cus AND maphong = @maphong
+			SET @ErrorMessage = 'Successfully'
 	END TRY
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE()
@@ -263,7 +263,7 @@ BEGIN
 					WHERE cccd_em = @cccd_em)
 	BEGIN 
 		INSERT INTO Employee(cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong) VALUES (@cccd_em, @first_name, @last_name, @sdt, @email, @gioitinh, @ngaysinh, @luong)
-		SET @ErrorMessage = 'Them Employee thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN 
@@ -278,7 +278,7 @@ BEGIN
 				WHERE maphong = @maphong)
 	BEGIN
 		DELETE FROM Room WHERE maphong = @maphong
-		SET @ErrorMessage = 'Da xoa phong thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN
@@ -300,7 +300,7 @@ BEGIN
 			price = COALESCE(@price, price)
 		WHERE maphong = @maphong;
 
-		SET @ErrorMessage = 'Update successful'
+		SET @ErrorMessage = 'Successfully'
 	END TRY
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE();
@@ -323,7 +323,7 @@ BEGIN
 			ngaysinh = COALESCE(@ngaysinh, ngaysinh), 
 			luong = COALESCE(@luong, luong)
 		WHERE cccd_em = @cccd_em;
-		SET @ErrorMessage = 'Update successful'
+		SET @ErrorMessage = 'Successfully'
 	END TRY
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE();
@@ -337,7 +337,7 @@ BEGIN
 					WHERE cccd_cus = @cccd_cus)
 	BEGIN
 		INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh, address_cus) VALUES (@cccd_cus, @first_name, @last_name, @sdt, @email, @gioitinh, @ngaysinh, @address_cus)
-		SET @ErrorMessage = 'Them customer thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN
@@ -361,7 +361,7 @@ BEGIN
 			address_cus = COALESCE(@address_cus, address_cus)
 		WHERE cccd_cus = @cccd_cus;
 
-		SET @ErrorMessage = 'Update Successful'
+		SET @ErrorMessage = 'Successfully'
 	END TRY
 	BEGIN CATCH
 		SET @ErrorMessage = ERROR_MESSAGE();
@@ -376,7 +376,7 @@ BEGIN
 					WHERE maphong = @maphong)
 	BEGIN 
 		INSERT INTO Update_room(maphong, status_room, house_keeping) VALUES (@maphong, @status_room, @house_keeping)
-		SET @ErrorMessage = 'Successful'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN TRY
@@ -398,7 +398,7 @@ BEGIN
 	IF EXISTS (SELECT 1 FROM Account WHERE id = @id)
 	BEGIN
 		DELETE FROM Account WHERE id = @id
-		SET @ErrorMessage = 'Xoa account thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN
@@ -412,7 +412,7 @@ BEGIN
 	IF EXISTS (SELECT 1 FROM Employee WHERE cccd_em = @cccd_em)
 	BEGIN
 		INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note) VALUES (@cccd_em, @ngay, @ca1, @ca2, @ca3, @ca4, @note)
-		SET @ErrorMessage = 'Cham cong thanh cong'
+		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
 	BEGIN

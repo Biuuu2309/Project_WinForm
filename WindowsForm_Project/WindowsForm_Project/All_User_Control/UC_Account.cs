@@ -56,7 +56,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addaccount(account, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
@@ -127,7 +127,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Deleteaccount(account, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }

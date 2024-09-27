@@ -70,7 +70,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addroom(room, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
@@ -180,7 +180,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addupdateroom(room, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
@@ -202,7 +202,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Deleteroom(room, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }

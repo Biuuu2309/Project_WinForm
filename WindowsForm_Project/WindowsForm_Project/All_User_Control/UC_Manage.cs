@@ -51,7 +51,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addemployee(employee, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Em();
                     }
@@ -222,7 +222,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addemployeework(employee, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Em();
                     }
@@ -261,7 +261,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Updateemployee(employee, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Em();
                     }

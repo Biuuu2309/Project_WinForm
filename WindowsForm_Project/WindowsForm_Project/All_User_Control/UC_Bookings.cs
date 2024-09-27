@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addroom(room, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("successfully"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
@@ -137,7 +137,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addcustomer(customer, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("Them customer thanh cong"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Cus();
                     }

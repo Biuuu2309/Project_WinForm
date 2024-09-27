@@ -41,25 +41,23 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnsubmit = new Guna.UI2.WinForms.Guna2Button();
             this.txtcccd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtcallserve = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtmaphong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtotherbooking = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtanuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnsubmit2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtcallserveee = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.DataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.uC_Report1 = new WindowsForm_Project.All_User_Control.UC_Report();
-            this.txtcallserveee = new Guna.UI2.WinForms.Guna2RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -120,26 +118,6 @@
             this.txtcccd.Size = new System.Drawing.Size(268, 36);
             this.txtcccd.TabIndex = 2;
             this.txtcccd.TextChanged += new System.EventHandler(this.txtcccd_TextChanged);
-            // 
-            // txtcallserve
-            // 
-            this.txtcallserve.BackColor = System.Drawing.Color.Transparent;
-            this.txtcallserve.BorderRadius = 3;
-            this.txtcallserve.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtcallserve.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtcallserve.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcallserve.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcallserve.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtcallserve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtcallserve.ItemHeight = 30;
-            this.txtcallserve.Items.AddRange(new object[] {
-            "1",
-            "0"});
-            this.txtcallserve.Location = new System.Drawing.Point(12, 576);
-            this.txtcallserve.Name = "txtcallserve";
-            this.txtcallserve.Size = new System.Drawing.Size(140, 36);
-            this.txtcallserve.TabIndex = 3;
-            this.txtcallserve.SelectedIndexChanged += new System.EventHandler(this.txtcallserve_SelectedIndexChanged);
             // 
             // txtmaphong
             // 
@@ -232,16 +210,6 @@
             this.guna2HtmlLabel4.TabIndex = 8;
             this.guna2HtmlLabel4.Text = "Ăn uống";
             this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 553);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(57, 15);
-            this.guna2HtmlLabel5.TabIndex = 10;
-            this.guna2HtmlLabel5.Text = "Call service";
-            this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
             // 
             // DataGridView1
             // 
@@ -377,9 +345,7 @@
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GroupBox1.Controls.Add(this.btnsubmit);
             this.guna2GroupBox1.Controls.Add(this.txtcccd);
-            this.guna2GroupBox1.Controls.Add(this.txtcallserve);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel5);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel3);
             this.guna2GroupBox1.Controls.Add(this.txtanuong);
             this.guna2GroupBox1.Controls.Add(this.txtotherbooking);
@@ -393,6 +359,25 @@
             this.guna2GroupBox1.TabIndex = 16;
             this.guna2GroupBox1.Text = "Nhập thông tin ";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
+            // 
+            // txtcallserveee
+            // 
+            this.txtcallserveee.AutoSize = true;
+            this.txtcallserveee.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcallserveee.CheckedState.BorderThickness = 0;
+            this.txtcallserveee.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcallserveee.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.txtcallserveee.CheckedState.InnerOffset = -4;
+            this.txtcallserveee.ForeColor = System.Drawing.Color.Black;
+            this.txtcallserveee.Location = new System.Drawing.Point(12, 557);
+            this.txtcallserveee.Name = "txtcallserveee";
+            this.txtcallserveee.Size = new System.Drawing.Size(97, 25);
+            this.txtcallserveee.TabIndex = 11;
+            this.txtcallserveee.Text = "Call Serve";
+            this.txtcallserveee.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtcallserveee.UncheckedState.BorderThickness = 2;
+            this.txtcallserveee.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.txtcallserveee.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // guna2GroupBox2
             // 
@@ -494,24 +479,6 @@
             this.uC_Report1.Visible = false;
             this.uC_Report1.Load += new System.EventHandler(this.uC_Report1_Load);
             // 
-            // txtcallserveee
-            // 
-            this.txtcallserveee.AutoSize = true;
-            this.txtcallserveee.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcallserveee.CheckedState.BorderThickness = 0;
-            this.txtcallserveee.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcallserveee.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.txtcallserveee.CheckedState.InnerOffset = -4;
-            this.txtcallserveee.Location = new System.Drawing.Point(203, 562);
-            this.txtcallserveee.Name = "txtcallserveee";
-            this.txtcallserveee.Size = new System.Drawing.Size(97, 25);
-            this.txtcallserveee.TabIndex = 11;
-            this.txtcallserveee.Text = "Call Serve";
-            this.txtcallserveee.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtcallserveee.UncheckedState.BorderThickness = 2;
-            this.txtcallserveee.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.txtcallserveee.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
             // UC_Serve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,14 +511,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button btnsubmit;
         private Guna.UI2.WinForms.Guna2TextBox txtcccd;
-        private Guna.UI2.WinForms.Guna2ComboBox txtcallserve;
         private Guna.UI2.WinForms.Guna2TextBox txtmaphong;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox txtotherbooking;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2TextBox txtanuong;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView1;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;

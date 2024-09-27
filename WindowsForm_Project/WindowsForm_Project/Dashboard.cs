@@ -250,7 +250,7 @@ namespace WindowsForm_Project
             InitializeComponent();
             currentDate = DateTime.Now; // Initialize with the current date
         }
-
+        
         private void Dashboard_Load(object sender, EventArgs e)
         {
             UpdateDateLabel();
@@ -465,7 +465,6 @@ namespace WindowsForm_Project
             uC_Bookings2.Visible = false;
             uC_Customer1.Visible = false;
             uC_Serve1.Visible = false;
-
         }
 
         private void btncheckout_Click_1(object sender, EventArgs e)

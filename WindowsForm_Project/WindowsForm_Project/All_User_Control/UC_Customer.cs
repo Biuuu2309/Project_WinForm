@@ -129,7 +129,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Addcustomer(customer, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("Them customer thanh cong"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Cus();
                     }
@@ -168,7 +168,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     Response response = dal.Updatecustomer(customer, conn);
                     MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("Update customer thanh cong"))
+                    if (response.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl_Cus();
                     }
