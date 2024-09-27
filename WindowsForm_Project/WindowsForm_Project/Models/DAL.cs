@@ -91,6 +91,39 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addbooking(Bookings booking, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addbooking", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_cus", booking.cccd_cus);
+                cmd.Parameters.AddWithValue("@stastus_room", booking.status_room);
+                cmd.Parameters.AddWithValue("@house_keeping", booking.house_keeping);
+                cmd.Parameters.AddWithValue("@roomtype", booking.roomtype);
+                cmd.Parameters.AddWithValue("@numbed", booking.numbed);
+                cmd.Parameters.AddWithValue("@view_room", booking.view_room);
+                cmd.Parameters.AddWithValue("@date_ci", booking.date_ci);
+                cmd.Parameters.AddWithValue("@date_co", booking.date_co);
+                cmd.Parameters.AddWithValue("@group_customer", booking.group_customer);
+                cmd.Parameters.AddWithValue("@maphong", booking.maphong);
+                cmd.Parameters.AddWithValue("@roomnumber", booking.roomnumber);
+                cmd.Parameters.AddWithValue("@price", booking.price);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addaccount(Account account, SqlConnection conn)
         {
             Response response = new Response();

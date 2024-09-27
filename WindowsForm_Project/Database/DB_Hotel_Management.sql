@@ -11,7 +11,7 @@ CREATE TABLE Room (
 	maphong INT PRIMARY KEY,
 	roomnumber INT NOT NULL,
 	roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
-	numbed INT NOT NULL,
+	numbed INT NOT NULL CHECK(numbed IN(1, 2, 3)),
 	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
 	price INT NOT NULL CHECK (price > 0),
 )
@@ -37,11 +37,18 @@ CREATE TABLE Customer (
 GO 
 CREATE TABLE Bookings (
 	cccd_cus NVARCHAR(200),
+	status_room NVARCHAR(200) NOT NULL CHECK(status_room IN ('Reserved', 'Occupied', 'Available', 'Check Out')),
+	house_keeping NVARCHAR(200) NOT NULL CHECK(house_keeping IN ('Clean', 'Not Clean', 'In Progress', 'Repair')),
+	roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
+	numbed INT NOT NULL CHECK(numbed IN(1, 2, 3)),
+	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
 	date_ci DATETIME NOT NULL,
 	date_co DATETIME NOT NULL,
-	maphong INT,
 	group_customer INT DEFAULT 0,
-	PRIMARY KEY (maphong, cccd_cus),
+	maphong INT, 
+	roomnumber INT NOT NULL,
+	price INT NOT NULL CHECK (price > 0),
+	PRIMARY KEY (cccd_cus, maphong),
 	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
 )
@@ -174,12 +181,22 @@ VALUES
 	('12052309', '4', 'Khong', 'Khong', '0'),
 	('12062309', '5', 'Khong', 'Khong', '0')
 GO 
-<<<<<<< Updated upstream
-CREATE OR ALTER PROC sp_account @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
-=======
-
+CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @date_ci DATETIME, @date_co DATETIME, @group_customer INT, @maphong INT, @roomnumber INT, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
+AS 
+BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Bookings
+					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
+	BEGIN
+		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @date_ci, @date_co, @group_customer, @maphong, @roomnumber, @price)
+		SET @ErrorMessage = 'Successfully'
+	END
+	ELSE
+	BEGIN 
+		SET @ErrorMessage = 'Add Booking error'
+	END
+END
+GO
 CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
->>>>>>> Stashed changes
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Account

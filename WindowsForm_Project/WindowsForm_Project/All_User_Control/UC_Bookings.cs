@@ -21,7 +21,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private bool ValidateInput()
         {
-            if(txtmaphong.Text == "" || txtsophong.Text == "" || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtgia.Text == "")
+            if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null)
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -31,58 +31,37 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (ValidateInput())
-            {
-                Room room = new Room
-                {
-                    maphong = int.Parse(txtmaphong.Text),
-                    roomnumber = int.Parse(txtsophong.Text),
-                    roomtype = txtloaiphong.SelectedItem.ToString(),
-                    numbed = txtloaigiuong.SelectedItem.ToString(),
-                    view_room = txtviewroom.SelectedItem.ToString(),
-                    price = int.Parse(txtgia.Text)
-                };
-
-                DAL dal = new DAL();
-                string connectionString = DatabaseConnection.Connection();
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    Response response = dal.Addroom(room, conn);
-                    MessageBox.Show(response.statusmessage);
-                    if (response.statusmessage.Contains("Successfully"))
-                    {
-                        RefreshControl();
-                    }
-                }
-            }
+            
         }
 
         private void RefreshControl()
         {
             clearAll();
-            LoadRoomData();
+            LoadBookingData();
         }
 
         public void clearAll()
         {
-            txtmaphong.Clear();
-            txtsophong.Clear();
+            txtcccd_cus.Clear();
+            txtstatusroom.SelectedItem = -1;
+            txthousekeeping.SelectedItem = -1;
             txtloaiphong.SelectedIndex = -1;
             txtloaigiuong.SelectedIndex = -1;
             txtviewroom.SelectedIndex = -1;
-            txtgia.Clear();
+            txtdateci.Value = DateTime.Now;
+            txtdateco.Value = DateTime.Now;
+            txtgroupcus.Clear();
+            txtprice.Clear();
         }
         private void UC_Bookings_Leave(object sender, EventArgs e)
         {
             clearAll();
-            clearAll_Cus();
         }
         private void UC_Bookings_Enter(object sender, EventArgs e)
         {
             try
             {
-                LoadRoomData();
-                LoadCustomerData();
+                LoadBookingData();
                 DataGridView1.Refresh();
                 DataGridView2.Refresh();
             }
@@ -92,7 +71,7 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
-        private void LoadRoomData()
+        private void LoadBookingData()
         {
             DAL dal = new DAL();
             string connectionString = DatabaseConnection.Connection();
@@ -117,42 +96,34 @@ namespace WindowsForm_Project.All_User_Control
         /// btn addcustomer
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (ValidateInput_Cus())
+            if (ValidateInput())
             {
-                Customer customer = new Customer
+                Bookings bookings = new Bookings
                 {
                     cccd_cus = txtcccd_cus.Text,
-                    first_name = txtfirstname_cus.Text,
-                    last_name = txtlastname_cus.Text,
-                    sdt = txtsdt_cus.Text,
-                    email = txtemail_cus.Text,
-                    gioitinh = txtgioitinh_cus.SelectedItem.ToString(),
-                    ngaysinh = txtngaysinh_cus.Value,
-                    address_cus = txtaddress.Text,
+                    status_room = txtstatusroom.SelectedItem.ToString(),
+                    house_keeping = txthousekeeping.SelectedItem.ToString(),
+                    roomtype = txtloaiphong.SelectedItem.ToString(),
+                    numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),
+                    view_room = txtviewroom.SelectedItem.ToString(),
+                    date_ci = txtdateci.Value,
+                    date_co = txtdateco.Value,
+                    group_customer = int.Parse(txtgroupcus.ToString()),
+                    price = int.Parse(txtprice.ToString())
                 };
 
                 DAL dal = new DAL();
-            string connectionString = DatabaseConnection.Connection();
+                string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    Response response = dal.Addcustomer(customer, conn);
+                    Response response = dal.Addbooking(bookings, conn);
                     MessageBox.Show(response.statusmessage);
                     if (response.statusmessage.Contains("Successfully"))
                     {
-                        RefreshControl_Cus();
+                        RefreshControl();
                     }
                 }
             }
-        }
-
-        private bool ValidateInput_Cus()
-        {
-            if (txtcccd_cus.Text == "" || txtfirstname_cus.Text == "" || txtlastname_cus.Text == "" || txtsdt_cus.Text == "" || txtemail_cus.Text == "" || txtgioitinh_cus.SelectedItem == null || txtngaysinh_cus.Value == null || txtaddress.Text == null)
-            {
-                MessageBox.Show("Please fill in all the fields.");
-                return false;
-            }
-            return true;
         }
 
         private void LoadCustomerData()
@@ -179,20 +150,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void RefreshControl_Cus()
         {
-            clearAll_Cus();
             LoadCustomerData();
-        }
-
-        public void clearAll_Cus()
-        {
-            txtcccd_cus.Clear();
-            txtfirstname_cus.Clear();
-            txtlastname_cus.Clear();
-            txtsdt_cus.Clear();
-            txtemail_cus.Clear();
-            txtgioitinh_cus.SelectedIndex = -1;
-            txtngaysinh_cus.Value = DateTime.Now;
-            txtaddress.Clear();
         }
         /// -------------------------------------------------------------------
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)

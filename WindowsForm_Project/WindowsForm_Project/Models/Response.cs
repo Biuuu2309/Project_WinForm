@@ -18,5 +18,6 @@ namespace WindowsForm_Project.Models
         public List<RoomUpdate> list6 { get; set; }
         public List<Serve> list7 { get; set; }
         public List<Report> list8 { get; set; }
+        public List<Bookings> list9 { get; set; }
     }
 }
