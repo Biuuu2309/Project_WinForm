@@ -25,6 +25,11 @@ namespace WindowsForm_Project.All_User_Control
         {
             this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            this.DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+
 
         }
 

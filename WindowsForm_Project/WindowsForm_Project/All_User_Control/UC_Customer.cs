@@ -24,6 +24,9 @@ namespace WindowsForm_Project.All_User_Control
         private void Customer_Load(object sender, EventArgs e)
         {
             this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+
 
         }
         private void guna2Button2_Click(object sender, EventArgs e)

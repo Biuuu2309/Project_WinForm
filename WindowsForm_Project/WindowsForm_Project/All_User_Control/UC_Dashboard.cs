@@ -16,5 +16,10 @@ namespace WindowsForm_Project.All_User_Control
         {
             InitializeComponent();
         }
+
+        private void UC_Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

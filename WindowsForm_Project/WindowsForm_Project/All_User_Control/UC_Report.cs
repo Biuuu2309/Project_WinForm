@@ -24,6 +24,9 @@ namespace WindowsForm_Project.All_User_Control
         private void Report_Load(object sender, EventArgs e)
         {
             this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            this.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
         }
         private bool ValidateInput()
         {

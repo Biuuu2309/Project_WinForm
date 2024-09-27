@@ -638,6 +638,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Dashboard";
             this.Size = new System.Drawing.Size(1681, 966);
+            this.Load += new System.EventHandler(this.UC_Dashboard_Load);
             this.metroPanel18.ResumeLayout(false);
             this.metroPanel18.PerformLayout();
             this.metroPanel21.ResumeLayout(false);
