@@ -89,7 +89,7 @@
             this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -99,7 +99,7 @@
             this.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(186)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -109,7 +109,7 @@
             this.DataGridView2.Location = new System.Drawing.Point(-3, 39);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(589, 371);
+            this.DataGridView2.Size = new System.Drawing.Size(714, 371);
             this.DataGridView2.TabIndex = 36;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -206,10 +206,11 @@
             // guna2HtmlLabel15
             // 
             this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel15.Location = new System.Drawing.Point(22, 460);
             this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            this.guna2HtmlLabel15.Size = new System.Drawing.Size(107, 15);
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(120, 17);
             this.guna2HtmlLabel15.TabIndex = 52;
             this.guna2HtmlLabel15.Text = "Ngày sinh ( bắt buộc )";
             this.guna2HtmlLabel15.Click += new System.EventHandler(this.guna2HtmlLabel15_Click);
@@ -237,10 +238,11 @@
             // guna2HtmlLabel14
             // 
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel14.Location = new System.Drawing.Point(26, 390);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            this.guna2HtmlLabel14.Size = new System.Drawing.Size(100, 15);
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(112, 17);
             this.guna2HtmlLabel14.TabIndex = 50;
             this.guna2HtmlLabel14.Text = "Giới tính ( bắt buộc ) ";
             this.guna2HtmlLabel14.Click += new System.EventHandler(this.guna2HtmlLabel14_Click);
@@ -292,9 +294,10 @@
             // guna2HtmlLabel12
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel12.Location = new System.Drawing.Point(24, 318);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(28, 15);
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(32, 17);
             this.guna2HtmlLabel12.TabIndex = 47;
             this.guna2HtmlLabel12.Text = "Email";
             this.guna2HtmlLabel12.Click += new System.EventHandler(this.guna2HtmlLabel12_Click);
@@ -302,9 +305,10 @@
             // guna2HtmlLabel13
             // 
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(22, 255);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(25, 15);
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(23, 17);
             this.guna2HtmlLabel13.TabIndex = 46;
             this.guna2HtmlLabel13.Text = "SĐT";
             this.guna2HtmlLabel13.Click += new System.EventHandler(this.guna2HtmlLabel13_Click);
@@ -334,9 +338,10 @@
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(20, 59);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(32, 15);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(35, 17);
             this.guna2HtmlLabel9.TabIndex = 44;
             this.guna2HtmlLabel9.Text = "CCCD";
             this.guna2HtmlLabel9.Click += new System.EventHandler(this.guna2HtmlLabel9_Click);
@@ -366,9 +371,10 @@
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(22, 192);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(52, 15);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(57, 17);
             this.guna2HtmlLabel10.TabIndex = 42;
             this.guna2HtmlLabel10.Text = "Last name";
             this.guna2HtmlLabel10.Click += new System.EventHandler(this.guna2HtmlLabel10_Click);
@@ -398,9 +404,10 @@
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(20, 129);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(56, 15);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(63, 17);
             this.guna2HtmlLabel11.TabIndex = 40;
             this.guna2HtmlLabel11.Text = "Fsirst name";
             this.guna2HtmlLabel11.Click += new System.EventHandler(this.guna2HtmlLabel11_Click);
@@ -480,10 +487,11 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(22, 460);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(107, 15);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(120, 17);
             this.guna2HtmlLabel2.TabIndex = 69;
             this.guna2HtmlLabel2.Text = "Ngày sinh ( bắt buộc )";
             this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
@@ -511,10 +519,11 @@
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(26, 390);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(100, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(112, 17);
             this.guna2HtmlLabel3.TabIndex = 67;
             this.guna2HtmlLabel3.Text = "Giới tính ( bắt buộc ) ";
             this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
@@ -566,10 +575,11 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(24, 318);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(28, 15);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(32, 17);
             this.guna2HtmlLabel4.TabIndex = 64;
             this.guna2HtmlLabel4.Text = "Email";
             this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
@@ -577,10 +587,11 @@
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(24, 253);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(25, 15);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(23, 17);
             this.guna2HtmlLabel5.TabIndex = 63;
             this.guna2HtmlLabel5.Text = "SĐT";
             this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
@@ -610,9 +621,10 @@
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(26, 57);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(32, 15);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(35, 17);
             this.guna2HtmlLabel6.TabIndex = 61;
             this.guna2HtmlLabel6.Text = "CCCD";
             this.guna2HtmlLabel6.Click += new System.EventHandler(this.guna2HtmlLabel6_Click);
@@ -642,10 +654,11 @@
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(24, 190);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(52, 15);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(57, 17);
             this.guna2HtmlLabel7.TabIndex = 59;
             this.guna2HtmlLabel7.Text = "Last name";
             this.guna2HtmlLabel7.Click += new System.EventHandler(this.guna2HtmlLabel7_Click);
@@ -675,10 +688,11 @@
             // guna2HtmlLabel16
             // 
             this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel16.Location = new System.Drawing.Point(22, 127);
             this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
-            this.guna2HtmlLabel16.Size = new System.Drawing.Size(51, 15);
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(58, 17);
             this.guna2HtmlLabel16.TabIndex = 57;
             this.guna2HtmlLabel16.Text = "First name";
             this.guna2HtmlLabel16.Click += new System.EventHandler(this.guna2HtmlLabel16_Click);
@@ -706,7 +720,7 @@
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel8);
             this.guna2GroupBox1.Controls.Add(this.txtaddress);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(66)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(186)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(299, 90);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
@@ -720,9 +734,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(148, 462);
+            this.label3.Location = new System.Drawing.Point(135, 457);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 15);
+            this.label3.Size = new System.Drawing.Size(17, 21);
             this.label3.TabIndex = 76;
             this.label3.Text = "*";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -732,9 +746,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(138, 393);
+            this.label1.Location = new System.Drawing.Point(132, 387);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 15);
+            this.label1.Size = new System.Drawing.Size(17, 21);
             this.label1.TabIndex = 75;
             this.label1.Text = "*";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -761,7 +775,7 @@
             this.guna2GroupBox2.Controls.Add(this.txtemail_cusup);
             this.guna2GroupBox2.Controls.Add(this.txtsdt_cusup);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(66)))));
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(186)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(716, 90);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
@@ -775,9 +789,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(148, 463);
+            this.label4.Location = new System.Drawing.Point(135, 457);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(12, 15);
+            this.label4.Size = new System.Drawing.Size(17, 21);
             this.label4.TabIndex = 76;
             this.label4.Text = "*";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -787,9 +801,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(138, 393);
+            this.label2.Location = new System.Drawing.Point(132, 389);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 15);
+            this.label2.Size = new System.Drawing.Size(17, 21);
             this.label2.TabIndex = 74;
             this.label2.Text = "*";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -809,11 +823,11 @@
             // 
             this.guna2GroupBox3.Controls.Add(this.DataGridView2);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(66)))));
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(1167, 90);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(1121, 90);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(586, 410);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(709, 410);
             this.guna2GroupBox3.TabIndex = 77;
             this.guna2GroupBox3.Text = "Bảng hiển thị thông tin";
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);

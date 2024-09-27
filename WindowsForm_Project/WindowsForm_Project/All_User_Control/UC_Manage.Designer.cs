@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Manage));
             this.DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtcccd_em = new Guna.UI2.WinForms.Guna2TextBox();
@@ -116,7 +117,7 @@
             this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -126,7 +127,7 @@
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -428,7 +429,7 @@
             this.DataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -438,7 +439,7 @@
             this.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -699,7 +700,7 @@
             this.DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -709,7 +710,7 @@
             this.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -1031,6 +1032,8 @@
             // 
             // uC_Account1
             // 
+            this.uC_Account1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Account1.BackgroundImage")));
+            this.uC_Account1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Account1.Location = new System.Drawing.Point(220, 727);
             this.uC_Account1.Name = "uC_Account1";
             this.uC_Account1.Size = new System.Drawing.Size(1450, 487);
@@ -1059,7 +1062,7 @@
             this.guna2GroupBox1.Controls.Add(this.txtgioitinh);
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(34, 35);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
@@ -1089,7 +1092,7 @@
             this.guna2GroupBox2.Controls.Add(this.txtemailup);
             this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel18);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(360, 35);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
@@ -1116,7 +1119,7 @@
             this.guna2GroupBox3.Controls.Add(this.txtngaycc);
             this.guna2GroupBox3.Controls.Add(this.btncc);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(698, 35);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
@@ -1128,7 +1131,7 @@
             // 
             this.guna2GroupBox4.Controls.Add(this.DataGridView1);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox4.Location = new System.Drawing.Point(1069, 38);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
@@ -1141,7 +1144,7 @@
             // 
             this.guna2GroupBox5.Controls.Add(this.DataGridView3);
             this.guna2GroupBox5.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox5.Location = new System.Drawing.Point(1069, 306);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
@@ -1153,7 +1156,7 @@
             // 
             this.guna2GroupBox6.Controls.Add(this.DataGridView2);
             this.guna2GroupBox6.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox6.Location = new System.Drawing.Point(1069, 521);
             this.guna2GroupBox6.Name = "guna2GroupBox6";

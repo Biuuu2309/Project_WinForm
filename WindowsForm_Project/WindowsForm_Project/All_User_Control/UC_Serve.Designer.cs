@@ -237,7 +237,7 @@
             this.DataGridView1.Location = new System.Drawing.Point(0, 39);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.Size = new System.Drawing.Size(586, 161);
+            this.DataGridView1.Size = new System.Drawing.Size(640, 161);
             this.DataGridView1.TabIndex = 11;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -288,7 +288,7 @@
             this.DataGridView2.Location = new System.Drawing.Point(0, 39);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(586, 184);
+            this.DataGridView2.Size = new System.Drawing.Size(640, 184);
             this.DataGridView2.TabIndex = 13;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -363,6 +363,7 @@
             // txtcallserveee
             // 
             this.txtcallserveee.AutoSize = true;
+            this.txtcallserveee.BackColor = System.Drawing.Color.White;
             this.txtcallserveee.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcallserveee.CheckedState.BorderThickness = 0;
             this.txtcallserveee.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -378,6 +379,7 @@
             this.txtcallserveee.UncheckedState.BorderThickness = 2;
             this.txtcallserveee.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.txtcallserveee.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.txtcallserveee.UseVisualStyleBackColor = false;
             // 
             // guna2GroupBox2
             // 
@@ -387,7 +389,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(479, 573);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(586, 200);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(640, 200);
             this.guna2GroupBox2.TabIndex = 17;
             this.guna2GroupBox2.Text = "Bảng dịch vụ";
             this.guna2GroupBox2.Click += new System.EventHandler(this.guna2GroupBox2_Click);
@@ -400,7 +402,7 @@
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(479, 346);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(586, 223);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(640, 223);
             this.guna2GroupBox3.TabIndex = 18;
             this.guna2GroupBox3.Text = "Bảng cập nhật trạng thái phòng";
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);
@@ -430,7 +432,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.DataGridView3.ColumnHeadersHeight = 4;
+            this.DataGridView3.ColumnHeadersHeight = 6;
             this.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
@@ -458,7 +460,7 @@
             this.DataGridView3.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGridView3.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridView3.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DataGridView3.ThemeStyle.HeaderStyle.Height = 4;
+            this.DataGridView3.ThemeStyle.HeaderStyle.Height = 6;
             this.DataGridView3.ThemeStyle.ReadOnly = false;
             this.DataGridView3.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView3.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
