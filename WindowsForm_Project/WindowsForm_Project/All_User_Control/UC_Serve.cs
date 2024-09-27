@@ -149,7 +149,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.ColumnHeadersHeight = 25;
                     DataGridView2.Columns["maphong"].HeaderText = "ID Phòng";
                     DataGridView2.Columns["roomnumber"].HeaderText = "Mã Phòng";
-                    DataGridView2.Columns["roomtype"].HeaderText = "Thể loại phòng";
+                    DataGridView2.Columns["roomtype"].HeaderText = "Loại phòng";
                     DataGridView2.Columns["numbed"].HeaderText = "Số phòng đặt";
                     DataGridView2.Columns["view_room"].HeaderText = "Dạng phòng";
                     DataGridView2.Columns["price"].HeaderText = "Giá cả";

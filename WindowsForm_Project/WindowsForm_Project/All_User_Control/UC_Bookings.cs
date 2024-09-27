@@ -83,6 +83,13 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list;
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["maphong"].HeaderText = "ID";
+                    DataGridView1.Columns["roomnumber"].HeaderText = "Mã Phòng";
+                    DataGridView1.Columns["roomtype"].HeaderText = "Loại phòng";
+                    DataGridView1.Columns["numbed"].HeaderText = "Số phòng đặt";
+                    DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView1.Columns["price"].HeaderText = "Giá cả";
+
 
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
