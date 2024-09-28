@@ -18,7 +18,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             InitializeComponent();
         }
-
+        
         private bool ValidateInput()
         {
             if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null)
@@ -196,11 +196,6 @@ namespace WindowsForm_Project.All_User_Control
 
         }
 
-        private void txtloaigiuong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtcccd_cus_TextChanged(object sender, EventArgs e)
         {
 
@@ -234,6 +229,126 @@ namespace WindowsForm_Project.All_User_Control
         private void guna2GroupBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtstatusroom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txthousekeeping.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = "SELECT house_keeping FROM Update_room WHERE status_room = @status_room";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txthousekeeping.Items.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            if (txthousekeeping.Items.Count > 0)
+            {
+                txthousekeeping.SelectedIndex = 0;
+            }
+        }
+        
+        private void txthousekeeping_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtloaiphong.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT roomtype 
+                                FROM Room 
+                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+                                WHERE status_room = @status_room AND house_keeping = @house_keeping";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtloaiphong.Items.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            if (txtloaiphong.Items.Count > 0)
+            {
+                txtloaiphong.SelectedIndex = 0;
+            }
+        }
+
+        private void txtloaiphong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtloaigiuong.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT numbed 
+                                FROM Room 
+                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+                                WHERE status_room = @status_room AND house_keeping = @house_keeping AND roomtype = @roomtype";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@roomtype", txtloaiphong.SelectedItem.ToString());
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtloaigiuong.Items.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+            if (txtloaigiuong.Items.Count > 0)
+            {
+                txtloaigiuong.SelectedIndex = 0;
+            }
+        }
+
+        private void txtloaigiuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtviewroom.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT view_room 
+                                FROM Room 
+                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+                                WHERE status_room = @status_room AND house_keeping = @house_keeping AND roomtype = @roomtype AND numbed = @numbed";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@roomtype", txtloaiphong.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@numbed", int.Parse(txtloaigiuong.SelectedItem.ToString()));
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtviewroom.Items.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            if (txtviewroom.Items.Count > 0)
+            {
+                txtviewroom.SelectedIndex = 0;
+            }
         }
     }
 }

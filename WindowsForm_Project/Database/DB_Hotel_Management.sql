@@ -146,13 +146,13 @@ VALUES
 	('12052309', 'Haha', 'Hihiiii', '4567', 'HahaHihiiii', 'Nu', '2004-09-27', 'BD'),
 	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
 GO
-INSERT INTO Bookings(cccd_cus, date_ci, date_co, maphong, group_customer)
+INSERT INTO Bookings(cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, price)
 VALUES
-	('12022309', '2024-09-20', '2024-09-21', '1', '0'),
-	('12032309', '2024-09-19', '2024-09-22', '2', '1'),
-	('12042309', '2024-09-18', '2024-09-20', '3', '2'),
-	('12052309', '2024-09-17', '2024-09-21', '4', '1'),
-	('12062309', '2024-09-16', '2024-09-20', '5', '2')
+	('12022309', 'Reserved', 'Clean', 'STD', '1', 'Good', '2024-09-20', '2024-09-21', '0',  '1', '101', '111110'),
+	('12032309', 'Occupied', 'Not Clean', 'DLX', '2', 'Simple', '2024-09-19', '2024-09-22', '0',  '2', '102', '2222221'),
+	('12042309', 'Available', 'In Progress', 'SUP', '3', 'Beautiful', '2024-09-18', '2024-09-20', '0',  '3', '103', '222222'),
+	('12052309', 'Check Out', 'Repair', 'SUT', '1', 'Good', '2024-09-17', '2024-09-21', '0',  '4', '104', '2222221'),
+	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-09-16', '2024-09-20', '0',  '5', '105', '2222222')
 GO
 INSERT INTO Report(cccd_cus, maphong, ghichu)
 VALUES
@@ -488,4 +488,10 @@ INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
 GROUP BY Employee.cccd_em, first_name, last_name, luong
 ORDER BY Employee.cccd_em;
 
-
+SELECT house_keeping
+FROM Update_room
+WHERE status_room = 'Available'
+SELECT view_room 
+FROM Room 
+INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+WHERE status_room = 'Available' AND house_keeping = 'Clean' AND roomtype = 'DLX' AND numbed = 2
