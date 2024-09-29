@@ -99,16 +99,16 @@ namespace WindowsForm_Project.Models
                 SqlCommand cmd = new SqlCommand("sp_addbooking", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cccd_cus", booking.cccd_cus);
-                cmd.Parameters.AddWithValue("@stastus_room", booking.status_room);
+                cmd.Parameters.AddWithValue("@status_room", booking.status_room);
                 cmd.Parameters.AddWithValue("@house_keeping", booking.house_keeping);
                 cmd.Parameters.AddWithValue("@roomtype", booking.roomtype);
                 cmd.Parameters.AddWithValue("@numbed", booking.numbed);
                 cmd.Parameters.AddWithValue("@view_room", booking.view_room);
-                cmd.Parameters.AddWithValue("@date_ci", booking.date_ci);
-                cmd.Parameters.AddWithValue("@date_co", booking.date_co);
-                cmd.Parameters.AddWithValue("@group_customer", booking.group_customer);
                 cmd.Parameters.AddWithValue("@maphong", booking.maphong);
                 cmd.Parameters.AddWithValue("@roomnumber", booking.roomnumber);
+                cmd.Parameters.AddWithValue("@group_customer", booking.group_customer);
+                cmd.Parameters.AddWithValue("@date_ci", booking.date_ci);
+                cmd.Parameters.AddWithValue("@date_co", booking.date_co);
                 cmd.Parameters.AddWithValue("@price", booking.price);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
@@ -539,7 +539,7 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
-                public Response Addupdateroom(RoomUpdate room, SqlConnection conn)
+        public Response Addupdateroom(RoomUpdate room, SqlConnection conn)
         {
             Response response = new Response();
             try

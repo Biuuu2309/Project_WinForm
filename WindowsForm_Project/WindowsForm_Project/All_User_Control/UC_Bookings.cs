@@ -21,7 +21,7 @@ namespace WindowsForm_Project.All_User_Control
         
         private bool ValidateInput()
         {
-            if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null)
+            if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null || txtmaphong.SelectedItem == null || txtsophong.SelectedItem == null)
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -52,6 +52,8 @@ namespace WindowsForm_Project.All_User_Control
             txtdateco.Value = DateTime.Now;
             txtgroupcus.Clear();
             txtprice.Clear();
+            txtsophong.SelectedItem = -1;
+            txtmaphong.SelectedIndex = -1;
         }
         private void UC_Bookings_Leave(object sender, EventArgs e)
         {
@@ -105,18 +107,45 @@ namespace WindowsForm_Project.All_User_Control
         {
             if (ValidateInput())
             {
+                // Ensure valid parsing of group_customer and price
+                if (!int.TryParse(txtgroupcus.Text, out int groupCustomer))
+                {
+                    MessageBox.Show("Invalid value for Group Customer. Please enter a valid number.");
+                    return;
+                }
+
+                if (!int.TryParse(txtprice.Text, out int price))
+                {
+                    MessageBox.Show("Invalid value for Price. Please enter a valid number.");
+                    return;
+                }
+
+                if (!int.TryParse(txtmaphong.Text, out int maphong))
+                {
+                    MessageBox.Show("Invalid value for Maphong. Please enter a valid number.");
+                    return;
+                }
+
+                if (!int.TryParse(txtsophong.Text, out int sophong))
+                {
+                    MessageBox.Show("Invalid value for Sophong. Please enter a valid number.");
+                    return;
+                }
+
                 Bookings bookings = new Bookings
                 {
                     cccd_cus = txtcccd_cus.Text,
                     status_room = txtstatusroom.SelectedItem.ToString(),
                     house_keeping = txthousekeeping.SelectedItem.ToString(),
                     roomtype = txtloaiphong.SelectedItem.ToString(),
-                    numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),
+                    numbed = int.Parse(txtloaigiuong.SelectedItem.ToString()),  // Assuming this is always valid
                     view_room = txtviewroom.SelectedItem.ToString(),
+                    maphong = maphong,
+                    roomnumber = sophong,
+                    group_customer = groupCustomer,
                     date_ci = txtdateci.Value,
                     date_co = txtdateco.Value,
-                    group_customer = int.Parse(txtgroupcus.ToString()),
-                    price = int.Parse(txtprice.ToString())
+                    price = price,
                 };
 
                 DAL dal = new DAL();
@@ -132,6 +161,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
         }
+
 
         private void LoadCustomerData()
         {
@@ -234,8 +264,12 @@ namespace WindowsForm_Project.All_User_Control
         private void txtstatusroom_SelectedIndexChanged(object sender, EventArgs e)
         {
             txthousekeeping.Items.Clear();
+            txtprice.Clear();
+
             string connectionString = DatabaseConnection.Connection();
-            string query = "SELECT house_keeping FROM Update_room WHERE status_room = @status_room";
+            string query = @"SELECT house_keeping
+                             FROM Update_room 
+                             WHERE status_room = @status_room";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -261,11 +295,14 @@ namespace WindowsForm_Project.All_User_Control
         private void txthousekeeping_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtloaiphong.Items.Clear();
+            txtprice.Clear();
+
             string connectionString = DatabaseConnection.Connection();
-            string query = @"   SELECT roomtype 
+            string query = @"   SELECT roomtype
                                 FROM Room 
-                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
-                                WHERE status_room = @status_room AND house_keeping = @house_keeping";
+                                WHERE maphong IN (  SELECT maphong 
+                                				    FROM Update_room 
+                                				    WHERE status_room = @status_room AND house_keeping = @house_keeping)";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -291,11 +328,14 @@ namespace WindowsForm_Project.All_User_Control
         private void txtloaiphong_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtloaigiuong.Items.Clear();
+            txtprice.Clear();
+
             string connectionString = DatabaseConnection.Connection();
-            string query = @"   SELECT numbed 
+            string query = @"   SELECT numbed
                                 FROM Room 
-                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
-                                WHERE status_room = @status_room AND house_keeping = @house_keeping AND roomtype = @roomtype";
+                                WHERE roomtype = @roomtype AND maphong IN ( SELECT maphong 
+                                										    FROM Update_room 
+                                										    WHERE status_room = @status_room AND house_keeping = @house_keeping)";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -322,11 +362,14 @@ namespace WindowsForm_Project.All_User_Control
         private void txtloaigiuong_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtviewroom.Items.Clear();
+            txtprice.Clear();
+
             string connectionString = DatabaseConnection.Connection();
-            string query = @"   SELECT view_room 
+            string query = @"   SELECT view_room
                                 FROM Room 
-                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
-                                WHERE status_room = @status_room AND house_keeping = @house_keeping AND roomtype = @roomtype AND numbed = @numbed";
+                                WHERE roomtype = @roomtype AND numbed = @numbed AND maphong IN (SELECT maphong 
+                                												                FROM Update_room 
+                                												                WHERE status_room = @status_room AND house_keeping = @house_keeping)";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -348,6 +391,116 @@ namespace WindowsForm_Project.All_User_Control
             if (txtviewroom.Items.Count > 0)
             {
                 txtviewroom.SelectedIndex = 0;
+            }
+        }
+
+        private void txtdateco_ValueChanged(object sender, EventArgs e)
+        {
+            txtprice.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT Room.price * DATEDIFF(DAY, @date_ci, @date_co) AS price
+                                FROM Room 
+                                WHERE roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room AND maphong IN (	SELECT maphong 
+                                																				            FROM Update_room 
+                                																				            WHERE status_room = @status_room AND house_keeping = @house_keeping)";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@roomtype", txtloaiphong.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@numbed", int.Parse(txtloaigiuong.SelectedItem.ToString()));
+                    command.Parameters.AddWithValue("@view_room", txtviewroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@date_ci", txtdateci.Value);
+                    command.Parameters.AddWithValue("@date_co", txtdateco.Value);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtprice.Text = reader.GetInt32(0).ToString();
+                        }
+                    }
+                }
+            }
+            if (txtprice.Text != "")
+            {
+                txtprice.Text = txtprice.Text;
+            }
+        }
+
+        private void txtdateci_ValueChanged(object sender, EventArgs e)
+        {
+            txtprice.Clear();
+        }
+
+        private void txtviewroom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtprice.Clear();
+            txtmaphong.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT maphong
+                                FROM Room 
+                                WHERE roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room AND maphong IN ( SELECT maphong 
+                                												                                            FROM Update_room 
+                                												                                            WHERE status_room = @status_room AND house_keeping = @house_keeping)";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@roomtype", txtloaiphong.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@numbed", int.Parse(txtloaigiuong.SelectedItem.ToString()));
+                    command.Parameters.AddWithValue("@view_room", txtviewroom.SelectedItem.ToString());
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtmaphong.Items.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+            if (txtmaphong.Items.Count > 0)
+            {
+                txtmaphong.SelectedIndex = 0;
+            }
+        }
+
+        private void txtsophong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtmaphong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtprice.Clear();
+            txtsophong.Items.Clear();
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT roomnumber
+                                FROM Room 
+                                WHERE maphong = @maphong";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@maphong", int.Parse(txtmaphong.SelectedItem.ToString()));
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txtsophong.Items.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+            if (txtsophong.Items.Count > 0)
+            {
+                txtsophong.SelectedIndex = 0;
             }
         }
     }

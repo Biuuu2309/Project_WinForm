@@ -144,7 +144,8 @@ VALUES
 	('12032309', 'Haha', 'Hihii', '2345', 'HahaHihii', 'Nu', '2004-09-25', 'HN'),
 	('12042309', 'Haha', 'Hihiii', '3456', 'HahaHihiii', 'Nam', '2004-09-26', 'DN'),
 	('12052309', 'Haha', 'Hihiiii', '4567', 'HahaHihiiii', 'Nu', '2004-09-27', 'BD'),
-	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
+	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA'),
+	('12072309', 'Haha', 'Hihiiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
 GO
 INSERT INTO Bookings(cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, price)
 VALUES
@@ -181,13 +182,13 @@ VALUES
 	('12052309', '4', 'Khong', 'Khong', '0'),
 	('12062309', '5', 'Khong', 'Khong', '0')
 GO 
-CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @date_ci DATETIME, @date_co DATETIME, @group_customer INT, @maphong INT, @roomnumber INT, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Bookings
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
 	BEGIN
-		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @date_ci, @date_co, @group_customer, @maphong, @roomnumber, @price)
+		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, group_customer, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @group_customer, @maphong, @roomnumber, @date_ci, @date_co, @price)
 		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
@@ -458,12 +459,6 @@ FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
 GROUP BY Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX))
 
-SELECT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
-FROM Employee
-INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
-WHERE Employee.cccd_em = Chamcong.cccd_em
-GROUP BY Employee.cccd_em, first_name, last_name, luong
-ORDER BY Employee.cccd_em
 
 SELECT 
     Employee.cccd_em, 
@@ -491,7 +486,41 @@ ORDER BY Employee.cccd_em;
 SELECT house_keeping
 FROM Update_room
 WHERE status_room = 'Available'
-SELECT view_room 
+SELECT Room.maphong 
 FROM Room 
 INNER JOIN Update_room ON Room.maphong = Update_room.maphong
-WHERE status_room = 'Available' AND house_keeping = 'Clean' AND roomtype = 'DLX' AND numbed = 2
+WHERE status_room = 'Available' AND house_keeping = 'Clean' AND roomtype = 'DLX' AND numbed = 2 AND view_room = 'Beautiful'
+
+SELECT Room.price * DATEDIFF(DAY, '2024-09-02', '2024-09-04') AS price
+FROM Room 
+WHERE roomtype = 'STD' AND numbed = 2 AND view_room = 'Good' AND maphong IN (	SELECT maphong 
+																				FROM Update_room 
+																				WHERE status_room = 'Available' AND house_keeping = 'Clean')
+
+SELECT Room.price * DATEDIFF(DAY, @date_ci, @date_co) AS price
+FROM Room 
+WHERE roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room AND maphong IN (	SELECT maphong 
+																				FROM Update_room 
+																				WHERE status_room = @status_room AND house_keeping = @house_keeping)
+
+
+
+SELECT Room.price * DATEDIFF(DAY, @date_ci, @date_co) AS price
+FROM Room 
+INNER JOIN Bookings ON Room.maphong = Bookings.maphong
+WHERE Room.maphong = (	SELECT Room.maphong 
+						FROM Room 
+						INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+						WHERE status_room = @status_room AND house_keeping = @house_keeping AND roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room)
+
+SELECT house_keeping
+                             FROM Update_room 
+                             WHERE maphong IN (  SELECT maphong 
+                                				 FROM Update_room 
+                                				 WHERE status_room = @status_room)
+SELECT roomtype
+                                FROM Room 
+                                WHERE maphong IN (  SELECT maphong 
+                                				    FROM Update_room 
+                                				    WHERE status_room = @status_room AND house_keeping = @house_keeping)
+SELECT * FROM Bookings
