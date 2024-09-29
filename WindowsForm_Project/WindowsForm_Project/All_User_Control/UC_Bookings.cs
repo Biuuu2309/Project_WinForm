@@ -546,5 +546,10 @@ namespace WindowsForm_Project.All_User_Control
                 txtsophong.SelectedIndex = 0;
             }
         }
+
+        private void guna2HtmlLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
