@@ -22,4 +22,9 @@ namespace WindowsForm_Project.Models
         public string status_room { get; set; }
         public string house_keeping { get; set; }
     }
+    public class DetailRoom : Room
+    {
+        public string status_room { get; set; }
+        public string house_keeping { get; set; }
+    }
 }

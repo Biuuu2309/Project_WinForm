@@ -45,7 +45,7 @@ CREATE TABLE Bookings (
 	date_ci DATETIME NOT NULL,
 	date_co DATETIME NOT NULL,
 	group_customer INT DEFAULT 0,
-	maphong INT, 
+	maphong INT UNIQUE, 
 	roomnumber INT NOT NULL,
 	price INT NOT NULL CHECK (price > 0),
 	PRIMARY KEY (cccd_cus, maphong),
@@ -524,3 +524,15 @@ SELECT roomtype
                                 				    FROM Update_room 
                                 				    WHERE status_room = @status_room AND house_keeping = @house_keeping)
 SELECT * FROM Bookings
+
+
+SELECT Room.maphong, roomnumber, roomtype, numbed, view_room, house_keeping, status_room, price
+FROM Room
+INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+WHERE Room.maphong NOT IN (	SELECT maphong
+							FROM Bookings)
+
+SELECT *
+FROM Customer
+WHERE cccd_cus NOT IN (	SELECT cccd_cus
+						FROM Bookings)

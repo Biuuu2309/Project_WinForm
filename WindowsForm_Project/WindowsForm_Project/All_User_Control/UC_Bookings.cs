@@ -37,6 +37,8 @@ namespace WindowsForm_Project.All_User_Control
         private void RefreshControl()
         {
             clearAll();
+            LoadRoomData();
+            LoadCustomerData();
             LoadBookingData();
         }
 
@@ -63,9 +65,12 @@ namespace WindowsForm_Project.All_User_Control
         {
             try
             {
+                LoadRoomData();
+                LoadCustomerData();
                 LoadBookingData();
                 DataGridView1.Refresh();
                 DataGridView2.Refresh();
+                DataGridView3.Refresh();
             }
             catch (Exception ex)
             {
@@ -73,26 +78,26 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
-        private void LoadBookingData()
+        private void LoadRoomData()
         {
             DAL dal = new DAL();
             string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Response response = dal.Getroom(conn);
-                if (response.list != null && response.list.Count > 0)
+                Response response = dal.Getroombook(conn);
+                if (response.list10 != null && response.list10.Count > 0)
                 {
                     DataGridView1.DataSource = null; // Clear previous data
-                    DataGridView1.DataSource = response.list;
+                    DataGridView1.DataSource = response.list10;
                     DataGridView1.ColumnHeadersHeight = 25;
                     DataGridView1.Columns["maphong"].HeaderText = "ID";
                     DataGridView1.Columns["roomnumber"].HeaderText = "Mã Phòng";
                     DataGridView1.Columns["roomtype"].HeaderText = "Loại phòng";
-                    DataGridView1.Columns["numbed"].HeaderText = "Số phòng đặt";
+                    DataGridView1.Columns["numbed"].HeaderText = "So giuong";
                     DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView1.Columns["house_keeping"].HeaderText = "house keeping";
+                    DataGridView1.Columns["status_room"].HeaderText = "status room";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
-
-
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -169,7 +174,7 @@ namespace WindowsForm_Project.All_User_Control
             string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Response response = dal.Getcustomer(conn);
+                Response response = dal.Getcustomerbook(conn);
                 if (response.list1 != null && response.list1.Count > 0)
                 {
                     DataGridView2.DataSource = null; // Clear previous data
@@ -185,9 +190,31 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
+        private void LoadBookingData()
+        {
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response = dal.Getbooking(conn);
+                if (response.list9 != null && response.list9.Count > 0)
+                {
+                    DataGridView3.DataSource = null; // Clear previous data
+                    DataGridView3.DataSource = response.list9;
+                    DataGridView3.ColumnHeadersHeight = 25;
+
+                    DataGridView3.Refresh(); // Refresh the grid view
+                }
+                else
+                {
+                    MessageBox.Show("No data available or " + response.statusmessage);
+                }
+            }
+        }
+
         private void RefreshControl_Cus()
         {
-            LoadCustomerData();
+
         }
         /// -------------------------------------------------------------------
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
@@ -396,18 +423,30 @@ namespace WindowsForm_Project.All_User_Control
 
         private void txtdateco_ValueChanged(object sender, EventArgs e)
         {
+            // Clear previous price
             txtprice.Clear();
+
+            // Ensure necessary ComboBox selections are not null
+            if (txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null ||
+                txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null ||
+                txtviewroom.SelectedItem == null)
+            {
+                MessageBox.Show("Please select all necessary fields before calculating the price.");
+                return;
+            }
+
             string connectionString = DatabaseConnection.Connection();
             string query = @"   SELECT Room.price * DATEDIFF(DAY, @date_ci, @date_co) AS price
-                                FROM Room 
-                                WHERE roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room AND maphong IN (	SELECT maphong 
-                                																				            FROM Update_room 
-                                																				            WHERE status_room = @status_room AND house_keeping = @house_keeping)";
+                        FROM Room 
+                        WHERE roomtype = @roomtype AND numbed = @numbed AND view_room = @view_room 
+                        AND maphong IN (SELECT maphong FROM Update_room WHERE status_room = @status_room AND house_keeping = @house_keeping)";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    // Safely add parameters if selections exist
                     command.Parameters.AddWithValue("@status_room", txtstatusroom.SelectedItem.ToString());
                     command.Parameters.AddWithValue("@house_keeping", txthousekeeping.SelectedItem.ToString());
                     command.Parameters.AddWithValue("@roomtype", txtloaiphong.SelectedItem.ToString());
@@ -415,6 +454,7 @@ namespace WindowsForm_Project.All_User_Control
                     command.Parameters.AddWithValue("@view_room", txtviewroom.SelectedItem.ToString());
                     command.Parameters.AddWithValue("@date_ci", txtdateci.Value);
                     command.Parameters.AddWithValue("@date_co", txtdateco.Value);
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -424,11 +464,14 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-            if (txtprice.Text != "")
+
+            // Ensure that price is updated correctly
+            if (!string.IsNullOrEmpty(txtprice.Text))
             {
                 txtprice.Text = txtprice.Text;
             }
         }
+
 
         private void txtdateci_ValueChanged(object sender, EventArgs e)
         {

@@ -312,6 +312,52 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Getroombook(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<DetailRoom> list = new List<DetailRoom>();
+            try
+            {
+                string query = @"SELECT Room.maphong, roomnumber, roomtype, numbed, view_room, house_keeping, status_room, price
+                                FROM Room
+                                INNER JOIN Update_room ON Room.maphong = Update_room.maphong
+                                WHERE Room.maphong NOT IN (	SELECT maphong
+							                                FROM Bookings)";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DetailRoom room = new DetailRoom
+                            {
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                roomnumber = int.Parse(reader["roomnumber"].ToString()),
+                                roomtype = reader["roomtype"].ToString(),
+                                numbed = reader["numbed"].ToString(),
+                                view_room = reader["view_room"].ToString(),
+                                house_keeping = reader["house_keeping"].ToString(),
+                                status_room = reader["status_room"].ToString(),
+                                price = int.Parse(reader["price"].ToString()),
+                            };
+                            list.Add(room);
+                        }
+                    }
+                }
+                response.list10 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
         public Response Getchamcong(SqlConnection conn)
         {
             Response response = new Response();
@@ -504,6 +550,97 @@ namespace WindowsForm_Project.Models
             try
             {
                 string query = @"SELECT * FROM Customer";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Customer customer = new Customer
+                            {
+                                cccd_cus = reader["cccd_cus"].ToString(),
+                                first_name = reader["first_name"].ToString(),
+                                last_name = reader["last_name"].ToString(),
+                                sdt = reader["sdt"].ToString(),
+                                email = reader["email"].ToString(),
+                                gioitinh = reader["gioitinh"].ToString(),
+                                ngaysinh = DateTime.Parse(reader["ngaysinh"].ToString()),
+                                address_cus = reader["address_cus"].ToString(),
+                            };
+                            list.Add(customer);
+                        }
+                    }
+                }
+                response.list1 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Getbooking(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Bookings> list = new List<Bookings>();
+            try
+            {
+                string query = @"SELECT * FROM Bookings";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Bookings bookings = new Bookings
+                            {
+                                cccd_cus = reader["cccd_cus"].ToString(),
+                                status_room = reader["status_room"].ToString(),
+                                house_keeping = reader["house_keeping"].ToString(),
+                                roomtype = reader["roomtype"].ToString(),
+                                numbed = int.Parse(reader["numbed"].ToString()),
+                                view_room = reader["view_room"].ToString(),
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                roomnumber = int.Parse(reader["roomnumber"].ToString()),
+                                group_customer = int.Parse(reader["group_customer"].ToString()),
+                                date_ci = DateTime.Parse(reader["date_ci"].ToString()),
+                                date_co = DateTime.Parse(reader["date_co"].ToString()),
+                                price = int.Parse(reader["price"].ToString()),
+                            };
+                            list.Add(bookings);
+                        }
+                    }
+                }
+                response.list9 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Getcustomerbook(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Customer> list = new List<Customer>();
+            try
+            {
+                string query = @"   SELECT *
+                                    FROM Customer
+                                    WHERE cccd_cus NOT IN (	SELECT cccd_cus
+                                    						FROM Bookings)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
