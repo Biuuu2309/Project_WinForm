@@ -21,7 +21,8 @@ namespace WindowsForm_Project.All_User_Control
         {
             InitializeComponent();
             this.Enter += new EventHandler(UC_Manage_Enter); // Ensure this is set to load data
-            // Remove the Leave event if not needed
+                                                             // Remove the Leave event if not needed
+            DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["last_name"].HeaderText = "Tên cuối";
                     DataGridView1.Columns["sdt"].HeaderText = "Số điện thoại";
                     DataGridView1.Columns["email"].HeaderText = "Email";
+                    DataGridView1.Columns["email"].Width = 500;
                     DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
                     DataGridView1.Columns["ngaysinh"].HeaderText = "Ngày sinh";
                     DataGridView1.Columns["luong"].HeaderText = "Lương";
@@ -349,6 +351,29 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2GroupBox4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void DataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            DataGridView1.Scroll += DataGridView1_Scroll;
+        }
+
+        private void DataGridView1_Click(object sender, EventArgs e)
+        {
+            DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+        }
+
+        private void DataGridView3_Scroll(object sender, ScrollEventArgs e)
+        {
+            DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+
+        }
+
+        private void DataGridView3_Click(object sender, EventArgs e)
+        {
+            DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 
         }
     }

@@ -93,13 +93,13 @@
             this.txtcccdup = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnaccount = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_Account1 = new WindowsForm_Project.All_User_Control.UC_Account();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox6 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.uC_Account1 = new WindowsForm_Project.All_User_Control.UC_Account();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).BeginInit();
@@ -161,6 +161,8 @@
             this.DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.DataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DataGridView1_Scroll);
+            this.DataGridView1.Click += new System.EventHandler(this.DataGridView1_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -473,6 +475,8 @@
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            this.DataGridView3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DataGridView3_Scroll);
+            this.DataGridView3.Click += new System.EventHandler(this.DataGridView3_Click);
             // 
             // txtca1cc
             // 
@@ -1030,17 +1034,6 @@
             this.btnaccount.UseTransparentBackground = true;
             this.btnaccount.Click += new System.EventHandler(this.btnaccount_Click);
             // 
-            // uC_Account1
-            // 
-            this.uC_Account1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Account1.BackgroundImage")));
-            this.uC_Account1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Account1.Location = new System.Drawing.Point(220, 727);
-            this.uC_Account1.Name = "uC_Account1";
-            this.uC_Account1.Size = new System.Drawing.Size(1450, 487);
-            this.uC_Account1.TabIndex = 57;
-            this.uC_Account1.Visible = false;
-            this.uC_Account1.Load += new System.EventHandler(this.uC_Account1_Load);
-            // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Black;
@@ -1163,6 +1156,17 @@
             this.guna2GroupBox6.Size = new System.Drawing.Size(801, 194);
             this.guna2GroupBox6.TabIndex = 63;
             this.guna2GroupBox6.Text = "Bảng tổng lương";
+            // 
+            // uC_Account1
+            // 
+            this.uC_Account1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Account1.BackgroundImage")));
+            this.uC_Account1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Account1.Location = new System.Drawing.Point(220, 727);
+            this.uC_Account1.Name = "uC_Account1";
+            this.uC_Account1.Size = new System.Drawing.Size(1450, 487);
+            this.uC_Account1.TabIndex = 57;
+            this.uC_Account1.Visible = false;
+            this.uC_Account1.Load += new System.EventHandler(this.uC_Account1_Load);
             // 
             // UC_Manage
             // 

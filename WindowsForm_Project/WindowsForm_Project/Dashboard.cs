@@ -249,8 +249,11 @@ namespace WindowsForm_Project
         {
             InitializeComponent();
             currentDate = DateTime.Now; // Initialize with the current date
+            WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard = new WindowsForm_Project.All_User_Control.UC_Dashboard();
+            uc_dashboard.Location = new Point(220, 114);
+            this.Controls.Add(uc_dashboard);
         }
-        
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
             UpdateDateLabel();
@@ -264,7 +267,7 @@ namespace WindowsForm_Project
             dateLabel.AutoSize = true;
             dateLabel.Font = new Font("Arial", 20, FontStyle.Bold); // Adjust font as needed
             dateLabel.BackColor = Color.Transparent;
-                dateLabel.ForeColor = ColorTranslator.FromHtml("#f9abfa");
+            dateLabel.ForeColor = ColorTranslator.FromHtml("#f9abfa");
 
             // Center the label in the panel
             dateLabel.Location = new Point(
