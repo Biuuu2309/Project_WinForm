@@ -87,6 +87,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
                     DataGridView1.Columns["ngaysinh"].HeaderText = "Ngày sinh";
                     DataGridView1.Columns["luong"].HeaderText = "Lương";
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView1.Width = 810;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -188,7 +191,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.Columns["ca4"].HeaderText = "Ca 4";
                     DataGridView3.Columns["note"].HeaderText = "Ghi chú";
                     DataGridView3.Columns["tongca"].HeaderText = "Tổng ca";
-
+                    DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView3.Width = 800;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
@@ -221,6 +226,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["tongca"].HeaderText = "Tổng ca";
                     DataGridView2.Columns["luong"].HeaderText = "Lương";
                     DataGridView2.Columns["total"].HeaderText = "Tổng";
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView2.Width = 800; 
 
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
