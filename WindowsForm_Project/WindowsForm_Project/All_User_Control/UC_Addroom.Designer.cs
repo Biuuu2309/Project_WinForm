@@ -468,7 +468,7 @@
             this.DataGridView2.Location = new System.Drawing.Point(0, 35);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(621, 211);
+            this.DataGridView2.Size = new System.Drawing.Size(621, 206);
             this.DataGridView2.TabIndex = 59;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -553,7 +553,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(135)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(1079, 35);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(621, 358);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(620, 358);
             this.guna2GroupBox1.TabIndex = 65;
             this.guna2GroupBox1.Text = "Bảng thông tin phòng";
             // 
@@ -565,7 +565,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(135)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(1079, 399);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(621, 246);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(620, 244);
             this.guna2GroupBox2.TabIndex = 66;
             this.guna2GroupBox2.Text = "Bảng cập nhật trạng thái phòng";
             // 

@@ -207,9 +207,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list9;
                     DataGridView3.ColumnHeadersHeight = 25;
-                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView2.Width = 800;
+                    DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView3.Width = 800;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else

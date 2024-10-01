@@ -128,7 +128,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["call_serve"].HeaderText = "Gọi dịch vụ";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView1.Width = 700;
+                    DataGridView1.Width = 638;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -158,7 +158,7 @@ namespace WindowsForm_Project.All_User_Control
 
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView2.Width = 700;
+                    DataGridView2.Width = 637;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -189,7 +189,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.Columns["address_cus"].HeaderText = "Địa chỉ";
                     DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView3.Width = 700;
+                    DataGridView3.Width = 638;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else

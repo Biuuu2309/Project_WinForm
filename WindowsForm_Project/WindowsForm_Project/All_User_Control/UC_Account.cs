@@ -94,7 +94,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["id"].HeaderText = "Mã ID";
                     DataGridView1.Columns["username"].HeaderText = "Tên";
                     DataGridView1.Columns["cccd_em"].HeaderText = "Mã CCCD";
-
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView1.Width = 445;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else

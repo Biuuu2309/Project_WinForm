@@ -1128,7 +1128,7 @@
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
             this.guna2GroupBox4.Location = new System.Drawing.Point(1069, 38);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(804, 250);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(803, 250);
             this.guna2GroupBox4.TabIndex = 61;
             this.guna2GroupBox4.Text = "Bảng thông tin nhân viên";
             this.guna2GroupBox4.Click += new System.EventHandler(this.guna2GroupBox4_Click);

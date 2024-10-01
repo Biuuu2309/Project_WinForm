@@ -143,7 +143,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView1.Width = 621;
+                    DataGridView1.Width = 620;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -170,7 +170,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView2.Width = 621;
+                    DataGridView2.Width = 620;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
