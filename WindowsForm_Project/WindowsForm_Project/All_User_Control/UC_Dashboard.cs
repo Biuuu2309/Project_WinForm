@@ -114,7 +114,7 @@ namespace WindowsForm_Project.All_User_Control
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 if (statusroom[i] == "Available")
                 {
-                    pictureBox1.Image = Properties.Resources;
+                    pictureBox1.Image = Properties.Resources.check1;
                 }
 
                 Guna2Panel guna2Panel = new Guna2Panel();
