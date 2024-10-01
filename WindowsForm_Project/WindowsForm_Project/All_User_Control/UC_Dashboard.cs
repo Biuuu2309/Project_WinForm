@@ -59,14 +59,18 @@ namespace WindowsForm_Project.All_User_Control
             int y = 20;
 
             string connectionString = DatabaseConnection.Connection();
-            string query1 = @"SELECT roomnumber FROM Room WHERE numbed = 1"; 
+            string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 1"; 
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
-                                WHERE Room.numbed = 1"; 
-
+                                WHERE Room.numbed = 1";
+            string query3 = @"  SELECT first_name + ' ' + last_name as fullname
+                                FROM Customer
+                                INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+                                WHERE numbed = 1";
             List<int> roomnumber = new List<int>(); 
             List<string> statusroom = new List<string>();
+            List<string> fullname = new List<string>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -88,6 +92,16 @@ namespace WindowsForm_Project.All_User_Control
                         while (reader.Read())
                         {
                             statusroom.Add(reader.GetString(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query3, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            fullname.Add(reader.GetString(0));
                         }
                     }
                 }
@@ -114,7 +128,25 @@ namespace WindowsForm_Project.All_User_Control
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 if (statusroom[i] == "Available")
                 {
-                    pictureBox1.Image = Properties.Resources;
+                    pictureBox1.Image = Properties.Resources.check__5_;
+                    pictureBox1.Size = new Size(36, 36);
+                    pictureBox1.Location = new Point(46, 52);
+                    pictureBox1.BringToFront();
+                    guna2HtmlLabel1.Font = new Font("Arial", 15, FontStyle.Regular);
+                    guna2HtmlLabel1.Text = "Free room";
+                    guna2HtmlLabel1.Location = new Point(95, 56);
+                    guna2HtmlLabel1.BringToFront();
+                }
+                else
+                {
+                    pictureBox1.Image = Properties.Resources.user_profile;
+                    pictureBox1.Size = new Size(36, 36);
+                    pictureBox1.Location = new Point(46, 52);
+                    pictureBox1.BringToFront();
+                    guna2HtmlLabel1.Font = new Font("Arial", 15, FontStyle.Regular);
+                    guna2HtmlLabel1.Text = fullname[i];
+                    guna2HtmlLabel1.Location = new Point(95, 56);
+                    guna2HtmlLabel1.BringToFront();
                 }
 
                 Guna2Panel guna2Panel = new Guna2Panel();
@@ -125,6 +157,8 @@ namespace WindowsForm_Project.All_User_Control
                 childPanel.Controls.Add(guna2HtmlLabel);
                 childPanel.Controls.Add(guna2Panel);
                 childPanel.Controls.Add(guna2HtmlLabel2);
+                childPanel.Controls.Add(pictureBox1);
+                childPanel.Controls.Add(guna2HtmlLabel1);
 
                 guna2Panel1.Controls.Add(childPanel);
 

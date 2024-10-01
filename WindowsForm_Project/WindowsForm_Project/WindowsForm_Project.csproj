@@ -465,7 +465,12 @@
     <None Include="Backgrounds\Pic24.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backgrounds\check1.png" />
+    <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\user-profile.png" />
+    <None Include="Backgrounds\check %286%29.png" />
+    <None Include="Backgrounds\check %285%29.png" />
+    <None Include="Backgrounds\check %284%29.png" />
+    <None Include="Backgrounds\check %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

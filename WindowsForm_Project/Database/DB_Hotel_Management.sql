@@ -536,3 +536,8 @@ SELECT *
 FROM Customer
 WHERE cccd_cus NOT IN (	SELECT cccd_cus
 						FROM Bookings)
+
+SELECT first_name + ' ' + last_name as fullname
+FROM Customer
+INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+WHERE numbed = 1
