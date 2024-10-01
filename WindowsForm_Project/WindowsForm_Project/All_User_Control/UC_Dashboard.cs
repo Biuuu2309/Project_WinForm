@@ -110,11 +110,11 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel2.Font = new Font("Arial", 10, FontStyle.Regular);
                 guna2HtmlLabel2.Text = statusroom[i];
 
-                PictureBox pictureBox1 = new PictureBox();
+                PictureBox pictureBox1 = new PictureBox(); 
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 if (statusroom[i] == "Available")
                 {
-                    pictureBox1.Image = Properties.Resources.check1;
+                    pictureBox1.Image = Properties.Resources;
                 }
 
                 Guna2Panel guna2Panel = new Guna2Panel();
