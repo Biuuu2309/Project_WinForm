@@ -466,6 +466,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\hair-dryer.png" />
+    <None Include="Backgrounds\wrench.png" />
+    <None Include="Backgrounds\clock %281%29.png" />
+    <None Include="Backgrounds\x-mark.png" />
+    <None Include="Backgrounds\check %287%29.png" />
+    <None Include="Backgrounds\spring-calendar.png" />
     <None Include="Backgrounds\user-profile.png" />
     <None Include="Backgrounds\check %286%29.png" />
     <None Include="Backgrounds\check %285%29.png" />

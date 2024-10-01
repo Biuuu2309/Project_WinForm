@@ -541,3 +541,15 @@ SELECT first_name + ' ' + last_name as fullname
 FROM Customer
 INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
 WHERE numbed = 1
+
+SELECT * 
+FROM Update_room
+
+SELECT DATEDIFF(DAY, date_ci, date_co) AS demngay
+FROM Bookings 
+WHERE numbed = 1
+
+SELECT house_keeping
+FROM Update_room
+INNER JOIN Room ON Update_room.maphong = Room.maphong
+WHERE numbed = 1
