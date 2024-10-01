@@ -145,13 +145,16 @@ namespace WindowsForm_Project.All_User_Control
 
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
                 guna2HtmlLabel.Text = "Room " + roomnumber[i]; 
-                guna2HtmlLabel.Font = new Font("Arial", 10, FontStyle.Regular);
-                guna2HtmlLabel.Location = new Point(0, 0);
+                guna2HtmlLabel.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                guna2HtmlLabel.Location = new Point(10, 10);
+                childPanel.BackColor = Color.Green;
+
 
                 Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
-                guna2HtmlLabel2.Location = new Point(180, 0);
-                guna2HtmlLabel2.Font = new Font("Arial", 10, FontStyle.Regular);
+                guna2HtmlLabel2.Location = new Point(180, 10);
+                guna2HtmlLabel2.Font = new Font("Segoe UI", 9, FontStyle.Bold);
                 guna2HtmlLabel2.Text = statusroom[i];
+
 
                 PictureBox pictureBox1 = new PictureBox(); 
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
@@ -191,7 +194,7 @@ namespace WindowsForm_Project.All_User_Control
 
                 Guna2Panel guna2Panel = new Guna2Panel();
                 guna2Panel.Height = 40;
-                guna2Panel.BackColor = Color.DarkViolet;
+                guna2Panel.BackColor = Color.Red;
                 guna2Panel.Dock = DockStyle.Bottom;
 
                 PictureBox pictureBox2 = new PictureBox();
