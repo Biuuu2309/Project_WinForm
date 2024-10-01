@@ -98,6 +98,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["house_keeping"].HeaderText = "house keeping";
                     DataGridView1.Columns["status_room"].HeaderText = "status room";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView1.Width = 800;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -180,7 +183,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list1;
                     DataGridView2.ColumnHeadersHeight = 25;
-
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView2.Width = 800;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -202,7 +207,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list9;
                     DataGridView3.ColumnHeadersHeight = 25;
-
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView2.Width = 800;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
