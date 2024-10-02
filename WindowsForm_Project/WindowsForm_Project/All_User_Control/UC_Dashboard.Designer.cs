@@ -42,7 +42,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.AutoScroll = true;
-            this.guna2Panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
             this.guna2Panel1.Location = new System.Drawing.Point(26, 28);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1099, 225);
@@ -54,7 +54,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.AutoScroll = true;
-            this.guna2Panel2.BackColor = System.Drawing.Color.RosyBrown;
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
             this.guna2Panel2.Location = new System.Drawing.Point(26, 338);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1099, 225);
@@ -65,7 +65,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.AutoScroll = true;
-            this.guna2Panel3.BackColor = System.Drawing.Color.RosyBrown;
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
             this.guna2Panel3.Location = new System.Drawing.Point(26, 638);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1099, 225);

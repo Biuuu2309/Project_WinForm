@@ -650,6 +650,7 @@
             this.uC_Dashboard2.Name = "uC_Dashboard2";
             this.uC_Dashboard2.Size = new System.Drawing.Size(1700, 966);
             this.uC_Dashboard2.TabIndex = 6;
+            this.uC_Dashboard2.Load += new System.EventHandler(this.uC_Dashboard2_Load);
             // 
             // uC_Addroom1
             // 

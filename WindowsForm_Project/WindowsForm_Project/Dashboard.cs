@@ -498,5 +498,10 @@ namespace WindowsForm_Project
             //uC_Serve1.Visible = false;
 
         }
+
+        private void uC_Dashboard2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
