@@ -53,7 +53,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
             guna2Panel1.Controls.Clear();
             guna2Panel1.Controls.Clear();
-
+            guna2Panel1.BackColor = Color.Transparent;
             int spacing = 20;
             int x = 20;
             int y = 20;

@@ -76,11 +76,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(240)))), ((int)(((byte)(213)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.wallhaven_0qw1er_1920x1080;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.DoubleBuffered = true;
             this.Name = "UC_Dashboard";
             this.Size = new System.Drawing.Size(1681, 966);
             this.Load += new System.EventHandler(this.UC_Dashboard_Load);

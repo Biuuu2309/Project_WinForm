@@ -466,6 +466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\wallhaven-0qw1er_1920x1080.png" />
     <None Include="Backgrounds\hair-dryer.png" />
     <None Include="Backgrounds\wrench.png" />
     <None Include="Backgrounds\clock %281%29.png" />
