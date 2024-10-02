@@ -42,8 +42,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.AutoScroll = true;
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(26, 28);
+            this.guna2Panel1.BackColor = System.Drawing.Color.Moccasin;
+            this.guna2Panel1.Location = new System.Drawing.Point(25, 28);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1099, 225);
             this.guna2Panel1.TabIndex = 49;
@@ -54,8 +54,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.AutoScroll = true;
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(26, 338);
+            this.guna2Panel2.BackColor = System.Drawing.Color.Moccasin;
+            this.guna2Panel2.Location = new System.Drawing.Point(25, 338);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1099, 225);
             this.guna2Panel2.TabIndex = 50;
@@ -65,8 +65,8 @@
             // guna2Panel3
             // 
             this.guna2Panel3.AutoScroll = true;
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(134)))), ((int)(((byte)(219)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(26, 638);
+            this.guna2Panel3.BackColor = System.Drawing.Color.Moccasin;
+            this.guna2Panel3.Location = new System.Drawing.Point(25, 638);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1099, 225);
             this.guna2Panel3.TabIndex = 50;
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic20;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(240)))), ((int)(((byte)(213)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
