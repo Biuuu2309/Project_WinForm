@@ -19,11 +19,14 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Dashboard()
         {
             InitializeComponent();
+            guna2Panel4.Controls.Add(guna2Panel1);
+            guna2Panel4.Controls.Add(guna2Panel2);
+            guna2Panel4.Controls.Add(guna2Panel3);
         }
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -52,8 +55,8 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Enabled = true;
             guna2Panel1.HorizontalScroll.Visible = true;
             guna2Panel1.Controls.Clear();
-            guna2Panel1.Controls.Clear();
             guna2Panel1.BackColor = Color.Transparent;
+            guna2Panel1.BringToFront();
             int spacing = 20;
             int x = 20;
             int y = 20;
@@ -142,14 +145,12 @@ namespace WindowsForm_Project.All_User_Control
                 childPanel.Size = new Size(270, 180);
                 childPanel.Location = new Point(x, y);
                 childPanel.BackColor = Color.White;
+                childPanel.BackColor = Color.White;
 
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
                 guna2HtmlLabel.Text = "Room " + roomnumber[i]; 
                 guna2HtmlLabel.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 guna2HtmlLabel.Location = new Point(10, 10);
-                childPanel.BackColor = Color.White;
-
-
 
                 Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
                 guna2HtmlLabel2.Location = new Point(200, 10);
@@ -175,8 +176,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = "Free room";
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#FECACA");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#FEF3C7");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = "0";
@@ -193,8 +194,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = fullname[i];
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#A7F3D0");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#ffe0e6");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = demngay[i].ToString();
@@ -394,8 +395,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = "Free room";
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#FECACA");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#FEF3C7");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = "0";
@@ -412,8 +413,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = fullname[i];
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#A7F3D0");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#ffe0e6");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = demngay[i].ToString();
@@ -613,8 +614,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = "Free room";
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#FECACA");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#FEF3C7");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = "0";
@@ -631,8 +632,8 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
                     guna2HtmlLabel1.Text = fullname[i];
                     guna2HtmlLabel1.Location = new Point(95, 56);
-                    childPanel.BackColor = ColorTranslator.FromHtml("#A7F3D0");
-                    guna2Panel.BackColor = ColorTranslator.FromHtml("#ffe0e6");
+                    childPanel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x210;
+                    guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                     guna2HtmlLabel3.Text = demngay[i].ToString();

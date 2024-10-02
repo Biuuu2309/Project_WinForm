@@ -466,6 +466,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\wallhaven-4lxwoq_360x50.png" />
+    <None Include="Backgrounds\wallhaven-4lxwoq_360x210.png" />
+    <None Include="Backgrounds\wallhaven-0w2wdx_360x50.png" />
+    <None Include="Backgrounds\wallhaven-0w2wdx_360x210.png" />
+    <None Include="Backgrounds\wallhaven-o3wvop_360x50.png" />
+    <None Include="Backgrounds\wallhaven-4le5mq_360x210.png" />
+    <None Include="Backgrounds\wallhaven-4d9l5j_360x210.png" />
     <None Include="Backgrounds\wallhaven-0qw1er_1920x1080.png" />
     <None Include="Backgrounds\hair-dryer.png" />
     <None Include="Backgrounds\wrench.png" />
