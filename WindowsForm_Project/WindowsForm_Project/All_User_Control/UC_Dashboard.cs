@@ -57,9 +57,15 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.Controls.Clear();
             guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BringToFront();
+
+            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
+            guna2HtmlLabel6.Text = "Single room";
+            guna2HtmlLabel6.Font = new Font("Comic Sans MS", 20, FontStyle.Bold);
+            guna2HtmlLabel6.Location = new Point(25, 17);
+            guna2Panel1.Controls.Add(guna2HtmlLabel6);
             int spacing = 20;
             int x = 20;
-            int y = 20;
+            int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
             string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 1"; 
@@ -278,9 +284,15 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel2.Controls.Clear();
             guna2Panel2.Controls.Clear();
 
+            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
+            guna2HtmlLabel6.Text = "Double room";
+            guna2HtmlLabel6.Font = new Font("Comic Sans MS", 20, FontStyle.Bold);
+            guna2HtmlLabel6.Location = new Point(25, 17);
+            guna2Panel2.Controls.Add(guna2HtmlLabel6);
+
             int spacing = 20;
             int x = 20;
-            int y = 20;
+            int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
             string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 2";
@@ -497,9 +509,15 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel3.Controls.Clear();
             guna2Panel3.Controls.Clear();
 
-            int spacing = 20;
-            int x = 20;
-            int y = 20;
+            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
+            guna2HtmlLabel6.Text = "Triple room";
+            guna2HtmlLabel6.Font = new Font("Comic Sans MS", 20, FontStyle.Bold);
+            guna2HtmlLabel6.Location = new Point(25, 17);
+            guna2Panel3.Controls.Add(guna2HtmlLabel6);
+
+            int spacing = 40;
+            int x = 40;
+            int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
             string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 3";
@@ -703,6 +721,256 @@ namespace WindowsForm_Project.All_User_Control
 
                 x += childPanel.Width + spacing;
             }
+        }
+
+        private void guna2Panel7_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel7_ControlAdded(object sender, ControlEventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel7_Enter(object sender, EventArgs e)
+        {
+            int freeroom = 0;
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"  SELECT COUNT(maphong) as free
+                        FROM Room
+                        WHERE maphong NOT IN (	SELECT maphong
+                              						FROM Bookings)";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            freeroom = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+            guna2HtmlLabel.Font = new Font("Arial", 14, FontStyle.Bold);
+            guna2HtmlLabel.Text = freeroom.ToString();
+            guna2HtmlLabel.Location = new Point(27, 85);
+            guna2Panel7.Controls.Add(guna2HtmlLabel);
+        }
+
+        private void guna2Panel7_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel8_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel9_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel10_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel8_Enter(object sender, EventArgs e)
+        {
+            int cus = 0;
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT COUNT(cccd_cus) as cus
+                                FROM Customer";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            cus = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+            guna2HtmlLabel.Font = new Font("Arial", 14, FontStyle.Bold);
+            guna2HtmlLabel.Text = cus.ToString();
+            guna2HtmlLabel.Location = new Point(27, 85);
+            guna2Panel8.Controls.Add(guna2HtmlLabel);
+        }
+
+        private void guna2Panel9_Enter(object sender, EventArgs e)
+        {
+            int em = 0;
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT COUNT(cccd_em) as em
+                                FROM Employee";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            em = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+            guna2HtmlLabel.Font = new Font("Arial", 14, FontStyle.Bold);
+            guna2HtmlLabel.Text = em.ToString();
+            guna2HtmlLabel.Location = new Point(27, 85);
+            guna2Panel9.Controls.Add(guna2HtmlLabel);
+        }
+
+        private void guna2Panel10_Enter(object sender, EventArgs e)
+        {
+            int em = 0;
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"   SELECT COUNT(cccd_em) as em
+                                FROM Employee";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            em = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+            guna2HtmlLabel.Font = new Font("Arial", 14, FontStyle.Bold);
+            guna2HtmlLabel.Text = em.ToString();
+            guna2HtmlLabel.Location = new Point(27, 85);
+            guna2Panel10.Controls.Add(guna2HtmlLabel);
         }
     }
 }

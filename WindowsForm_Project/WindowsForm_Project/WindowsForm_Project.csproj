@@ -466,6 +466,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\check-out.png" />
+    <None Include="Backgrounds\waiter.png" />
+    <None Include="Backgrounds\group %281%29.png" />
+    <None Include="Backgrounds\free.png" />
     <None Include="Backgrounds\wallhaven-4lxwoq_360x50.png" />
     <None Include="Backgrounds\wallhaven-4lxwoq_360x210.png" />
     <None Include="Backgrounds\wallhaven-0w2wdx_360x50.png" />

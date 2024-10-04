@@ -553,3 +553,8 @@ SELECT house_keeping
 FROM Update_room
 INNER JOIN Room ON Update_room.maphong = Room.maphong
 WHERE numbed = 1
+
+SELECT COUNT(maphong) as free
+FROM Room
+WHERE maphong NOT IN (	SELECT maphong
+						FROM Bookings)
