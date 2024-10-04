@@ -74,7 +74,7 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.guna2Panel1.BorderThickness = 20;
+            this.guna2Panel1.BorderThickness = 10;
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(5);
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
