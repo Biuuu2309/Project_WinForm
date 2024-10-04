@@ -659,7 +659,7 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel3.BringToFront();
                 }
 
-         
+
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;
@@ -720,9 +720,14 @@ namespace WindowsForm_Project.All_User_Control
                 guna2Panel3.Controls.Add(childPanel);
 
                 x += childPanel.Width + spacing;
+
+                if ((i + 1) % 2 == 0)
+                {
+                    x = 20;  
+                    y += childPanel.Height + spacing;  
+                }
             }
         }
-
         private void guna2Panel7_Paint(object sender, PaintEventArgs e)
         {
             
