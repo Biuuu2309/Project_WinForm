@@ -66,15 +66,17 @@
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
             this.uC_Serve1 = new WindowsForm_Project.All_User_Control.UC_Serve();
             this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
             this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
+            this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -612,6 +614,17 @@
             this.btnaddroom.Text = "Add Room";
             this.btnaddroom.Click += new System.EventHandler(this.btnaddroom_Click);
             // 
+            // dashboardpaneldate
+            // 
+            this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dashboardpaneldate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(101)))), ((int)(((byte)(67)))));
+            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
+            this.dashboardpaneldate.Location = new System.Drawing.Point(0, 57);
+            this.dashboardpaneldate.Name = "dashboardpaneldate";
+            this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
+            this.dashboardpaneldate.TabIndex = 5;
+            this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
             // guna2Button1
             // 
             this.guna2Button1.BackColor = System.Drawing.Color.Snow;
@@ -631,26 +644,15 @@
             this.guna2Button1.TabIndex = 25;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
-            // dashboardpaneldate
-            // 
-            this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dashboardpaneldate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(101)))), ((int)(((byte)(67)))));
-            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.dashboardpaneldate.Location = new System.Drawing.Point(0, 57);
-            this.dashboardpaneldate.Name = "dashboardpaneldate";
-            this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
-            this.dashboardpaneldate.TabIndex = 5;
-            this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
-            // 
             // uC_Dashboard2
             // 
+            this.uC_Dashboard2.BackColor = System.Drawing.Color.White;
             this.uC_Dashboard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Dashboard2.BackgroundImage")));
             this.uC_Dashboard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Dashboard2.Location = new System.Drawing.Point(220, 114);
             this.uC_Dashboard2.Name = "uC_Dashboard2";
             this.uC_Dashboard2.Size = new System.Drawing.Size(1700, 966);
-            this.uC_Dashboard2.TabIndex = 6;
-            this.uC_Dashboard2.Load += new System.EventHandler(this.uC_Dashboard2_Load);
+            this.uC_Dashboard2.TabIndex = 12;
             // 
             // uC_Addroom1
             // 
@@ -681,6 +683,7 @@
             // 
             // uC_Customer1
             // 
+            this.uC_Customer1.AutoScroll = true;
             this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
             this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
@@ -699,21 +702,29 @@
             this.uC_Manage1.TabIndex = 9;
             this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
             // 
+            // uC_Checkout1
+            // 
+            this.uC_Checkout1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Checkout1.Name = "uC_Checkout1";
+            this.uC_Checkout1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Checkout1.TabIndex = 13;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.uC_Dashboard2);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.dashboardpaneldate);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.uC_Dashboard2);
             this.Controls.Add(this.uC_Addroom1);
             this.Controls.Add(this.uC_Bookings2);
             this.Controls.Add(this.uC_Serve1);
             this.Controls.Add(this.uC_Customer1);
             this.Controls.Add(this.uC_Manage1);
+            this.Controls.Add(this.uC_Checkout1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Hotel Management";
@@ -766,12 +777,14 @@
         private Guna.UI2.WinForms.Guna2GradientPanel dashboardpaneldate;
         private All_User_Control.UC_Bookings uC_Bookings1;
         private All_User_Control.UC_Bookings uC_Bookings2;
-        private All_User_Control.UC_Dashboard uC_Dashboard2;
         private Guna.UI2.WinForms.Guna2GradientButton btnaddroom;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private All_User_Control.UC_Addroom uC_Addroom1;
         private All_User_Control.UC_Manage uC_Manage1;
         private All_User_Control.UC_Customer uC_Customer1;
         private All_User_Control.UC_Serve uC_Serve1;
+        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder2;
+        private All_User_Control.UC_Dashboard uC_Dashboard2;
+        private All_User_Control.UC_Checkout uC_Checkout1;
     }
 }

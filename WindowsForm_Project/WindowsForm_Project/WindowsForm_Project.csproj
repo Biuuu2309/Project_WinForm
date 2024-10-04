@@ -197,6 +197,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All_User_Control\UC_Checkout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All_User_Control\UC_Checkout.Designer.cs">
+      <DependentUpon>UC_Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="All_User_Control\UC_Report.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     <Compile Include="Models\Serve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="All_User_Control\UC_Checkout.resx">
+      <DependentUpon>UC_Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="All_User_Control\UC_Report.resx">
       <DependentUpon>UC_Report.cs</DependentUpon>
     </EmbeddedResource>

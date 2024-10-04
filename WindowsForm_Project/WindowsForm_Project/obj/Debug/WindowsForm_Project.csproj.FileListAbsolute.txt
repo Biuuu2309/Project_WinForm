@@ -203,3 +203,4 @@ E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_
 >>>>>>> Stashed changes
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Report.resources
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Report.resources
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Checkout.resources
