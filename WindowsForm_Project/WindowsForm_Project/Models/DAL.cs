@@ -124,6 +124,34 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Addcheckout(Checkout checkout, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addcheckout", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cccd_cus", checkout.cccd_cus);
+                cmd.Parameters.AddWithValue("@first_name", checkout.first_name);
+                cmd.Parameters.AddWithValue("@last_name", checkout.last_name);
+                cmd.Parameters.AddWithValue("@maphong", checkout.maphong);
+                cmd.Parameters.AddWithValue("@sophong", checkout.sophong);
+                cmd.Parameters.AddWithValue("@date_ci", checkout.date_ci);
+                cmd.Parameters.AddWithValue("@date_co", checkout.date_co);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addaccount(Account account, SqlConnection conn)
         {
             Response response = new Response();
@@ -223,6 +251,48 @@ namespace WindowsForm_Project.Models
                     }
                 }
                 response.list7 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response Getcheckout(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Checkout> list = new List<Checkout>();
+            try
+            {
+                string query = @"SELECT * FROM Checkout";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Checkout checkout = new Checkout
+                            {
+                                id = int.Parse(reader["id"].ToString()),
+                                cccd_cus = reader["cccd_cus"].ToString(),
+                                first_name = reader["first_name"].ToString(),
+                                last_name = reader["last_name"].ToString(),
+                                maphong = int.Parse(reader["maphong"].ToString()),
+                                sophong = int.Parse(reader["sophong"].ToString()),
+                                date_ci = DateTime.Parse(reader["date_ci"].ToString()),
+                                date_co = DateTime.Parse(reader["date_co"].ToString()),
+                            };
+                            list.Add(checkout);
+                        }
+                    }
+                }
+                response.list11 = list;
             }
             catch (Exception ex)
             {

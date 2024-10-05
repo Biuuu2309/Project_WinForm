@@ -20,6 +20,6 @@ namespace WindowsForm_Project.Models
         public List<Report> list8 { get; set; }
         public List<Bookings> list9 { get; set; }
         public List<DetailRoom> list10 { get; set; }
-
+        public List<Checkout> list11 { get; set; }
     }
 }

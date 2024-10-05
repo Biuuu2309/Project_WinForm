@@ -266,6 +266,7 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Bookings.cs" />
+    <Compile Include="Models\Checkout.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DAL.cs" />
     <Compile Include="Models\ManageEmployee.cs" />

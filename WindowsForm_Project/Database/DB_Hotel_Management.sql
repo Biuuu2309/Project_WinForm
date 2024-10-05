@@ -105,6 +105,17 @@ CREATE TABLE Account
 	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
+CREATE TABLE Checkout (
+	id INT IDENTITY(1, 1),
+	cccd_cus NVARCHAR(200) NOT NULL,
+	first_name NVARCHAR(200) NOT NULL,
+	last_name NVARCHAR(200) NOT NULL,
+	maphong INT NOT NULL,
+	sophong INT NOT NULL,
+	date_ci DATETIME NOT NULL,
+	date_co DATETIME NOT NULL
+)
+GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
 VALUES
 	('1', '101', 'STD', '1', 'Good', '1000000'),
@@ -438,6 +449,21 @@ BEGIN
 	END
 END
 GO
+CREATE OR ALTER PROC sp_addcheckout @cccd_cus NVARCHAR(200), @first_name NVARCHAR(200), @last_name NVARCHAR(200), @maphong INT, @sophong INT, @date_ci DATETIME, @date_co DATETIME, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF NOT EXISTS (SELECT 1 FROM Checkout WHERE @cccd_cus = cccd_cus)
+	BEGIN 
+		INSERT INTO Checkout(cccd_cus, first_name, last_name, maphong, sophong, date_ci, date_co) VALUES (@cccd_cus, @first_name, @last_name, @maphong, @sophong, @date_ci, @date_co)
+		SET @ErrorMessage = 'Successfully'
+	END
+	ELSE 
+	BEGIN
+		SET @ErrorMessage = ERROR_MESSAGE()
+	END
+END
+
+GO
 SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
 FROM Chamcong
 INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
@@ -558,3 +584,9 @@ SELECT COUNT(maphong) as free
 FROM Room
 WHERE maphong NOT IN (	SELECT maphong
 						FROM Bookings)
+SELECT first_name, last_name, maphong, date_ci
+FROM Customer
+INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+
+SELECT *
+FROM Checkout
