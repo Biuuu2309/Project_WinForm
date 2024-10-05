@@ -208,7 +208,7 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -236,6 +236,18 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T06:00:27.298Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UC_Checkout.cs [Design]",
+              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
+              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs [Design]",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:27:54.145Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -268,9 +280,9 @@
               "Title": "UC_Checkout.cs",
               "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
               "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs*",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs*",
-              "ViewState": "AQIAAAQBAAAAAAAAAAAcwBQBAAAAAAAA",
+              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
+              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAmwIQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T06:33:15.692Z",
               "EditorCaption": ""
@@ -287,18 +299,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T06:30:44.041Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_Checkout.cs [Design]",
-              "DocumentMoniker": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
-              "RelativeDocumentMoniker": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs",
-              "ToolTip": "C:\\Zan\\Project_winform\\Project_WinForm\\WindowsForm_Project\\WindowsForm_Project\\All_User_Control\\UC_Checkout.cs [Design]*",
-              "RelativeToolTip": "WindowsForm_Project\\All_User_Control\\UC_Checkout.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T06:27:54.145Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -625,7 +625,8 @@
               "RelativeToolTip": "WindowsForm_Project\\Properties\\Settings.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T10:14:29.14Z"
+              "WhenOpened": "2024-09-23T10:14:29.14Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
