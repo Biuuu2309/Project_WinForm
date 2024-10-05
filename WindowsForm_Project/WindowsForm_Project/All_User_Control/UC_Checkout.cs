@@ -72,7 +72,8 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.ColumnHeadersHeight = 25;
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView1.Width = 800;
+                    DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -261,5 +262,19 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
+        private void txtdate_co_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

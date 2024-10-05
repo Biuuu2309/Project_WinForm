@@ -127,6 +127,9 @@
   <data name="Pic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\Pic1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="check (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\check (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pic11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\Pic11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +166,9 @@
   <data name="free" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wallhaven-4lxwoq_360x2101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\wallhaven-4lxwoq_360x2101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="left (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\left (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,8 +184,8 @@
   <data name="check (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\check (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Backgrounds\check (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -201,6 +207,9 @@
   </data>
   <data name="check (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\check (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pic26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\Pic26.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,9 +235,6 @@
   <data name="left (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\left (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallhaven-o3wvop_360x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Backgrounds\wallhaven-o3wvop_360x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="wallhaven-4lxwoq_360x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\wallhaven-4lxwoq_360x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -237,6 +243,9 @@
   </data>
   <data name="user-profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\user-profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wallhaven-4lxwoq_360x50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\wallhaven-4lxwoq_360x50 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="waiter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\waiter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -6963,9 +6972,6 @@
         NfXUC/YiP+iD/sS7T30f9L+p/wBPP+6h/v4tde6in78u/ZhT+bOYPXDf99NMl5UWLRPJKZ//2Q==
 </value>
   </data>
-  <data name="left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Backgrounds\left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="main_bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\house-sunset-sky-clouds-scenery-art-hd-wallpaper-uhdpaper.com-219@0@k.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -6981,8 +6987,8 @@
   <data name="Pic3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\Pic3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallhaven-4lxwoq_360x2101" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Backgrounds\wallhaven-4lxwoq_360x2101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wallhaven-o3wvop_360x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\wallhaven-o3wvop_360x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallhaven-0w2wdx_360x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\wallhaven-0w2wdx_360x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -7041,7 +7047,7 @@
   <data name="people1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Backgrounds\people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallhaven-4lxwoq_360x50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Backgrounds\wallhaven-4lxwoq_360x50 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pic27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Backgrounds\Pic27.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
