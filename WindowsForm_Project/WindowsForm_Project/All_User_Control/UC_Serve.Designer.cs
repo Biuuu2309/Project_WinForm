@@ -387,7 +387,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(53)))), ((int)(((byte)(79)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(479, 573);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(482, 573);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(637, 200);
             this.guna2GroupBox2.TabIndex = 17;
@@ -485,6 +485,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic24;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.guna2GroupBox4);
@@ -494,7 +495,7 @@
             this.Controls.Add(this.uC_Report1);
             this.Controls.Add(this.btnsubmit2);
             this.Name = "UC_Serve";
-            this.Size = new System.Drawing.Size(1920, 1080);
+            this.Size = new System.Drawing.Size(1903, 1046);
             this.Load += new System.EventHandler(this.UC_Serve_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();

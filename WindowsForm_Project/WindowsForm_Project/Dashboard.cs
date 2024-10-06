@@ -21,6 +21,18 @@ namespace WindowsForm_Project
         {
             get { return cbreserved.Checked; }
         }
+        public bool IsOccupiedChecked
+        {
+            get { return cboccupied.Checked; }
+        }
+        public bool IsAvailableChecked
+        {
+            get { return cbavailable.Checked; }
+        }
+        public bool IsCheckOutChecked
+        {
+            get { return cbcheckout.Checked; }
+        }
         private DateTime currentDate;
         private WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard;
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -90,10 +102,7 @@ namespace WindowsForm_Project
 
         }
 
-        private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         
 
@@ -757,6 +766,41 @@ namespace WindowsForm_Project
         private void uC_Dashboard2_Load_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void cboccupied_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cboccupied.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Occupied");
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+            }
+        }
+        private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbavailable.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Available");
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+            }
+        }
+
+        private void cbcheckout_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbcheckout.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Check Out");
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+            }
         }
     }
 }

@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
         }
 
-        public void LoadSingleRoom(string statusCon = "")
+        public void LoadSingleRoom(string statusCon1 = "", string statusCon2 = "", string statusCon3 = "", string statusCon4 = "")
         {
             guna2Panel1.AutoScroll = true;
             guna2Panel1.HorizontalScroll.Enabled = true;
@@ -87,13 +87,37 @@ namespace WindowsForm_Project.All_User_Control
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 1";
 
-            if (!string.IsNullOrEmpty(statusCon))
+            if (!string.IsNullOrEmpty(statusCon1))
             {
-                query1 += $" AND Update_room.status_room = '{statusCon}'";
-                query2 += $" AND Update_room.status_room = '{statusCon}'";
-                query3 += $" AND Update_room.status_room = '{statusCon}'";
-                query4 += $" AND Update_room.status_room = '{statusCon}'";
-                query5 += $" AND Update_room.status_room = '{statusCon}'";
+                query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+            }
+            if (!string.IsNullOrEmpty(statusCon2))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon2}'";
+                query2 += $" AND Update_room.status_room = '{statusCon2}'";
+                query3 += $" AND Update_room.status_room = '{statusCon2}'";
+                query4 += $" AND Update_room.status_room = '{statusCon2}'";
+                query5 += $" AND Update_room.status_room = '{statusCon2}'";
+            }
+            if (!string.IsNullOrEmpty(statusCon3))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon3}'";
+                query2 += $" AND Update_room.status_room = '{statusCon3}'";
+                query3 += $" AND Update_room.status_room = '{statusCon3}'";
+                query4 += $" AND Update_room.status_room = '{statusCon3}'";
+                query5 += $" AND Update_room.status_room = '{statusCon3}'";
+            }
+            if (!string.IsNullOrEmpty(statusCon4))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon4}'";
+                query2 += $" AND Update_room.status_room = '{statusCon4}'";
+                query3 += $" AND Update_room.status_room = '{statusCon4}'";
+                query4 += $" AND Update_room.status_room = '{statusCon4}'";
+                query5 += $" AND Update_room.status_room = '{statusCon4}'";
             }
 
             List<int> roomnumber = new List<int>();
@@ -177,9 +201,13 @@ namespace WindowsForm_Project.All_User_Control
 
 
                 PictureBox pictureBox1 = new PictureBox();
+<<<<<<< Updated upstream
 
                 pictureBox1.BackColor = Color.Transparent;
 
+=======
+                pictureBox1.BackColor = Color.Transparent;
+>>>>>>> Stashed changes
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -297,9 +325,24 @@ namespace WindowsForm_Project.All_User_Control
                 string status = "Reserved";
                 LoadSingleRoom(status);  
             }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                string status = "Occupied";
+                LoadSingleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                string status = "Available";
+                LoadSingleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                string status = "Check Out";
+                LoadSingleRoom(status);
+            }
             else
             {
-                LoadSingleRoom();  
+                LoadSingleRoom();
             }
         }
 
