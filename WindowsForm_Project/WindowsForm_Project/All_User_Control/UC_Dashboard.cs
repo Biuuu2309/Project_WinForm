@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
         }
 
-        private void guna2Panel1_Click(object sender, EventArgs e)
+        public void LoadSingleRoom(string statusCon = "")
         {
             guna2Panel1.AutoScroll = true;
             guna2Panel1.HorizontalScroll.Enabled = true;
@@ -68,7 +68,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
-            string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 1"; 
+            string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
@@ -76,15 +76,27 @@ namespace WindowsForm_Project.All_User_Control
             string query3 = @"  SELECT first_name + ' ' + last_name as fullname
                                 FROM Customer
                                 INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 1";
             string query4 = @"  SELECT DATEDIFF(DAY, date_ci, date_co) AS demngay
                                 FROM Bookings 
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 1";
             string query5 = @"  SELECT house_keeping
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 1";
-            List<int> roomnumber = new List<int>(); 
+
+            if (!string.IsNullOrEmpty(statusCon))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon}'";
+                query2 += $" AND Update_room.status_room = '{statusCon}'";
+                query3 += $" AND Update_room.status_room = '{statusCon}'";
+                query4 += $" AND Update_room.status_room = '{statusCon}'";
+                query5 += $" AND Update_room.status_room = '{statusCon}'";
+            }
+
+            List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
             List<int> demngay = new List<int>();
@@ -99,7 +111,7 @@ namespace WindowsForm_Project.All_User_Control
                     {
                         while (reader.Read())
                         {
-                            roomnumber.Add(reader.GetInt32(0)); 
+                            roomnumber.Add(reader.GetInt32(0));
                         }
                     }
                 }
@@ -145,7 +157,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++) 
+            for (int i = 0; i < roomnumber.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -154,7 +166,7 @@ namespace WindowsForm_Project.All_User_Control
                 childPanel.BackColor = Color.White;
 
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
-                guna2HtmlLabel.Text = "Room " + roomnumber[i]; 
+                guna2HtmlLabel.Text = "Room " + roomnumber[i];
                 guna2HtmlLabel.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 guna2HtmlLabel.Location = new Point(10, 10);
 
@@ -164,7 +176,7 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel2.Text = statusroom[i];
 
 
-                PictureBox pictureBox1 = new PictureBox(); 
+                PictureBox pictureBox1 = new PictureBox();
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -189,7 +201,7 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel3.Text = "0";
                     guna2HtmlLabel3.Location = new Point(50, 10);
                     guna2HtmlLabel3.BringToFront();
-                    
+
                 }
                 else
                 {
@@ -249,7 +261,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     pictureBox3.Image = Properties.Resources.hair_dryer;
                 }
-               
+
                 pictureBox3.BringToFront();
 
                 guna2Panel.Controls.Add(pictureBox2);
@@ -268,6 +280,21 @@ namespace WindowsForm_Project.All_User_Control
                 guna2Panel1.Controls.Add(childPanel);
 
                 x += childPanel.Width + spacing;
+            }
+        }
+        
+        private void guna2Panel1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                string status = "Reserved";
+                LoadSingleRoom(status);  
+            }
+            else
+            {
+                LoadSingleRoom();  
             }
         }
 
