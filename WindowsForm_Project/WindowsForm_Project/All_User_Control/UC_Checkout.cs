@@ -74,6 +74,20 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+                    DataGridView1.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView1.Columns["status_room"].HeaderText = "Trạng thái phòng";
+                    DataGridView1.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
+                    DataGridView1.Columns["roomtype"].HeaderText = "Loại phòng";
+                    DataGridView1.Columns["numbed"].HeaderText = "Số giường";
+                    DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView1.Columns["date_ci"].HeaderText = "Ngày vào";
+                    DataGridView1.Columns["date_co"].HeaderText = "Ngày ra";
+                    DataGridView1.Columns["group_customer"].HeaderText = "Nhóm khách hàng";
+                    DataGridView1.Columns["maphong"].HeaderText = "Mã phòng";
+                    DataGridView1.Columns["roomnumber"].HeaderText = "Số phòng";
+                    DataGridView1.Columns["status_room"].HeaderText = "Trạng thái phòng";
+                    DataGridView1.Columns["price"].HeaderText = "Giá tiền";
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
