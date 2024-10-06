@@ -177,6 +177,13 @@ namespace WindowsForm_Project.All_User_Control
 
 
                 PictureBox pictureBox1 = new PictureBox();
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                pictureBox1.BackColor = Color.Transparent;
+=======
+>>>>>>> 9215a44bf6621636ccaa8ea5c87e343868398044
+>>>>>>> Stashed changes
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -224,6 +231,7 @@ namespace WindowsForm_Project.All_User_Control
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;
+                pictureBox2.BackColor = Color.Transparent;
                 pictureBox2.Size = new Size(36, 36);
                 pictureBox2.Location = new Point(3, 3);
                 pictureBox2.BringToFront();
@@ -241,6 +249,7 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel5.BringToFront();
 
                 PictureBox pictureBox3 = new PictureBox();
+                pictureBox3.BackColor = Color.Transparent;
                 pictureBox3.Size = new Size(36, 36);
                 pictureBox3.Location = new Point(180, 3);
                 if (housekeeping[i] == "Clean")
@@ -417,6 +426,7 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel2.Text = statusroom[i];
 
                 PictureBox pictureBox1 = new PictureBox();
+                pictureBox1.BackColor = Color.Transparent;
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -465,6 +475,7 @@ namespace WindowsForm_Project.All_User_Control
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;
+                pictureBox2.BackColor = Color.Transparent;
                 pictureBox2.Size = new Size(36, 36);
                 pictureBox2.Location = new Point(3, 3);
                 pictureBox2.BringToFront();
@@ -483,6 +494,7 @@ namespace WindowsForm_Project.All_User_Control
 
 
                 PictureBox pictureBox3 = new PictureBox();
+                pictureBox3.BackColor = Color.Transparent;
                 pictureBox3.Size = new Size(36, 36);
                 pictureBox3.Location = new Point(160, 3);
                 if (housekeeping[i] == "Clean")
@@ -642,6 +654,7 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel2.Text = statusroom[i];
 
                 PictureBox pictureBox1 = new PictureBox();
+                pictureBox1.BackColor = Color.Transparent;
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -690,6 +703,7 @@ namespace WindowsForm_Project.All_User_Control
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;
+                pictureBox2.BackColor = Color.Transparent;
                 pictureBox2.Size = new Size(36, 36);
                 pictureBox2.Location = new Point(3, 3);
                 pictureBox2.BringToFront();
@@ -707,6 +721,7 @@ namespace WindowsForm_Project.All_User_Control
                 guna2HtmlLabel5.BringToFront();
 
                 PictureBox pictureBox3 = new PictureBox();
+                pictureBox3.BackColor = Color.Transparent;
                 pictureBox3.Size = new Size(36, 36);
                 pictureBox3.Location = new Point(160, 3);
                 if (housekeeping[i] == "Clean")
