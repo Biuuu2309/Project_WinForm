@@ -1462,8 +1462,8 @@ namespace WindowsForm_Project.All_User_Control
             guna2HtmlLabel6.Location = new Point(34, 23);
             guna2Panel5.Controls.Add(guna2HtmlLabel6);
 
-            int spacing = 40;
-            int x = 40;
+            int spacing = 20;
+            int x = 20;
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
@@ -1568,105 +1568,68 @@ namespace WindowsForm_Project.All_User_Control
             for (int i = 0; i < id.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
-                childPanel.Size = new Size(270, 180);
+                childPanel.Size = new Size(300, 200);
                 childPanel.Location = new Point(x, y);
-                childPanel.BackColor = Color.White;
+                childPanel.BackColor = Color.DarkGray; /////////////////////////////////
 
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
                 guna2HtmlLabel.Text = "ID " + id[i];
-                guna2HtmlLabel.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                guna2HtmlLabel.Location = new Point(10, 10);
+                guna2HtmlLabel.Font = new Font("Arial", 12, FontStyle.Regular);
+                guna2HtmlLabel.Location = new Point(5, 5);
 
                 Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
-                guna2HtmlLabel2.Location = new Point(200, 10);
-                guna2HtmlLabel2.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel2.Location = new Point(230, 5);
+                guna2HtmlLabel2.Font = new Font("Arial", 12, FontStyle.Regular);
                 guna2HtmlLabel2.Text = "Room" + sophong[i];
-
-                PictureBox pictureBox1 = new PictureBox();
-                pictureBox1.BackColor = Color.Transparent;
-                Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
-                Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
                 Guna2Panel guna2Panel = new Guna2Panel();
                 guna2Panel.Height = 50;
-                guna2Panel.BackColor = Color.DarkViolet;
+                guna2Panel.BackColor = Color.DarkViolet; ////////////////////////////
                 guna2Panel.Dock = DockStyle.Bottom;
 
-                pictureBox1.Image = Properties.Resources.check__5_;
-                pictureBox1.Size = new Size(36, 36);
-                pictureBox1.Location = new Point(50, 57);
-                pictureBox1.BringToFront();
-                guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
-                guna2HtmlLabel1.Text = "Free room";
-                guna2HtmlLabel1.Location = new Point(95, 56);
-                childPanel.BackgroundImage = Properties.Resources.Untitled_design__1___1_;
-                guna2Panel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x50__1_;
-                guna2HtmlLabel1.BringToFront();
-                guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                guna2HtmlLabel3.Text = "0";
-                guna2HtmlLabel3.Location = new Point(50, 10);
-                guna2HtmlLabel3.BringToFront();
+                Guna2PictureBox pictureBox1 = new Guna2PictureBox();
+                pictureBox1.Location = new Point(100, 35);
+                pictureBox1.Size = new Size(40, 40);
 
-                pictureBox1.Image = Properties.Resources.user_profile;
-                pictureBox1.Size = new Size(36, 36);
-                pictureBox1.Location = new Point(50, 57);
-                pictureBox1.BringToFront();
-                guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
-                guna2HtmlLabel1.Text = fullname[i];
-                guna2HtmlLabel1.Location = new Point(95, 56);
-                childPanel.BackgroundImage = Properties.Resources.Untitled_design__4_;
-                guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50__1_;
-                guna2HtmlLabel1.BringToFront();
-                guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                guna2HtmlLabel3.Text = fullname[i].ToString();
-                guna2HtmlLabel3.Location = new Point(50, 10);
-                guna2HtmlLabel3.BringToFront();
+                Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
+                guna2HtmlLabel1.Location = new Point(160, 40);
+                guna2HtmlLabel1.Font = new Font("Arial", 20, FontStyle.Regular);
+                guna2HtmlLabel1.Text = numday[i].ToString() + " days";
 
+                Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
+                guna2HtmlLabel3.Location = new Point(70, 90);
+                guna2HtmlLabel3.Text = fullname[i] + cccd[i];
+                guna2HtmlLabel3.Font = new Font("Arial", 20, FontStyle.Regular);
 
+                Guna2PictureBox guna2PictureBox = new Guna2PictureBox();
+                guna2PictureBox.Location = new Point(3, 3);
+                guna2PictureBox.Size = new Size(40, 40);
 
-                PictureBox pictureBox2 = new PictureBox();
-                pictureBox2.Image = Properties.Resources.spring_calendar;
-                pictureBox2.BackColor = Color.Transparent;
-                pictureBox2.Size = new Size(36, 36);
-                pictureBox2.Location = new Point(3, 3);
-                pictureBox2.BringToFront();
+                Guna2PictureBox guna2PictureBox1 = new Guna2PictureBox();
+                guna2PictureBox1.Location = new Point(160, 3);
+                guna2PictureBox1.Size = new Size(40, 40);
 
                 Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
-                guna2HtmlLabel4.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                guna2HtmlLabel4.Text = "days";
-                guna2HtmlLabel4.Location = new Point(65, 10);
-                guna2HtmlLabel4.BringToFront();
+                guna2HtmlLabel4.Text = date_ci[i].ToString();
+                guna2HtmlLabel4.Location = new Point(50, 16);
+                guna2HtmlLabel4.Font = new Font("Arial", 20, FontStyle.Regular);
 
                 Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
-                guna2HtmlLabel5.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                guna2HtmlLabel5.Text = fullname[i];
-                guna2HtmlLabel5.Location = new Point(200, 10);
-                guna2HtmlLabel5.BringToFront();
+                guna2HtmlLabel5.Text = date_co[i].ToString();
+                guna2HtmlLabel5.Location = new Point(215, 16);
+                guna2HtmlLabel5.Font = new Font("Arial", 20, FontStyle.Regular);
 
-                PictureBox pictureBox3 = new PictureBox();
-                pictureBox3.BackColor = Color.Transparent;
-                pictureBox3.Size = new Size(36, 36);
-                pictureBox3.Location = new Point(160, 3);
-                pictureBox3.Image = Properties.Resources.check__7_;
-                guna2HtmlLabel5.Location = new Point(220, 10);
-                pictureBox3.Location = new Point(190, 3);
-                pictureBox3.Image = Properties.Resources.x_mark;
-                pictureBox3.Image = Properties.Resources.clock__1_;
-                pictureBox3.Image = Properties.Resources.hair_dryer;
-                pictureBox3.BringToFront();
-
-                guna2Panel.Controls.Add(pictureBox2);
-                guna2Panel.Controls.Add(guna2HtmlLabel3);
+                guna2Panel.Controls.Add(guna2PictureBox);
+                guna2Panel.Controls.Add(guna2PictureBox1);
                 guna2Panel.Controls.Add(guna2HtmlLabel4);
                 guna2Panel.Controls.Add(guna2HtmlLabel5);
-                guna2Panel.Controls.Add(pictureBox3);
-
 
                 childPanel.Controls.Add(guna2HtmlLabel);
-                childPanel.Controls.Add(guna2Panel);
                 childPanel.Controls.Add(guna2HtmlLabel2);
                 childPanel.Controls.Add(pictureBox1);
                 childPanel.Controls.Add(guna2HtmlLabel1);
+                childPanel.Controls.Add(guna2HtmlLabel3);
+                childPanel.Controls.Add(guna2Panel);
 
                 guna2Panel5.Controls.Add(childPanel);
 
@@ -1678,6 +1641,16 @@ namespace WindowsForm_Project.All_User_Control
                     y += childPanel.Height + spacing;
                 }
             }
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
