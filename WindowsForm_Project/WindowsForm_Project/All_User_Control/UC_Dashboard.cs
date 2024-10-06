@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
         }
 
-        public void LoadSingleRoom(string statusCon1 = "", string housekeep1 = "")
+        public void LoadSingleRoom(string statusCon1 = "")
         {
             guna2Panel1.AutoScroll = true;
             guna2Panel1.HorizontalScroll.Enabled = true;
@@ -95,14 +95,7 @@ namespace WindowsForm_Project.All_User_Control
                 query4 += $" AND Update_room.status_room = '{statusCon1}'";
                 query5 += $" AND Update_room.status_room = '{statusCon1}'";
             }
-            if (!string.IsNullOrEmpty(housekeep1))
-            {
-                query1 += $" AND Update_room.house_keeping = '{housekeep1}'";
-                query2 += $" AND Update_room.house_keeping = '{housekeep1}'";
-                query3 += $" AND Update_room.house_keeping = '{housekeep1}'";
-                query4 += $" AND Update_room.house_keeping = '{housekeep1}'";
-                query5 += $" AND Update_room.house_keeping = '{housekeep1}'";
-            }
+            
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -319,26 +312,6 @@ namespace WindowsForm_Project.All_User_Control
             {
                 string status = "Check Out";
                 LoadSingleRoom(status);
-            }
-            else if (dashboard != null && dashboard.IsCleanChecked)
-            {
-                string housekeep = "Clean";
-                LoadSingleRoom(housekeep);
-            }
-            else if (dashboard != null && dashboard.IsNotCleanChecked)
-            {
-                string housekeep = "Not Clean";
-                LoadSingleRoom(housekeep);
-            }
-            else if (dashboard != null && dashboard.IsInProgressChecked)
-            {
-                string housekeep = "In Progress";
-                LoadSingleRoom(housekeep);
-            }
-            else if (dashboard != null && dashboard.IsRepairChecked)
-            {
-                string housekeep = "Repair";
-                LoadSingleRoom(housekeep);
             }
             else
             {

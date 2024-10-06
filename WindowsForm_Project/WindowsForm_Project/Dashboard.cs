@@ -33,22 +33,6 @@ namespace WindowsForm_Project
         {
             get { return cbcheckout.Checked; }
         }
-        public bool IsCleanChecked
-        {
-            get { return cbclean.Checked; }
-        }
-        public bool IsNotCleanChecked
-        {
-            get { return cbnotclean.Checked; }
-        }
-        public bool IsInProgressChecked
-        {
-            get { return cbinprogress.Checked; }
-        }
-        public bool IsRepairChecked
-        {
-            get { return cbrepair.Checked; }
-        }
         private DateTime currentDate;
         private WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard;
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -848,20 +832,12 @@ namespace WindowsForm_Project
 
         private void cbclean_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbclean.Checked)
-            {
-                uc_dashboard.LoadSingleRoom("", "Clean");
-                //uc_dashboard.LoadDoubleRoom("Clean");
-                //uc_dashboard.LoadTripleRoom("Clean");
+            
+        }
 
-            }
-            else
-            {
-                uc_dashboard.LoadSingleRoom();
-                uc_dashboard.LoadDoubleRoom();
-                uc_dashboard.LoadTripleRoom();
-
-            }
+        private void cbnotclean_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

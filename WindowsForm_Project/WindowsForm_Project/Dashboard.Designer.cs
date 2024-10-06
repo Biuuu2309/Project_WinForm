@@ -59,13 +59,6 @@
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
-            this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
-            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
-            this.uC_Serve1 = new WindowsForm_Project.All_User_Control.UC_Serve();
-            this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
-            this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
-            this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbsingle = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbdouble = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -73,6 +66,13 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
+            this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
+            this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
+            this.uC_Serve1 = new WindowsForm_Project.All_User_Control.UC_Serve();
+            this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
+            this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
+            this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
@@ -213,6 +213,7 @@
             this.cbnotclean.UncheckedState.BorderRadius = 0;
             this.cbnotclean.UncheckedState.BorderThickness = 0;
             this.cbnotclean.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbnotclean.CheckedChanged += new System.EventHandler(this.cbnotclean_CheckedChanged);
             // 
             // cbclean
             // 
@@ -538,75 +539,6 @@
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
-            // uC_Dashboard2
-            // 
-            this.uC_Dashboard2.BackColor = System.Drawing.Color.White;
-            this.uC_Dashboard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Dashboard2.BackgroundImage")));
-            this.uC_Dashboard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Dashboard2.Location = new System.Drawing.Point(220, 114);
-            this.uC_Dashboard2.Name = "uC_Dashboard2";
-            this.uC_Dashboard2.Size = new System.Drawing.Size(1700, 966);
-            this.uC_Dashboard2.TabIndex = 12;
-            this.uC_Dashboard2.Load += new System.EventHandler(this.uC_Dashboard2_Load_1);
-            // 
-            // uC_Addroom1
-            // 
-            this.uC_Addroom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Addroom1.BackgroundImage")));
-            this.uC_Addroom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Addroom1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Addroom1.Name = "uC_Addroom1";
-            this.uC_Addroom1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Addroom1.TabIndex = 8;
-            // 
-            // uC_Bookings2
-            // 
-            this.uC_Bookings2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Bookings2.BackgroundImage")));
-            this.uC_Bookings2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Bookings2.Location = new System.Drawing.Point(0, 114);
-            this.uC_Bookings2.Name = "uC_Bookings2";
-            this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Bookings2.TabIndex = 7;
-            // 
-            // uC_Serve1
-            // 
-            this.uC_Serve1.AutoScroll = true;
-            this.uC_Serve1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Serve1.BackgroundImage")));
-            this.uC_Serve1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Serve1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Serve1.Name = "uC_Serve1";
-            this.uC_Serve1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Serve1.TabIndex = 11;
-            // 
-            // uC_Customer1
-            // 
-            this.uC_Customer1.AutoScroll = true;
-            this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
-            this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Customer1.Name = "uC_Customer1";
-            this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Customer1.TabIndex = 10;
-            this.uC_Customer1.Load += new System.EventHandler(this.uC_Customer1_Load);
-            // 
-            // uC_Manage1
-            // 
-            this.uC_Manage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Manage1.BackgroundImage")));
-            this.uC_Manage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Manage1.Name = "uC_Manage1";
-            this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Manage1.TabIndex = 9;
-            this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
-            // 
-            // uC_Checkout1
-            // 
-            this.uC_Checkout1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Checkout1.BackgroundImage")));
-            this.uC_Checkout1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Checkout1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Checkout1.Name = "uC_Checkout1";
-            this.uC_Checkout1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Checkout1.TabIndex = 13;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -703,6 +635,75 @@
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 16;
             this.guna2PictureBox3.TabStop = false;
+            // 
+            // uC_Dashboard2
+            // 
+            this.uC_Dashboard2.BackColor = System.Drawing.Color.White;
+            this.uC_Dashboard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Dashboard2.BackgroundImage")));
+            this.uC_Dashboard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Dashboard2.Location = new System.Drawing.Point(220, 114);
+            this.uC_Dashboard2.Name = "uC_Dashboard2";
+            this.uC_Dashboard2.Size = new System.Drawing.Size(1700, 966);
+            this.uC_Dashboard2.TabIndex = 12;
+            this.uC_Dashboard2.Load += new System.EventHandler(this.uC_Dashboard2_Load_1);
+            // 
+            // uC_Addroom1
+            // 
+            this.uC_Addroom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Addroom1.BackgroundImage")));
+            this.uC_Addroom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Addroom1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Addroom1.Name = "uC_Addroom1";
+            this.uC_Addroom1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Addroom1.TabIndex = 8;
+            // 
+            // uC_Bookings2
+            // 
+            this.uC_Bookings2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Bookings2.BackgroundImage")));
+            this.uC_Bookings2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Bookings2.Location = new System.Drawing.Point(0, 114);
+            this.uC_Bookings2.Name = "uC_Bookings2";
+            this.uC_Bookings2.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Bookings2.TabIndex = 7;
+            // 
+            // uC_Serve1
+            // 
+            this.uC_Serve1.AutoScroll = true;
+            this.uC_Serve1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Serve1.BackgroundImage")));
+            this.uC_Serve1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Serve1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Serve1.Name = "uC_Serve1";
+            this.uC_Serve1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Serve1.TabIndex = 11;
+            // 
+            // uC_Customer1
+            // 
+            this.uC_Customer1.AutoScroll = true;
+            this.uC_Customer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Customer1.BackgroundImage")));
+            this.uC_Customer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Customer1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Customer1.Name = "uC_Customer1";
+            this.uC_Customer1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Customer1.TabIndex = 10;
+            this.uC_Customer1.Load += new System.EventHandler(this.uC_Customer1_Load);
+            // 
+            // uC_Manage1
+            // 
+            this.uC_Manage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Manage1.BackgroundImage")));
+            this.uC_Manage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Manage1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Manage1.Name = "uC_Manage1";
+            this.uC_Manage1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Manage1.TabIndex = 9;
+            this.uC_Manage1.Load += new System.EventHandler(this.uC_Manage1_Load);
+            // 
+            // uC_Checkout1
+            // 
+            this.uC_Checkout1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Checkout1.BackgroundImage")));
+            this.uC_Checkout1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_Checkout1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Checkout1.Name = "uC_Checkout1";
+            this.uC_Checkout1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Checkout1.TabIndex = 13;
             // 
             // Dashboard
             // 
