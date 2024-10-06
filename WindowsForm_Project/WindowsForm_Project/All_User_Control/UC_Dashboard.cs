@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
         }
 
-        public void LoadSingleRoom(string statusCon1 = "")
+        public void LoadSingleRoom(string statusCon1 = "", string statusCon2 = "")
         {
             guna2Panel1.AutoScroll = true;
             guna2Panel1.HorizontalScroll.Enabled = true;
@@ -87,13 +87,32 @@ namespace WindowsForm_Project.All_User_Control
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 1";
 
-            if (!string.IsNullOrEmpty(statusCon1))
+            if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
-                query1 += $" AND Update_room.status_room = '{statusCon1}'";
-                query2 += $" AND Update_room.status_room = '{statusCon1}'";
-                query3 += $" AND Update_room.status_room = '{statusCon1}'";
-                query4 += $" AND Update_room.status_room = '{statusCon1}'";
-                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+            }
+            else if (!string.IsNullOrEmpty(statusCon1) && string.IsNullOrEmpty(statusCon2))
+            {
+                if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
+                {
+                    query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                }
+                else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
+                {
+                    query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query4 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                }
             }
             
             List<int> roomnumber = new List<int>();
@@ -293,25 +312,116 @@ namespace WindowsForm_Project.All_User_Control
         {
             Dashboard dashboard = this.FindForm() as Dashboard;
 
-            if (dashboard != null && dashboard.IsReservedChecked)
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
             {
-                string status = "Reserved";
-                LoadSingleRoom(status);  
+                LoadSingleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadSingleRoom("Reserved");  
             }
             else if (dashboard != null && dashboard.IsOccupiedChecked)
             {
-                string status = "Occupied";
-                LoadSingleRoom(status);
+                LoadSingleRoom("Occupied");
             }
             else if (dashboard != null && dashboard.IsAvailableChecked)
             {
-                string status = "Available";
-                LoadSingleRoom(status);
+                LoadSingleRoom("Available");
             }
             else if (dashboard != null && dashboard.IsCheckOutChecked)
             {
-                string status = "Check Out";
-                LoadSingleRoom(status);
+                LoadSingleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Repair");
             }
             else
             {
@@ -324,7 +434,7 @@ namespace WindowsForm_Project.All_User_Control
 
         }
 
-        public void LoadDoubleRoom(string statusCon1 = "")
+        public void LoadDoubleRoom(string statusCon1 = "", string statusCon2 = "")
         {
             guna2Panel2.AutoScroll = true;
             guna2Panel2.HorizontalScroll.Enabled = true;
@@ -362,13 +472,32 @@ namespace WindowsForm_Project.All_User_Control
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 2";
 
-            if (!string.IsNullOrEmpty(statusCon1))
+            if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
-                query1 += $" AND Update_room.status_room = '{statusCon1}'";
-                query2 += $" AND Update_room.status_room = '{statusCon1}'";
-                query3 += $" AND Update_room.status_room = '{statusCon1}'";
-                query4 += $" AND Update_room.status_room = '{statusCon1}'";
-                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+            }
+            else if (!string.IsNullOrEmpty(statusCon1) && string.IsNullOrEmpty(statusCon2))
+            {
+                if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
+                {
+                    query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                }
+                else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
+                {
+                    query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query4 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                }
             }
 
             List<int> roomnumber = new List<int>();
@@ -568,25 +697,116 @@ namespace WindowsForm_Project.All_User_Control
         {
             Dashboard dashboard = this.FindForm() as Dashboard;
 
-            if (dashboard != null && dashboard.IsReservedChecked)
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
             {
-                string status = "Reserved";
-                LoadDoubleRoom(status);
+                LoadDoubleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadDoubleRoom("Reserved");
             }
             else if (dashboard != null && dashboard.IsOccupiedChecked)
             {
-                string status = "Occupied";
-                LoadDoubleRoom(status);
+                LoadDoubleRoom("Occupied");
             }
             else if (dashboard != null && dashboard.IsAvailableChecked)
             {
-                string status = "Available";
-                LoadDoubleRoom(status);
+                LoadDoubleRoom("Available");
             }
             else if (dashboard != null && dashboard.IsCheckOutChecked)
             {
-                string status = "Check Out";
-                LoadDoubleRoom(status);
+                LoadDoubleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Repair");
             }
             else
             {
@@ -594,7 +814,7 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
-        public void LoadTripleRoom(string statusCon1 = "")
+        public void LoadTripleRoom(string statusCon1 = "", string statusCon2 = "")
         {
             guna2Panel3.AutoScroll = true;
             guna2Panel3.HorizontalScroll.Enabled = true;
@@ -632,13 +852,32 @@ namespace WindowsForm_Project.All_User_Control
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 3";
 
-            if (!string.IsNullOrEmpty(statusCon1))
+            if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
-                query1 += $" AND Update_room.status_room = '{statusCon1}'";
-                query2 += $" AND Update_room.status_room = '{statusCon1}'";
-                query3 += $" AND Update_room.status_room = '{statusCon1}'";
-                query4 += $" AND Update_room.status_room = '{statusCon1}'";
-                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
+            }
+            else if (!string.IsNullOrEmpty(statusCon1) && string.IsNullOrEmpty(statusCon2))
+            {
+                if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
+                {
+                    query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                    query5 += $" AND Update_room.status_room = '{statusCon1}'";
+                }
+                else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
+                {
+                    query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query4 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                    query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
+                }
             }
 
             List<int> roomnumber = new List<int>();
@@ -841,25 +1080,116 @@ namespace WindowsForm_Project.All_User_Control
         {
             Dashboard dashboard = this.FindForm() as Dashboard;
 
-            if (dashboard != null && dashboard.IsReservedChecked)
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
             {
-                string status = "Reserved";
-                LoadTripleRoom(status);
+                LoadTripleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadTripleRoom("Reserved");
             }
             else if (dashboard != null && dashboard.IsOccupiedChecked)
             {
-                string status = "Occupied";
-                LoadTripleRoom(status);
+                LoadTripleRoom("Occupied");
             }
             else if (dashboard != null && dashboard.IsAvailableChecked)
             {
-                string status = "Available";
-                LoadTripleRoom(status);
+                LoadTripleRoom("Available");
             }
             else if (dashboard != null && dashboard.IsCheckOutChecked)
             {
-                string status = "Check Out";
-                LoadTripleRoom(status);
+                LoadTripleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Repair");
             }
             else
             {
@@ -1114,6 +1444,240 @@ namespace WindowsForm_Project.All_User_Control
             guna2HtmlLabel.Text = em.ToString();
             guna2HtmlLabel.Location = new Point(27, 85);
             guna2Panel10.Controls.Add(guna2HtmlLabel);
+        }
+
+
+        // Dang sua dung dung vo
+        private void guna2Panel5_Click(object sender, EventArgs e)
+        {
+            guna2Panel5.AutoScroll = true;
+            guna2Panel5.HorizontalScroll.Enabled = true;
+            guna2Panel5.HorizontalScroll.Visible = true;
+            guna2Panel5.Controls.Clear();
+            guna2Panel5.Controls.Clear();
+
+            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
+            guna2HtmlLabel6.Text = "Check Out";
+            guna2HtmlLabel6.Font = new Font("Comic Sans MS", 20, FontStyle.Bold);
+            guna2HtmlLabel6.Location = new Point(34, 23);
+            guna2Panel5.Controls.Add(guna2HtmlLabel6);
+
+            int spacing = 40;
+            int x = 40;
+            int y = 120;
+
+            string connectionString = DatabaseConnection.Connection();
+            string query1 = @"  SELECT id FROM Checkout";
+            string query2 = @"  SELECT sophong 
+                                FROM Checkout";
+            string query3 = @"  SELECT first_name + ' ' + last_name as fullname
+                                FROM Checkout";
+            string query4 = @"  SELECT cccd_cus
+                                FROM Checkout";
+            string query5 = @"  SELECT date_ci
+                                FROM Checkout";
+            string query6 = @"  SELECT date_co
+                                FROM Checkout";
+            string query7 = @"  SELECT DATEDIFF(DAY, date_ci, date_co) AS numday
+                                FROM Checkout";
+
+
+            List<int> id = new List<int>();
+            List<int> sophong = new List<int>();
+            List<string> fullname = new List<string>();
+            List<string> cccd = new List<string>();
+            List<DateTime> date_ci = new List<DateTime>();
+            List<DateTime> date_co = new List<DateTime>();
+            List<int> numday = new List<int>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query1, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            id.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query2, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            sophong.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query3, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            fullname.Add(reader.GetString(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query4, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            cccd.Add(reader.GetString(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query5, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            date_ci.Add(reader.GetDateTime(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query6, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            date_co.Add(reader.GetDateTime(0));
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query7, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            numday.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < id.Count; i++)
+            {
+                Guna2Panel childPanel = new Guna2Panel();
+                childPanel.Size = new Size(270, 180);
+                childPanel.Location = new Point(x, y);
+                childPanel.BackColor = Color.White;
+
+                Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+                guna2HtmlLabel.Text = "ID " + id[i];
+                guna2HtmlLabel.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel.Location = new Point(10, 10);
+
+                Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
+                guna2HtmlLabel2.Location = new Point(200, 10);
+                guna2HtmlLabel2.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel2.Text = "Room" + sophong[i];
+
+                PictureBox pictureBox1 = new PictureBox();
+                pictureBox1.BackColor = Color.Transparent;
+                Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
+                Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
+
+                Guna2Panel guna2Panel = new Guna2Panel();
+                guna2Panel.Height = 50;
+                guna2Panel.BackColor = Color.DarkViolet;
+                guna2Panel.Dock = DockStyle.Bottom;
+
+                pictureBox1.Image = Properties.Resources.check__5_;
+                pictureBox1.Size = new Size(36, 36);
+                pictureBox1.Location = new Point(50, 57);
+                pictureBox1.BringToFront();
+                guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
+                guna2HtmlLabel1.Text = "Free room";
+                guna2HtmlLabel1.Location = new Point(95, 56);
+                childPanel.BackgroundImage = Properties.Resources.Untitled_design__1___1_;
+                guna2Panel.BackgroundImage = Properties.Resources.wallhaven_0w2wdx_360x50__1_;
+                guna2HtmlLabel1.BringToFront();
+                guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel3.Text = "0";
+                guna2HtmlLabel3.Location = new Point(50, 10);
+                guna2HtmlLabel3.BringToFront();
+
+                pictureBox1.Image = Properties.Resources.user_profile;
+                pictureBox1.Size = new Size(36, 36);
+                pictureBox1.Location = new Point(50, 57);
+                pictureBox1.BringToFront();
+                guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
+                guna2HtmlLabel1.Text = fullname[i];
+                guna2HtmlLabel1.Location = new Point(95, 56);
+                childPanel.BackgroundImage = Properties.Resources.Untitled_design__4_;
+                guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50__1_;
+                guna2HtmlLabel1.BringToFront();
+                guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel3.Text = fullname[i].ToString();
+                guna2HtmlLabel3.Location = new Point(50, 10);
+                guna2HtmlLabel3.BringToFront();
+
+
+
+                PictureBox pictureBox2 = new PictureBox();
+                pictureBox2.Image = Properties.Resources.spring_calendar;
+                pictureBox2.BackColor = Color.Transparent;
+                pictureBox2.Size = new Size(36, 36);
+                pictureBox2.Location = new Point(3, 3);
+                pictureBox2.BringToFront();
+
+                Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
+                guna2HtmlLabel4.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel4.Text = "days";
+                guna2HtmlLabel4.Location = new Point(65, 10);
+                guna2HtmlLabel4.BringToFront();
+
+                Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
+                guna2HtmlLabel5.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                guna2HtmlLabel5.Text = fullname[i];
+                guna2HtmlLabel5.Location = new Point(200, 10);
+                guna2HtmlLabel5.BringToFront();
+
+                PictureBox pictureBox3 = new PictureBox();
+                pictureBox3.BackColor = Color.Transparent;
+                pictureBox3.Size = new Size(36, 36);
+                pictureBox3.Location = new Point(160, 3);
+                pictureBox3.Image = Properties.Resources.check__7_;
+                guna2HtmlLabel5.Location = new Point(220, 10);
+                pictureBox3.Location = new Point(190, 3);
+                pictureBox3.Image = Properties.Resources.x_mark;
+                pictureBox3.Image = Properties.Resources.clock__1_;
+                pictureBox3.Image = Properties.Resources.hair_dryer;
+                pictureBox3.BringToFront();
+
+                guna2Panel.Controls.Add(pictureBox2);
+                guna2Panel.Controls.Add(guna2HtmlLabel3);
+                guna2Panel.Controls.Add(guna2HtmlLabel4);
+                guna2Panel.Controls.Add(guna2HtmlLabel5);
+                guna2Panel.Controls.Add(pictureBox3);
+
+
+                childPanel.Controls.Add(guna2HtmlLabel);
+                childPanel.Controls.Add(guna2Panel);
+                childPanel.Controls.Add(guna2HtmlLabel2);
+                childPanel.Controls.Add(pictureBox1);
+                childPanel.Controls.Add(guna2HtmlLabel1);
+
+                guna2Panel5.Controls.Add(childPanel);
+
+                x += childPanel.Width + spacing;
+
+                if ((i + 1) % 2 == 0)
+                {
+                    x = 20;
+                    y += childPanel.Height + spacing;
+                }
+            }
         }
     }
 }

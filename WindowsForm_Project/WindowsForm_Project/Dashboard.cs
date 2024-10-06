@@ -33,6 +33,22 @@ namespace WindowsForm_Project
         {
             get { return cbcheckout.Checked; }
         }
+        public bool IsCleanChecked
+        {
+            get { return cbclean.Checked; }
+        }
+        public bool IsNotCleanChecked
+        {
+            get { return cbnotclean.Checked; }
+        }
+        public bool IsInProgressChecked
+        {
+            get { return cbinprogress.Checked; }
+        }
+        public bool IsRepairChecked
+        {
+            get { return cbrepair.Checked; }
+        }
         private DateTime currentDate;
         private WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard;
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -753,7 +769,31 @@ namespace WindowsForm_Project
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbreserved.Checked)
+            if (cbreserved.Checked && cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Reserved", "Clean");
+                uc_dashboard.LoadDoubleRoom("Reserved", "Clean");
+                uc_dashboard.LoadTripleRoom("Reserved", "Clean");
+            }
+            else if (cbreserved.Checked && cbnotclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Reserved", "Not Clean");
+                uc_dashboard.LoadDoubleRoom("Reserved", "Not Clean");
+                uc_dashboard.LoadTripleRoom("Reserved", "Not Clean");
+            }
+            else if (cbreserved.Checked && cbinprogress.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Reserved", "In Progress");
+                uc_dashboard.LoadDoubleRoom("Reserved", "In Progress");
+                uc_dashboard.LoadTripleRoom("Reserved", "In Progress");
+            }
+            else if (cbreserved.Checked && cbrepair.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Reserved", "Repair");
+                uc_dashboard.LoadDoubleRoom("Reserved", "Repair");
+                uc_dashboard.LoadTripleRoom("Reserved", "Repair");
+            }
+            else if (cbreserved.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Reserved");
                 uc_dashboard.LoadDoubleRoom("Reserved");
@@ -774,7 +814,31 @@ namespace WindowsForm_Project
 
         private void cboccupied_CheckedChanged(object sender, EventArgs e)
         {
-            if (cboccupied.Checked)
+            if (cboccupied.Checked && cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Occupied", "Clean");
+                uc_dashboard.LoadDoubleRoom("Occupied", "Clean");
+                uc_dashboard.LoadTripleRoom("Occupied", "Clean");
+            }
+            else if (cboccupied.Checked && cbnotclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Occupied", "Not Clean");
+                uc_dashboard.LoadDoubleRoom("Occupied", "Not Clean");
+                uc_dashboard.LoadTripleRoom("Occupied", "Not Clean");
+            }
+            else if (cboccupied.Checked && cbinprogress.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Occupied", "In Progress");
+                uc_dashboard.LoadDoubleRoom("Occupied", "In Progress");
+                uc_dashboard.LoadTripleRoom("Occupied", "In Progress");
+            }
+            else if (cboccupied.Checked && cbrepair.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Occupied", "Repair");
+                uc_dashboard.LoadDoubleRoom("Occupied", "Repair");
+                uc_dashboard.LoadTripleRoom("Occupied", "Repair");
+            }
+            else if(cboccupied.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Occupied");
                 uc_dashboard.LoadDoubleRoom("Occupied");
@@ -791,7 +855,31 @@ namespace WindowsForm_Project
         }
         private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbavailable.Checked)
+            if (cbavailable.Checked && cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Available", "Clean");
+                uc_dashboard.LoadDoubleRoom("Available", "Clean");
+                uc_dashboard.LoadTripleRoom("Available", "Clean");
+            }
+            else if (cbavailable.Checked && cbnotclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Available", "Not Clean");
+                uc_dashboard.LoadDoubleRoom("Available", "Not Clean");
+                uc_dashboard.LoadTripleRoom("Available", "Not Clean");
+            }
+            else if (cbavailable.Checked && cbinprogress.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Available", "In Progress");
+                uc_dashboard.LoadDoubleRoom("Available", "In Progress");
+                uc_dashboard.LoadTripleRoom("Available", "In Progress");
+            }
+            else if (cbavailable.Checked && cbrepair.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Available", "Repair");
+                uc_dashboard.LoadDoubleRoom("Available", "Repair");
+                uc_dashboard.LoadTripleRoom("Available", "Repair");
+            }
+            else if (cbavailable.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Available");
                 uc_dashboard.LoadDoubleRoom("Available");
@@ -809,7 +897,31 @@ namespace WindowsForm_Project
 
         private void cbcheckout_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbcheckout.Checked)
+            if (cbcheckout.Checked && cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Check Out", "Clean");
+                uc_dashboard.LoadDoubleRoom("Check Out", "Clean");
+                uc_dashboard.LoadTripleRoom("Check Out", "Clean");
+            }
+            else if (cbcheckout.Checked && cbnotclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Check Out", "Not Clean");
+                uc_dashboard.LoadDoubleRoom("Check Out", "Not Clean");
+                uc_dashboard.LoadTripleRoom("Check Out", "Not Clean");
+            }
+            else if (cbcheckout.Checked && cbinprogress.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Check Out", "In Progress");
+                uc_dashboard.LoadDoubleRoom("Check Out", "In Progress");
+                uc_dashboard.LoadTripleRoom("Check Out", "In Progress");
+            }
+            else if (cbcheckout.Checked && cbrepair.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Check Out", "Repair");
+                uc_dashboard.LoadDoubleRoom("Check Out", "Repair");
+                uc_dashboard.LoadTripleRoom("Check Out", "Repair");
+            }
+            else if (cbcheckout.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Check Out");
                 uc_dashboard.LoadDoubleRoom("Check Out");
@@ -832,12 +944,74 @@ namespace WindowsForm_Project
 
         private void cbclean_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Clean");
+                uc_dashboard.LoadDoubleRoom("Clean");
+                uc_dashboard.LoadTripleRoom("Clean");
+
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
+            }
         }
 
         private void cbnotclean_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (cbnotclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Not Clean");
+                uc_dashboard.LoadDoubleRoom("Not Clean");
+                uc_dashboard.LoadTripleRoom("Not Clean");
+
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
+            }
+        }
+
+        private void cbinprogress_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbinprogress.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("In Progress");
+                uc_dashboard.LoadDoubleRoom("In Progress");
+                uc_dashboard.LoadTripleRoom("In Progress");
+
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
+            }
+        }
+
+        private void cbrepair_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbrepair.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("Repair");
+                uc_dashboard.LoadDoubleRoom("Repair");
+                uc_dashboard.LoadTripleRoom("Repair");
+
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
+            }
         }
     }
 }

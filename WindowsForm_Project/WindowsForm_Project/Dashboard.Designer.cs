@@ -60,9 +60,6 @@
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cbsingle = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.cbdouble = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.cbtriple = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -73,6 +70,9 @@
             this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
             this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
             this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
@@ -87,6 +87,9 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox7);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox5);
@@ -99,9 +102,6 @@
             this.guna2Panel3.Controls.Add(this.cbnotclean);
             this.guna2Panel3.Controls.Add(this.cbclean);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel3.Controls.Add(this.cbtriple);
-            this.guna2Panel3.Controls.Add(this.cbdouble);
-            this.guna2Panel3.Controls.Add(this.cbsingle);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel3.Controls.Add(this.cbcheckout);
             this.guna2Panel3.Controls.Add(this.cbavailable);
@@ -177,6 +177,7 @@
             this.cbrepair.UncheckedState.BorderRadius = 0;
             this.cbrepair.UncheckedState.BorderThickness = 0;
             this.cbrepair.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbrepair.CheckedChanged += new System.EventHandler(this.cbrepair_CheckedChanged);
             // 
             // cbinprogress
             // 
@@ -195,6 +196,7 @@
             this.cbinprogress.UncheckedState.BorderRadius = 0;
             this.cbinprogress.UncheckedState.BorderThickness = 0;
             this.cbinprogress.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbinprogress.CheckedChanged += new System.EventHandler(this.cbinprogress_CheckedChanged);
             // 
             // cbnotclean
             // 
@@ -548,61 +550,6 @@
             this.guna2HtmlLabel2.TabIndex = 5;
             this.guna2HtmlLabel2.Text = "Type";
             // 
-            // cbsingle
-            // 
-            this.cbsingle.AutoSize = true;
-            this.cbsingle.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbsingle.CheckedState.BorderRadius = 0;
-            this.cbsingle.CheckedState.BorderThickness = 0;
-            this.cbsingle.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbsingle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbsingle.Location = new System.Drawing.Point(12, 234);
-            this.cbsingle.Name = "cbsingle";
-            this.cbsingle.Size = new System.Drawing.Size(71, 22);
-            this.cbsingle.TabIndex = 6;
-            this.cbsingle.Text = "Single";
-            this.cbsingle.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbsingle.UncheckedState.BorderRadius = 0;
-            this.cbsingle.UncheckedState.BorderThickness = 0;
-            this.cbsingle.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbsingle.CheckedChanged += new System.EventHandler(this.cbsingle_CheckedChanged);
-            // 
-            // cbdouble
-            // 
-            this.cbdouble.AutoSize = true;
-            this.cbdouble.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbdouble.CheckedState.BorderRadius = 0;
-            this.cbdouble.CheckedState.BorderThickness = 0;
-            this.cbdouble.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbdouble.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbdouble.Location = new System.Drawing.Point(12, 269);
-            this.cbdouble.Name = "cbdouble";
-            this.cbdouble.Size = new System.Drawing.Size(77, 22);
-            this.cbdouble.TabIndex = 7;
-            this.cbdouble.Text = "Double";
-            this.cbdouble.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbdouble.UncheckedState.BorderRadius = 0;
-            this.cbdouble.UncheckedState.BorderThickness = 0;
-            this.cbdouble.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // cbtriple
-            // 
-            this.cbtriple.AutoSize = true;
-            this.cbtriple.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbtriple.CheckedState.BorderRadius = 0;
-            this.cbtriple.CheckedState.BorderThickness = 0;
-            this.cbtriple.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbtriple.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtriple.Location = new System.Drawing.Point(12, 303);
-            this.cbtriple.Name = "cbtriple";
-            this.cbtriple.Size = new System.Drawing.Size(65, 22);
-            this.cbtriple.TabIndex = 8;
-            this.cbtriple.Text = "Triple";
-            this.cbtriple.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbtriple.UncheckedState.BorderRadius = 0;
-            this.cbtriple.UncheckedState.BorderThickness = 0;
-            this.cbtriple.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.people;
@@ -705,6 +652,36 @@
             this.uC_Checkout1.Size = new System.Drawing.Size(1920, 966);
             this.uC_Checkout1.TabIndex = 13;
             // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 238);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(47, 20);
+            this.guna2HtmlLabel4.TabIndex = 21;
+            this.guna2HtmlLabel4.Text = "Single";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 273);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(53, 20);
+            this.guna2HtmlLabel5.TabIndex = 22;
+            this.guna2HtmlLabel5.Text = "Double";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 307);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(42, 20);
+            this.guna2HtmlLabel6.TabIndex = 23;
+            this.guna2HtmlLabel6.Text = "Triple";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,9 +758,9 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2CheckBox cbtriple;
-        private Guna.UI2.WinForms.Guna2CheckBox cbdouble;
-        private Guna.UI2.WinForms.Guna2CheckBox cbsingle;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
     }
 }

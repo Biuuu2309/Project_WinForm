@@ -359,6 +359,7 @@
             this.guna2Panel5.ShadowDecoration.Enabled = true;
             this.guna2Panel5.Size = new System.Drawing.Size(665, 674);
             this.guna2Panel5.TabIndex = 51;
+            this.guna2Panel5.Click += new System.EventHandler(this.guna2Panel5_Click);
             this.guna2Panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
             // 
             // guna2HtmlLabel4
