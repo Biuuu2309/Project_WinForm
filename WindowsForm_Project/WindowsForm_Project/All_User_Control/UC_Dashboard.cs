@@ -177,13 +177,9 @@ namespace WindowsForm_Project.All_User_Control
 
 
                 PictureBox pictureBox1 = new PictureBox();
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
                 pictureBox1.BackColor = Color.Transparent;
-=======
->>>>>>> 9215a44bf6621636ccaa8ea5c87e343868398044
->>>>>>> Stashed changes
+
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 

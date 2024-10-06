@@ -319,7 +319,7 @@
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(202)))), ((int)(((byte)(222)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(585, 429);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(981, 363);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(981, 375);
             this.guna2GroupBox3.TabIndex = 11;
             this.guna2GroupBox3.Text = "Bảng";
             // 
