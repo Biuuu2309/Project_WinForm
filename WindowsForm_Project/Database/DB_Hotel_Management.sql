@@ -590,3 +590,9 @@ INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
 
 SELECT *
 FROM Checkout
+
+
+SELECT status_room 
+                                FROM Update_room
+                                INNER JOIN Room ON Update_room.maphong = Room.maphong
+                                WHERE Room.numbed = 1 AND Update_room.house_keeping = 'Clean'

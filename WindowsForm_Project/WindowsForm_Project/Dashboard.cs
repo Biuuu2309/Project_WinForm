@@ -33,6 +33,22 @@ namespace WindowsForm_Project
         {
             get { return cbcheckout.Checked; }
         }
+        public bool IsCleanChecked
+        {
+            get { return cbclean.Checked; }
+        }
+        public bool IsNotCleanChecked
+        {
+            get { return cbnotclean.Checked; }
+        }
+        public bool IsInProgressChecked
+        {
+            get { return cbinprogress.Checked; }
+        }
+        public bool IsRepairChecked
+        {
+            get { return cbrepair.Checked; }
+        }
         private DateTime currentDate;
         private WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard;
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -756,10 +772,14 @@ namespace WindowsForm_Project
             if (cbreserved.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Reserved");
+                uc_dashboard.LoadDoubleRoom("Reserved");
+                uc_dashboard.LoadTripleRoom("Reserved");
             }
             else
             {
                 uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
             }
         }
 
@@ -773,10 +793,16 @@ namespace WindowsForm_Project
             if (cboccupied.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Occupied");
+                uc_dashboard.LoadDoubleRoom("Occupied");
+                uc_dashboard.LoadTripleRoom("Occupied");
+
             }
             else
             {
                 uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
             }
         }
         private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
@@ -784,10 +810,16 @@ namespace WindowsForm_Project
             if (cbavailable.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Available");
+                uc_dashboard.LoadDoubleRoom("Available");
+                uc_dashboard.LoadTripleRoom("Available");
+
             }
             else
             {
                 uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
             }
         }
 
@@ -796,10 +828,39 @@ namespace WindowsForm_Project
             if (cbcheckout.Checked)
             {
                 uc_dashboard.LoadSingleRoom("Check Out");
+                uc_dashboard.LoadDoubleRoom("Check Out");
+                uc_dashboard.LoadTripleRoom("Check Out");
+
             }
             else
             {
                 uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
+            }
+        }
+
+        private void cbsingle_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbclean_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbclean.Checked)
+            {
+                uc_dashboard.LoadSingleRoom("", "Clean");
+                //uc_dashboard.LoadDoubleRoom("Clean");
+                //uc_dashboard.LoadTripleRoom("Clean");
+
+            }
+            else
+            {
+                uc_dashboard.LoadSingleRoom();
+                uc_dashboard.LoadDoubleRoom();
+                uc_dashboard.LoadTripleRoom();
+
             }
         }
     }

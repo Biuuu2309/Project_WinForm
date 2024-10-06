@@ -49,7 +49,7 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel1.HorizontalScroll.Visible = true;
         }
 
-        public void LoadSingleRoom(string statusCon1 = "", string statusCon2 = "", string statusCon3 = "", string statusCon4 = "")
+        public void LoadSingleRoom(string statusCon1 = "", string housekeep1 = "")
         {
             guna2Panel1.AutoScroll = true;
             guna2Panel1.HorizontalScroll.Enabled = true;
@@ -95,31 +95,14 @@ namespace WindowsForm_Project.All_User_Control
                 query4 += $" AND Update_room.status_room = '{statusCon1}'";
                 query5 += $" AND Update_room.status_room = '{statusCon1}'";
             }
-            if (!string.IsNullOrEmpty(statusCon2))
+            if (!string.IsNullOrEmpty(housekeep1))
             {
-                query1 += $" AND Update_room.status_room = '{statusCon2}'";
-                query2 += $" AND Update_room.status_room = '{statusCon2}'";
-                query3 += $" AND Update_room.status_room = '{statusCon2}'";
-                query4 += $" AND Update_room.status_room = '{statusCon2}'";
-                query5 += $" AND Update_room.status_room = '{statusCon2}'";
+                query1 += $" AND Update_room.house_keeping = '{housekeep1}'";
+                query2 += $" AND Update_room.house_keeping = '{housekeep1}'";
+                query3 += $" AND Update_room.house_keeping = '{housekeep1}'";
+                query4 += $" AND Update_room.house_keeping = '{housekeep1}'";
+                query5 += $" AND Update_room.house_keeping = '{housekeep1}'";
             }
-            if (!string.IsNullOrEmpty(statusCon3))
-            {
-                query1 += $" AND Update_room.status_room = '{statusCon3}'";
-                query2 += $" AND Update_room.status_room = '{statusCon3}'";
-                query3 += $" AND Update_room.status_room = '{statusCon3}'";
-                query4 += $" AND Update_room.status_room = '{statusCon3}'";
-                query5 += $" AND Update_room.status_room = '{statusCon3}'";
-            }
-            if (!string.IsNullOrEmpty(statusCon4))
-            {
-                query1 += $" AND Update_room.status_room = '{statusCon4}'";
-                query2 += $" AND Update_room.status_room = '{statusCon4}'";
-                query3 += $" AND Update_room.status_room = '{statusCon4}'";
-                query4 += $" AND Update_room.status_room = '{statusCon4}'";
-                query5 += $" AND Update_room.status_room = '{statusCon4}'";
-            }
-
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -201,13 +184,10 @@ namespace WindowsForm_Project.All_User_Control
 
 
                 PictureBox pictureBox1 = new PictureBox();
-<<<<<<< Updated upstream
 
                 pictureBox1.BackColor = Color.Transparent;
 
-=======
                 pictureBox1.BackColor = Color.Transparent;
->>>>>>> Stashed changes
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
 
@@ -340,6 +320,26 @@ namespace WindowsForm_Project.All_User_Control
                 string status = "Check Out";
                 LoadSingleRoom(status);
             }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                string housekeep = "Clean";
+                LoadSingleRoom(housekeep);
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                string housekeep = "Not Clean";
+                LoadSingleRoom(housekeep);
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                string housekeep = "In Progress";
+                LoadSingleRoom(housekeep);
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                string housekeep = "Repair";
+                LoadSingleRoom(housekeep);
+            }
             else
             {
                 LoadSingleRoom();
@@ -351,7 +351,7 @@ namespace WindowsForm_Project.All_User_Control
 
         }
 
-        private void guna2Panel2_Click(object sender, EventArgs e)
+        public void LoadDoubleRoom(string statusCon1 = "")
         {
             guna2Panel2.AutoScroll = true;
             guna2Panel2.HorizontalScroll.Enabled = true;
@@ -370,7 +370,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
-            string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 2";
+            string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 2";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
@@ -378,14 +378,26 @@ namespace WindowsForm_Project.All_User_Control
             string query3 = @"  SELECT first_name + ' ' + last_name as fullname
                                 FROM Customer
                                 INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 2";
             string query4 = @"  SELECT DATEDIFF(DAY, date_ci, date_co) AS demngay
                                 FROM Bookings 
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 2";
             string query5 = @"  SELECT house_keeping
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 2";
+
+            if (!string.IsNullOrEmpty(statusCon1))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+            }
+
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -510,7 +522,7 @@ namespace WindowsForm_Project.All_User_Control
                     guna2HtmlLabel3.BringToFront();
                 }
 
-                
+
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;
@@ -557,7 +569,7 @@ namespace WindowsForm_Project.All_User_Control
                 {
                     pictureBox3.Image = Properties.Resources.hair_dryer;
                 }
-                
+
                 pictureBox3.BringToFront();
 
                 guna2Panel.Controls.Add(pictureBox2);
@@ -579,7 +591,37 @@ namespace WindowsForm_Project.All_User_Control
             }
         }
 
-        private void guna2Panel3_Click(object sender, EventArgs e)
+        private void guna2Panel2_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                string status = "Reserved";
+                LoadDoubleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                string status = "Occupied";
+                LoadDoubleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                string status = "Available";
+                LoadDoubleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                string status = "Check Out";
+                LoadDoubleRoom(status);
+            }
+            else
+            {
+                LoadDoubleRoom();
+            }
+        }
+
+        public void LoadTripleRoom(string statusCon1 = "")
         {
             guna2Panel3.AutoScroll = true;
             guna2Panel3.HorizontalScroll.Enabled = true;
@@ -598,7 +640,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
-            string query1 = @"  SELECT roomnumber FROM Room WHERE numbed = 3";
+            string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 3";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
@@ -606,14 +648,26 @@ namespace WindowsForm_Project.All_User_Control
             string query3 = @"  SELECT first_name + ' ' + last_name as fullname
                                 FROM Customer
                                 INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 3";
             string query4 = @"  SELECT DATEDIFF(DAY, date_ci, date_co) AS demngay
                                 FROM Bookings 
+                                INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 3";
             string query5 = @"  SELECT house_keeping
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE numbed = 3";
+
+            if (!string.IsNullOrEmpty(statusCon1))
+            {
+                query1 += $" AND Update_room.status_room = '{statusCon1}'";
+                query2 += $" AND Update_room.status_room = '{statusCon1}'";
+                query3 += $" AND Update_room.status_room = '{statusCon1}'";
+                query4 += $" AND Update_room.status_room = '{statusCon1}'";
+                query5 += $" AND Update_room.status_room = '{statusCon1}'";
+            }
+
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -804,9 +858,39 @@ namespace WindowsForm_Project.All_User_Control
 
                 if ((i + 1) % 2 == 0)
                 {
-                    x = 20;  
-                    y += childPanel.Height + spacing;  
+                    x = 20;
+                    y += childPanel.Height + spacing;
                 }
+            }
+        }
+
+        private void guna2Panel3_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                string status = "Reserved";
+                LoadTripleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                string status = "Occupied";
+                LoadTripleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                string status = "Available";
+                LoadTripleRoom(status);
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                string status = "Check Out";
+                LoadTripleRoom(status);
+            }
+            else
+            {
+                LoadTripleRoom();
             }
         }
         private void guna2Panel7_Paint(object sender, PaintEventArgs e)
