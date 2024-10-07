@@ -83,7 +83,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["last_name"].HeaderText = "Tên cuối";
                     DataGridView1.Columns["sdt"].HeaderText = "Số điện thoại";
                     DataGridView1.Columns["email"].HeaderText = "Email";
-                    DataGridView1.Columns["email"].Width = 500;
                     DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
                     DataGridView1.Columns["ngaysinh"].HeaderText = "Ngày sinh";
                     DataGridView1.Columns["luong"].HeaderText = "Lương";
@@ -384,6 +383,11 @@ namespace WindowsForm_Project.All_User_Control
         private void DataGridView3_Click(object sender, EventArgs e)
         {
             DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
 
         }
     }
