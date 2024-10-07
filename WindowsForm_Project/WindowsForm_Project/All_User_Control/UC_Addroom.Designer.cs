@@ -638,8 +638,10 @@
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Addroom";
-            this.Size = new System.Drawing.Size(1903, 966);
+            this.Size = new System.Drawing.Size(1886, 966);
             this.Load += new System.EventHandler(this.UC_Addroom_Load);
+            this.Enter += new System.EventHandler(this.UC_Addroom_Enter_1);
+            this.Leave += new System.EventHandler(this.UC_Addroom_Leave_1);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);

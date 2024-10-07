@@ -91,23 +91,11 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void UC_Serve_Leave(object sender, EventArgs e)
         {
-            clearAll();
+            
         }
         private void UC_Serve_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                LoadServeData();
-                DataGridView1.Refresh();
-                LoadRoomData();
-                DataGridView2.Refresh();
-                LoadCustomerData();
-                DataGridView3.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
         private void LoadServeData()
         {
@@ -339,6 +327,28 @@ namespace WindowsForm_Project.All_User_Control
         private void guna2GroupBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_Serve_Enter_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadServeData();
+                DataGridView1.Refresh();
+                LoadRoomData();
+                DataGridView2.Refresh();
+                LoadCustomerData();
+                DataGridView3.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UC_Serve_Leave_1(object sender, EventArgs e)
+        {
+            clearAll();
         }
     }
 }

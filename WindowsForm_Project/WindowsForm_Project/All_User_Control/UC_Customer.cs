@@ -108,21 +108,11 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void UC_Customer_Leave(object sender, EventArgs e)
         {
-            clearAll_Cus();
+            
         }
         private void UC_Customer_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                LoadCustomerData();
-                DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-                DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                DataGridView2.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -395,6 +385,26 @@ namespace WindowsForm_Project.All_User_Control
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_Customer_Enter_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCustomerData();
+                DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+                DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                DataGridView2.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UC_Customer_Leave_1(object sender, EventArgs e)
+        {
+            clearAll_Cus();
         }
     }
 }

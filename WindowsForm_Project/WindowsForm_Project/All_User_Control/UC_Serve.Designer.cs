@@ -329,7 +329,7 @@
             this.btnsubmit2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(90)))), ((int)(((byte)(111)))));
             this.btnsubmit2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnsubmit2.ForeColor = System.Drawing.Color.White;
-            this.btnsubmit2.Location = new System.Drawing.Point(888, 1171);
+            this.btnsubmit2.Location = new System.Drawing.Point(1579, 42);
             this.btnsubmit2.Name = "btnsubmit2";
             this.btnsubmit2.Size = new System.Drawing.Size(180, 45);
             this.btnsubmit2.TabIndex = 14;
@@ -353,7 +353,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(53)))), ((int)(((byte)(79)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(79, 208);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(53, 149);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(837, 530);
             this.guna2GroupBox1.TabIndex = 16;
@@ -387,7 +387,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(53)))), ((int)(((byte)(79)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(79, 816);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(53, 725);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(837, 318);
             this.guna2GroupBox2.TabIndex = 17;
@@ -400,7 +400,7 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(53)))), ((int)(((byte)(79)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(1015, 816);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(957, 725);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(802, 318);
             this.guna2GroupBox3.TabIndex = 18;
@@ -413,7 +413,7 @@
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(53)))), ((int)(((byte)(79)))));
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(222)))), ((int)(((byte)(186)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(1015, 208);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(957, 149);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.Size = new System.Drawing.Size(802, 530);
             this.guna2GroupBox4.TabIndex = 19;
@@ -473,13 +473,13 @@
             // 
             // uC_Report1
             // 
+            this.uC_Report1.AutoSize = true;
             this.uC_Report1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(44)))), ((int)(((byte)(80)))));
-            this.uC_Report1.Location = new System.Drawing.Point(401, 1234);
+            this.uC_Report1.Location = new System.Drawing.Point(452, 111);
             this.uC_Report1.Name = "uC_Report1";
-            this.uC_Report1.Size = new System.Drawing.Size(1371, 557);
-            this.uC_Report1.TabIndex = 15;
+            this.uC_Report1.Size = new System.Drawing.Size(1307, 439);
+            this.uC_Report1.TabIndex = 0;
             this.uC_Report1.Visible = false;
-            this.uC_Report1.Load += new System.EventHandler(this.uC_Report1_Load);
             // 
             // UC_Serve
             // 
@@ -488,15 +488,17 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic24;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.uC_Report1);
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.uC_Report1);
             this.Controls.Add(this.btnsubmit2);
             this.Name = "UC_Serve";
-            this.Size = new System.Drawing.Size(1852, 1123);
+            this.Size = new System.Drawing.Size(1818, 1123);
             this.Load += new System.EventHandler(this.UC_Serve_Load);
+            this.Enter += new System.EventHandler(this.UC_Serve_Enter_1);
+            this.Leave += new System.EventHandler(this.UC_Serve_Leave_1);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
@@ -506,6 +508,7 @@
             this.guna2GroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -524,12 +527,12 @@
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnsubmit2;
-        private UC_Report uC_Report1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView3;
         private Guna.UI2.WinForms.Guna2RadioButton txtcallserveee;
+        private UC_Report uC_Report1;
     }
 }

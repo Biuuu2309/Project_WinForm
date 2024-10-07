@@ -284,8 +284,6 @@ namespace WindowsForm_Project
             this.Enter += new EventHandler(cbreserved_Enter);
             this.MouseEnter += new EventHandler(guna2Panel3_MouseEnter);
             this.cbreserved.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
-            uc_bookings = new WindowsForm_Project.All_User_Control.UC_Bookings();
-            Controls.Add(uc_bookings);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -1035,6 +1033,11 @@ namespace WindowsForm_Project
             guna2HtmlLabel10.Text = repair.ToString();
             guna2HtmlLabel10.Location = new Point(165, 485);
             guna2Panel3.Controls.Add(guna2HtmlLabel10);
+        }
+
+        private void uC_Dashboard2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

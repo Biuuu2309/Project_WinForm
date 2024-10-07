@@ -106,21 +106,11 @@ namespace WindowsForm_Project.All_User_Control
 
         private void UC_Addroom_Leave(object sender, EventArgs e)
         {
-            clearAll();
+            
         }
         private void UC_Addroom_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                LoadRoomData();
-                LoadRoomUpData();
-                DataGridView1.Refresh();
-                DataGridView2.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void LoadRoomData()
@@ -243,6 +233,26 @@ namespace WindowsForm_Project.All_User_Control
         private void txtstatusroom_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_Addroom_Enter_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadRoomData();
+                LoadRoomUpData();
+                DataGridView1.Refresh();
+                DataGridView2.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UC_Addroom_Leave_1(object sender, EventArgs e)
+        {
+            clearAll();
         }
     }
 }

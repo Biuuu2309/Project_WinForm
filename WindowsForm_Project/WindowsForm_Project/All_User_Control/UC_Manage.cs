@@ -136,19 +136,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private void UC_Manage_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                LoadEmployeeData(); // Load employee data when entering the control
-                LoadChamCong(); // Load attendance data
-                LoadEmployeeTotal(); // Load total employee data
-                DataGridView1.Refresh(); // Refresh the grid view
-                DataGridView2.Refresh(); // Refresh the grid view
-                DataGridView3.Refresh(); // Refresh the grid view
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
@@ -390,6 +378,28 @@ namespace WindowsForm_Project.All_User_Control
         private void guna2GroupBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_Manage_Enter_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadEmployeeData(); // Load employee data when entering the control
+                LoadChamCong(); // Load attendance data
+                LoadEmployeeTotal(); // Load total employee data
+                DataGridView1.Refresh(); // Refresh the grid view
+                DataGridView2.Refresh(); // Refresh the grid view
+                DataGridView3.Refresh(); // Refresh the grid view
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UC_Manage_Leave(object sender, EventArgs e)
+        {
+            clearAll_Em();
         }
     }
 }

@@ -137,7 +137,7 @@
             this.DataGridView1.Location = new System.Drawing.Point(0, 34);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.Size = new System.Drawing.Size(930, 301);
+            this.DataGridView1.Size = new System.Drawing.Size(927, 301);
             this.DataGridView1.TabIndex = 0;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1026,7 +1026,7 @@
             this.btnaccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(161)))), ((int)(((byte)(140)))));
             this.btnaccount.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnaccount.ForeColor = System.Drawing.Color.Black;
-            this.btnaccount.Location = new System.Drawing.Point(798, 1215);
+            this.btnaccount.Location = new System.Drawing.Point(1660, 49);
             this.btnaccount.Name = "btnaccount";
             this.btnaccount.Size = new System.Drawing.Size(180, 45);
             this.btnaccount.TabIndex = 56;
@@ -1057,7 +1057,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(54, 53);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(61, 165);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(383, 680);
             this.guna2GroupBox1.TabIndex = 58;
@@ -1087,7 +1087,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(487, 53);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(494, 165);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(376, 680);
             this.guna2GroupBox2.TabIndex = 59;
@@ -1114,7 +1114,7 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(54, 811);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(61, 923);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(809, 366);
             this.guna2GroupBox3.TabIndex = 60;
@@ -1127,7 +1127,7 @@
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(903, 53);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(910, 165);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.Size = new System.Drawing.Size(930, 335);
             this.guna2GroupBox4.TabIndex = 61;
@@ -1140,7 +1140,7 @@
             this.guna2GroupBox5.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox5.Location = new System.Drawing.Point(902, 811);
+            this.guna2GroupBox5.Location = new System.Drawing.Point(909, 923);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.Size = new System.Drawing.Size(930, 366);
             this.guna2GroupBox5.TabIndex = 62;
@@ -1152,7 +1152,7 @@
             this.guna2GroupBox6.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox6.Location = new System.Drawing.Point(902, 425);
+            this.guna2GroupBox6.Location = new System.Drawing.Point(909, 537);
             this.guna2GroupBox6.Name = "guna2GroupBox6";
             this.guna2GroupBox6.Size = new System.Drawing.Size(930, 308);
             this.guna2GroupBox6.TabIndex = 63;
@@ -1160,11 +1160,13 @@
             // 
             // uC_Account1
             // 
+            this.uC_Account1.AutoSize = true;
+            this.uC_Account1.BackColor = System.Drawing.Color.MistyRose;
             this.uC_Account1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Account1.BackgroundImage")));
             this.uC_Account1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_Account1.Location = new System.Drawing.Point(265, 1310);
+            this.uC_Account1.Location = new System.Drawing.Point(1182, 128);
             this.uC_Account1.Name = "uC_Account1";
-            this.uC_Account1.Size = new System.Drawing.Size(1316, 419);
+            this.uC_Account1.Size = new System.Drawing.Size(658, 717);
             this.uC_Account1.TabIndex = 57;
             this.uC_Account1.Visible = false;
             this.uC_Account1.Load += new System.EventHandler(this.uC_Account1_Load);
@@ -1176,17 +1178,19 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::WindowsForm_Project.Properties.Resources.Pic14;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.uC_Account1);
             this.Controls.Add(this.guna2GroupBox6);
             this.Controls.Add(this.guna2GroupBox5);
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.uC_Account1);
             this.Controls.Add(this.btnaccount);
             this.Name = "UC_Manage";
-            this.Size = new System.Drawing.Size(1835, 1080);
+            this.Size = new System.Drawing.Size(1874, 961);
             this.Load += new System.EventHandler(this.UC_Manage_Load);
+            this.Enter += new System.EventHandler(this.UC_Manage_Enter_1);
+            this.Leave += new System.EventHandler(this.UC_Manage_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();
@@ -1200,6 +1204,7 @@
             this.guna2GroupBox5.ResumeLayout(false);
             this.guna2GroupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

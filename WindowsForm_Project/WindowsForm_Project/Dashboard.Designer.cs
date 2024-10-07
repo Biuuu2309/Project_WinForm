@@ -34,6 +34,13 @@
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbrepair = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbinprogress = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbnotclean = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -55,17 +62,10 @@
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
@@ -74,7 +74,6 @@
             this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
             this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
@@ -82,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -147,6 +147,83 @@
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(47, 20);
             this.guna2HtmlLabel4.TabIndex = 21;
             this.guna2HtmlLabel4.Text = "Single";
+            // 
+            // guna2PictureBox7
+            // 
+            this.guna2PictureBox7.Image = global::WindowsForm_Project.Properties.Resources.tools;
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(188, 489);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(17, 15);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox7.TabIndex = 20;
+            this.guna2PictureBox7.TabStop = false;
+            // 
+            // guna2PictureBox6
+            // 
+            this.guna2PictureBox6.Image = global::WindowsForm_Project.Properties.Resources.clock;
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(188, 455);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(17, 18);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox6.TabIndex = 19;
+            this.guna2PictureBox6.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::WindowsForm_Project.Properties.Resources.close;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(188, 421);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(17, 20);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 18;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.Image = global::WindowsForm_Project.Properties.Resources.check__1_;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(188, 386);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(17, 19);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 17;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = global::WindowsForm_Project.Properties.Resources.multiple_users_silhouette;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(186, 307);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(17, 18);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 16;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::WindowsForm_Project.Properties.Resources.group;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(186, 273);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(19, 18);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 15;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.people;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(188, 238);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(17, 18);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 14;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // cbrepair
             // 
@@ -509,94 +586,6 @@
             this.btnaddroom.Text = "Add Room";
             this.btnaddroom.Click += new System.EventHandler(this.btnaddroom_Click);
             // 
-            // dashboardpaneldate
-            // 
-            this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dashboardpaneldate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(101)))), ((int)(((byte)(67)))));
-            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
-            this.dashboardpaneldate.Location = new System.Drawing.Point(0, 57);
-            this.dashboardpaneldate.Name = "dashboardpaneldate";
-            this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
-            this.dashboardpaneldate.TabIndex = 5;
-            this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.Image = global::WindowsForm_Project.Properties.Resources.tools;
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(188, 489);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(17, 15);
-            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox7.TabIndex = 20;
-            this.guna2PictureBox7.TabStop = false;
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.Image = global::WindowsForm_Project.Properties.Resources.clock;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(188, 455);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(17, 18);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 19;
-            this.guna2PictureBox6.TabStop = false;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.Image = global::WindowsForm_Project.Properties.Resources.close;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(188, 421);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(17, 20);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 18;
-            this.guna2PictureBox5.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Image = global::WindowsForm_Project.Properties.Resources.check__1_;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(188, 386);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(17, 19);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 17;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = global::WindowsForm_Project.Properties.Resources.multiple_users_silhouette;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(186, 307);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(17, 18);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 16;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::WindowsForm_Project.Properties.Resources.group;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(186, 273);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(19, 18);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 15;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.people;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(188, 238);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(17, 18);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // guna2Button1
             // 
             this.guna2Button1.BackColor = System.Drawing.Color.Snow;
@@ -616,6 +605,17 @@
             this.guna2Button1.TabIndex = 25;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
+            // dashboardpaneldate
+            // 
+            this.dashboardpaneldate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dashboardpaneldate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(101)))), ((int)(((byte)(67)))));
+            this.dashboardpaneldate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
+            this.dashboardpaneldate.Location = new System.Drawing.Point(0, 57);
+            this.dashboardpaneldate.Name = "dashboardpaneldate";
+            this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
+            this.dashboardpaneldate.TabIndex = 5;
+            this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
             // uC_Dashboard2
             // 
             this.uC_Dashboard2.BackColor = System.Drawing.Color.White;
@@ -626,6 +626,7 @@
             this.uC_Dashboard2.Size = new System.Drawing.Size(1700, 966);
             this.uC_Dashboard2.TabIndex = 12;
             this.uC_Dashboard2.Load += new System.EventHandler(this.uC_Dashboard2_Load_1);
+            this.uC_Dashboard2.Enter += new System.EventHandler(this.uC_Dashboard2_Enter);
             // 
             // uC_Addroom1
             // 
@@ -711,7 +712,6 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
@@ -719,6 +719,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
