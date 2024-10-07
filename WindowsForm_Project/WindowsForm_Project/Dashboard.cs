@@ -279,6 +279,10 @@ namespace WindowsForm_Project
             uc_dashboard = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             uc_dashboard.Location = new Point(220, 114);
             Controls.Add(uc_dashboard);
+            //this.Load += new EventHandler(uC_Dashboard2_Load_1);
+            this.Enter += new EventHandler(cbreserved_Enter);
+            this.MouseEnter += new EventHandler(guna2Panel3_MouseEnter);
+            this.cbreserved.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -558,208 +562,7 @@ namespace WindowsForm_Project
 
         private void guna2Panel3_Click(object sender, EventArgs e)
         {
-            int reserved = 0;
-            int occupied = 0;
-            int available = 0;
-            int checkout = 0;
-            int singletype = 0;
-            int doubletype = 0;
-            int tripletype = 0;
-            int clean = 0;
-            int notclean = 0;
-            int inprogress = 0;
-            int repair = 0;
-            string connectionString = DatabaseConnection.Connection();
-            string query1 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Reserved'";
-            string query2 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Occupied'";
-            string query3 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Available'";
-            string query4 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Check Out'";
-            string query5 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 1";
-            string query6 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 2";
-            string query7 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 3";
-            string query8 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Clean'";
-            string query9 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Not Clean'";
-            string query10 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'In Progress'";
-            string query11 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Repair'";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query1, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            reserved = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query2, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            occupied = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query3, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            available = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query4, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            checkout = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query5, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            singletype = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query6, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            doubletype = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query7, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            tripletype = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query8, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            clean = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query9, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            notclean = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query10, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            inprogress = reader.GetInt32(0);
-                        }
-                    }
-                }
-                using (SqlCommand command = new SqlCommand(query11, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
-                        {
-                            repair = reader.GetInt32(0);
-                        }
-                    }
-                }
-            }
-            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
-            guna2HtmlLabel.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel.Text = reserved.ToString();
-            guna2HtmlLabel.Location = new Point(185, 56);
-            guna2Panel3.Controls.Add(guna2HtmlLabel);
-
-            Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
-            guna2HtmlLabel1.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel1.Text = occupied.ToString();
-            guna2HtmlLabel1.Location = new Point(185, 91);
-            guna2Panel3.Controls.Add(guna2HtmlLabel1);
-
-            Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
-            guna2HtmlLabel2.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel2.Text = available.ToString();
-            guna2HtmlLabel2.Location = new Point(185, 125);
-            guna2Panel3.Controls.Add(guna2HtmlLabel2);
-
-            Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
-            guna2HtmlLabel3.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel3.Text = checkout.ToString();
-            guna2HtmlLabel3.Location = new Point(185, 159);
-            guna2Panel3.Controls.Add(guna2HtmlLabel3);
-
-            Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
-            guna2HtmlLabel4.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel4.Text = singletype.ToString();
-            guna2HtmlLabel4.Location = new Point(165, 234);
-            guna2Panel3.Controls.Add(guna2HtmlLabel4);
-
-            Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
-            guna2HtmlLabel5.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel5.Text = doubletype.ToString();
-            guna2HtmlLabel5.Location = new Point(165, 269);
-            guna2Panel3.Controls.Add(guna2HtmlLabel5);
-
-            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
-            guna2HtmlLabel6.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel6.Text = tripletype.ToString();
-            guna2HtmlLabel6.Location = new Point(165, 303);
-            guna2Panel3.Controls.Add(guna2HtmlLabel6);
-
-            Guna2HtmlLabel guna2HtmlLabel7 = new Guna2HtmlLabel();
-            guna2HtmlLabel7.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel7.Text = clean.ToString();
-            guna2HtmlLabel7.Location = new Point(165, 382);
-            guna2Panel3.Controls.Add(guna2HtmlLabel7);
-
-            Guna2HtmlLabel guna2HtmlLabel8 = new Guna2HtmlLabel();
-            guna2HtmlLabel8.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel8.Text = notclean.ToString();
-            guna2HtmlLabel8.Location = new Point(165, 417);
-            guna2Panel3.Controls.Add(guna2HtmlLabel8);
-
-            Guna2HtmlLabel guna2HtmlLabel9 = new Guna2HtmlLabel();
-            guna2HtmlLabel9.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel9.Text = inprogress.ToString();
-            guna2HtmlLabel9.Location = new Point(165, 451);
-            guna2Panel3.Controls.Add(guna2HtmlLabel9);
-
-            Guna2HtmlLabel guna2HtmlLabel10 = new Guna2HtmlLabel();
-            guna2HtmlLabel10.Font = new Font("Arial", 12, FontStyle.Regular);
-            guna2HtmlLabel10.Text = repair.ToString();
-            guna2HtmlLabel10.Location = new Point(165, 485);
-            guna2Panel3.Controls.Add(guna2HtmlLabel10);
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -809,7 +612,8 @@ namespace WindowsForm_Project
 
         private void uC_Dashboard2_Load_1(object sender, EventArgs e)
         {
-            
+            uc_dashboard = new WindowsForm_Project.All_User_Control.UC_Dashboard();
+            Controls.Add(uc_dashboard);
         }
 
         private void cboccupied_CheckedChanged(object sender, EventArgs e)
@@ -1012,6 +816,222 @@ namespace WindowsForm_Project
                 uc_dashboard.LoadTripleRoom();
 
             }
+        }
+
+        private void cbreserved_Enter(object sender, EventArgs e)
+        {
+            guna2CheckBox1_CheckedChanged(this, EventArgs.Empty);
+        }
+
+        private void guna2Panel3_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Panel3_MouseEnter(object sender, EventArgs e)
+        {
+            int reserved = 0;
+            int occupied = 0;
+            int available = 0;
+            int checkout = 0;
+            int singletype = 0;
+            int doubletype = 0;
+            int tripletype = 0;
+            int clean = 0;
+            int notclean = 0;
+            int inprogress = 0;
+            int repair = 0;
+            string connectionString = DatabaseConnection.Connection();
+            string query1 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Reserved'";
+            string query2 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Occupied'";
+            string query3 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Available'";
+            string query4 = @"  SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Check Out'";
+            string query5 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 1";
+            string query6 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 2";
+            string query7 = @"  SELECT COUNT(maphong) FROM Room WHERE numbed = 3";
+            string query8 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Clean'";
+            string query9 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Not Clean'";
+            string query10 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'In Progress'";
+            string query11 = @"  SELECT COUNT(maphong) FROM Update_room WHERE house_keeping = 'Repair'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query1, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            reserved = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query2, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            occupied = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query3, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            available = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query4, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            checkout = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query5, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            singletype = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query6, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            doubletype = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query7, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            tripletype = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query8, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            clean = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query9, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            notclean = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query10, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            inprogress = reader.GetInt32(0);
+                        }
+                    }
+                }
+                using (SqlCommand command = new SqlCommand(query11, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())  // Kiểm tra nếu có dữ liệu
+                        {
+                            repair = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
+            guna2HtmlLabel.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel.Text = reserved.ToString();
+            guna2HtmlLabel.Location = new Point(185, 56);
+            guna2Panel3.Controls.Add(guna2HtmlLabel);
+
+            Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
+            guna2HtmlLabel1.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel1.Text = occupied.ToString();
+            guna2HtmlLabel1.Location = new Point(185, 91);
+            guna2Panel3.Controls.Add(guna2HtmlLabel1);
+
+            Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
+            guna2HtmlLabel2.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel2.Text = available.ToString();
+            guna2HtmlLabel2.Location = new Point(185, 125);
+            guna2Panel3.Controls.Add(guna2HtmlLabel2);
+
+            Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
+            guna2HtmlLabel3.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel3.Text = checkout.ToString();
+            guna2HtmlLabel3.Location = new Point(185, 159);
+            guna2Panel3.Controls.Add(guna2HtmlLabel3);
+
+            Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
+            guna2HtmlLabel4.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel4.Text = singletype.ToString();
+            guna2HtmlLabel4.Location = new Point(165, 234);
+            guna2Panel3.Controls.Add(guna2HtmlLabel4);
+
+            Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
+            guna2HtmlLabel5.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel5.Text = doubletype.ToString();
+            guna2HtmlLabel5.Location = new Point(165, 269);
+            guna2Panel3.Controls.Add(guna2HtmlLabel5);
+
+            Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
+            guna2HtmlLabel6.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel6.Text = tripletype.ToString();
+            guna2HtmlLabel6.Location = new Point(165, 303);
+            guna2Panel3.Controls.Add(guna2HtmlLabel6);
+
+            Guna2HtmlLabel guna2HtmlLabel7 = new Guna2HtmlLabel();
+            guna2HtmlLabel7.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel7.Text = clean.ToString();
+            guna2HtmlLabel7.Location = new Point(165, 382);
+            guna2Panel3.Controls.Add(guna2HtmlLabel7);
+
+            Guna2HtmlLabel guna2HtmlLabel8 = new Guna2HtmlLabel();
+            guna2HtmlLabel8.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel8.Text = notclean.ToString();
+            guna2HtmlLabel8.Location = new Point(165, 417);
+            guna2Panel3.Controls.Add(guna2HtmlLabel8);
+
+            Guna2HtmlLabel guna2HtmlLabel9 = new Guna2HtmlLabel();
+            guna2HtmlLabel9.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel9.Text = inprogress.ToString();
+            guna2HtmlLabel9.Location = new Point(165, 451);
+            guna2Panel3.Controls.Add(guna2HtmlLabel9);
+
+            Guna2HtmlLabel guna2HtmlLabel10 = new Guna2HtmlLabel();
+            guna2HtmlLabel10.Font = new Font("Arial", 12, FontStyle.Regular);
+            guna2HtmlLabel10.Text = repair.ToString();
+            guna2HtmlLabel10.Location = new Point(165, 485);
+            guna2Panel3.Controls.Add(guna2HtmlLabel10);
         }
     }
 }

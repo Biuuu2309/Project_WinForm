@@ -22,6 +22,15 @@ namespace WindowsForm_Project.All_User_Control
             guna2Panel4.Controls.Add(guna2Panel1);
             guna2Panel4.Controls.Add(guna2Panel2);
             guna2Panel4.Controls.Add(guna2Panel3);
+            this.Enter += new EventHandler(guna2Panel7_Enter);
+            this.Enter += new EventHandler(guna2Panel1_Enter);
+            this.Enter += new EventHandler(guna2Panel2_Enter);
+            this.Enter += new EventHandler(guna2Panel3_Enter);
+            this.Enter += new EventHandler(guna2Panel9_Enter);
+            this.Enter += new EventHandler(guna2Panel8_Enter);
+            this.Enter += new EventHandler(guna2Panel10_Enter);
+            this.Enter += new EventHandler(guna2Panel5_Enter);
+
         }
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
@@ -310,123 +319,7 @@ namespace WindowsForm_Project.All_User_Control
         
         private void guna2Panel1_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = this.FindForm() as Dashboard;
-
-            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
-            {
-                LoadSingleRoom("Reserved", "Clean");
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadSingleRoom("Reserved", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadSingleRoom("Reserved", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
-            {
-                LoadSingleRoom("Reserved", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
-            {
-                LoadSingleRoom("Occupied", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadSingleRoom("Occupied", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadSingleRoom("Occupied", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
-            {
-                LoadSingleRoom("Occupied", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
-            {
-                LoadSingleRoom("Available", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadSingleRoom("Available", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
-            {
-                LoadSingleRoom("Available", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
-            {
-                LoadSingleRoom("Available", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
-            {
-                LoadSingleRoom("Check Out", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadSingleRoom("Check Out", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
-            {
-                LoadSingleRoom("Check Out", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
-            {
-                LoadSingleRoom("Check Out", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked)
-            {
-                LoadSingleRoom("Reserved");  
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked)
-            {
-                LoadSingleRoom("Occupied");
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked)
-            {
-                LoadSingleRoom("Available");
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked)
-            {
-                LoadSingleRoom("Check Out");
-            }
-            else if (dashboard != null && dashboard.IsCleanChecked)
-            {
-                LoadSingleRoom("Clean");
-            }
-            else if (dashboard != null && dashboard.IsNotCleanChecked)
-            {
-                LoadSingleRoom("Not Clean");
-            }
-            else if (dashboard != null && dashboard.IsInProgressChecked)
-            {
-                LoadSingleRoom("In Progress");
-            }
-            else if (dashboard != null && dashboard.IsRepairChecked)
-            {
-                LoadSingleRoom("Repair");
-            }
-            else
-            {
-                LoadSingleRoom();
-            }
+            
         }
 
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
@@ -695,123 +588,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Panel2_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = this.FindForm() as Dashboard;
-
-            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
-            {
-                LoadDoubleRoom("Reserved", "Clean");
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadDoubleRoom("Reserved", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadDoubleRoom("Reserved", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
-            {
-                LoadDoubleRoom("Reserved", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
-            {
-                LoadDoubleRoom("Occupied", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadDoubleRoom("Occupied", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadDoubleRoom("Occupied", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
-            {
-                LoadDoubleRoom("Occupied", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
-            {
-                LoadDoubleRoom("Available", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadDoubleRoom("Available", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
-            {
-                LoadDoubleRoom("Available", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
-            {
-                LoadDoubleRoom("Available", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
-            {
-                LoadDoubleRoom("Check Out", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadDoubleRoom("Check Out", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
-            {
-                LoadDoubleRoom("Check Out", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
-            {
-                LoadDoubleRoom("Check Out", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked)
-            {
-                LoadDoubleRoom("Reserved");
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked)
-            {
-                LoadDoubleRoom("Occupied");
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked)
-            {
-                LoadDoubleRoom("Available");
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked)
-            {
-                LoadDoubleRoom("Check Out");
-            }
-            else if (dashboard != null && dashboard.IsCleanChecked)
-            {
-                LoadDoubleRoom("Clean");
-            }
-            else if (dashboard != null && dashboard.IsNotCleanChecked)
-            {
-                LoadDoubleRoom("Not Clean");
-            }
-            else if (dashboard != null && dashboard.IsInProgressChecked)
-            {
-                LoadDoubleRoom("In Progress");
-            }
-            else if (dashboard != null && dashboard.IsRepairChecked)
-            {
-                LoadDoubleRoom("Repair");
-            }
-            else
-            {
-                LoadDoubleRoom();
-            }
+            
         }
 
         public void LoadTripleRoom(string statusCon1 = "", string statusCon2 = "")
@@ -1078,124 +855,9 @@ namespace WindowsForm_Project.All_User_Control
 
         private void guna2Panel3_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = this.FindForm() as Dashboard;
-
-            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
-            {
-                LoadTripleRoom("Reserved", "Clean");
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadTripleRoom("Reserved", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadTripleRoom("Reserved", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
-            {
-                LoadTripleRoom("Reserved", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
-            {
-                LoadTripleRoom("Occupied", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadTripleRoom("Occupied", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
-            {
-                LoadTripleRoom("Occupied", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
-            {
-                LoadTripleRoom("Occupied", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
-            {
-                LoadTripleRoom("Available", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadTripleRoom("Available", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
-            {
-                LoadTripleRoom("Available", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
-            {
-                LoadTripleRoom("Available", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
-            {
-                LoadTripleRoom("Check Out", "Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
-            {
-                LoadTripleRoom("Check Out", "Not Clean");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
-            {
-                LoadTripleRoom("Check Out", "In Progress");
-
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
-            {
-                LoadTripleRoom("Check Out", "Repair");
-
-            }
-            else if (dashboard != null && dashboard.IsReservedChecked)
-            {
-                LoadTripleRoom("Reserved");
-            }
-            else if (dashboard != null && dashboard.IsOccupiedChecked)
-            {
-                LoadTripleRoom("Occupied");
-            }
-            else if (dashboard != null && dashboard.IsAvailableChecked)
-            {
-                LoadTripleRoom("Available");
-            }
-            else if (dashboard != null && dashboard.IsCheckOutChecked)
-            {
-                LoadTripleRoom("Check Out");
-            }
-            else if (dashboard != null && dashboard.IsCleanChecked)
-            {
-                LoadTripleRoom("Clean");
-            }
-            else if (dashboard != null && dashboard.IsNotCleanChecked)
-            {
-                LoadTripleRoom("Not Clean");
-            }
-            else if (dashboard != null && dashboard.IsInProgressChecked)
-            {
-                LoadTripleRoom("In Progress");
-            }
-            else if (dashboard != null && dashboard.IsRepairChecked)
-            {
-                LoadTripleRoom("Repair");
-            }
-            else
-            {
-                LoadTripleRoom();
-            }
+            
         }
+
         private void guna2Panel7_Paint(object sender, PaintEventArgs e)
         {
             
@@ -1450,6 +1112,384 @@ namespace WindowsForm_Project.All_User_Control
         // Dang sua dung dung vo
         private void guna2Panel5_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Enter(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadSingleRoom("Reserved");
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                LoadSingleRoom("Occupied");
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                LoadSingleRoom("Available");
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                LoadSingleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadSingleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadSingleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadSingleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadSingleRoom("Repair");
+            }
+            else
+            {
+                LoadSingleRoom();
+            }
+        }
+
+        private void guna2Panel2_Enter(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadDoubleRoom("Reserved");
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                LoadDoubleRoom("Occupied");
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                LoadDoubleRoom("Available");
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                LoadDoubleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadDoubleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadDoubleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadDoubleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadDoubleRoom("Repair");
+            }
+            else
+            {
+                LoadDoubleRoom();
+            }
+        }
+
+        private void guna2Panel3_Enter(object sender, EventArgs e)
+        {
+            Dashboard dashboard = this.FindForm() as Dashboard;
+
+            if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Reserved", "Clean");
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Reserved", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Reserved", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Reserved", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Occupied", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Occupied", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Occupied", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Occupied", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Available", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Available", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Available", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Available", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Check Out", "Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Check Out", "Not Clean");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("Check Out", "In Progress");
+
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Check Out", "Repair");
+
+            }
+            else if (dashboard != null && dashboard.IsReservedChecked)
+            {
+                LoadTripleRoom("Reserved");
+            }
+            else if (dashboard != null && dashboard.IsOccupiedChecked)
+            {
+                LoadTripleRoom("Occupied");
+            }
+            else if (dashboard != null && dashboard.IsAvailableChecked)
+            {
+                LoadTripleRoom("Available");
+            }
+            else if (dashboard != null && dashboard.IsCheckOutChecked)
+            {
+                LoadTripleRoom("Check Out");
+            }
+            else if (dashboard != null && dashboard.IsCleanChecked)
+            {
+                LoadTripleRoom("Clean");
+            }
+            else if (dashboard != null && dashboard.IsNotCleanChecked)
+            {
+                LoadTripleRoom("Not Clean");
+            }
+            else if (dashboard != null && dashboard.IsInProgressChecked)
+            {
+                LoadTripleRoom("In Progress");
+            }
+            else if (dashboard != null && dashboard.IsRepairChecked)
+            {
+                LoadTripleRoom("Repair");
+            }
+            else
+            {
+                LoadTripleRoom();
+            }
+        }
+
+        private void guna2Panel5_Enter(object sender, EventArgs e)
+        {
             guna2Panel5.AutoScroll = true;
             guna2Panel5.HorizontalScroll.Enabled = true;
             guna2Panel5.HorizontalScroll.Visible = true;
@@ -1649,16 +1689,6 @@ namespace WindowsForm_Project.All_User_Control
                     y += childPanel.Height + spacing;
                 }
             }
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -90,6 +90,7 @@
             this.guna2Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2Panel1_Scroll);
             this.guna2Panel1.Click += new System.EventHandler(this.guna2Panel1_Click);
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            this.guna2Panel1.Enter += new System.EventHandler(this.guna2Panel1_Enter);
             // 
             // guna2Panel2
             // 
@@ -110,6 +111,7 @@
             this.guna2Panel2.TabIndex = 50;
             this.guna2Panel2.Click += new System.EventHandler(this.guna2Panel2_Click);
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            this.guna2Panel2.Enter += new System.EventHandler(this.guna2Panel2_Enter);
             // 
             // guna2Panel3
             // 
@@ -129,6 +131,7 @@
             this.guna2Panel3.TabIndex = 50;
             this.guna2Panel3.Click += new System.EventHandler(this.guna2Panel3_Click);
             this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
+            this.guna2Panel3.Enter += new System.EventHandler(this.guna2Panel3_Enter);
             // 
             // guna2Panel4
             // 
@@ -361,6 +364,7 @@
             this.guna2Panel5.TabIndex = 51;
             this.guna2Panel5.Click += new System.EventHandler(this.guna2Panel5_Click);
             this.guna2Panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
+            this.guna2Panel5.Enter += new System.EventHandler(this.guna2Panel5_Enter);
             // 
             // guna2HtmlLabel4
             // 

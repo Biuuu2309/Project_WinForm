@@ -19,6 +19,7 @@ namespace WindowsForm_Project
             InitializeComponent();
             this.textusername.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
             this.textpassword.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
+            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
