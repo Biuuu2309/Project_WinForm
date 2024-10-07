@@ -137,7 +137,7 @@
             this.DataGridView1.Location = new System.Drawing.Point(0, 34);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.Size = new System.Drawing.Size(930, 216);
+            this.DataGridView1.Size = new System.Drawing.Size(930, 301);
             this.DataGridView1.TabIndex = 0;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -724,7 +724,7 @@
             this.DataGridView2.Location = new System.Drawing.Point(0, 40);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(635, 151);
+            this.DataGridView2.Size = new System.Drawing.Size(930, 265);
             this.DataGridView2.TabIndex = 38;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1152,7 +1152,7 @@
             this.guna2GroupBox6.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox6.Location = new System.Drawing.Point(903, 425);
+            this.guna2GroupBox6.Location = new System.Drawing.Point(902, 425);
             this.guna2GroupBox6.Name = "guna2GroupBox6";
             this.guna2GroupBox6.Size = new System.Drawing.Size(930, 308);
             this.guna2GroupBox6.TabIndex = 63;
@@ -1185,7 +1185,7 @@
             this.Controls.Add(this.uC_Account1);
             this.Controls.Add(this.btnaccount);
             this.Name = "UC_Manage";
-            this.Size = new System.Drawing.Size(1869, 1080);
+            this.Size = new System.Drawing.Size(1835, 1080);
             this.Load += new System.EventHandler(this.UC_Manage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
