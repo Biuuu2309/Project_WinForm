@@ -451,7 +451,7 @@
             this.DataGridView3.Location = new System.Drawing.Point(0, 40);
             this.DataGridView3.Name = "DataGridView3";
             this.DataGridView3.RowHeadersVisible = false;
-            this.DataGridView3.Size = new System.Drawing.Size(617, 157);
+            this.DataGridView3.Size = new System.Drawing.Size(929, 323);
             this.DataGridView3.TabIndex = 20;
             this.DataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView3.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1140,7 +1140,7 @@
             this.guna2GroupBox5.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(49)))), ((int)(((byte)(87)))));
             this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(249)))));
-            this.guna2GroupBox5.Location = new System.Drawing.Point(903, 811);
+            this.guna2GroupBox5.Location = new System.Drawing.Point(902, 811);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.Size = new System.Drawing.Size(930, 366);
             this.guna2GroupBox5.TabIndex = 62;
