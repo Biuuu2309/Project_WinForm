@@ -51,6 +51,7 @@ namespace WindowsForm_Project
         }
         private DateTime currentDate;
         private WindowsForm_Project.All_User_Control.UC_Dashboard uc_dashboard;
+        private WindowsForm_Project.All_User_Control.UC_Bookings uc_bookings;
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -283,6 +284,8 @@ namespace WindowsForm_Project
             this.Enter += new EventHandler(cbreserved_Enter);
             this.MouseEnter += new EventHandler(guna2Panel3_MouseEnter);
             this.cbreserved.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
+            uc_bookings = new WindowsForm_Project.All_User_Control.UC_Bookings();
+            Controls.Add(uc_bookings);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

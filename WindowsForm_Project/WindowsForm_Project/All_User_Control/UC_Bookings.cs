@@ -17,6 +17,7 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Bookings()
         {
             InitializeComponent();
+            this.Enter += new EventHandler(UC_Bookings_Enter);
         }
         
         private bool ValidateInput()
