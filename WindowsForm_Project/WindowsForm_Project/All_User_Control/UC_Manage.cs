@@ -86,7 +86,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
                     DataGridView1.Columns["ngaysinh"].HeaderText = "Ngày sinh";
                     DataGridView1.Columns["luong"].HeaderText = "Lương";
-                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    DataGridView1.Columns[DataGridView1.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 
                     DataGridView1.Refresh(); // Refresh the grid view
@@ -191,6 +193,8 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.Columns["note"].HeaderText = "Ghi chú";
                     DataGridView3.Columns["tongca"].HeaderText = "Tổng ca";
                     DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    DataGridView3.Columns[DataGridView3.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
@@ -224,7 +228,8 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["tongca"].HeaderText = "Tổng ca";
                     DataGridView2.Columns["luong"].HeaderText = "Lương";
                     DataGridView2.Columns["total"].HeaderText = "Tổng";
-                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    DataGridView2.Columns[DataGridView2.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 
                     DataGridView2.Refresh(); // Refresh the grid view
