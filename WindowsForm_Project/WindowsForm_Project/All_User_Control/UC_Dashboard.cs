@@ -1568,9 +1568,10 @@ namespace WindowsForm_Project.All_User_Control
             for (int i = 0; i < id.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
-                childPanel.Size = new Size(300, 200);
+                childPanel.Size = new Size(298, 200);
                 childPanel.Location = new Point(x, y);
                 childPanel.BackColor = Color.DarkGray; /////////////////////////////////
+                childPanel.BackgroundImage = Properties.Resources.Untitled_design__5_;
 
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
                 guna2HtmlLabel.Text = "ID " + id[i];
@@ -1584,12 +1585,15 @@ namespace WindowsForm_Project.All_User_Control
 
                 Guna2Panel guna2Panel = new Guna2Panel();
                 guna2Panel.Height = 50;
+                guna2Panel.BackgroundImage = Properties.Resources.Untitled_design__6_;
                 guna2Panel.BackColor = Color.DarkViolet; ////////////////////////////
                 guna2Panel.Dock = DockStyle.Bottom;
 
                 Guna2PictureBox pictureBox1 = new Guna2PictureBox();
                 pictureBox1.Location = new Point(100, 35);
                 pictureBox1.Size = new Size(40, 40);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = Properties.Resources.day_and_night;
 
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
                 guna2HtmlLabel1.Location = new Point(160, 40);
@@ -1604,10 +1608,14 @@ namespace WindowsForm_Project.All_User_Control
                 Guna2PictureBox guna2PictureBox = new Guna2PictureBox();
                 guna2PictureBox.Location = new Point(3, 3);
                 guna2PictureBox.Size = new Size(40, 40);
+                guna2PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                guna2PictureBox.Image = Properties.Resources.check_in_desk;
 
                 Guna2PictureBox guna2PictureBox1 = new Guna2PictureBox();
                 guna2PictureBox1.Location = new Point(160, 3);
                 guna2PictureBox1.Size = new Size(40, 40);
+                guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                guna2PictureBox1.Image = Properties.Resources.check_out;
 
                 Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
                 guna2HtmlLabel4.Text = date_ci[i].ToString();
