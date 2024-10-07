@@ -23,9 +23,7 @@ namespace WindowsForm_Project.All_User_Control
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
-            this.DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            
 
 
         }
@@ -64,6 +62,15 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["gioitinh"].HeaderText = "Giới tính";
                     DataGridView2.Columns["ngaysinh"].HeaderText = "Ngày sinh";
                     DataGridView2.Columns["address_cus"].HeaderText = "Địa chỉ";
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+                    DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                    DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    DataGridView2.Columns[DataGridView2.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
