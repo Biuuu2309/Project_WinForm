@@ -536,7 +536,6 @@ namespace WindowsForm_Project
                 else
                 {
                     MessageBox.Show("Tiep tuc dang nhap duoi quyen la nhan vien");
-                    dashboard.Show();
                 }
             }
             else if (count != 0)
