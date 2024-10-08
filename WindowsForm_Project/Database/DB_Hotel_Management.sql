@@ -199,7 +199,7 @@ BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Bookings
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
 	BEGIN
-		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, group_customer, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @group_customer, @maphong, @roomnumber, @date_ci, @date_co, @price)
+		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @maphong, @roomnumber, @group_customer, @date_ci, @date_co, @price)
 		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
@@ -463,6 +463,41 @@ BEGIN
 	END
 END
 
+
+GO
+CREATE OR ALTER PROC sp_deletebooking @roomnumber INT = NULL, @cccd_cus NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF EXISTS (SELECT 1 FROM Bookings WHERE roomnumber = @roomnumber AND cccd_cus = @cccd_cus)
+	BEGIN
+		DELETE FROM Bookings WHERE roomnumber = @roomnumber AND cccd_cus = @cccd_cus
+		SET @ErrorMessage = 'Successfully'
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = 'Check out khong thanh cong'
+	END
+END
+
+GO
+CREATE OR ALTER PROC sp_updatestatusroom @roomnumber NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Update_room
+		SET
+			status_room = 'Available'
+		WHERE maphong IN (	SELECT maphong
+							FROM Room
+							WHERE roomnumber = @roomnumber);
+		SET @ErrorMessage = 'Successfully'
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE();
+	END CATCH
+END
+
+
 GO
 SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts
 FROM Chamcong
@@ -596,3 +631,7 @@ SELECT status_room
                                 FROM Update_room
                                 INNER JOIN Room ON Update_room.maphong = Room.maphong
                                 WHERE Room.numbed = 1 AND Update_room.house_keeping = 'Clean'
+
+SELECT * 
+FROM Room
+INNER JOIN Update_room ON Room.maphong = Update_room.maphong

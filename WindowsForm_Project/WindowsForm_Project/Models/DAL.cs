@@ -873,6 +873,32 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Updateroombooking(RoomUpdate roomupdate, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updatestatusroom", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(roomupdate.roomnumber.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@roomnumber", roomupdate.roomnumber);
+                }
+                
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Getemployeework(SqlConnection conn)
         {
             Response response = new Response();
@@ -929,6 +955,29 @@ namespace WindowsForm_Project.Models
                 SqlCommand cmd = new SqlCommand("sp_deleteroom", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@maphong", room.maphong);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
+        public Response Deletebooking(Bookings bookings, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deletebooking", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@roomnumber", bookings.roomnumber);
+                cmd.Parameters.AddWithValue("@cccd_cus", bookings.cccd_cus);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();

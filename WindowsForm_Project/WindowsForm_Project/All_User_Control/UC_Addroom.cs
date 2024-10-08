@@ -159,7 +159,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["status_room"].HeaderText = "Trạng thái phòng";
                     DataGridView2.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                    DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }

@@ -109,9 +109,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list11;
                     DataGridView2.ColumnHeadersHeight = 25;
-                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView2.Width = 800;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -220,7 +218,7 @@ namespace WindowsForm_Project.All_User_Control
             if (ValidateInput())
             {
                 string connectionString = DatabaseConnection.Connection();
-                string query = @"SELECT first_name, last_name, maphong, date_ci
+                string query = @"SELECT first_name, last_name, maphong, date_cid
                          FROM Customer
                          INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
                          WHERE Bookings.cccd_cus = @cccd_cus";
@@ -262,13 +260,33 @@ namespace WindowsForm_Project.All_User_Control
                     date_ci = dateCi,                 
                     date_co = txtdate_co.Value       
                 };
+                Bookings delbk = new Bookings
+                {
+                    roomnumber = int.Parse(txtsophong.Text),
+                    cccd_cus = txtcccd_cus.Text
+                };
+
+                RoomUpdate room = new RoomUpdate
+                {
+                    roomnumber = int.Parse(txtsophong.Text)
+                };
 
                 DAL dal = new DAL();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addcheckout(checkout, conn);
+                    Response response1 = dal.Deletebooking(delbk, conn);
+                    Response response2 = dal.Updateroombooking(room, conn);
                     MessageBox.Show(response.statusmessage);
                     if (response.statusmessage.Contains("Successfully"))
+                    {
+                        RefreshControl();
+                    }
+                    if (response1.statusmessage.Contains("Successfully"))
+                    {
+                        RefreshControl();
+                    }
+                    if (response2.statusmessage.Contains("Successfully"))
                     {
                         RefreshControl();
                     }
