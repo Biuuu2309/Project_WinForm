@@ -232,6 +232,7 @@
             this.cbrepair.CheckedState.BorderRadius = 0;
             this.cbrepair.CheckedState.BorderThickness = 0;
             this.cbrepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbrepair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbrepair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbrepair.Location = new System.Drawing.Point(12, 485);
             this.cbrepair.Name = "cbrepair";
@@ -251,6 +252,7 @@
             this.cbinprogress.CheckedState.BorderRadius = 0;
             this.cbinprogress.CheckedState.BorderThickness = 0;
             this.cbinprogress.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbinprogress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbinprogress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbinprogress.Location = new System.Drawing.Point(12, 451);
             this.cbinprogress.Name = "cbinprogress";
@@ -270,6 +272,7 @@
             this.cbnotclean.CheckedState.BorderRadius = 0;
             this.cbnotclean.CheckedState.BorderThickness = 0;
             this.cbnotclean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbnotclean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbnotclean.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbnotclean.Location = new System.Drawing.Point(12, 417);
             this.cbnotclean.Name = "cbnotclean";
@@ -289,6 +292,7 @@
             this.cbclean.CheckedState.BorderRadius = 0;
             this.cbclean.CheckedState.BorderThickness = 0;
             this.cbclean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbclean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbclean.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbclean.Location = new System.Drawing.Point(12, 382);
             this.cbclean.Name = "cbclean";
@@ -326,6 +330,7 @@
             this.cbcheckout.CheckedState.BorderRadius = 0;
             this.cbcheckout.CheckedState.BorderThickness = 0;
             this.cbcheckout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbcheckout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbcheckout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcheckout.Location = new System.Drawing.Point(12, 159);
             this.cbcheckout.Name = "cbcheckout";
@@ -345,6 +350,7 @@
             this.cbavailable.CheckedState.BorderRadius = 0;
             this.cbavailable.CheckedState.BorderThickness = 0;
             this.cbavailable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbavailable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbavailable.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbavailable.Location = new System.Drawing.Point(12, 125);
             this.cbavailable.Name = "cbavailable";
@@ -364,6 +370,7 @@
             this.cboccupied.CheckedState.BorderRadius = 0;
             this.cboccupied.CheckedState.BorderThickness = 0;
             this.cboccupied.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboccupied.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboccupied.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboccupied.Location = new System.Drawing.Point(12, 91);
             this.cboccupied.Name = "cboccupied";
@@ -383,6 +390,7 @@
             this.cbreserved.CheckedState.BorderRadius = 0;
             this.cbreserved.CheckedState.BorderThickness = 0;
             this.cbreserved.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbreserved.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbreserved.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbreserved.Location = new System.Drawing.Point(12, 56);
             this.cbreserved.Name = "cbreserved";

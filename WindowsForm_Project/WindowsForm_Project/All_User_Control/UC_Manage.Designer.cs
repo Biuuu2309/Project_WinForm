@@ -410,6 +410,7 @@
             this.guna2Button1.Animated = true;
             this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -606,6 +607,7 @@
             this.btncc.Animated = true;
             this.btncc.BackColor = System.Drawing.Color.Transparent;
             this.btncc.BorderRadius = 10;
+            this.btncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btncc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btncc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -758,6 +760,7 @@
             this.btnupdate.Animated = true;
             this.btnupdate.BackColor = System.Drawing.Color.Transparent;
             this.btnupdate.BorderRadius = 10;
+            this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnupdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnupdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnupdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1187,7 +1190,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnaccount);
             this.Name = "UC_Manage";
-            this.Size = new System.Drawing.Size(1874, 961);
+            this.Size = new System.Drawing.Size(1857, 961);
             this.Load += new System.EventHandler(this.UC_Manage_Load);
             this.Enter += new System.EventHandler(this.UC_Manage_Enter_1);
             this.Leave += new System.EventHandler(this.UC_Manage_Leave);

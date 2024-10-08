@@ -341,7 +341,9 @@ namespace WindowsForm_Project
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            LoginFormNew loginFormNew = new LoginFormNew();
+            this.Hide();
+            loginFormNew.Show();
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -498,20 +500,59 @@ namespace WindowsForm_Project
         {
             //MovePanel(btnreport);
         }
-
+        int count = 0;
         private void btnemployee_Click_1(object sender, EventArgs e)
         {
-            MovePanel(btnmanage);
-            uC_Manage1.Visible = true;
-            uC_Manage1.BringToFront();
-            // Hide other user controls
-            uC_Dashboard2.Visible = false;
-            uC_Addroom1.Visible = false;
-            uC_Bookings2.Visible = false;
-            uC_Customer1.Visible = false;
-            uC_Serve1.Visible = false;
-            uC_Checkout1.Visible = false;
+            LoginFormNew loginFormNew = new LoginFormNew();
+            if (count == 0)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục dang nhap duoi quyen quan ly khong ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    if (loginFormNew.ShowDialog() == DialogResult.OK)
+                    {
+                        if (loginFormNew.Username == "admin" && loginFormNew.Password == "admin")
+                        {
+                            MovePanel(btnmanage);
+                            uC_Manage1.Visible = true;
+                            uC_Manage1.BringToFront();
+                            uC_Dashboard2.Visible = false;
+                            uC_Addroom1.Visible = false;
+                            uC_Bookings2.Visible = false;
+                            uC_Customer1.Visible = false;
+                            uC_Serve1.Visible = false;
+                            uC_Checkout1.Visible = false;
+                            count++;
+                        }
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Đã hủy bỏ thao tác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tiep tuc dang nhap duoi quyen la nhan vien");
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
+                }
+            }
+            else if (count != 0)
+            {
+                MovePanel(btnmanage);
+                uC_Manage1.Visible = true;
+                uC_Manage1.BringToFront();
+                uC_Dashboard2.Visible = false;
+                uC_Addroom1.Visible = false;
+                uC_Bookings2.Visible = false;
+                uC_Customer1.Visible = false;
+                uC_Serve1.Visible = false;
+                uC_Checkout1.Visible = false;
+            }
         }
+
 
         private void btncheckout_Click_1(object sender, EventArgs e)
         {

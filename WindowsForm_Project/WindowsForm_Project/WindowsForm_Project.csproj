@@ -476,6 +476,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backgrounds\check %282%29.png" />
+    <None Include="Backgrounds\switch.png" />
     <None Include="Backgrounds\Pic27.jpg" />
     <None Include="Backgrounds\Pic26.jpg" />
     <None Include="Backgrounds\wallhaven-4lxwoq_360x50 %281%29.png" />

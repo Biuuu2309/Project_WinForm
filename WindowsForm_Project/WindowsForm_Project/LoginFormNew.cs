@@ -14,14 +14,15 @@ namespace WindowsForm_Project
 {
     public partial class LoginFormNew : Form
     {
+        public string Username { get { return textusername.Text; } }
+        public string Password { get { return textpassword.Text; } }
         public LoginFormNew()
         {
             InitializeComponent();
             this.textusername.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
             this.textpassword.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
-            
         }
-
+        
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
@@ -32,8 +33,9 @@ namespace WindowsForm_Project
                 {
                     Response response = dal.Getaccount(conn);
                     if ((response.list3.Any(account => account.username == textusername.Text) && response.list3.Any(account => account.password == textpassword.Text)) || 
-                        (textusername.Text == "zan" && textpassword.Text == "1"))
+                        (textusername.Text == "admin" && textpassword.Text == "admin"))
                     {
+                        this.DialogResult = DialogResult.OK;
                         errormess.Visible = false;
                         Dashboard ds = new Dashboard();
                         this.Hide();
@@ -79,6 +81,11 @@ namespace WindowsForm_Project
         private void errormess_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
