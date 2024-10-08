@@ -122,7 +122,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 307);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 475);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(42, 20);
             this.guna2HtmlLabel6.TabIndex = 23;
@@ -132,7 +132,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 273);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 419);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(53, 20);
             this.guna2HtmlLabel5.TabIndex = 22;
@@ -142,7 +142,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 238);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 366);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(47, 20);
             this.guna2HtmlLabel4.TabIndex = 21;
@@ -152,7 +152,7 @@
             // 
             this.guna2PictureBox7.Image = global::WindowsForm_Project.Properties.Resources.tools;
             this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(188, 489);
+            this.guna2PictureBox7.Location = new System.Drawing.Point(188, 783);
             this.guna2PictureBox7.Name = "guna2PictureBox7";
             this.guna2PictureBox7.Size = new System.Drawing.Size(17, 15);
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +163,7 @@
             // 
             this.guna2PictureBox6.Image = global::WindowsForm_Project.Properties.Resources.clock;
             this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(188, 455);
+            this.guna2PictureBox6.Location = new System.Drawing.Point(188, 724);
             this.guna2PictureBox6.Name = "guna2PictureBox6";
             this.guna2PictureBox6.Size = new System.Drawing.Size(17, 18);
             this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,7 +174,7 @@
             // 
             this.guna2PictureBox5.Image = global::WindowsForm_Project.Properties.Resources.close;
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(188, 421);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(188, 667);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
             this.guna2PictureBox5.Size = new System.Drawing.Size(17, 20);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,18 +185,19 @@
             // 
             this.guna2PictureBox4.Image = global::WindowsForm_Project.Properties.Resources.check__1_;
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(188, 386);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(188, 611);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(17, 19);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 17;
             this.guna2PictureBox4.TabStop = false;
+            this.guna2PictureBox4.Click += new System.EventHandler(this.guna2PictureBox4_Click_1);
             // 
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = global::WindowsForm_Project.Properties.Resources.multiple_users_silhouette;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(186, 307);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(186, 475);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(17, 18);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +208,7 @@
             // 
             this.guna2PictureBox2.Image = global::WindowsForm_Project.Properties.Resources.group;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(186, 273);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(186, 419);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(19, 18);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -218,7 +219,7 @@
             // 
             this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.people;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(188, 238);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(188, 366);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(17, 18);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -234,7 +235,7 @@
             this.cbrepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbrepair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbrepair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbrepair.Location = new System.Drawing.Point(12, 485);
+            this.cbrepair.Location = new System.Drawing.Point(12, 783);
             this.cbrepair.Name = "cbrepair";
             this.cbrepair.Size = new System.Drawing.Size(74, 22);
             this.cbrepair.TabIndex = 14;
@@ -254,7 +255,7 @@
             this.cbinprogress.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbinprogress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbinprogress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbinprogress.Location = new System.Drawing.Point(12, 451);
+            this.cbinprogress.Location = new System.Drawing.Point(12, 724);
             this.cbinprogress.Name = "cbinprogress";
             this.cbinprogress.Size = new System.Drawing.Size(106, 22);
             this.cbinprogress.TabIndex = 13;
@@ -274,7 +275,7 @@
             this.cbnotclean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbnotclean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbnotclean.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbnotclean.Location = new System.Drawing.Point(12, 417);
+            this.cbnotclean.Location = new System.Drawing.Point(12, 667);
             this.cbnotclean.Name = "cbnotclean";
             this.cbnotclean.Size = new System.Drawing.Size(96, 22);
             this.cbnotclean.TabIndex = 12;
@@ -294,7 +295,7 @@
             this.cbclean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbclean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbclean.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbclean.Location = new System.Drawing.Point(12, 382);
+            this.cbclean.Location = new System.Drawing.Point(12, 611);
             this.cbclean.Name = "cbclean";
             this.cbclean.Size = new System.Drawing.Size(68, 22);
             this.cbclean.TabIndex = 11;
@@ -308,18 +309,20 @@
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 344);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 544);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(76, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(144, 24);
             this.guna2HtmlLabel3.TabIndex = 10;
             this.guna2HtmlLabel3.Text = "House Keeping";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 196);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 296);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(27, 15);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(50, 24);
             this.guna2HtmlLabel2.TabIndex = 5;
             this.guna2HtmlLabel2.Text = "Type";
             // 
@@ -332,7 +335,7 @@
             this.cbcheckout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbcheckout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbcheckout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcheckout.Location = new System.Drawing.Point(12, 159);
+            this.cbcheckout.Location = new System.Drawing.Point(12, 233);
             this.cbcheckout.Name = "cbcheckout";
             this.cbcheckout.Size = new System.Drawing.Size(118, 22);
             this.cbcheckout.TabIndex = 4;
@@ -352,7 +355,7 @@
             this.cbavailable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbavailable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbavailable.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbavailable.Location = new System.Drawing.Point(12, 125);
+            this.cbavailable.Location = new System.Drawing.Point(12, 182);
             this.cbavailable.Name = "cbavailable";
             this.cbavailable.Size = new System.Drawing.Size(91, 22);
             this.cbavailable.TabIndex = 3;
@@ -372,7 +375,7 @@
             this.cboccupied.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboccupied.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboccupied.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboccupied.Location = new System.Drawing.Point(12, 91);
+            this.cboccupied.Location = new System.Drawing.Point(12, 132);
             this.cboccupied.Name = "cboccupied";
             this.cboccupied.Size = new System.Drawing.Size(94, 22);
             this.cboccupied.TabIndex = 2;
@@ -392,7 +395,7 @@
             this.cbreserved.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbreserved.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbreserved.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbreserved.Location = new System.Drawing.Point(12, 56);
+            this.cbreserved.Location = new System.Drawing.Point(12, 87);
             this.cbreserved.Name = "cbreserved";
             this.cbreserved.Size = new System.Drawing.Size(94, 22);
             this.cbreserved.TabIndex = 1;
@@ -407,9 +410,10 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 18);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(33, 15);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(62, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Status";
             this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);

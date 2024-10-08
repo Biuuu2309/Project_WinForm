@@ -1012,71 +1012,76 @@ namespace WindowsForm_Project
             Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
             guna2HtmlLabel.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel.Text = reserved.ToString();
-            guna2HtmlLabel.Location = new Point(185, 56);
+            guna2HtmlLabel.Location = new Point(186, 87);
             guna2Panel3.Controls.Add(guna2HtmlLabel);
 
             Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
             guna2HtmlLabel1.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel1.Text = occupied.ToString();
-            guna2HtmlLabel1.Location = new Point(185, 91);
+            guna2HtmlLabel1.Location = new Point(186, 132);
             guna2Panel3.Controls.Add(guna2HtmlLabel1);
 
             Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
             guna2HtmlLabel2.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel2.Text = available.ToString();
-            guna2HtmlLabel2.Location = new Point(185, 125);
+            guna2HtmlLabel2.Location = new Point(185, 182);
             guna2Panel3.Controls.Add(guna2HtmlLabel2);
 
             Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
             guna2HtmlLabel3.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel3.Text = checkout.ToString();
-            guna2HtmlLabel3.Location = new Point(185, 159);
+            guna2HtmlLabel3.Location = new Point(185, 233);
             guna2Panel3.Controls.Add(guna2HtmlLabel3);
 
             Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
             guna2HtmlLabel4.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel4.Text = singletype.ToString();
-            guna2HtmlLabel4.Location = new Point(165, 234);
+            guna2HtmlLabel4.Location = new Point(165, 366);
             guna2Panel3.Controls.Add(guna2HtmlLabel4);
 
             Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
             guna2HtmlLabel5.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel5.Text = doubletype.ToString();
-            guna2HtmlLabel5.Location = new Point(165, 269);
+            guna2HtmlLabel5.Location = new Point(165, 419);
             guna2Panel3.Controls.Add(guna2HtmlLabel5);
 
             Guna2HtmlLabel guna2HtmlLabel6 = new Guna2HtmlLabel();
             guna2HtmlLabel6.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel6.Text = tripletype.ToString();
-            guna2HtmlLabel6.Location = new Point(165, 303);
+            guna2HtmlLabel6.Location = new Point(165, 475);
             guna2Panel3.Controls.Add(guna2HtmlLabel6);
 
             Guna2HtmlLabel guna2HtmlLabel7 = new Guna2HtmlLabel();
             guna2HtmlLabel7.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel7.Text = clean.ToString();
-            guna2HtmlLabel7.Location = new Point(165, 382);
+            guna2HtmlLabel7.Location = new Point(165, 611);
             guna2Panel3.Controls.Add(guna2HtmlLabel7);
 
             Guna2HtmlLabel guna2HtmlLabel8 = new Guna2HtmlLabel();
             guna2HtmlLabel8.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel8.Text = notclean.ToString();
-            guna2HtmlLabel8.Location = new Point(165, 417);
+            guna2HtmlLabel8.Location = new Point(165, 667);
             guna2Panel3.Controls.Add(guna2HtmlLabel8);
 
             Guna2HtmlLabel guna2HtmlLabel9 = new Guna2HtmlLabel();
             guna2HtmlLabel9.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel9.Text = inprogress.ToString();
-            guna2HtmlLabel9.Location = new Point(165, 451);
+            guna2HtmlLabel9.Location = new Point(165, 724);
             guna2Panel3.Controls.Add(guna2HtmlLabel9);
 
             Guna2HtmlLabel guna2HtmlLabel10 = new Guna2HtmlLabel();
             guna2HtmlLabel10.Font = new Font("Arial", 12, FontStyle.Regular);
             guna2HtmlLabel10.Text = repair.ToString();
-            guna2HtmlLabel10.Location = new Point(165, 485);
+            guna2HtmlLabel10.Location = new Point(165, 783);
             guna2Panel3.Controls.Add(guna2HtmlLabel10);
         }
 
         private void uC_Dashboard2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox4_Click_1(object sender, EventArgs e)
         {
 
         }
