@@ -131,7 +131,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.MediumPurple;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Linen;
-            this.guna2Button1.Location = new System.Drawing.Point(115, 354);
+            this.guna2Button1.Location = new System.Drawing.Point(376, 195);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(200, 45);
             this.guna2Button1.TabIndex = 2;
@@ -167,7 +167,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(15, 154);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(376, 61);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(71, 31);
             this.guna2HtmlLabel2.TabIndex = 4;
@@ -187,7 +187,7 @@
             this.txtcccd_cus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcccd_cus.ForeColor = System.Drawing.Color.Black;
             this.txtcccd_cus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcccd_cus.Location = new System.Drawing.Point(15, 191);
+            this.txtcccd_cus.Location = new System.Drawing.Point(376, 98);
             this.txtcccd_cus.Name = "txtcccd_cus";
             this.txtcccd_cus.PasswordChar = '\0';
             this.txtcccd_cus.PlaceholderText = "Nhập căn cước công dân";
@@ -205,11 +205,11 @@
             this.txtdate_co.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtdate_co.ForeColor = System.Drawing.Color.Beige;
             this.txtdate_co.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtdate_co.Location = new System.Drawing.Point(15, 282);
+            this.txtdate_co.Location = new System.Drawing.Point(729, 98);
             this.txtdate_co.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtdate_co.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtdate_co.Name = "txtdate_co";
-            this.txtdate_co.Size = new System.Drawing.Size(195, 40);
+            this.txtdate_co.Size = new System.Drawing.Size(210, 40);
             this.txtdate_co.TabIndex = 6;
             this.txtdate_co.UseTransparentBackground = true;
             this.txtdate_co.Value = new System.DateTime(2024, 10, 4, 13, 53, 9, 815);
@@ -220,7 +220,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(15, 245);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(729, 61);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(173, 31);
             this.guna2HtmlLabel3.TabIndex = 7;
@@ -288,7 +288,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(61)))), ((int)(((byte)(186)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(202)))), ((int)(((byte)(222)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(704, 316);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(477, 583);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(981, 336);
             this.guna2GroupBox1.TabIndex = 9;
@@ -306,9 +306,9 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(61)))), ((int)(((byte)(186)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(202)))), ((int)(((byte)(222)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(165, 316);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(477, 235);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(458, 431);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(981, 295);
             this.guna2GroupBox2.TabIndex = 10;
             this.guna2GroupBox2.Text = "Nhập thông tin";
             // 
@@ -318,7 +318,7 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(61)))), ((int)(((byte)(186)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(202)))), ((int)(((byte)(222)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(704, 697);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(477, 964);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(981, 363);
             this.guna2GroupBox3.TabIndex = 11;
@@ -335,7 +335,7 @@
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Checkout";
-            this.Size = new System.Drawing.Size(1869, 966);
+            this.Size = new System.Drawing.Size(1852, 966);
             this.Enter += new System.EventHandler(this.UC_Checkout_Enter_1);
             this.Leave += new System.EventHandler(this.UC_Checkout_Leave_1);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
