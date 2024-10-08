@@ -22,7 +22,7 @@ namespace WindowsForm_Project
             this.textusername.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
             this.textpassword.KeyDown += new KeyEventHandler(this.TextBox_KeyDown);
         }
-        
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
@@ -32,7 +32,8 @@ namespace WindowsForm_Project
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Getaccount(conn);
-                    if ((response.list3.Any(account => account.username == textusername.Text) && response.list3.Any(account => account.password == textpassword.Text)) || 
+
+                    if (response.list3.Any(account => account.username == textusername.Text && account.password == textpassword.Text) ||
                         (textusername.Text == "admin" && textpassword.Text == "admin"))
                     {
                         this.DialogResult = DialogResult.OK;
@@ -47,9 +48,9 @@ namespace WindowsForm_Project
                         textpassword.Clear();
                     }
                 }
-                    
             }
         }
+
         private bool ValidateInput()
         {
             if (textusername.Text == "" || textpassword.Text == "")

@@ -504,6 +504,7 @@ namespace WindowsForm_Project
         private void btnemployee_Click_1(object sender, EventArgs e)
         {
             LoginFormNew loginFormNew = new LoginFormNew();
+            Dashboard dashboard = new Dashboard();
             if (count == 0)
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục dang nhap duoi quyen quan ly khong ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -535,7 +536,6 @@ namespace WindowsForm_Project
                 else
                 {
                     MessageBox.Show("Tiep tuc dang nhap duoi quyen la nhan vien");
-                    Dashboard dashboard = new Dashboard();
                     dashboard.Show();
                 }
             }
