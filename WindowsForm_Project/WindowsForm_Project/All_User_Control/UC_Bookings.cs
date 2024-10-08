@@ -101,7 +101,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView1.Width = 800;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
@@ -184,9 +183,16 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = null; // Clear previous data
                     DataGridView2.DataSource = response.list1;
                     DataGridView2.ColumnHeadersHeight = 25;
-                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView2.Width = 800;
+                    DataGridView2.Columns["cccd_cus"].HeaderText = "Mã CCCD";
+                    DataGridView2.Columns["first_name"].HeaderText = "Tên đầu";
+                    DataGridView2.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView2.Columns["sdt"].HeaderText = "Số điện thoại";
+                    DataGridView2.Columns["email"].HeaderText = "Email";
+                    DataGridView2.Columns["gioitinh"].HeaderText = "Giới tính";
+                    DataGridView2.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+                    DataGridView2.Columns["address_cus"].HeaderText = "Địa chỉ";
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
                 else
@@ -209,8 +215,20 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = response.list9;
                     DataGridView3.ColumnHeadersHeight = 25;
                     DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView3.Columns["cccd_cus"].HeaderText = "CCCD";
+                    DataGridView3.Columns["status_room"].HeaderText = "Trạng thái phòng";
+                    DataGridView3.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
+                    DataGridView3.Columns["roomtype"].HeaderText = "Loại phòng";
+                    DataGridView3.Columns["numbed"].HeaderText = "Số giường";
+                    DataGridView3.Columns["date_ci"].HeaderText = "Ngày vào";
+                    DataGridView3.Columns["date_co"].HeaderText = "Ngày ra";
+                    DataGridView3.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView3.Columns["price"].HeaderText = "Giá cả";
+                    DataGridView3.Columns["group_customer"].HeaderText = "Nhóm khách hàng";
+                    DataGridView3.Columns["maphong"].HeaderText = "Mã phòng";
+                    DataGridView3.Columns["roomnumber"].HeaderText = "Số phòng";
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-                    DataGridView3.Width = 800;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }
                 else
@@ -243,8 +261,10 @@ namespace WindowsForm_Project.All_User_Control
         {
             this.DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             this.DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            this.DataGridView3.DefaultCellStyle.ForeColor = Color.Black;
             this.DataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             this.DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            this.DataGridView3.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             this.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
