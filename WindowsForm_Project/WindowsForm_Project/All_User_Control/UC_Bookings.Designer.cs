@@ -254,10 +254,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView2.Location = new System.Drawing.Point(0, 43);
+            this.DataGridView2.Location = new System.Drawing.Point(0, 37);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(867, 294);
+            this.DataGridView2.Size = new System.Drawing.Size(760, 300);
             this.DataGridView2.TabIndex = 35;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -338,7 +338,7 @@
             this.DataGridView1.Location = new System.Drawing.Point(0, 40);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.Size = new System.Drawing.Size(870, 309);
+            this.DataGridView1.Size = new System.Drawing.Size(760, 309);
             this.DataGridView1.TabIndex = 12;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -617,9 +617,9 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(123)))), ((int)(((byte)(102)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(752, 761);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(752, 769);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(870, 340);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(760, 340);
             this.guna2GroupBox3.TabIndex = 42;
             this.guna2GroupBox3.Text = "Bảng thông tin khách hàng chưa đặt phòng";
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);
@@ -632,7 +632,7 @@
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(123)))), ((int)(((byte)(102)))));
             this.guna2GroupBox4.Location = new System.Drawing.Point(752, 406);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(870, 349);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(760, 349);
             this.guna2GroupBox4.TabIndex = 43;
             this.guna2GroupBox4.Text = "Bảng thông tin phòng còn trống";
             this.guna2GroupBox4.Click += new System.EventHandler(this.guna2GroupBox4_Click);
@@ -722,7 +722,7 @@
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Name = "UC_Bookings";
-            this.Size = new System.Drawing.Size(1852, 966);
+            this.Size = new System.Drawing.Size(1835, 966);
             this.Load += new System.EventHandler(this.UC_Bookings_Load);
             this.Enter += new System.EventHandler(this.UC_Bookings_Enter);
             this.Leave += new System.EventHandler(this.UC_Bookings_Leave);
