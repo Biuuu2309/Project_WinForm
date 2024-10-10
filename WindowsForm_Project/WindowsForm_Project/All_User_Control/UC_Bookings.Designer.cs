@@ -656,7 +656,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(123)))), ((int)(((byte)(102)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(752, 51);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(870, 349);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(760, 349);
             this.guna2GroupBox1.TabIndex = 44;
             this.guna2GroupBox1.Text = "Bảng thông tin đặt phòng";
             // 
@@ -686,7 +686,7 @@
             this.DataGridView3.Location = new System.Drawing.Point(0, 38);
             this.DataGridView3.Name = "DataGridView3";
             this.DataGridView3.RowHeadersVisible = false;
-            this.DataGridView3.Size = new System.Drawing.Size(870, 311);
+            this.DataGridView3.Size = new System.Drawing.Size(760, 311);
             this.DataGridView3.TabIndex = 35;
             this.DataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView3.ThemeStyle.AlternatingRowsStyle.Font = null;

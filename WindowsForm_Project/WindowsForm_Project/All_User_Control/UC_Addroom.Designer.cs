@@ -99,7 +99,7 @@
             this.DataGridView1.Location = new System.Drawing.Point(0, 40);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.Size = new System.Drawing.Size(982, 390);
+            this.DataGridView1.Size = new System.Drawing.Size(985, 390);
             this.DataGridView1.TabIndex = 14;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -465,10 +465,10 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView2.Location = new System.Drawing.Point(3, 43);
+            this.DataGridView2.Location = new System.Drawing.Point(0, 33);
             this.DataGridView2.Name = "DataGridView2";
             this.DataGridView2.RowHeadersVisible = false;
-            this.DataGridView2.Size = new System.Drawing.Size(979, 380);
+            this.DataGridView2.Size = new System.Drawing.Size(985, 390);
             this.DataGridView2.TabIndex = 59;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -627,7 +627,7 @@
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Addroom";
-            this.Size = new System.Drawing.Size(1835, 966);
+            this.Size = new System.Drawing.Size(1818, 966);
             this.Load += new System.EventHandler(this.UC_Addroom_Load);
             this.Enter += new System.EventHandler(this.UC_Addroom_Enter_1);
             this.Leave += new System.EventHandler(this.UC_Addroom_Leave_1);
