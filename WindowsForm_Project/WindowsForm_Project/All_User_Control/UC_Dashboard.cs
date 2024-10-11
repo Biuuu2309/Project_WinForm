@@ -185,7 +185,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < fullname.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -454,7 +454,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < fullname.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -718,7 +718,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < fullname.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
