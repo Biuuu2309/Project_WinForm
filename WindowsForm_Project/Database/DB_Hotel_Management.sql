@@ -496,7 +496,23 @@ BEGIN
 		SET @ErrorMessage = ERROR_MESSAGE();
 	END CATCH
 END
-
+GO
+CREATE OR ALTER PROC sp_updatestatusroom2 @roomnumber NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Update_room
+		SET
+			status_room = 'Occupied'
+		WHERE maphong IN (	SELECT maphong
+							FROM Room
+							WHERE roomnumber = @roomnumber);
+		SET @ErrorMessage = 'Successfully'
+	END TRY
+	BEGIN CATCH
+		SET @ErrorMessage = ERROR_MESSAGE();
+	END CATCH
+END
 
 GO
 SELECT Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note, SUM(CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END + CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END) AS total_shifts

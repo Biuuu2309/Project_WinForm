@@ -899,6 +899,32 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Updateroombooking2(RoomUpdate roomupdate, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updatestatusroom2", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(roomupdate.roomnumber.ToString()))
+                {
+                    cmd.Parameters.AddWithValue("@roomnumber", roomupdate.roomnumber);
+                }
+
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Getemployeework(SqlConnection conn)
         {
             Response response = new Response();

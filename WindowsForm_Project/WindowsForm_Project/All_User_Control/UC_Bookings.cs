@@ -155,12 +155,16 @@ namespace WindowsForm_Project.All_User_Control
                     date_co = txtdateco.Value,
                     price = price,
                 };
-
+                RoomUpdate roomUpdate = new RoomUpdate
+                {
+                    roomnumber = int.Parse(txtsophong.SelectedItem.ToString())
+                };
                 DAL dal = new DAL();
                 string connectionString = DatabaseConnection.Connection();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     Response response = dal.Addbooking(bookings, conn);
+                    Response response1 = dal.Updateroombooking2(roomUpdate, conn);
                     MessageBox.Show(response.statusmessage);
                     if (response.statusmessage.Contains("Successfully"))
                     {
