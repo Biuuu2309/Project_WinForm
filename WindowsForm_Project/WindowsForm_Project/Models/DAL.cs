@@ -95,7 +95,7 @@ namespace WindowsForm_Project.Models
         {
             Response response = new Response();
             try
-            {
+            {   
                 SqlCommand cmd = new SqlCommand("sp_addbooking", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cccd_cus", booking.cccd_cus);

@@ -521,7 +521,6 @@ INNER JOIN Employee ON Chamcong.cccd_em = Employee.cccd_em
 WHERE Chamcong.cccd_em = Employee.cccd_em
 GROUP BY Chamcong.cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, ngay, ca1, ca2, ca3, ca4, luong, note
 
-GO
 SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
 FROM Employee
 INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
@@ -529,7 +528,6 @@ WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 =
 GROUP BY Employee.cccd_em, first_name, last_name, luong
 ORDER BY Employee.cccd_em
 
-GO
 SELECT 
     Chamcong.cccd_em, first_name, last_name, ngay, ca1, ca2, ca3, ca4, CAST(note AS NVARCHAR(MAX)) AS note
 FROM Chamcong
