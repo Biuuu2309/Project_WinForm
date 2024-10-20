@@ -463,7 +463,6 @@ BEGIN
 	END
 END
 
-
 GO
 CREATE OR ALTER PROC sp_deletebooking @roomnumber INT = NULL, @cccd_cus NVARCHAR(200) = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
