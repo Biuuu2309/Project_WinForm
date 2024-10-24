@@ -655,3 +655,4 @@ SELECT first_name + ' ' + last_name as fullname
                                 INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
                                 INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 1
+SELECT * FROM Customer
