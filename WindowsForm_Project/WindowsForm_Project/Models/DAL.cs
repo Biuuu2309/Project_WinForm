@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace WindowsForm_Project.Models
             Response response = new Response();
             try
             {
+                string imageroom = Path.GetFileName(room.image_room);
                 SqlCommand cmd = new SqlCommand("sp_addroom", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@maphong", room.maphong);
@@ -24,6 +26,7 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@roomtype", room.roomtype);
                 cmd.Parameters.AddWithValue("@numbed", room.numbed);
                 cmd.Parameters.AddWithValue("@view_room", room.view_room);
+                cmd.Parameters.AddWithValue("@image_room", imageroom);
                 cmd.Parameters.AddWithValue("@price", room.price);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
@@ -363,6 +366,7 @@ namespace WindowsForm_Project.Models
                                 roomtype = reader["roomtype"].ToString(),
                                 numbed = reader["numbed"].ToString(),
                                 view_room = reader["view_room"].ToString(),
+                                image_room = reader["image_room"].ToString(),
                                 price = int.Parse(reader["price"].ToString()),
                             };
                             list.Add(room);

@@ -13,6 +13,7 @@ namespace WindowsForm_Project.Models
         public string roomtype { get; set; }
         public string numbed { get; set; }
         public string view_room { get; set; }
+        public string image_room { get; set; }
         public int price { get; set; }
     }
     public class RoomUpdate

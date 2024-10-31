@@ -185,6 +185,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -251,6 +252,12 @@
     <Compile Include="All_User_Control\UC_Serve.Designer.cs">
       <DependentUpon>UC_Serve.cs</DependentUpon>
     </Compile>
+    <Compile Include="All_User_Control\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All_User_Control\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -302,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="All_User_Control\UC_Serve.resx">
       <DependentUpon>UC_Serve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All_User_Control\UC_Salary.resx">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

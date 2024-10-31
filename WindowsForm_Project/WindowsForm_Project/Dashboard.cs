@@ -374,6 +374,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
         }
 
@@ -389,6 +390,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
             // ... hide other user controls
         }
@@ -405,6 +407,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
 
             // ... hide other user controls
@@ -449,6 +452,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
         }
 
@@ -478,6 +482,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
         }
 
@@ -493,6 +498,7 @@ namespace WindowsForm_Project
             uC_Manage1.Visible = false;
             uC_Customer1.Visible = false;
             uC_Checkout1.Visible = false;
+            uC_Tongthu1.Visible = false;
 
         }
 
@@ -549,6 +555,8 @@ namespace WindowsForm_Project
                 uC_Customer1.Visible = false;
                 uC_Serve1.Visible = false;
                 uC_Checkout1.Visible = false;
+                uC_Tongthu1.Visible = false;
+
             }
         }
 
@@ -565,6 +573,8 @@ namespace WindowsForm_Project
             uC_Customer1.Visible = false;
             uC_Serve1.Visible = false;
             uC_Manage1.Visible = false;
+            uC_Tongthu1.Visible = false;
+
         }
 
         private void uC_Manage1_Load(object sender, EventArgs e)
@@ -1083,6 +1093,26 @@ namespace WindowsForm_Project
         private void guna2PictureBox4_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTongthu_Click(object sender, EventArgs e)
+        {
+            MovePanel(btnTongthu);
+            uC_Tongthu1.Visible = true;
+            uC_Tongthu1.BringToFront();
+            // Hide other user controls
+            uC_Dashboard2.Visible = false;
+            uC_Addroom1.Visible = false;
+            uC_Customer1.Visible = false;
+            uC_Manage1.Visible = false;
+            uC_Serve1.Visible = false;
+            uC_Checkout1.Visible = false;
+            uC_Bookings2.Visible = false;
+        }
+
+        private void uC_Tongthu1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -13,6 +13,7 @@ CREATE TABLE Room (
 	roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
 	numbed INT NOT NULL CHECK(numbed IN(1, 2, 3)),
 	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
+	image_room NVARCHAR(200),
 	price INT NOT NULL CHECK (price > 0),
 )
 GO
@@ -34,6 +35,17 @@ CREATE TABLE Customer (
 	ngaysinh DATETIME CHECK (DATEDIFF(y, ngaysinh, GETDATE()) >= 18),
 	address_cus NVARCHAR(200) NOT NULL,
 )
+GO
+CREATE TABLE Employee (
+	cccd_em NVARCHAR(200) PRIMARY KEY,
+	first_name NVARCHAR(200) NOT NULL,
+	last_name NVARCHAR(200) NOT NULL,
+	sdt NVARCHAR(200) NOT NULL,
+	email NVARCHAR(200) NOT NULL,
+	gioitinh NVARCHAR(200) CHECK (gioitinh IN ('Nam', 'Nu')),
+	ngaysinh DATETIME CHECK (DATEDIFF(y, ngaysinh, GETDATE()) >= 18),
+	luong FLOAT CHECK (luong > 0),
+)
 GO 
 CREATE TABLE Bookings (
 	cccd_cus NVARCHAR(200),
@@ -47,21 +59,12 @@ CREATE TABLE Bookings (
 	group_customer INT DEFAULT 0,
 	maphong INT UNIQUE, 
 	roomnumber INT NOT NULL,
+	cccd_em NVARCHAR(200),
 	price INT NOT NULL CHECK (price > 0),
 	PRIMARY KEY (cccd_cus, maphong),
 	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
-)
-GO
-CREATE TABLE Employee (
-	cccd_em NVARCHAR(200) PRIMARY KEY,
-	first_name NVARCHAR(200) NOT NULL,
-	last_name NVARCHAR(200) NOT NULL,
-	sdt NVARCHAR(200) NOT NULL,
-	email NVARCHAR(200) NOT NULL,
-	gioitinh NVARCHAR(200) CHECK (gioitinh IN ('Nam', 'Nu')),
-	ngaysinh DATETIME CHECK (DATEDIFF(y, ngaysinh, GETDATE()) >= 18),
-	luong FLOAT CHECK (luong > 0),
+	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 CREATE TABLE Report (
@@ -79,9 +82,12 @@ CREATE TABLE Serve (
 	other_booking NVARCHAR(200),
 	anuong NVARCHAR(200),
 	call_serve BIT DEFAULT 0,
+	cost INT,
+	cccd_em NVARCHAR(200),
 	PRIMARY KEY (cccd_cus, maphong),
 	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 CREATE TABLE Chamcong (
@@ -114,6 +120,32 @@ CREATE TABLE Checkout (
 	sophong INT NOT NULL,
 	date_ci DATETIME NOT NULL,
 	date_co DATETIME NOT NULL
+)
+GO
+CREATE TABLE Tongchi (
+	sttchi INT IDENTITY(1, 1) PRIMARY KEY,
+	ngay DATETIME,
+	tendogiadung NVARCHAR(200),
+	gianhapdogiadung INT,
+	tennguyenlieu NVARCHAR(200),
+	gianhapnguyenlieu INT,
+	tennhuyeupham NVARCHAR(200),
+	gianhuyeupham INT
+)
+GO 
+CREATE TABLE Tongthu (
+	sttthu INT IDENTITY(1, 1) PRIMARY KEY,
+	thang INT,
+	tongtienthu INT
+)
+GO
+CREATE TABLE Salary (
+	stt INT IDENTITY(1, 1) PRIMARY KEY,
+	sttthu INT,
+	sttchi INT,
+	loinhuandoanhnghiep INT,
+	FOREIGN KEY (sttchi) REFERENCES Tongchi(sttchi) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (sttthu) REFERENCES Tongthu(sttthu) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
@@ -158,13 +190,13 @@ VALUES
 	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA'),
 	('12072309', 'Haha', 'Hihiiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
 GO
-INSERT INTO Bookings(cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, price)
+INSERT INTO Bookings(cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, cccd_em, price)
 VALUES
-	('12022309', 'Reserved', 'Clean', 'STD', '1', 'Good', '2024-09-20', '2024-09-21', '0',  '1', '101', '111110'),
-	('12032309', 'Occupied', 'Not Clean', 'DLX', '2', 'Simple', '2024-09-19', '2024-09-22', '0',  '2', '102', '2222221'),
-	('12042309', 'Available', 'In Progress', 'SUP', '3', 'Beautiful', '2024-09-18', '2024-09-20', '0',  '3', '103', '222222'),
-	('12052309', 'Check Out', 'Repair', 'SUT', '1', 'Good', '2024-09-17', '2024-09-21', '0',  '4', '104', '2222221'),
-	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-09-16', '2024-09-20', '0',  '5', '105', '2222222')
+	('12022309', 'Reserved', 'Clean', 'STD', '1', 'Good', '2024-09-20', '2024-09-21', '0',  '1', '101', '12012309', '111110'),
+	('12032309', 'Occupied', 'Not Clean', 'DLX', '2', 'Simple', '2024-09-19', '2024-09-22', '0',  '2', '102', '12012309', '2222221'),
+	('12042309', 'Available', 'In Progress', 'SUP', '3', 'Beautiful', '2024-09-18', '2024-09-20', '0',  '3', '103', '12012309', '222222'),
+	('12052309', 'Check Out', 'Repair', 'SUT', '1', 'Good', '2024-09-17', '2024-09-21', '0',  '4', '104', '12012309', '2222221'),
+	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-09-16', '2024-09-20', '0',  '5', '105', '12012309', '2222222')
 GO
 INSERT INTO Report(cccd_cus, maphong, ghichu)
 VALUES
@@ -185,13 +217,13 @@ VALUES
 	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
 	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good')
 GO
-INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve)
+INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost, cccd_em)
 VALUES
-	('12022309', '1', 'Khong', 'Khong', '0'),
-	('12032309', '2', 'Khong', 'Khong', '0'),
-	('12042309', '3', 'Khong', 'Khong', '0'),
-	('12052309', '4', 'Khong', 'Khong', '0'),
-	('12062309', '5', 'Khong', 'Khong', '0')
+	('12022309', '1', 'Khong', 'Khong', '0', '0', '12012309'),
+	('12032309', '2', 'Khong', 'Khong', '0', '0', '12012309'),
+	('12042309', '3', 'Khong', 'Khong', '0', '0', '12012309'),
+	('12052309', '4', 'Khong', 'Khong', '0', '0', '12012309'),
+	('12062309', '5', 'Khong', 'Khong', '0', '0', '12012309')
 GO 
 CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
@@ -656,3 +688,33 @@ SELECT first_name + ' ' + last_name as fullname
                                 INNER JOIN Update_room ON Bookings.maphong = Update_room.maphong
                                 WHERE numbed = 1
 SELECT * FROM Customer
+
+SELECT DISTINCT first_name + ' ' + last_name as full_name, COUNT(*) AS total_shifts, luong * COUNT(*) AS total_salary
+                                FROM Employee
+                                INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+                                WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
+                                GROUP BY Employee.cccd_em, first_name, last_name, luong
+
+
+
+
+SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+FROM Employee
+INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
+GROUP BY Employee.cccd_em, first_name, last_name, luong
+ORDER BY Employee.cccd_em
+
+
+SELECT 
+    (SELECT SUM(total_salary) 
+     FROM (
+         SELECT luong * COUNT(*) AS total_salary
+         FROM Employee
+         INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+         WHERE ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co'
+         GROUP BY Employee.cccd_em, first_name, last_name, luong
+     ) AS SalaryPerEmployee) 
+    +
+    (SELECT SUM(cost) FROM Serve) AS grand_total;
+

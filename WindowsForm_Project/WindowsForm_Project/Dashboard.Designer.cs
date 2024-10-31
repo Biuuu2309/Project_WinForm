@@ -61,11 +61,13 @@
             this.btncustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnserve = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnTongthu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnaddroom = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            this.uC_Tongthu1 = new WindowsForm_Project.All_User_Control.UC_Salary();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
@@ -561,6 +563,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel1.Controls.Add(this.btnTongthu);
             this.guna2Panel1.Controls.Add(this.btnaddroom);
             this.guna2Panel1.Controls.Add(this.btncheckout);
             this.guna2Panel1.Controls.Add(this.btnserve);
@@ -576,6 +579,27 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1920, 57);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // btnTongthu
+            // 
+            this.btnTongthu.BackColor = System.Drawing.Color.Snow;
+            this.btnTongthu.BorderRadius = 10;
+            this.btnTongthu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTongthu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTongthu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTongthu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTongthu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTongthu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTongthu.FillColor = System.Drawing.Color.Transparent;
+            this.btnTongthu.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnTongthu.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongthu.ForeColor = System.Drawing.Color.Black;
+            this.btnTongthu.Location = new System.Drawing.Point(1564, 6);
+            this.btnTongthu.Name = "btnTongthu";
+            this.btnTongthu.Size = new System.Drawing.Size(217, 45);
+            this.btnTongthu.TabIndex = 33;
+            this.btnTongthu.Text = "Check Out";
+            this.btnTongthu.Click += new System.EventHandler(this.btnTongthu_Click);
             // 
             // btnaddroom
             // 
@@ -627,6 +651,15 @@
             this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // uC_Tongthu1
+            // 
+            this.uC_Tongthu1.BackColor = System.Drawing.Color.White;
+            this.uC_Tongthu1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Tongthu1.Name = "uC_Tongthu1";
+            this.uC_Tongthu1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Tongthu1.TabIndex = 14;
+            this.uC_Tongthu1.Load += new System.EventHandler(this.uC_Tongthu1_Load);
             // 
             // uC_Dashboard2
             // 
@@ -718,6 +751,7 @@
             this.Controls.Add(this.uC_Customer1);
             this.Controls.Add(this.uC_Manage1);
             this.Controls.Add(this.uC_Checkout1);
+            this.Controls.Add(this.uC_Tongthu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Hotel Management";
@@ -782,5 +816,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2GradientButton btnTongthu;
+        private All_User_Control.UC_Salary uC_Tongthu1;
     }
 }
