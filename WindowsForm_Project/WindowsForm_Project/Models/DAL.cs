@@ -112,6 +112,7 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@group_customer", booking.group_customer);
                 cmd.Parameters.AddWithValue("@date_ci", booking.date_ci);
                 cmd.Parameters.AddWithValue("@date_co", booking.date_co);
+                cmd.Parameters.AddWithValue("@cccd_em", booking.cccd_em);
                 cmd.Parameters.AddWithValue("@price", booking.price);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
@@ -686,6 +687,7 @@ namespace WindowsForm_Project.Models
                                 group_customer = int.Parse(reader["group_customer"].ToString()),
                                 date_ci = DateTime.Parse(reader["date_ci"].ToString()),
                                 date_co = DateTime.Parse(reader["date_co"].ToString()),
+                                cccd_em = reader["cccd_em"].ToString(),
                                 price = int.Parse(reader["price"].ToString()),
                             };
                             list.Add(bookings);

@@ -225,13 +225,13 @@ VALUES
 	('12052309', '4', 'Khong', 'Khong', '0', '0', '12012309'),
 	('12062309', '5', 'Khong', 'Khong', '0', '0', '12012309')
 GO 
-CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @cccd_em NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Bookings
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
 	BEGIN
-		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @maphong, @roomnumber, @group_customer, @date_ci, @date_co, @price)
+		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, cccd_em, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @maphong, @roomnumber, @group_customer, @date_ci, @date_co, @cccd_em, @price)
 		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
@@ -255,13 +255,13 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @cost INT , @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Serve
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
 	BEGIN 
-		INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve)
+		INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost, cccd_em) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve, @cost, @cccd_em)
 		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
@@ -270,7 +270,9 @@ BEGIN
 			SET 
 				other_booking = COALESCE(@other_booking,other_booking),
 				anuong = COALESCE(@anuong,anuong),
-				call_serve = COALESCE(@call_serve,call_serve)
+				call_serve = COALESCE(@call_serve,call_serve),
+				cost = COALESCE(@cost,cost),
+				cccd_em = COALESCE(@cccd_em,cccd_em)
 			WHERE cccd_cus = @cccd_cus AND maphong = @maphong
 			SET @ErrorMessage = 'Successfully'
 	END TRY
@@ -280,13 +282,13 @@ BEGIN
 END
 SELECT * FROM Serve
 GO
-CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @image_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Room
 					WHERE maphong = @maphong)
 	BEGIN
-		INSERT INTO Room(maphong, roomnumber, roomtype, numbed, view_room, price) VALUES (@maphong, @roomnumber, @roomtype, @numbed, @view_room, @price)
+		INSERT INTO Room(maphong, roomnumber, roomtype, numbed, view_room, image_room, price) VALUES (@maphong, @roomnumber, @roomtype, @numbed, @view_room, @image_room, @price)
 		SET @ErrorMessage = 'Successfully'
 	END
 	ELSE
@@ -347,7 +349,7 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_updateroom @maphong INT = NULL, @roomnumber INT = NULL, @roomtype NVARCHAR(200) = NULL, @numbed INT = NULL, @view_room NVARCHAR(200) = NULL, @price INT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
+CREATE OR ALTER PROC sp_updateroom @maphong INT = NULL, @roomnumber INT = NULL, @roomtype NVARCHAR(200) = NULL, @numbed INT = NULL, @view_room NVARCHAR(200) = NULL,@image_room NVARCHAR(200) = NULL, @price INT = NULL, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN 
 	BEGIN TRY
@@ -358,6 +360,7 @@ BEGIN
 			roomtype = COALESCE(@roomtype, roomtype),
 			numbed = COALESCE(@numbed, numbed),
 			view_room = COALESCE(@view_room, view_room),
+			image_room = COALESCE(@image_room, image_room),
 			price = COALESCE(@price, price)
 		WHERE maphong = @maphong;
 
