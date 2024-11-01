@@ -192,6 +192,8 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@other_booking", serve.other_booking);
                 cmd.Parameters.AddWithValue("@anuong", serve.anuong);
                 cmd.Parameters.AddWithValue("@call_serve", serve.call_serve);
+                cmd.Parameters.AddWithValue("@cost", serve.cost);
+                cmd.Parameters.AddWithValue("@cccd_em", serve.cccd_em);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
@@ -249,6 +251,8 @@ namespace WindowsForm_Project.Models
                                 other_booking = reader["other_booking"].ToString(),
                                 anuong = reader["anuong"].ToString(),
                                 call_serve = bool.Parse(reader["call_serve"].ToString()),
+                                cost = int.Parse(reader["cost"].ToString()),
+                                cccd_em = reader["cccd_em"].ToString()
                             };
                             list.Add(serve);
                         }

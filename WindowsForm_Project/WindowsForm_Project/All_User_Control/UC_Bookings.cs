@@ -22,7 +22,7 @@ namespace WindowsForm_Project.All_User_Control
         
         private bool ValidateInput()
         {
-            if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null || txtmaphong.SelectedItem == null || txtsophong.SelectedItem == null)
+            if (txtcccd_cus.Text == "" || txtstatusroom.SelectedItem == null || txthousekeeping.SelectedItem == null || txtloaiphong.SelectedItem == null || txtloaigiuong.SelectedItem == null || txtviewroom.SelectedItem == null || txtdateci.Value == null || txtdateco.Value == null || txtgroupcus.Text == null || txtprice.Text == null || txtmaphong.SelectedItem == null || txtsophong.SelectedItem == null || txtcccd_em.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -57,6 +57,8 @@ namespace WindowsForm_Project.All_User_Control
             txtprice.Clear();
             txtsophong.SelectedItem = -1;
             txtmaphong.SelectedIndex = -1;
+            txtcccd_em.Clear();
+
         }
         private void UC_Bookings_Leave(object sender, EventArgs e)
         {
@@ -98,6 +100,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
                     DataGridView1.Columns["house_keeping"].HeaderText = "house keeping";
                     DataGridView1.Columns["status_room"].HeaderText = "status room";
+                    DataGridView1.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -153,6 +156,7 @@ namespace WindowsForm_Project.All_User_Control
                     group_customer = groupCustomer,
                     date_ci = txtdateci.Value,
                     date_co = txtdateco.Value,
+                    cccd_em = txtcccd_em.Text,
                     price = price,
                 };
                 RoomUpdate roomUpdate = new RoomUpdate
@@ -232,6 +236,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.Columns["group_customer"].HeaderText = "Nhóm khách hàng";
                     DataGridView3.Columns["maphong"].HeaderText = "Mã phòng";
                     DataGridView3.Columns["roomnumber"].HeaderText = "Số phòng";
+                    DataGridView3.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView3.Refresh(); // Refresh the grid view
                 }

@@ -50,6 +50,8 @@ namespace WindowsForm_Project.All_User_Control
                     other_booking = txtotherbooking.Text,
                     anuong = txtanuong.Text,
                     call_serve = txtcallserveee.Checked,
+                    cost = int.Parse(txtcost.Text),
+                    cccd_em = txtcccd.Text,
                 };
 
                 DAL dal = new DAL();
@@ -67,7 +69,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private bool ValidateInput()
         {
-            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserveee.Text == null)
+            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserveee.Text == null || txtcost.Text == "" || txtcccd_em.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -88,6 +90,9 @@ namespace WindowsForm_Project.All_User_Control
             txtotherbooking.Clear();
             txtanuong.Clear();
             txtcallserveee.Checked = false;
+            txtcost.Clear();
+            txtcccd_em.Clear();
+
         }
         private void UC_Serve_Leave(object sender, EventArgs e)
         {
@@ -114,6 +119,8 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["other_booking"].HeaderText = "Đặt phòng khác";
                     DataGridView1.Columns["anuong"].HeaderText = "Ăn uống";
                     DataGridView1.Columns["call_serve"].HeaderText = "Gọi dịch vụ";
+                    DataGridView1.Columns["cost"].HeaderText = "Phi dich vu";
+                    DataGridView1.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.Columns["call_serve"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -143,6 +150,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["roomtype"].HeaderText = "Loại phòng";
                     DataGridView2.Columns["numbed"].HeaderText = "Số phòng đặt";
                     DataGridView2.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView2.Columns["image_room"].HeaderText = "Anh phong";
                     DataGridView2.Columns["price"].HeaderText = "Giá cả";
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;

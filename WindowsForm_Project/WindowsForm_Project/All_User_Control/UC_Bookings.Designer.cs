@@ -73,6 +73,8 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.DataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtcccd_em = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -160,7 +162,7 @@
             this.txtprice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtprice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtprice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtprice.Location = new System.Drawing.Point(29, 921);
+            this.txtprice.Location = new System.Drawing.Point(31, 982);
             this.txtprice.Name = "txtprice";
             this.txtprice.PasswordChar = '\0';
             this.txtprice.PlaceholderText = "Nhập giá tiền";
@@ -172,7 +174,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(31, 900);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(33, 961);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(39, 15);
             this.guna2HtmlLabel5.TabIndex = 8;
@@ -223,7 +225,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(89)))), ((int)(((byte)(123)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(106, 984);
+            this.guna2Button2.Location = new System.Drawing.Point(113, 1029);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 34;
@@ -365,6 +367,8 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel13);
+            this.guna2GroupBox2.Controls.Add(this.txtcccd_em);
             this.guna2GroupBox2.Controls.Add(this.txtsophong);
             this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel8);
             this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel12);
@@ -395,7 +399,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(123)))), ((int)(((byte)(102)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(215, 51);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(438, 1058);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(438, 1091);
             this.guna2GroupBox2.TabIndex = 41;
             this.guna2GroupBox2.Text = "Nhập thông tin khách hàng";
             // 
@@ -710,6 +714,36 @@
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(34, 892);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(116, 23);
+            this.guna2HtmlLabel13.TabIndex = 55;
+            this.guna2HtmlLabel13.Text = "CCCD Employee";
+            // 
+            // txtcccd_em
+            // 
+            this.txtcccd_em.Animated = true;
+            this.txtcccd_em.BorderRadius = 3;
+            this.txtcccd_em.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcccd_em.DefaultText = "";
+            this.txtcccd_em.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcccd_em.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcccd_em.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcccd_em.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcccd_em.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcccd_em.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtcccd_em.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcccd_em.Location = new System.Drawing.Point(33, 912);
+            this.txtcccd_em.Name = "txtcccd_em";
+            this.txtcccd_em.PasswordChar = '\0';
+            this.txtcccd_em.PlaceholderText = "Nhập căn cước công dân";
+            this.txtcccd_em.SelectedText = "";
+            this.txtcccd_em.Size = new System.Drawing.Size(303, 43);
+            this.txtcccd_em.TabIndex = 54;
+            // 
             // UC_Bookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,7 +756,7 @@
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Name = "UC_Bookings";
-            this.Size = new System.Drawing.Size(1835, 966);
+            this.Size = new System.Drawing.Size(1818, 966);
             this.Load += new System.EventHandler(this.UC_Bookings_Load);
             this.Enter += new System.EventHandler(this.UC_Bookings_Enter);
             this.Leave += new System.EventHandler(this.UC_Bookings_Leave);
@@ -774,5 +808,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox txtmaphong;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2TextBox txtcccd_em;
     }
 }

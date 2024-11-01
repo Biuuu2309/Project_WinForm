@@ -18,7 +18,7 @@ namespace WindowsForm_Project.Models
         public DateTime date_co { get; set; }
         public int group_customer { get; set; }
         public int maphong { get; set; }
-        public int roomnumber { get; set; }
+        public int roomnumber { get; set; } 
         public string cccd_em { get; set; }
         public int price { get; set; }
     }

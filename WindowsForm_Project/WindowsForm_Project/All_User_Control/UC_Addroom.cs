@@ -66,6 +66,7 @@ namespace WindowsForm_Project.All_User_Control
                     roomtype = txtloaiphong.SelectedItem.ToString(),
                     numbed = txtloaigiuong.SelectedItem.ToString(),
                     view_room = txtviewroom.SelectedItem.ToString(),
+                    image_room = 
                     price = int.Parse(txtgia.Text)
                 };
 

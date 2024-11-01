@@ -206,3 +206,4 @@ C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\o
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Checkout.resources
 C:\Zan\Project_winform\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Checkout.resources
 E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Tongthu.resources
+E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\WindowsForm_Project\obj\Debug\WindowsForm_Project.All_User_Control.UC_Salary.resources
