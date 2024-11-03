@@ -353,7 +353,7 @@ namespace WindowsForm_Project.All_User_Control
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+ 
         private void UC_Serve_Leave_1(object sender, EventArgs e)
         {
             clearAll();
