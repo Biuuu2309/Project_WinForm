@@ -42,6 +42,76 @@ namespace WindowsForm_Project.Models
             }
             return response;
         }
+        public Response Gettongchi(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Chitieu> list = new List<Chitieu>();
+            try
+            {
+                string query = @"SELECT * FROM Tongchi";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Chitieu tongchi = new Chitieu
+                            {
+                                sttchi = int.Parse(reader["stt"].ToString()),
+                                ngay = DateTime.Parse(reader["ngay"].ToString()),
+                                tendogiadung = reader["tendogiadung"].ToString(),
+                                gianhapdogiadung = int.Parse(reader["gianhapdogiadung"].ToString()),
+                                tennguyenlieu = reader["tennguyenlieu"].ToString(),
+                                gianhapnguyenlieu = int.Parse(reader["gianhapnguyenlieu"].ToString()),
+                                tennhuyeupham = reader["tennhuyeupham"].ToString(),
+                                gianhuyeupham = int.Parse(reader["gianhuyeupham"].ToString())
+                            };
+                            list.Add(tongchi);
+                        }
+                    }
+                }
+                response.list12 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response AddTongchi(Chitieu tongchi, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addtongchi", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ngay", tongchi.ngay);
+                cmd.Parameters.AddWithValue("@tendogiadung", tongchi.tendogiadung);
+                cmd.Parameters.AddWithValue("@gianhapdogiadung", tongchi.gianhapdogiadung);
+                cmd.Parameters.AddWithValue("@tennguyenlieu", tongchi.tennguyenlieu);
+                cmd.Parameters.AddWithValue("@gianhapnguyenlieu", tongchi.gianhapnguyenlieu);
+                cmd.Parameters.AddWithValue("@tennhuyeupham", tongchi.tennhuyeupham);
+                cmd.Parameters.AddWithValue("@gianhuyeupham", tongchi.gianhuyeupham);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addreport(Report report, SqlConnection conn)
         {
             Response response = new Response();

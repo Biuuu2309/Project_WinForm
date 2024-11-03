@@ -280,6 +280,7 @@
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Salary.cs" />
     <Compile Include="Models\Serve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

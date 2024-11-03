@@ -66,7 +66,7 @@ namespace WindowsForm_Project.All_User_Control
                     roomtype = txtloaiphong.SelectedItem.ToString(),
                     numbed = txtloaigiuong.SelectedItem.ToString(),
                     view_room = txtviewroom.SelectedItem.ToString(),
-                    image_room = 
+                    image_room = Image1.ImageLocation,
                     price = int.Parse(txtgia.Text)
                 };
 
@@ -253,6 +253,26 @@ namespace WindowsForm_Project.All_User_Control
         private void UC_Addroom_Leave_1(object sender, EventArgs e)
         {
             clearAll();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            String imagelocation = "";
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
+
+                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imagelocation = openFileDialog.FileName;
+                    Image1.ImageLocation = imagelocation;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

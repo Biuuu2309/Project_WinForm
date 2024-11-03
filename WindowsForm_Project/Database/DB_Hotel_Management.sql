@@ -1,4 +1,4 @@
-use master
+﻿use master
 GO
 IF EXISTS (SELECT * FROM sysdatabases WHERE name = 'Hotel_Management')
 	DROP DATABASE Hotel_Management
@@ -48,24 +48,24 @@ CREATE TABLE Employee (
 )
 GO 
 CREATE TABLE Bookings (
-	cccd_cus NVARCHAR(200),
-	status_room NVARCHAR(200) NOT NULL CHECK(status_room IN ('Reserved', 'Occupied', 'Available', 'Check Out')),
-	house_keeping NVARCHAR(200) NOT NULL CHECK(house_keeping IN ('Clean', 'Not Clean', 'In Progress', 'Repair')),
-	roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
-	numbed INT NOT NULL CHECK(numbed IN(1, 2, 3)),
-	view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
-	date_ci DATETIME NOT NULL,
-	date_co DATETIME NOT NULL,
-	group_customer INT DEFAULT 0,
-	maphong INT UNIQUE, 
-	roomnumber INT NOT NULL,
-	cccd_em NVARCHAR(200),
-	price INT NOT NULL CHECK (price > 0),
-	PRIMARY KEY (cccd_cus, maphong),
-	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
-)
+    stt INT IDENTITY(1, 1) PRIMARY KEY,
+    cccd_cus NVARCHAR(200),
+    status_room NVARCHAR(200) NOT NULL CHECK(status_room IN ('Reserved', 'Occupied', 'Available', 'Check Out')),
+    house_keeping NVARCHAR(200) NOT NULL CHECK(house_keeping IN ('Clean', 'Not Clean', 'In Progress', 'Repair')),
+    roomtype NVARCHAR(200) NOT NULL CHECK (roomtype IN ('STD', 'SUP', 'DLX', 'SUT')),
+    numbed INT NOT NULL CHECK(numbed IN(1, 2, 3)),
+    view_room NVARCHAR(200) NOT NULL CHECK(view_room IN ('Simple', 'Good', 'Beautiful')),
+    date_ci DATETIME NOT NULL,
+    date_co DATETIME NOT NULL,
+    group_customer INT DEFAULT 0,
+    maphong INT UNIQUE,
+    roomnumber INT NOT NULL,
+    cccd_em NVARCHAR(200),
+    price INT NOT NULL CHECK (price > 0),
+    FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE
+);
 GO
 CREATE TABLE Report (
 	cccd_cus NVARCHAR(200),
@@ -122,7 +122,7 @@ CREATE TABLE Checkout (
 	date_co DATETIME NOT NULL
 )
 GO
-CREATE TABLE Tongchi (
+CREATE TABLE Chitieu (
 	sttchi INT IDENTITY(1, 1) PRIMARY KEY,
 	ngay DATETIME,
 	tendogiadung NVARCHAR(200),
@@ -132,20 +132,13 @@ CREATE TABLE Tongchi (
 	tennhuyeupham NVARCHAR(200),
 	gianhuyeupham INT
 )
-GO 
-CREATE TABLE Tongthu (
-	sttthu INT IDENTITY(1, 1) PRIMARY KEY,
-	thang INT,
-	tongtienthu INT
-)
 GO
 CREATE TABLE Salary (
 	stt INT IDENTITY(1, 1) PRIMARY KEY,
-	sttthu INT,
-	sttchi INT,
+	ngay DATETIME,
+	tongthu INT,
+	tongchi INT,
 	loinhuandoanhnghiep INT,
-	FOREIGN KEY (sttchi) REFERENCES Tongchi(sttchi) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (sttthu) REFERENCES Tongthu(sttthu) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
@@ -196,7 +189,7 @@ VALUES
 	('12032309', 'Occupied', 'Not Clean', 'DLX', '2', 'Simple', '2024-09-19', '2024-09-22', '0',  '2', '102', '12012309', '2222221'),
 	('12042309', 'Available', 'In Progress', 'SUP', '3', 'Beautiful', '2024-09-18', '2024-09-20', '0',  '3', '103', '12012309', '222222'),
 	('12052309', 'Check Out', 'Repair', 'SUT', '1', 'Good', '2024-09-17', '2024-09-21', '0',  '4', '104', '12012309', '2222221'),
-	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-09-16', '2024-09-20', '0',  '5', '105', '12012309', '2222222')
+	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-10-16', '2024-10-20', '0',  '5', '105', '12012309', '2222222')
 GO
 INSERT INTO Report(cccd_cus, maphong, ghichu)
 VALUES
@@ -215,6 +208,8 @@ VALUES
 	('12012308', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
 	('12012307', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
 	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
+	('12012307', '2024-10-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
+	('12012306', '2024-10-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
 	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good')
 GO
 INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost, cccd_em)
@@ -224,6 +219,17 @@ VALUES
 	('12042309', '3', 'Khong', 'Khong', '0', '0', '12012309'),
 	('12052309', '4', 'Khong', 'Khong', '0', '0', '12012309'),
 	('12062309', '5', 'Khong', 'Khong', '0', '0', '12012309')
+
+GO 
+INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennhuyeupham, gianhuyeupham)
+VALUES
+	('2024-09-20', 'ban', '200000', 'khan', '10000'),
+	('2024-09-20', 'ban', '200000', 'khan', '10000'),
+	('2024-09-20', 'ghe', '100000', 'nem', '100000'),
+	('2024-09-22', 'ghe', '100000', 'nem', '100000'),
+	('2024-09-22', 'ghe', '100000', 'nem', '100000'),
+	('2024-10-20', 'ghe', '100000', 'nem', '100000'),
+	('2024-10-22', 'ghe', '100000', 'nem', '100000')
 GO 
 CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @cccd_em NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
@@ -710,7 +716,7 @@ SELECT DISTINCT first_name + ' ' + last_name as full_name, COUNT(*) AS total_shi
 
 
 
-SELECT DISTINCT Employee.cccd_em, first_name, last_name, DATEDIFF(DAY, MIN(ngay), GETDATE()) AS days_since_start, COUNT(*) AS total_shifts, luong, luong * COUNT(*) AS total_salary
+SELECT SUM(luong * COUNT(*)) AS total_salary
 FROM Employee
 INNER JOIN Chamcong ON Employee.cccd_em = Chamcong.cccd_em
 WHERE Employee.cccd_em = Chamcong.cccd_em AND (ca1 = 'Co' OR ca2 = 'Co' OR ca3 = 'Co' OR ca4 = 'Co')
@@ -729,4 +735,220 @@ SELECT
      ) AS SalaryPerEmployee) 
     +
     (SELECT SUM(cost) FROM Serve) AS grand_total;
+	 
 
+
+
+
+---thu
+SELECT SUM(price) + SUM(cost) as total_booking
+FROM Bookings
+INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
+---chi
+SELECT SUM(gianhapdogiadung) + SUM(gianhuyeupham) AS total_chitieu FROM Chitieu
+---luongnv
+SELECT SUM(total_salary) AS grand_total_salary
+FROM (
+    SELECT 
+        SUM(luong * diem_danh.so_ca) AS total_salary
+    FROM 
+        Employee
+    INNER JOIN 
+        Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+    CROSS APPLY 
+        (
+            SELECT 
+                CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+                CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+                CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+                CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+        ) AS diem_danh
+    GROUP BY 
+        Employee.cccd_em, first_name, last_name, luong
+) AS per_employee_salary;
+---loinhuan
+SELECT 
+    (SELECT SUM(total_booking) 
+     FROM (
+         SELECT SUM(price) + SUM(cost) AS total_booking
+         FROM Bookings
+         INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
+     ) AS total_bk) 
+    -
+    (SELECT SUM(total_chitieu) 
+     FROM (
+         SELECT SUM(gianhapdogiadung) + SUM(gianhuyeupham) AS total_chitieu
+         FROM Chitieu
+     ) AS total_ct) 
+	-
+	(SELECT SUM(total_salary) AS grand_total_salary
+	FROM (
+	    SELECT 
+	        SUM(luong * diem_danh.so_ca) AS total_salary
+	    FROM 
+	        Employee
+	    INNER JOIN 
+	        Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+	    CROSS APPLY 
+	        (
+	            SELECT 
+	                CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+	                CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+	                CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+	                CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+	        ) AS diem_danh
+	    GROUP BY 
+	        Employee.cccd_em, first_name, last_name, luong
+	) AS per_employee_salary);
+
+--------------------------------------------------
+WITH MonthYear AS (
+    SELECT 
+        --YEAR(date_co) AS year,
+        MONTH(date_co) AS month
+    FROM 
+        Bookings
+    GROUP BY 
+        --YEAR(date_co), 
+		MONTH(date_co)
+)
+
+SELECT 
+    --my.year,
+    my.month,
+    COALESCE(SUM(CAST(price AS DECIMAL(10, 2))) + SUM(CAST(cost AS DECIMAL(10, 2))), 0) AS total_booking
+FROM 
+    MonthYear AS my
+LEFT JOIN 
+    Bookings ON --YEAR(Bookings.date_co) = my.year AND 
+	MONTH(Bookings.date_co) = my.month
+LEFT JOIN 
+    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+GROUP BY 
+    --my.year, 
+	my.month
+ORDER BY 
+    --my.year, 
+	my.month;
+--------------------------------------------------
+SELECT 
+    --year,
+    month,
+    SUM(total_chitieu + grand_total_salary) AS total_costs
+FROM 
+    (
+        -- Truy vấn chi tiêu
+        SELECT 
+            --YEAR(ngay) AS year,
+            MONTH(ngay) AS month,
+            SUM(gianhapdogiadung) + SUM(gianhuyeupham) AS total_chitieu,
+            0 AS grand_total_salary
+        FROM 
+            Chitieu
+        GROUP BY 
+           --YEAR(ngay), 
+		   MONTH(ngay)
+        
+        UNION ALL
+        
+        -- Truy vấn lương nhân viên
+        SELECT 
+            --YEAR(ngay) AS year,
+            MONTH(ngay) AS month,
+            0 AS total_chitieu,
+            SUM(luong * diem_danh.so_ca) AS grand_total_salary
+        FROM 
+            Employee
+        INNER JOIN 
+            Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+        CROSS APPLY 
+            (
+                SELECT 
+                    CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+            ) AS diem_danh
+        GROUP BY 
+            --YEAR(ngay), 
+			MONTH(ngay), Employee.cccd_em, first_name, last_name, luong
+    ) AS combined
+GROUP BY 
+    --year, 
+	month
+ORDER BY 
+    --year, 
+	month;
+
+
+
+
+
+
+	WITH MonthYear AS (
+    SELECT 
+        MONTH(date_co) AS month
+    FROM 
+        Bookings
+    GROUP BY 
+        MONTH(date_co)
+)
+
+SELECT 
+    my.month,
+    COALESCE(SUM(CAST(price AS DECIMAL(10, 2))) + SUM(CAST(cost AS DECIMAL(10, 2))), 0) AS total_booking
+FROM 
+    MonthYear AS my
+LEFT JOIN 
+    Bookings ON MONTH(Bookings.date_co) = my.month
+LEFT JOIN 
+    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+GROUP BY 
+    my.month
+ORDER BY 
+    my.month;
+
+
+
+
+	SELECT 
+    month,
+    SUM(total_chitieu + grand_total_salary) AS total_costs
+FROM 
+    (
+        -- Truy vấn chi tiêu
+        SELECT 
+            MONTH(ngay) AS month,
+            SUM(CAST(gianhapdogiadung AS DECIMAL(10, 2))) + SUM(CAST(gianhuyeupham AS DECIMAL(10, 2))) AS total_chitieu,
+            0 AS grand_total_salary
+        FROM 
+            Chitieu
+        GROUP BY 
+            MONTH(ngay)
+
+        UNION ALL
+        
+        -- Truy vấn lương nhân viên
+        SELECT 
+            MONTH(ngay) AS month,
+            0 AS total_chitieu,
+            SUM(CAST(luong AS DECIMAL(10, 2)) * diem_danh.so_ca) AS grand_total_salary
+        FROM 
+            Employee
+        INNER JOIN 
+            Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+        CROSS APPLY 
+            (
+                SELECT 
+                    CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+                    CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+            ) AS diem_danh
+        GROUP BY 
+            MONTH(ngay), Employee.cccd_em
+    ) AS combined
+GROUP BY 
+    month
+ORDER BY 
+    month;
