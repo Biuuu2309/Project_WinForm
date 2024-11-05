@@ -221,15 +221,16 @@ VALUES
 	('12062309', '5', 'Khong', 'Khong', '0', '0', '12012309')
 
 GO 
-INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennhuyeupham, gianhuyeupham)
+INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennhuyeupham, gianhuyeupham, tennguyenlieu, gianhapnguyenlieu)
 VALUES
-	('2024-09-20', 'ban', '200000', 'khan', '10000'),
-	('2024-09-20', 'ban', '200000', 'khan', '10000'),
-	('2024-09-20', 'ghe', '100000', 'nem', '100000'),
-	('2024-09-22', 'ghe', '100000', 'nem', '100000'),
-	('2024-09-22', 'ghe', '100000', 'nem', '100000'),
-	('2024-10-20', 'ghe', '100000', 'nem', '100000'),
-	('2024-10-22', 'ghe', '100000', 'nem', '100000')
+	('2024-09-20', 'ban', '200000', 'khan', '10000', 'thit bo', '20000'),
+	('2024-09-20', 'ban', '200000', 'khan', '10000', 'thit bo', '20000'),
+	('2024-09-20', 'ghe', '100000', 'nem', '100000', 'thit bo', '20000'),
+	('2024-09-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
+	('2024-09-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
+	('2024-10-20', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
+	('2024-10-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000')
+
 GO 
 CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @cccd_em NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
@@ -741,16 +742,16 @@ SELECT
 
 
 ---thu
-SELECT SUM(price) + SUM(cost) as total_booking
+SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
 FROM Bookings
 INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
 ---chi
-SELECT SUM(gianhapdogiadung) + SUM(gianhuyeupham) AS total_chitieu FROM Chitieu
+SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) + SUM(CAST(gianhapnguyenlieu AS INT)) AS total_chitieu FROM Chitieu
 ---luongnv
-SELECT SUM(total_salary) AS grand_total_salary
+SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
 FROM (
     SELECT 
-        SUM(luong * diem_danh.so_ca) AS total_salary
+        SUM(CAST(luong AS INT) * diem_danh.so_ca) AS total_salary
     FROM 
         Employee
     INNER JOIN 
@@ -768,23 +769,23 @@ FROM (
 ) AS per_employee_salary;
 ---loinhuan
 SELECT 
-    (SELECT SUM(total_booking) 
+    (SELECT SUM(CAST(total_booking AS INT)) 
      FROM (
-         SELECT SUM(price) + SUM(cost) AS total_booking
+         SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
          FROM Bookings
          INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
      ) AS total_bk) 
     -
-    (SELECT SUM(total_chitieu) 
+    (SELECT SUM(CAST(total_chitieu AS INT)) 
      FROM (
-         SELECT SUM(gianhapdogiadung) + SUM(gianhuyeupham) AS total_chitieu
+         SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) AS total_chitieu
          FROM Chitieu
      ) AS total_ct) 
 	-
-	(SELECT SUM(total_salary) AS grand_total_salary
+	(SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
 	FROM (
 	    SELECT 
-	        SUM(luong * diem_danh.so_ca) AS total_salary
+	        SUM(CAST(luong AS INT) * diem_danh.so_ca) AS total_salary
 	    FROM 
 	        Employee
 	    INNER JOIN 
@@ -896,7 +897,7 @@ ORDER BY
 
 SELECT 
     my.month,
-    COALESCE(SUM(CAST(price AS DECIMAL(10, 2))) + SUM(CAST(cost AS DECIMAL(10, 2))), 0) AS total_booking
+    COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
 FROM 
     MonthYear AS my
 LEFT JOIN 
@@ -919,7 +920,7 @@ FROM
         -- Truy vấn chi tiêu
         SELECT 
             MONTH(ngay) AS month,
-            SUM(CAST(gianhapdogiadung AS DECIMAL(10, 2))) + SUM(CAST(gianhuyeupham AS DECIMAL(10, 2))) AS total_chitieu,
+            SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) AS total_chitieu,
             0 AS grand_total_salary
         FROM 
             Chitieu
@@ -932,7 +933,7 @@ FROM
         SELECT 
             MONTH(ngay) AS month,
             0 AS total_chitieu,
-            SUM(CAST(luong AS DECIMAL(10, 2)) * diem_danh.so_ca) AS grand_total_salary
+            SUM(CAST(luong AS INT) * diem_danh.so_ca) AS grand_total_salary
         FROM 
             Employee
         INNER JOIN 
@@ -952,3 +953,12 @@ GROUP BY
     month
 ORDER BY 
     month;
+
+
+SELECT COUNT(maphong) FROM Update_room WHERE status_room = 'Available'
+
+
+SELECT COUNT(maphong) as free
+                        FROM Room
+                        WHERE maphong NOT IN (	SELECT maphong
+                              						FROM Bookings)

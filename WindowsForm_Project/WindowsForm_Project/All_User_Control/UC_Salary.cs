@@ -34,73 +34,126 @@ namespace WindowsForm_Project.All_User_Control
 
 
             string query2 = @"  
-                                WITH MonthYear AS (
-    SELECT 
-        MONTH(date_co) AS month
-    FROM 
-        Bookings
-    GROUP BY 
-        MONTH(date_co)
-)
+                                	WITH MonthYear AS (
+                                        SELECT 
+                                            MONTH(date_co) AS month
+                                        FROM 
+                                            Bookings
+                                        GROUP BY 
+                                            MONTH(date_co)
+                                    )
+                                    
+                                    SELECT 
+                                        my.month,
+                                        COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
+                                    FROM 
+                                        MonthYear AS my
+                                    LEFT JOIN 
+                                        Bookings ON MONTH(Bookings.date_co) = my.month
+                                    LEFT JOIN 
+                                        Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                                    GROUP BY 
+                                        my.month
+                                    ORDER BY 
+                                        my.month;";
 
-SELECT 
-    my.month,
-    COALESCE(SUM(CAST(price AS DECIMAL(10, 2))) + SUM(CAST(cost AS DECIMAL(10, 2))), 0) AS total_booking
-FROM 
-    MonthYear AS my
-LEFT JOIN 
-    Bookings ON MONTH(Bookings.date_co) = my.month
-LEFT JOIN 
-    Serve ON Bookings.cccd_cus = Serve.cccd_cus
-GROUP BY 
-    my.month
-ORDER BY 
-    my.month;
-";
-
-            string query3 = @"  SELECT 
-    month,
-    SUM(total_chitieu + grand_total_salary) AS total_costs
-FROM 
-    (
-        -- Truy vấn chi tiêu
-        SELECT 
-            MONTH(ngay) AS month,
-            SUM(CAST(gianhapdogiadung AS DECIMAL(10, 2))) + SUM(CAST(gianhuyeupham AS DECIMAL(10, 2))) AS total_chitieu,
-            0 AS grand_total_salary
-        FROM 
-            Chitieu
-        GROUP BY 
-            MONTH(ngay)
-
-        UNION ALL
-        
-        -- Truy vấn lương nhân viên
-        SELECT 
-            MONTH(ngay) AS month,
-            0 AS total_chitieu,
-            SUM(CAST(luong AS DECIMAL(10, 2)) * diem_danh.so_ca) AS grand_total_salary
-        FROM 
-            Employee
-        INNER JOIN 
-            Chamcong ON Employee.cccd_em = Chamcong.cccd_em
-        CROSS APPLY 
-            (
-                SELECT 
-                    CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
-                    CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
-                    CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
-                    CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
-            ) AS diem_danh
-        GROUP BY 
-            MONTH(ngay), Employee.cccd_em
-    ) AS combined
-GROUP BY 
-    month
-ORDER BY 
-    month;
-
-";
+            string query3 = @"  	SELECT 
+                                        month,
+                                        SUM(total_chitieu + grand_total_salary) AS total_costs
+                                    FROM 
+                                        (
+                                            -- Truy vấn chi tiêu
+                                            SELECT 
+                                                MONTH(ngay) AS month,
+                                                SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) AS total_chitieu,
+                                                0 AS grand_total_salary
+                                            FROM 
+                                                Chitieu
+                                            GROUP BY 
+                                                MONTH(ngay)
+                                    
+                                            UNION ALL
+                                            
+                                            -- Truy vấn lương nhân viên
+                                            SELECT 
+                                                MONTH(ngay) AS month,
+                                                0 AS total_chitieu,
+                                                SUM(CAST(luong AS INT) * diem_danh.so_ca) AS grand_total_salary
+                                            FROM 
+                                                Employee
+                                            INNER JOIN 
+                                                Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+                                            CROSS APPLY 
+                                                (
+                                                    SELECT 
+                                                        CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+                                                        CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+                                                        CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+                                                        CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+                                                ) AS diem_danh
+                                            GROUP BY 
+                                                MONTH(ngay), Employee.cccd_em
+                                        ) AS combined
+                                    GROUP BY 
+                                        month
+                                    ORDER BY 
+                                        month;";
+            string query4 = @"  SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
+                                FROM Bookings
+                                INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus";
+            string query5 = @"  SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) + SUM(CAST(gianhapnguyenlieu AS INT)) AS total_chitieu FROM Chitieu";
+            string query6 = @"  SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
+                                FROM (
+                                    SELECT 
+                                        SUM(CAST(luong AS INT) * diem_danh.so_ca) AS total_salary
+                                    FROM 
+                                        Employee
+                                    INNER JOIN 
+                                        Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+                                    CROSS APPLY 
+                                        (
+                                            SELECT 
+                                                CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+                                                CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+                                                CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+                                                CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+                                        ) AS diem_danh
+                                    GROUP BY 
+                                        Employee.cccd_em, first_name, last_name, luong
+                                ) AS per_employee_salary;";
+            string query7 = @"  SELECT 
+                                (SELECT SUM(CAST(total_booking AS INT)) 
+                                 FROM (
+                                     SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
+                                     FROM Bookings
+                                     INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                                 ) AS total_bk) 
+                                -
+                                (SELECT SUM(CAST(total_chitieu AS INT)) 
+                                 FROM (
+                                     SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) AS total_chitieu
+                                     FROM Chitieu
+                                 ) AS total_ct) 
+	                            -
+	                            (SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
+	                            FROM (
+	                                SELECT 
+	                                    SUM(CAST(luong AS INT) * diem_danh.so_ca) AS total_salary
+	                                FROM 
+	                                    Employee
+	                                INNER JOIN 
+	                                    Chamcong ON Employee.cccd_em = Chamcong.cccd_em
+	                                CROSS APPLY 
+	                                    (
+	                                        SELECT 
+	                                            CASE WHEN ca1 = 'Co' THEN 1 ELSE 0 END +
+	                                            CASE WHEN ca2 = 'Co' THEN 1 ELSE 0 END +
+	                                            CASE WHEN ca3 = 'Co' THEN 1 ELSE 0 END +
+	                                            CASE WHEN ca4 = 'Co' THEN 1 ELSE 0 END AS so_ca
+	                                    ) AS diem_danh
+	                                GROUP BY 
+	                                    Employee.cccd_em, first_name, last_name, luong
+	                            ) AS per_employee_salary);";
 
             List<string> fullname = new List<string>();
             List<int> counthour = new List<int>();
@@ -108,21 +161,23 @@ ORDER BY
             List<int> total_booking = new List<int>();
             List<int> month1 = new List<int>();
             List<int> total_chitieu = new List<int>();
-
+            int income = 0;
+            int chitieu = 0;
+            int luongnv = 0;
+            int loinhuan = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    // Execute query1
                     using (SqlCommand command = new SqlCommand(query1, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                if (reader.FieldCount > 1) // Ensure there are enough columns
+                                if (reader.FieldCount > 1) 
                                 {
                                     fullname.Add(reader.GetString(0));
                                     counthour.Add(reader.GetInt32(1));
@@ -131,14 +186,13 @@ ORDER BY
                         }
                     }
 
-                    // Execute query2
                     using (SqlCommand command = new SqlCommand(query2, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                if (reader.FieldCount > 1) // Ensure there are enough columns
+                                if (reader.FieldCount > 1) 
                                 {
                                     month.Add(reader.GetInt32(0));
                                     total_booking.Add(reader.GetInt32(1));
@@ -147,14 +201,13 @@ ORDER BY
                         }
                     }
 
-                    // Execute query3
                     using (SqlCommand command = new SqlCommand(query3, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                if (reader.FieldCount > 1) // Ensure there are enough columns
+                                if (reader.FieldCount > 1) 
                                 {
                                     month1.Add(reader.GetInt32(0));
                                     total_chitieu.Add(reader.GetInt32(1));
@@ -162,24 +215,57 @@ ORDER BY
                             }
                         }
                     }
-
-                    // Log counts to help debug
-                    Console.WriteLine($"Fullname Count: {fullname.Count}");
-                    Console.WriteLine($"Counthour Count: {counthour.Count}");
-                    Console.WriteLine($"Month Count: {month.Count}");
-                    Console.WriteLine($"Total Booking Count: {total_booking.Count}");
-                    Console.WriteLine($"Month1 Count: {month1.Count}");
-                    Console.WriteLine($"Total Chitieu Count: {total_chitieu.Count}");
-
+                    using (SqlCommand command = new SqlCommand(query4, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                income = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                    using (SqlCommand command = new SqlCommand(query5, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                chitieu = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                    using (SqlCommand command = new SqlCommand(query6, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                luongnv = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                    using (SqlCommand command = new SqlCommand(query7, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                loinhuan = reader.GetInt32(0);
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    // Handle exceptions (log them, show a message, etc.)
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
 
-            // Chart setup
+            Title title = new Title("Salary Employee");
+            title.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
+            Salary.Titles.Add(title);
+
             for (int i = 0; i < fullname.Count; i++)
             {
                 Salary.Series.Add(fullname[i]);
@@ -188,15 +274,15 @@ ORDER BY
 
             chart1.Series.Clear();
 
-            // Sales Series
-            Series salesSeries = new Series("Monthly Sales");
+            Series salesSeries = new Series("Monthly Income");
             salesSeries.ChartType = SeriesChartType.Spline;
             salesSeries.BorderWidth = 2;
+
             string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
             for (int i = 0; i < month.Count; i++)
             {
-                if (i < total_booking.Count) // Check bounds
+                if (i < total_booking.Count)
                 {
                     int monthNumber = month[i];
                     if (monthNumber >= 1 && monthNumber <= 12)
@@ -206,7 +292,8 @@ ORDER BY
                 }
             }
 
-            // Expenses Series
+            chart1.Series.Add(salesSeries);
+
             Series expensesSeries = new Series("Monthly Expenses");
             expensesSeries.ChartType = SeriesChartType.Spline;
             expensesSeries.BorderWidth = 2;
@@ -214,7 +301,7 @@ ORDER BY
 
             for (int i = 0; i < month1.Count; i++)
             {
-                if (i < total_chitieu.Count) // Check bounds
+                if (i < total_chitieu.Count)
                 {
                     int monthNumber = month1[i];
                     if (monthNumber >= 1 && monthNumber <= 12)
@@ -223,15 +310,40 @@ ORDER BY
                     }
                 }
             }
+            Title title1 = new Title("Month Income Expenses");
+            title1.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
 
-            chart1.Series.Add(salesSeries);
             chart1.Series.Add(expensesSeries);
-
+            chart1.Titles.Add(title1);
             chart1.ChartAreas[0].AxisX.Title = "Month";
-            chart1.ChartAreas[0].AxisY.Title = "Amount (USD)";
+            chart1.ChartAreas[0].AxisY.Title = "Amount (VND)";
             chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.ChartAreas[0].AxisY.Interval = 500;
             chart1.ChartAreas[0].RecalculateAxesScale();
+
+
+            Title title2 = new Title("Total Income Expenses Breakdown");
+            title2.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
+            chart2.Series.Clear();
+            Series doughnutSeries = new Series("Income Expenses Breakdown");
+            doughnutSeries.ChartType = SeriesChartType.Doughnut;
+            doughnutSeries.BorderWidth = 2; 
+            doughnutSeries.Points.AddXY("Income", income);
+            doughnutSeries.Points.AddXY("Expenses", chitieu);
+            doughnutSeries.Points.AddXY("Employee Salary", luongnv);
+            doughnutSeries.Points.AddXY("Profit", loinhuan);
+            chart2.Series.Add(doughnutSeries);
+            chart2.ChartAreas[0].Area3DStyle.Enable3D = true; 
+            chart2.ChartAreas[0].BackColor = System.Drawing.Color.Transparent; 
+            chart2.Legends[0].Enabled = true;
+            chart2.Titles.Add(title2);
+            doughnutSeries["PieLabelStyle"] = "Outside";
+            doughnutSeries["DoughnutRadius"] = "60"; 
+            foreach (DataPoint point in doughnutSeries.Points)
+            {
+                point.Label = $"{point.AxisLabel}: #PERCENT";
+            }
+
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
@@ -316,7 +428,7 @@ ORDER BY
                 Response response = dal.Gettongchi(conn);
                 if ((response.list12 != null && response.list12.Count > 0))
                 {
-                    guna2DataGridView1.DataSource = null; // Clear previous data
+                    guna2DataGridView1.DataSource = null; 
                     guna2DataGridView1.DataSource = response.list12;
                     guna2DataGridView1.ColumnHeadersHeight = 25;
                     guna2DataGridView1.Columns["sttchi"].HeaderText = "STT";
