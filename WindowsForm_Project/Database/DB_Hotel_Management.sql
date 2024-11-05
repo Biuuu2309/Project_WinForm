@@ -962,3 +962,6 @@ SELECT COUNT(maphong) as free
                         FROM Room
                         WHERE maphong NOT IN (	SELECT maphong
                               						FROM Bookings)
+
+SELECT date_ci
+                                FROM Checkout

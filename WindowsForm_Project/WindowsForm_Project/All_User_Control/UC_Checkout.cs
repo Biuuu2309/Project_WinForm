@@ -218,7 +218,7 @@ namespace WindowsForm_Project.All_User_Control
             if (ValidateInput())
             {
                 string connectionString = DatabaseConnection.Connection();
-                string query = @"SELECT first_name, last_name, maphong, date_cid
+                string query = @"SELECT first_name, last_name, maphong, date_ci
                          FROM Customer
                          INNER JOIN Bookings ON Customer.cccd_cus = Bookings.cccd_cus
                          WHERE Bookings.cccd_cus = @cccd_cus";

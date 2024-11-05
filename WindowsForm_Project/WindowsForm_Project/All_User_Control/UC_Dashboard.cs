@@ -1616,17 +1616,17 @@ namespace WindowsForm_Project.All_User_Control
                 Guna2HtmlLabel guna2HtmlLabel = new Guna2HtmlLabel();
                 guna2HtmlLabel.Text = "ID " + id[i];
                 guna2HtmlLabel.Font = new Font("Arial", 12, FontStyle.Regular);
-                guna2HtmlLabel.Location = new Point(5, 5);
+                guna2HtmlLabel.Location = new Point(10, 5);
 
                 Guna2HtmlLabel guna2HtmlLabel2 = new Guna2HtmlLabel();
-                guna2HtmlLabel2.Location = new Point(230, 5);
+                guna2HtmlLabel2.Location = new Point(210, 5);
                 guna2HtmlLabel2.Font = new Font("Arial", 12, FontStyle.Regular);
-                guna2HtmlLabel2.Text = "Room" + sophong[i];
+                guna2HtmlLabel2.Text = "Room " + sophong[i];
 
                 Guna2Panel guna2Panel = new Guna2Panel();
                 guna2Panel.Height = 50;
                 guna2Panel.BackgroundImage = Properties.Resources.Untitled_design__6_;
-                guna2Panel.BackColor = Color.DarkViolet; ////////////////////////////
+                guna2Panel.BackColor = Color.Transparent; ////////////////////////////
                 guna2Panel.Dock = DockStyle.Bottom;
 
                 Guna2PictureBox pictureBox1 = new Guna2PictureBox();
@@ -1634,38 +1634,48 @@ namespace WindowsForm_Project.All_User_Control
                 pictureBox1.Size = new Size(40, 40);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Image = Properties.Resources.day_and_night;
+                pictureBox1.BackColor = Color.Transparent;
 
                 Guna2HtmlLabel guna2HtmlLabel1 = new Guna2HtmlLabel();
-                guna2HtmlLabel1.Location = new Point(160, 40);
-                guna2HtmlLabel1.Font = new Font("Arial", 20, FontStyle.Regular);
+                guna2HtmlLabel1.Location = new Point(150, 45);
+                guna2HtmlLabel1.Font = new Font("Arial", 15, FontStyle.Bold);
                 guna2HtmlLabel1.Text = numday[i].ToString() + " days";
 
                 Guna2HtmlLabel guna2HtmlLabel3 = new Guna2HtmlLabel();
-                guna2HtmlLabel3.Location = new Point(70, 90);
-                guna2HtmlLabel3.Text = fullname[i] + cccd[i];
-                guna2HtmlLabel3.Font = new Font("Arial", 20, FontStyle.Regular);
+                guna2HtmlLabel3.Location = new Point(45, 90);
+                guna2HtmlLabel3.Text = fullname[i] + " - " + cccd[i];
+                guna2HtmlLabel3.Font = new Font("Comic Sans MS", 15, FontStyle.Regular);
 
                 Guna2PictureBox guna2PictureBox = new Guna2PictureBox();
-                guna2PictureBox.Location = new Point(3, 3);
-                guna2PictureBox.Size = new Size(40, 40);
+                guna2PictureBox.Location = new Point(20, 12);
+                guna2PictureBox.Size = new Size(30, 30);
                 guna2PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 guna2PictureBox.Image = Properties.Resources.check_in_desk;
 
                 Guna2PictureBox guna2PictureBox1 = new Guna2PictureBox();
-                guna2PictureBox1.Location = new Point(160, 3);
-                guna2PictureBox1.Size = new Size(40, 40);
+                guna2PictureBox1.Location = new Point(160, 12);
+                guna2PictureBox1.Size = new Size(30, 30);
                 guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 guna2PictureBox1.Image = Properties.Resources.check_out;
 
+                string datePart = date_ci[i].ToString("dd/MM/yyyy");
+                string timePart = date_ci[i].ToString("HH:mm:ss");
                 Guna2HtmlLabel guna2HtmlLabel4 = new Guna2HtmlLabel();
-                guna2HtmlLabel4.Text = date_ci[i].ToString();
-                guna2HtmlLabel4.Location = new Point(50, 16);
-                guna2HtmlLabel4.Font = new Font("Arial", 20, FontStyle.Regular);
+                guna2HtmlLabel4.Text = datePart + "<br>" + timePart;  
+                guna2HtmlLabel4.Location = new Point(62, 13);
+                guna2HtmlLabel4.Font = new Font("Arial", 8, FontStyle.Regular);
+                guna2HtmlLabel4.AutoSize = true;  
+                this.Controls.Add(guna2HtmlLabel4);
 
+
+                datePart = date_co[i].ToString("dd/MM/yyyy");
+                timePart = date_co[i].ToString("HH:mm:ss");
                 Guna2HtmlLabel guna2HtmlLabel5 = new Guna2HtmlLabel();
-                guna2HtmlLabel5.Text = date_co[i].ToString();
-                guna2HtmlLabel5.Location = new Point(215, 16);
-                guna2HtmlLabel5.Font = new Font("Arial", 20, FontStyle.Regular);
+                guna2HtmlLabel5.Text = datePart + "<br>" + timePart;
+                guna2HtmlLabel5.Location = new Point(200, 13);
+                guna2HtmlLabel5.Font = new Font("Arial", 8, FontStyle.Regular);
+                guna2HtmlLabel5.AutoSize = true;
+                this.Controls.Add(guna2HtmlLabel5);
 
                 guna2Panel.Controls.Add(guna2PictureBox);
                 guna2Panel.Controls.Add(guna2PictureBox1);

@@ -67,7 +67,6 @@
             this.dashboardpaneldate = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.sqlCommandBuilder2 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            this.uC_Tongthu1 = new WindowsForm_Project.All_User_Control.UC_Salary();
             this.uC_Dashboard2 = new WindowsForm_Project.All_User_Control.UC_Dashboard();
             this.uC_Addroom1 = new WindowsForm_Project.All_User_Control.UC_Addroom();
             this.uC_Bookings2 = new WindowsForm_Project.All_User_Control.UC_Bookings();
@@ -75,6 +74,7 @@
             this.uC_Customer1 = new WindowsForm_Project.All_User_Control.UC_Customer();
             this.uC_Manage1 = new WindowsForm_Project.All_User_Control.UC_Manage();
             this.uC_Checkout1 = new WindowsForm_Project.All_User_Control.UC_Checkout();
+            this.uC_Tongthu1 = new WindowsForm_Project.All_User_Control.UC_Salary();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
@@ -598,7 +598,7 @@
             this.btnTongthu.Name = "btnTongthu";
             this.btnTongthu.Size = new System.Drawing.Size(217, 45);
             this.btnTongthu.TabIndex = 33;
-            this.btnTongthu.Text = "Check Out";
+            this.btnTongthu.Text = "Total Salary";
             this.btnTongthu.Click += new System.EventHandler(this.btnTongthu_Click);
             // 
             // btnaddroom
@@ -651,15 +651,6 @@
             this.dashboardpaneldate.Size = new System.Drawing.Size(1920, 57);
             this.dashboardpaneldate.TabIndex = 5;
             this.dashboardpaneldate.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
-            // 
-            // uC_Tongthu1
-            // 
-            this.uC_Tongthu1.BackColor = System.Drawing.Color.White;
-            this.uC_Tongthu1.Location = new System.Drawing.Point(0, 114);
-            this.uC_Tongthu1.Name = "uC_Tongthu1";
-            this.uC_Tongthu1.Size = new System.Drawing.Size(1920, 966);
-            this.uC_Tongthu1.TabIndex = 14;
-            this.uC_Tongthu1.Load += new System.EventHandler(this.uC_Tongthu1_Load);
             // 
             // uC_Dashboard2
             // 
@@ -734,6 +725,15 @@
             this.uC_Checkout1.Name = "uC_Checkout1";
             this.uC_Checkout1.Size = new System.Drawing.Size(1920, 966);
             this.uC_Checkout1.TabIndex = 13;
+            // 
+            // uC_Tongthu1
+            // 
+            this.uC_Tongthu1.BackColor = System.Drawing.Color.White;
+            this.uC_Tongthu1.Location = new System.Drawing.Point(0, 114);
+            this.uC_Tongthu1.Name = "uC_Tongthu1";
+            this.uC_Tongthu1.Size = new System.Drawing.Size(1920, 966);
+            this.uC_Tongthu1.TabIndex = 14;
+            this.uC_Tongthu1.Load += new System.EventHandler(this.uC_Tongthu1_Load);
             // 
             // Dashboard
             // 

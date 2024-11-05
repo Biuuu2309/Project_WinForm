@@ -77,7 +77,7 @@ namespace WindowsForm_Project.All_User_Control
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -105,10 +105,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.Refresh(); // Refresh the grid view
-                }
-                else
-                {
-                    MessageBox.Show("No data available or " + response.statusmessage);
                 }
             }
         }
@@ -203,10 +199,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["address_cus"].HeaderText = "Địa chỉ";
                     DataGridView2.Refresh(); // Refresh the grid view
                 }
-                else
-                {
-                    MessageBox.Show("No customer data available or " + response.statusmessage);
-                }
             }
         }
 
@@ -239,10 +231,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView3.Refresh(); // Refresh the grid view
-                }
-                else
-                {
-                    MessageBox.Show("No data available or " + response.statusmessage);
                 }
             }
         }
