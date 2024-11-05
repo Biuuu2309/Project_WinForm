@@ -8,6 +8,7 @@ namespace WindowsForm_Project.Models
 {
     public class Bookings
     {
+        public int stt { get; set; }
         public string cccd_cus { get; set; }
         public string status_room { get; set; }
         public string house_keeping { get; set; }

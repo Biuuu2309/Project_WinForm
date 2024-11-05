@@ -1,4 +1,4 @@
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -263,7 +263,6 @@ namespace WindowsForm_Project.Models
                 cmd.Parameters.AddWithValue("@anuong", serve.anuong);
                 cmd.Parameters.AddWithValue("@call_serve", serve.call_serve);
                 cmd.Parameters.AddWithValue("@cost", serve.cost);
-                cmd.Parameters.AddWithValue("@cccd_em", serve.cccd_em);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
@@ -316,13 +315,13 @@ namespace WindowsForm_Project.Models
                         {
                             Serve serve = new Serve
                             {
+                                stt = int.Parse(reader["stt"].ToString()),
                                 cccd_cus = reader["cccd_cus"].ToString(),
                                 maphong = int.Parse(reader["maphong"].ToString()),
                                 other_booking = reader["other_booking"].ToString(),
                                 anuong = reader["anuong"].ToString(),
                                 call_serve = bool.Parse(reader["call_serve"].ToString()),
                                 cost = int.Parse(reader["cost"].ToString()),
-                                cccd_em = reader["cccd_em"].ToString()
                             };
                             list.Add(serve);
                         }
@@ -750,6 +749,7 @@ namespace WindowsForm_Project.Models
                         {
                             Bookings bookings = new Bookings
                             {
+                                stt = int.Parse(reader["stt"].ToString()),
                                 cccd_cus = reader["cccd_cus"].ToString(),
                                 status_room = reader["status_room"].ToString(),
                                 house_keeping = reader["house_keeping"].ToString(),

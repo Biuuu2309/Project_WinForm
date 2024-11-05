@@ -77,17 +77,15 @@ CREATE TABLE Report (
 )
 GO
 CREATE TABLE Serve (
+	stt INT IDENTITY(1, 1) PRIMARY KEY,
 	cccd_cus NVARCHAR(200),
 	maphong INT,
 	other_booking NVARCHAR(200),
 	anuong NVARCHAR(200),
 	call_serve BIT DEFAULT 0,
 	cost INT,
-	cccd_em NVARCHAR(200),
-	PRIMARY KEY (cccd_cus, maphong),
 	FOREIGN KEY (cccd_cus) REFERENCES Customer(cccd_cus) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (maphong) REFERENCES Room(maphong) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (cccd_em) REFERENCES Employee(cccd_em) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 CREATE TABLE Chamcong (
@@ -212,13 +210,13 @@ VALUES
 	('12012306', '2024-10-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
 	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good')
 GO
-INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost, cccd_em)
+INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost)
 VALUES
-	('12022309', '1', 'Khong', 'Khong', '0', '0', '12012309'),
-	('12032309', '2', 'Khong', 'Khong', '0', '0', '12012309'),
-	('12042309', '3', 'Khong', 'Khong', '0', '0', '12012309'),
-	('12052309', '4', 'Khong', 'Khong', '0', '0', '12012309'),
-	('12062309', '5', 'Khong', 'Khong', '0', '0', '12012309')
+	('12022309', '1', 'Khong', 'Khong', '0', '0'),
+	('12032309', '2', 'Khong', 'Khong', '0', '0'),
+	('12042309', '3', 'Khong', 'Khong', '0', '0'),
+	('12052309', '4', 'Khong', 'Khong', '0', '0'),
+	('12062309', '5', 'Khong', 'Khong', '0', '0')
 
 GO 
 INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennhuyeupham, gianhuyeupham, tennguyenlieu, gianhapnguyenlieu)
@@ -250,10 +248,8 @@ GO
 CREATE OR ALTER PROC sp_addtongchi @ngay DATETIME, @tendogiadung NVARCHAR(200), @gianhapdogiadung INT, @tennguyenlieu NVARCHAR(200), @gianhapnguyenlieu INT, @tennhuyeupham NVARCHAR(200), @gianhuyeupham INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
-	BEGIN
-		INSERT INTO Tongchi(ngay, tendogiadung, gianhapdogiadung, tennguyenlieu, gianhapnguyenlieu, tennhuyeupham, gianhuyeupham) VALUES (@ngay, @tendogiadung, @gianhapdogiadung, @tennguyenlieu, @gianhapnguyenlieu, @tennhuyeupham, @gianhuyeupham)
-		SET @ErrorMessage = 'Successfully'
-	END 
+	INSERT INTO Tongchi(ngay, tendogiadung, gianhapdogiadung, tennguyenlieu, gianhapnguyenlieu, tennhuyeupham, gianhuyeupham) VALUES (@ngay, @tendogiadung, @gianhapdogiadung, @tennguyenlieu, @gianhapnguyenlieu, @tennhuyeupham, @gianhuyeupham)
+	SET @ErrorMessage = 'Successfully'
 END
 GO
 CREATE OR ALTER PROC sp_account @id INT, @username NVARCHAR(200), @password NVARCHAR(200), @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
@@ -271,24 +267,19 @@ BEGIN
 	END
 END
 GO
-CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @cost INT , @cccd_em NVARCHAR(200), @ErrorMessage NVARCHAR(200) OUTPUT
-AS
+CREATE OR ALTER PROC sp_updateserve @cccd_cus NVARCHAR(200) = NULL, @maphong INT = NULL, @other_booking NVARCHAR(200) = NULL, @anuong NVARCHAR(200) = NULL, @call_serve BIT = NULL, @cost INT, @ErrorMessage NVARCHAR(200) OUTPUT
+AS                      
 BEGIN
-	IF NOT EXISTS (	SELECT 1 FROM Serve
-					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
-	BEGIN 
-		INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost, cccd_em) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve, @cost, @cccd_em)
+	INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost) VALUES (@cccd_cus, @maphong, @other_booking, @anuong, @call_serve, @cost)
 		SET @ErrorMessage = 'Successfully'
-	END
-	ELSE
 	BEGIN TRY
 		UPDATE Serve
 			SET 
+				cccd_cus = COALESCE(@cccd_cus, cccd_cus),
 				other_booking = COALESCE(@other_booking,other_booking),
 				anuong = COALESCE(@anuong,anuong),
 				call_serve = COALESCE(@call_serve,call_serve),
-				cost = COALESCE(@cost,cost),
-				cccd_em = COALESCE(@cccd_em,cccd_em)
+				cost = COALESCE(@cost,cost)
 			WHERE cccd_cus = @cccd_cus AND maphong = @maphong
 			SET @ErrorMessage = 'Successfully'
 	END TRY
@@ -296,7 +287,6 @@ BEGIN
 		SET @ErrorMessage = ERROR_MESSAGE()
 	END CATCH
 END
-SELECT * FROM Serve
 GO
 CREATE OR ALTER PROC sp_addroom @maphong INT, @roomnumber INT, @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @image_room NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
@@ -965,3 +955,6 @@ SELECT COUNT(maphong) as free
 
 SELECT date_ci
                                 FROM Checkout
+
+
+SELECT image_room FROM Room

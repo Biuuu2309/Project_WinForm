@@ -51,7 +51,6 @@ namespace WindowsForm_Project.All_User_Control
                     anuong = txtanuong.Text,
                     call_serve = txtcallserveee.Checked,
                     cost = int.Parse(txtcost.Text),
-                    cccd_em = txtcccd.Text,
                 };
 
                 DAL dal = new DAL();
@@ -69,7 +68,7 @@ namespace WindowsForm_Project.All_User_Control
         }
         private bool ValidateInput()
         {
-            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserveee.Text == null || txtcost.Text == "" || txtcccd_em.Text == "")
+            if (txtcccd.Text == "" || txtmaphong.Text == "" || txtotherbooking.Text == "" || txtanuong.Text == "" || txtcallserveee.Text == null || txtcost.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields.");
                 return false;
@@ -91,7 +90,6 @@ namespace WindowsForm_Project.All_User_Control
             txtanuong.Clear();
             txtcallserveee.Checked = false;
             txtcost.Clear();
-            txtcccd_em.Clear();
 
         }
         private void UC_Serve_Leave(object sender, EventArgs e)
@@ -114,13 +112,13 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list7;
                     DataGridView1.ColumnHeadersHeight = 25;
+                    DataGridView1.Columns["stt"].HeaderText = "STT";
                     DataGridView1.Columns["cccd_cus"].HeaderText = "Mã CCCD";
                     DataGridView1.Columns["maphong"].HeaderText = "Mã Phòng";
                     DataGridView1.Columns["other_booking"].HeaderText = "Đặt phòng khác";
                     DataGridView1.Columns["anuong"].HeaderText = "Ăn uống";
                     DataGridView1.Columns["call_serve"].HeaderText = "Gọi dịch vụ";
                     DataGridView1.Columns["cost"].HeaderText = "Phi dich vu";
-                    DataGridView1.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.Columns["call_serve"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -204,7 +202,7 @@ namespace WindowsForm_Project.All_User_Control
             }
             else
             {
-                btnsubmit2.Text = "Account";
+                btnsubmit2.Text = "Ghi chu";
                 btnsubmit2.Image = null;
             }
             uC_Report1.BringToFront();

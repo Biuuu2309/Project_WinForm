@@ -103,6 +103,7 @@ namespace WindowsForm_Project.All_User_Control
             txtstatusroom.SelectedIndex = -1;
             txthousekeeping.SelectedIndex = -1;
             txtdeletemaphong.Clear();
+            Image1.Image = null;
         }
 
         private void UC_Addroom_Leave(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["roomtype"].HeaderText = "Thể loại phòng";
                     DataGridView1.Columns["numbed"].HeaderText = "Số phòng đặt";
                     DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView1.Columns["image_room"].HeaderText = "Image room";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;

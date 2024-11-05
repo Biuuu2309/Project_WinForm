@@ -8,12 +8,12 @@ namespace WindowsForm_Project.Models
 {
     public class Serve
     {
+        public int stt { get; set; }
         public string cccd_cus { get; set; }
         public int maphong { get; set; }
         public string other_booking { get; set; }
         public string anuong { get; set; }
         public bool call_serve { get; set; }
         public int cost { get; set; }
-        public string cccd_em { get; set; }
     }
 }

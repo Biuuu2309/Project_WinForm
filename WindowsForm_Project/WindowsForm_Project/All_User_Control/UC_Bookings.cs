@@ -17,7 +17,6 @@ namespace WindowsForm_Project.All_User_Control
         public UC_Bookings()
         {
             InitializeComponent();
-            this.Enter += new EventHandler(UC_Bookings_Enter);
         }
         
         private bool ValidateInput()
@@ -48,15 +47,15 @@ namespace WindowsForm_Project.All_User_Control
             txtcccd_cus.Clear();
             txtstatusroom.SelectedItem = -1;
             txthousekeeping.SelectedItem = -1;
-            txtloaiphong.SelectedIndex = -1;
-            txtloaigiuong.SelectedIndex = -1;
-            txtviewroom.SelectedIndex = -1;
+            txtloaiphong.SelectedItem = -1;
+            txtloaigiuong.SelectedItem = -1;
+            txtviewroom.SelectedItem = -1;
             txtdateci.Value = DateTime.Now;
             txtdateco.Value = DateTime.Now;
             txtgroupcus.Clear();
             txtprice.Clear();
             txtsophong.SelectedItem = -1;
-            txtmaphong.SelectedIndex = -1;
+            txtmaphong.SelectedItem = -1;
             txtcccd_em.Clear();
 
         }
@@ -77,7 +76,7 @@ namespace WindowsForm_Project.All_User_Control
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -90,6 +89,7 @@ namespace WindowsForm_Project.All_User_Control
                 Response response = dal.Getroombook(conn);
                 if (response.list10 != null && response.list10.Count > 0)
                 {
+                    DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list10;
                     DataGridView1.ColumnHeadersHeight = 25;
@@ -100,7 +100,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
                     DataGridView1.Columns["house_keeping"].HeaderText = "house keeping";
                     DataGridView1.Columns["status_room"].HeaderText = "status room";
-                    DataGridView1.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -216,6 +215,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.ColumnHeadersHeight = 25;
                     DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView3.Columns["stt"].HeaderText = "STT";
                     DataGridView3.Columns["cccd_cus"].HeaderText = "CCCD";
                     DataGridView3.Columns["status_room"].HeaderText = "Trạng thái phòng";
                     DataGridView3.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
@@ -573,6 +573,11 @@ namespace WindowsForm_Project.All_User_Control
         }
 
         private void guna2HtmlLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

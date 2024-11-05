@@ -743,6 +743,7 @@
             this.DataGridView3.ThemeStyle.RowsStyle.Height = 22;
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_CellContentClick);
             // 
             // UC_Bookings
             // 
@@ -756,7 +757,7 @@
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Name = "UC_Bookings";
-            this.Size = new System.Drawing.Size(1801, 966);
+            this.Size = new System.Drawing.Size(1784, 966);
             this.Load += new System.EventHandler(this.UC_Bookings_Load);
             this.Enter += new System.EventHandler(this.UC_Bookings_Enter);
             this.Leave += new System.EventHandler(this.UC_Bookings_Leave);
