@@ -63,6 +63,16 @@ namespace WindowsForm_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5271 {
+            get {
+                object obj = ResourceManager.GetObject("5271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _lock {
             get {
                 object obj = ResourceManager.GetObject("lock", resourceCulture);
@@ -76,6 +86,16 @@ namespace WindowsForm_Project.Properties {
         internal static System.Drawing.Bitmap _switch {
             get {
                 object obj = ResourceManager.GetObject("switch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap building_with_negative_space_window_5487ld {
+            get {
+                object obj = ResourceManager.GetObject("building-with-negative-space-window-5487ld", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +236,36 @@ namespace WindowsForm_Project.Properties {
         internal static System.Drawing.Bitmap day_and_night {
             get {
                 object obj = ResourceManager.GetObject("day-and-night", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DyqDzBgUYAAsE_S {
+            get {
+                object obj = ResourceManager.GetObject("DyqDzBgUYAAsE_S", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DyqDzBgUYAAsE_S1 {
+            get {
+                object obj = ResourceManager.GetObject("DyqDzBgUYAAsE_S1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DyqDzBgUYAAsE_S111 {
+            get {
+                object obj = ResourceManager.GetObject("DyqDzBgUYAAsE_S111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

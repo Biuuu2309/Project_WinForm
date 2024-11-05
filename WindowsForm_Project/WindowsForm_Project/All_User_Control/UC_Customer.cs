@@ -406,5 +406,10 @@ namespace WindowsForm_Project.All_User_Control
         {
             clearAll_Cus();
         }
+
+        private void guna2HtmlLabel1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -486,6 +486,10 @@
     <None Include="Backgrounds\Pic24.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Backgrounds\DyqDzBgUYAAsE_S111.jpg" />
+    <None Include="Backgrounds\DyqDzBgUYAAsE_S.jpg" />
+    <None Include="Backgrounds\building-with-negative-space-window-5487ld.png" />
+    <None Include="Backgrounds\5271.jpg" />
     <Content Include="Backgrounds\check %282%29.png" />
     <None Include="Backgrounds\switch.png" />
     <None Include="Backgrounds\Pic27.jpg" />

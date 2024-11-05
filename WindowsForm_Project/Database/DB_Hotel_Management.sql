@@ -493,15 +493,8 @@ GO
 CREATE OR ALTER PROC sp_addcheckout @cccd_cus NVARCHAR(200), @first_name NVARCHAR(200), @last_name NVARCHAR(200), @maphong INT, @sophong INT, @date_ci DATETIME, @date_co DATETIME, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Checkout WHERE @cccd_cus = cccd_cus)
-	BEGIN 
-		INSERT INTO Checkout(cccd_cus, first_name, last_name, maphong, sophong, date_ci, date_co) VALUES (@cccd_cus, @first_name, @last_name, @maphong, @sophong, @date_ci, @date_co)
-		SET @ErrorMessage = 'Successfully'
-	END
-	ELSE 
-	BEGIN
-		SET @ErrorMessage = ERROR_MESSAGE()
-	END
+	INSERT INTO Checkout(cccd_cus, first_name, last_name, maphong, sophong, date_ci, date_co) VALUES (@cccd_cus, @first_name, @last_name, @maphong, @sophong, @date_ci, @date_co)
+	SET @ErrorMessage = 'Successfully'
 END
 
 GO

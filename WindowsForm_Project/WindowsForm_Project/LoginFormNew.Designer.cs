@@ -57,12 +57,12 @@
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::WindowsForm_Project.Properties.Resources.Pic11;
+            this.guna2PictureBox2.Image = global::WindowsForm_Project.Properties.Resources._5271;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(337, 0);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(326, -9);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(752, 651);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(770, 663);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 0;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
@@ -130,13 +130,14 @@
             this.textpassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textpassword.ForeColor = System.Drawing.Color.Black;
             this.textpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textpassword.Location = new System.Drawing.Point(15, 419);
+            this.textpassword.Location = new System.Drawing.Point(15, 412);
+            this.textpassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textpassword.Name = "textpassword";
             this.textpassword.PasswordChar = '*';
             this.textpassword.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(134)))), ((int)(((byte)(132)))));
             this.textpassword.PlaceholderText = "Password";
             this.textpassword.SelectedText = "";
-            this.textpassword.Size = new System.Drawing.Size(304, 36);
+            this.textpassword.Size = new System.Drawing.Size(304, 43);
             this.textpassword.TabIndex = 2;
             this.textpassword.TextChanged += new System.EventHandler(this.textpassword_TextChanged);
             // 
@@ -156,24 +157,25 @@
             this.textusername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textusername.ForeColor = System.Drawing.Color.Black;
             this.textusername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textusername.Location = new System.Drawing.Point(15, 352);
+            this.textusername.Location = new System.Drawing.Point(15, 333);
+            this.textusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textusername.Name = "textusername";
             this.textusername.PasswordChar = '\0';
             this.textusername.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(134)))), ((int)(((byte)(132)))));
             this.textusername.PlaceholderText = "Email";
             this.textusername.SelectedText = "";
-            this.textusername.Size = new System.Drawing.Size(304, 36);
+            this.textusername.Size = new System.Drawing.Size(304, 43);
             this.textusername.TabIndex = 1;
             this.textusername.TextChanged += new System.EventHandler(this.textusername_TextChanged);
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.Pic13;
+            this.guna2PictureBox1.Image = global::WindowsForm_Project.Properties.Resources.building_with_negative_space_window_5487ld;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 79);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(340, 203);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(332, 240);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
