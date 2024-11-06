@@ -48,7 +48,7 @@ namespace WindowsForm_Project.Models
             List<Chitieu> list = new List<Chitieu>();
             try
             {
-                string query = @"SELECT * FROM Tongchi";
+                string query = @"SELECT * FROM Chitieu";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
@@ -58,7 +58,7 @@ namespace WindowsForm_Project.Models
                         {
                             Chitieu tongchi = new Chitieu
                             {
-                                sttchi = int.Parse(reader["stt"].ToString()),
+                                sttchi = int.Parse(reader["sttchi"].ToString()),
                                 ngay = DateTime.Parse(reader["ngay"].ToString()),
                                 tendogiadung = reader["tendogiadung"].ToString(),
                                 gianhapdogiadung = int.Parse(reader["gianhapdogiadung"].ToString()),

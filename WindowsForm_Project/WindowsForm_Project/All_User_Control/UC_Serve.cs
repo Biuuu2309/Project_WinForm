@@ -166,28 +166,29 @@ namespace WindowsForm_Project.All_User_Control
             string connectionString = DatabaseConnection.Connection();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Response response = dal.Getcustomer(conn);
-                if (response.list1 != null && response.list1.Count > 0)
+                Response response = dal.Getbooking(conn);
+                if (response.list9 != null && response.list9.Count > 0)
                 {
                     DataGridView3.DataSource = null; // Clear previous data
-                    DataGridView3.DataSource = response.list1;
+                    DataGridView3.DataSource = response.list9;
                     DataGridView3.ColumnHeadersHeight = 25;
-                    DataGridView3.Columns["cccd_cus"].HeaderText = "Mã CCCD";
-                    DataGridView3.Columns["first_name"].HeaderText = "Tên đầu";
-                    DataGridView3.Columns["last_name"].HeaderText = "Tên cuối";
-                    DataGridView3.Columns["sdt"].HeaderText = "Số điện thoại";
-                    DataGridView3.Columns["email"].HeaderText = "Email";
-                    DataGridView3.Columns["gioitinh"].HeaderText = "Giới tính";
-                    DataGridView3.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-                    DataGridView3.Columns["address_cus"].HeaderText = "Địa chỉ";
                     DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    DataGridView3.Columns[DataGridView3.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    DataGridView3.Columns["stt"].HeaderText = "STT";
+                    DataGridView3.Columns["cccd_cus"].HeaderText = "CCCD";
+                    DataGridView3.Columns["status_room"].HeaderText = "Trạng thái phòng";
+                    DataGridView3.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
+                    DataGridView3.Columns["roomtype"].HeaderText = "Loại phòng";
+                    DataGridView3.Columns["numbed"].HeaderText = "Số giường";
+                    DataGridView3.Columns["date_ci"].HeaderText = "Ngày vào";
+                    DataGridView3.Columns["date_co"].HeaderText = "Ngày ra";
+                    DataGridView3.Columns["view_room"].HeaderText = "Dạng phòng";
+                    DataGridView3.Columns["price"].HeaderText = "Giá cả";
+                    DataGridView3.Columns["group_customer"].HeaderText = "Nhóm khách hàng";
+                    DataGridView3.Columns["maphong"].HeaderText = "Mã phòng";
+                    DataGridView3.Columns["roomnumber"].HeaderText = "Số phòng";
+                    DataGridView3.Columns["cccd_em"].HeaderText = "CCCD Employee";
                     DataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView3.Refresh(); // Refresh the grid view
-                }
-                else
-                {
-                    MessageBox.Show("No customer data available or " + response.statusmessage);
                 }
             }
         }
