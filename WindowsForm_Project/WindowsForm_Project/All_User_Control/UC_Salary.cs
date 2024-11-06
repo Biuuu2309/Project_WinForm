@@ -113,20 +113,20 @@ namespace WindowsForm_Project.All_User_Control
                                     ORDER BY 
                                         month;";
             string query4 = @"  SELECT 
-                                    COALESCE(SUM(CAST(price AS INT)), 0) + 
-                                    COALESCE(SUM(CAST(cost AS INT)), 0) + 
-                                    COALESCE(SUM(material_count.material_cost), 0) AS total_income
-                                FROM 
-                                    Bookings
-                                INNER JOIN 
-                                    Serve ON Bookings.cccd_cus = Serve.cccd_cus
-                                LEFT JOIN 
-                                    (
-                                        SELECT 
-                                            COUNT(tennguyenlieu) * 70000 AS material_cost
-                                        FROM 
-                                            Chitieu
-                                    ) AS material_count ON 1 = 1;";
+                                COALESCE(SUM(CAST(price AS INT)), 0) + 
+                                COALESCE(SUM(CAST(cost AS INT)), 0) + 
+                                COALESCE(SUM(material_count.material_cost), 0) AS total_income
+                            FROM 
+                                Bookings
+                            INNER JOIN 
+                                Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                            LEFT JOIN 
+                                (
+                                    SELECT 
+                                        COUNT(tennguyenlieu) * 70000 AS material_cost
+                                    FROM 
+                                        Chitieu
+                                ) AS material_count ON 1 = 1;";
             string query5 = @"  SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) + SUM(CAST(gianhapnguyenlieu AS INT)) AS total_chitieu FROM Chitieu";
             string query6 = @"  SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
                                 FROM (
@@ -298,14 +298,28 @@ namespace WindowsForm_Project.All_User_Control
                 Salary.Series[fullname[i]].Points.AddXY(i, counthour[i]);
             }
 
+            // Xóa tất cả các series trước khi thêm mới
             chart1.Series.Clear();
 
+            // Series cho Monthly Income (Thu nhập hàng tháng)
             Series salesSeries = new Series("Monthly Income");
             salesSeries.ChartType = SeriesChartType.Spline;
             salesSeries.BorderWidth = 2;
+            salesSeries.Color = System.Drawing.Color.Blue;
+
+            // Series cho Monthly Expenses (Chi tiêu hàng tháng)
+            Series expensesSeries = new Series("Monthly Expenses");
+            expensesSeries.ChartType = SeriesChartType.Spline;
+            expensesSeries.BorderWidth = 2;
+            expensesSeries.Color = System.Drawing.Color.Red;
 
             string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
+            // Tạo từ điển cho các tháng và giá trị của hai series
+            Dictionary<int, int> incomeData = new Dictionary<int, int>();
+            Dictionary<int, int> expensesData = new Dictionary<int, int>();
+
+            // Đưa dữ liệu vào từ điển thu nhập
             for (int i = 0; i < month.Count; i++)
             {
                 if (i < total_booking.Count)
@@ -313,18 +327,12 @@ namespace WindowsForm_Project.All_User_Control
                     int monthNumber = month[i];
                     if (monthNumber >= 1 && monthNumber <= 12)
                     {
-                        salesSeries.Points.AddXY(monthNames[monthNumber - 1], total_booking[i]);
+                        incomeData[monthNumber] = total_booking[i];
                     }
                 }
             }
 
-            chart1.Series.Add(salesSeries);
-
-            Series expensesSeries = new Series("Monthly Expenses");
-            expensesSeries.ChartType = SeriesChartType.Spline;
-            expensesSeries.BorderWidth = 2;
-            expensesSeries.Color = System.Drawing.Color.Red;
-
+            // Đưa dữ liệu vào từ điển chi tiêu
             for (int i = 0; i < month1.Count; i++)
             {
                 if (i < total_chitieu.Count)
@@ -332,20 +340,52 @@ namespace WindowsForm_Project.All_User_Control
                     int monthNumber = month1[i];
                     if (monthNumber >= 1 && monthNumber <= 12)
                     {
-                        expensesSeries.Points.AddXY(monthNames[monthNumber - 1], total_chitieu[i]);
+                        expensesData[monthNumber] = total_chitieu[i];
                     }
                 }
             }
+
+            // Thêm điểm dữ liệu vào Series, đồng bộ các tháng
+            for (int monthNumber = 1; monthNumber <= 12; monthNumber++)
+            {
+                string monthName = monthNames[monthNumber - 1];
+
+                int income1 = incomeData.ContainsKey(monthNumber) ? incomeData[monthNumber] : 0;
+                int expense = expensesData.ContainsKey(monthNumber) ? expensesData[monthNumber] : 0;
+
+                salesSeries.Points.AddXY(monthName, income1);
+                expensesSeries.Points.AddXY(monthName, expense);
+            }
+
+            // Thêm series vào chart
+            chart1.Series.Add(salesSeries);
+            chart1.Series.Add(expensesSeries);
+
+            // Cài đặt tiêu đề và các thông số cho trục
+            chart1.Titles.Clear();
             Title title1 = new Title("Month Income Expenses");
             title1.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
-
-            chart1.Series.Add(expensesSeries);
             chart1.Titles.Add(title1);
+
             chart1.ChartAreas[0].AxisX.Title = "Month";
             chart1.ChartAreas[0].AxisY.Title = "Amount (VND)";
             chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.ChartAreas[0].AxisY.Interval = 500;
+
+            // Hiển thị các mốc chia chính trên trục Y
+            chart1.ChartAreas[0].AxisY.MajorTickMark.Enabled = true;
+
+            // Hiển thị các mốc chia phụ trên trục Y (nếu muốn)
+            chart1.ChartAreas[0].AxisY.MinorTickMark.Enabled = true;
+
+            // Tùy chỉnh các mốc nhãn trên trục Y để dễ đọc
+            chart1.ChartAreas[0].AxisY.LabelStyle.Format = "N0"; // Định dạng số nguyên
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash; // Đường lưới kiểu gạch ngang
             chart1.ChartAreas[0].RecalculateAxesScale();
+
+
+
+
 
 
             Title title2 = new Title("Total Income Expenses Breakdown");
@@ -504,11 +544,6 @@ namespace WindowsForm_Project.All_User_Control
                 guna2Button4.Image = null;
             }
             guna2Panel5.BringToFront();
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -79,8 +79,8 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.DataSource = response.list2; // Set the data source
                     DataGridView1.ColumnHeadersHeight = 25;
                     DataGridView1.Columns["cccd_em"].HeaderText = "Mã CCCD";
-                    DataGridView1.Columns["first_name"].HeaderText = "Tên đầu";
-                    DataGridView1.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView1.Columns["first_name"].HeaderText = "First Name";
+                    DataGridView1.Columns["last_name"].HeaderText = "Last Name";
                     DataGridView1.Columns["sdt"].HeaderText = "Số điện thoại";
                     DataGridView1.Columns["email"].HeaderText = "Email";
                     DataGridView1.Columns["gioitinh"].HeaderText = "Giới tính";
@@ -169,10 +169,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list4;
                     DataGridView3.ColumnHeadersHeight = 25;
-                    DataGridView3.Columns["maphieu"].HeaderText = "Mã Phiếu";
                     DataGridView3.Columns["cccd_em"].HeaderText = "Mã CCCD";
-                    DataGridView3.Columns["first_name"].HeaderText = "Tên đầu";
-                    DataGridView3.Columns["last_name"].HeaderText = "Tên cuối";
+                    DataGridView3.Columns["first_name"].HeaderText = "First Name";
+                    DataGridView3.Columns["last_name"].HeaderText = "Last Name";
                     DataGridView3.Columns["ngay"].HeaderText = "Ngày";
                     DataGridView3.Columns["ca1"].HeaderText = "Ca 1";
                     DataGridView3.Columns["ca2"].HeaderText = "Ca 2";
@@ -210,9 +209,9 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.DataSource = response.list5;
                     DataGridView2.ColumnHeadersHeight = 25;
                     DataGridView2.Columns["cccd_em"].HeaderText = "Mã CCCD";
-                    DataGridView2.Columns["first_name"].HeaderText = "Tên đầu";
-                    DataGridView2.Columns["last_name"].HeaderText = "Tên cuối";
-                    DataGridView2.Columns["tongngay"].HeaderText = "Tổng ngày";
+                    DataGridView2.Columns["first_name"].HeaderText = "First Name";
+                    DataGridView2.Columns["last_name"].HeaderText = "Last Name";
+                    DataGridView2.Columns["tongngay"].HeaderText = "Số ngày làm tại Hotel";
                     DataGridView2.Columns["tongca"].HeaderText = "Tổng ca";
                     DataGridView2.Columns["luong"].HeaderText = "Lương";
                     DataGridView2.Columns["total"].HeaderText = "Tổng";

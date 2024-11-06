@@ -138,6 +138,7 @@ CREATE TABLE Salary (
 	tongchi INT,
 	loinhuandoanhnghiep INT,
 )
+
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
 VALUES
