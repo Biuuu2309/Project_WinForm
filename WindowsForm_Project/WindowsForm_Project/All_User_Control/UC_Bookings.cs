@@ -89,7 +89,6 @@ namespace WindowsForm_Project.All_User_Control
                 Response response = dal.Getroombook(conn);
                 if (response.list10 != null && response.list10.Count > 0)
                 {
-                    DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView1.DataSource = null; // Clear previous data
                     DataGridView1.DataSource = response.list10;
                     DataGridView1.ColumnHeadersHeight = 25;
@@ -101,7 +100,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["house_keeping"].HeaderText = "house keeping";
                     DataGridView1.Columns["status_room"].HeaderText = "status room";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
-                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
@@ -213,8 +212,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView3.DataSource = null; // Clear previous data
                     DataGridView3.DataSource = response.list9;
                     DataGridView3.ColumnHeadersHeight = 25;
-                    DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                    DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView3.Columns["stt"].HeaderText = "STT";
                     DataGridView3.Columns["cccd_cus"].HeaderText = "CCCD";
                     DataGridView3.Columns["status_room"].HeaderText = "Trạng thái phòng";
@@ -264,6 +262,7 @@ namespace WindowsForm_Project.All_User_Control
             this.DataGridView3.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             this.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
 
         }

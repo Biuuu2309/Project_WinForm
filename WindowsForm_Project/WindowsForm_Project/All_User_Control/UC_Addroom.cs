@@ -130,7 +130,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["maphong"].HeaderText = "ID Phòng";
                     DataGridView1.Columns["roomnumber"].HeaderText = "Mã Phòng";
                     DataGridView1.Columns["roomtype"].HeaderText = "Thể loại phòng";
-                    DataGridView1.Columns["numbed"].HeaderText = "Số phòng đặt";
+                    DataGridView1.Columns["numbed"].HeaderText = "Số giường";
                     DataGridView1.Columns["view_room"].HeaderText = "Dạng phòng";
                     DataGridView1.Columns["image_room"].HeaderText = "Image room";
                     DataGridView1.Columns["price"].HeaderText = "Giá cả";
@@ -160,7 +160,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["maphong"].HeaderText = "ID Phòng";
                     DataGridView2.Columns["roomnumber"].HeaderText = "Mã Phòng";
                     DataGridView2.Columns["status_room"].HeaderText = "Trạng thái phòng";
-                    DataGridView2.Columns["house_keeping"].HeaderText = "Trạng thái nhà";
+                    DataGridView2.Columns["house_keeping"].HeaderText = "Tình trạng phòng";
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView2.Refresh(); // Refresh the grid view

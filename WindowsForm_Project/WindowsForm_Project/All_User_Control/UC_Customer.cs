@@ -67,7 +67,6 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
                     DataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                    DataGridView2.Columns[DataGridView2.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     DataGridView2.Columns["email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
 
