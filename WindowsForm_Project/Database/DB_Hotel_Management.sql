@@ -141,93 +141,175 @@ CREATE TABLE Salary (
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
 VALUES
-	('1', '101', 'STD', '1', 'Good', '1000000'),
-	('2', '102', 'DLX', '2', 'Simple', '2000000'),
-	('3', '103', 'SUP', '3', 'Beautiful', '3000000'),
-	('4', '104', 'SUT', '1', 'Good', '2000000'),
-	('5', '105', 'DLX', '2', 'Beautiful', '3000000')
+	('1', '101', 'STD', '1', 'Simple', '1000000'),
+	('2', '102', 'STD', '2', 'Good', '1200000'),
+	('3', '103', 'STD', '3', 'Beautiful', '1400000'),
+	('4', '104', 'SUP', '1', 'Simple', '1200000'),
+	('5', '105', 'SUP', '2', 'Good', '1400000'),
+	('6', '106', 'SUP', '3', 'Beautiful', '1600000'),
+	('7', '107', 'DLX', '1', 'Simple', '1400000'),
+	('8', '108', 'DLX', '2', 'Good', '1600000'),
+	('9', '109', 'DLX', '3', 'Beautiful', '1800000'),
+	('10', '110', 'SUT', '1', 'Simple', '1600000'),
+	('11', '111', 'SUT', '2', 'Good', '1800000'),
+	('12', '112', 'SUT', '3', 'Beautiful', '2000000'),
+	('13', '201', 'STD', '1', 'Simple', '1400000'),
+	('14', '202', 'STD', '2', 'Good', '1600000'),
+	('15', '203', 'STD', '3', 'Beautiful', '1800000'),
+	('16', '204', 'SUP', '1', 'Simple', '1800000'),
+	('17', '205', 'SUP', '2', 'Good', '2000000'),
+	('18', '206', 'SUP', '3', 'Beautiful', '2200000'),
+	('19', '207', 'DLX', '1', 'Simple', '2000000'),
+	('20', '208', 'DLX', '2', 'Good', '2200000'),
+	('21', '209', 'DLX', '3', 'Beautiful', '2400000'),
+	('22', '210', 'SUT', '1', 'Simple', '2400000'),
+	('23', '211', 'SUT', '2', 'Good', '2600000'),
+	('24', '212', 'SUT', '3', 'Beautiful', '2800000'),
+	('25', '301', 'DLX', '2', 'Good', '3400000'),
+	('26', '302', 'DLX', '2', 'Beautiful', '3600000'),
+	('27', '303', 'DLX', '3', 'Beautiful', '4000000'),
+	('28', '401', 'SUT', '2', 'Beautiful', '5000000'),
+	('29', '402', 'SUT', '2', 'Beautiful', '5000000'),
+	('30', '403', 'SUT', '3', 'Beautiful', '6000000')
 
 GO
 INSERT INTO Update_room(maphong, status_room, house_keeping)
 VALUES
-	('1', 'Reserved', 'Clean'),
-	('2', 'Occupied', 'Not Clean'),
-	('3', 'Available', 'In Progress'),
-	('4', 'Check Out', 'Repair'),
-	('5', 'Available', 'Clean')
+	('1', 'Available', 'Clean'),
+	('2', 'Available', 'Repair'),
+	('3', 'Available', 'Clean'),
+	('4', 'Available', 'Clean'),
+	('5', 'Available', 'Repair'),
+	('6', 'Available', 'Clean'),
+	('7', 'Available', 'Not Clean'),
+	('8', 'Available', 'Clean'),
+	('9', 'Available', 'Repair'),
+	('10', 'Available', 'Clean'),
+	('11', 'Available', 'Clean'),
+	('12', 'Available', 'Repair'),
+	('13', 'Available', 'Repair'),
+	('14', 'Available', 'Not Clean'),
+	('15', 'Available', 'Clean'),
+	('16', 'Available', 'Clean'),
+	('17', 'Available', 'Clean'),
+	('18', 'Available', 'Repair'),
+	('19', 'Available', 'Clean'),
+	('20', 'Available', 'Not Clean'),
+	('21', 'Available', 'Clean'),
+	('22', 'Available', 'Repair'),
+	('23', 'Available', 'Repair'),
+	('24', 'Available', 'Clean'),
+	('25', 'Available', 'Clean'),
+	('26', 'Available', 'Not Clean'),
+	('27', 'Available', 'Clean'),
+	('28', 'Available', 'Repair'),
+	('29', 'Available', 'Clean'),
+	('30', 'Available', 'Clean')
 GO
-INSERT INTO Employee(cccd_em, first_name, last_name, sdt, email, gioitinh, ngaysinh, luong)
+INSERT INTO Employee(cccd_em, last_name, first_name, sdt, email, gioitinh, ngaysinh, luong)
 VALUES
-	('12012309', 'Biu', 'Biu', '123', 'BiuBiu@gmail.com', 'Nu', '2004-09-23', '200000'),
-	('12012308', 'Biu', 'Biuu', '234', 'BiuBiuu@gmail.com', 'Nam', '2004-09-22', '100000'),
-	('12012307', 'Biu', 'Biuuu', '345', 'BiuBiuuu@gmail.com', 'Nu', '2004-09-21', '300000'),
-	('12012306', 'Biu', 'Biuuuu', '456', 'BiuBiuuuu@gmail.com', 'Nam', '2004-09-20', '400000'),
-	('12012305', 'Biu', 'Biuuuuu', '567', 'BiuBiuuuuu@gmail.com', 'Nu', '2004-09-19', '200000')
+	('CE12012309', 'Andersen', 'Leocadia', '11578773', 'AndersenLeocadia@gmail.com', 'Nu', '2004-09-23', '200000'),
+	('CE12012308', 'Lucero', 'Chad', '11613549', 'LuceroChad@gmail.com', 'Nam', '2004-09-22', '200000'),
+	('CE12012307', 'Randall', 'Stone', '11903153', 'RandallStone@gmail.com', 'Nu', '2004-09-21', '200000'),
+	('CE12012306', 'Braun', 'Emelia', '11680840', 'BraunEmelia@gmail.com', 'Nam', '2004-03-20', '200000'),
+	('CE12012305', 'Velez', 'Ridley', '11809979', 'VelezRidley@gmail.com', 'Nu', '2004-01-19', '300000'),
+	('CE12012304', 'Sloan', 'Devadas', '11933063', 'SloanDevadas@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012303', 'Proctor', 'Jamaal', '11836481', 'ProctorJamaal@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012302', 'Morris', 'Reba', '11847320', 'MorrisReba@gmail.com', 'Nam', '2004-05-20', '300000'),
+	('CE12012301', 'Knight', 'Nomusa', '11709833', 'KnightNomusa@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012300', 'Dunlap', 'Romaine', '11611869', 'DunlapRomaine@gmail.com', 'Nu', '2004-09-12', '300000'),
+	('CE12012299', 'Wilcox', 'Regan', '11790275', 'WilcoxRegan@gmail.com', 'Nu', '2004-09-20', '200000'),
+	('CE12012298', 'Grimes', 'Forest', '11849664', 'GrimesForest@gmail.com', 'Nu', '2004-09-03', '200000'),
+	('CE12012297', 'Gillespie', 'Feliciana', '11936768', 'GillespieFeliciana@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012296', 'Logan', 'Ella', '11847874', 'LoganElla@gmail.com', 'Nam', '2004-09-11', '300000'),
+	('CE12012295', 'Black', 'Abel', '11689670', 'BlackAbel@gmail.com', 'Nam', '2004-09-12', '200000'),
+	('CE12012294', 'Mills', 'Josceline', '11594204', 'MillsJosceline@gmail.com', 'Nu', '2004-09-20', '200000'),
+	('CE12012293', 'Dixon', 'Kit', '11689480', 'DixonKit@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012292', 'Ruiz', 'Annice', '11814376', 'RuizAnnice@gmail.com', 'Nam', '2004-09-20', '200000'),
+	('CE12012291', 'Rubio', 'Alesia', '11860874', 'RubioAlesia@gmail.com', 'Nam', '2004-09-20', '300000'),
+	('CE12012290', 'Craig', 'Magnolia', '11669831', 'CraigMagnolia@gmail.com', 'Nu', '2004-09-20', '200000'),
+	('CE12012289', 'Blanchard', 'Elouan', '11908270', 'BlanchardElouan@gmail.com', 'Nam', '2004-09-20', '400000'),
+	('CE12012288', 'Cummings', 'McKinley', '11832090', 'CummingsMcKinley@gmail.com', 'Nam', '2004-09-20', '400000')
+
+
 GO
 INSERT INTO Account(username, password, cccd_em)
 VALUES
-	('BiuBiu', 'BiuBiu', '12012309'),
-	('BiuBiuu', 'BiuBiuu', '12012308'),
-	('BiuBiuuu', 'BiuBiuuu', '12012307'),
-	('BiuBiuuuu', 'BiuBiuuuu', '12012306'),
-	('BiuBiuuuuu', 'BiuBiuuuuu', '12012305')
+	('RubioAlesia', 'manage1', 'CE12012291'),
+	('LoganElla', 'manage1', 'CE12012296'),
+	('DunlapRomaine', 'manage1', 'CE12012300'),
+	('MorrisReba', 'manage1', 'CE12012303'),
+	('VelezRidley', 'manage1', 'CE12012305')
 GO
 INSERT INTO Customer(cccd_cus, first_name, last_name, sdt, email, gioitinh, ngaysinh, address_cus)
 VALUES
-	('12022309', 'Haha', 'Hihi', '1234', 'HahaHihi', 'Nam', '2004-09-24', 'HCM'),
-	('12032309', 'Haha', 'Hihii', '2345', 'HahaHihii', 'Nu', '2004-09-25', 'HN'),
-	('12042309', 'Haha', 'Hihiii', '3456', 'HahaHihiii', 'Nam', '2004-09-26', 'DN'),
-	('12052309', 'Haha', 'Hihiiii', '4567', 'HahaHihiiii', 'Nu', '2004-09-27', 'BD'),
-	('12062309', 'Haha', 'Hihiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA'),
-	('12072309', 'Haha', 'Hihiiiiii', '5678', 'HahaHihiiiii', 'Nam', '2004-09-28', 'NA')
-GO
-INSERT INTO Bookings(cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, date_ci, date_co, group_customer, maphong, roomnumber, cccd_em, price)
-VALUES
-	('12022309', 'Reserved', 'Clean', 'STD', '1', 'Good', '2024-09-20', '2024-09-21', '0',  '1', '101', '12012309', '111110'),
-	('12032309', 'Occupied', 'Not Clean', 'DLX', '2', 'Simple', '2024-09-19', '2024-09-22', '0',  '2', '102', '12012309', '2222221'),
-	('12042309', 'Available', 'In Progress', 'SUP', '3', 'Beautiful', '2024-09-18', '2024-09-20', '0',  '3', '103', '12012309', '222222'),
-	('12052309', 'Check Out', 'Repair', 'SUT', '1', 'Good', '2024-09-17', '2024-09-21', '0',  '4', '104', '12012309', '2222221'),
-	('12062309', 'Available', 'Clean', 'DLX', '2', 'Beautiful', '2024-10-16', '2024-10-20', '0',  '5', '105', '12012309', '2222222')
-GO
-INSERT INTO Report(cccd_cus, maphong, ghichu)
-VALUES
-	('12022309', '1', 'Biuuuuuuuuuu'),
-	('12032309', '2', 'Beoooooooo'),
-	('12052309', '4', 'Bemmmmmmm')
-GO
-INSERT INTO Chamcong(cccd_em, ngay, ca1, ca2, ca3, ca4, note)
-VALUES
-	('12012309', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012308', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
-	('12012307', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012306', '2024-09-20', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
-	('12012305', '2024-09-20', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012309', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
-	('12012308', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012307', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
-	('12012306', '2024-09-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012307', '2024-10-21', 'Khong', 'Co', 'Khong', 'Co', 'Good'),
-	('12012306', '2024-10-21', 'Co', 'Khong', 'Co', 'Khong', 'Good'),
-	('12012305', '2024-09-21', 'Khong', 'Co', 'Khong', 'Co', 'Good')
-GO
-INSERT INTO Serve(cccd_cus, maphong, other_booking, anuong, call_serve, cost)
-VALUES
-	('12022309', '1', 'Khong', 'Khong', '0', '0'),
-	('12032309', '2', 'Khong', 'Khong', '0', '0'),
-	('12042309', '3', 'Khong', 'Khong', '0', '0'),
-	('12052309', '4', 'Khong', 'Khong', '0', '0'),
-	('12062309', '5', 'Khong', 'Khong', '0', '0')
-
+	('100011', 'Tsao', 'Danny', '11820266', 'TsaoDanny@gmail.com', 'Nam', '2000-09-24', '27 Wu Tzu St Tamshui 251  Taiwan'),
+	('100012', 'Lei', 'Colleen', '11663635', 'LeiColleen@gmail.com', 'Nu', '2000-09-25', '88 6th Avenue Teda 300457 TIANJIN  China'),
+	('100013', 'Roth', 'Nancy', '11842511', 'RothNancy@gmail.com', 'Nam', '2000-09-26', 'Hoefenstrasse 31 Muehlethal  Switzerland'),
+	('100014', 'Meneses Contreras', 'Karl-Oscar', '11585702', 'MenesesKarlOscar@gmail.com', 'Nu', '2000-09-27', 'Poniente 134 Ste. 740 02300 México DIF Mexico'),
+	('100015', 'Nunez', 'Helmut', '11620651', 'NunezHelmut@gmail.com', 'Nam', '2000-09-28', 'Andador Pinos 345 45235 Zapopan JAL Mexico'),
+	('100016', 'Fitzpatrick', 'Dmitry', '11871014', 'FitzpatrickDmitry@gmail.com', 'Nu', '2000-09-01', '22 Hemingford Pl Whitby ON Canada'),
+	('100017', 'Andreu', 'Leya', '11880263', 'AndreuLeya@gmail.com', 'Nam', '1998-09-09', 'Nevada de Colima 104 20280 Aguascalientes  Mexico'),
+	('100018', 'Ramsey', 'Stephen', '11893645', 'RamseyStephen@gmail.com', 'Nam', '1998-09-09', 'Z-Block No 59  Chennai TN - 600040  India'),
+	('100019', 'Xiao-Hui', 'Michael', '11809723', 'XiaHuiMichael@gmail.com', 'Nu', '1998-09-01', 'Unit B-E F19 XinMei Union Square 200120 Shanghai  China'),
+	('100020', 'He', 'Jan', '11677573', 'HeJan@gmail.com', 'Nam', '1998-09-09', '5055 Heather Leigh Avenue Mississauga ON Canada'),
+	('100021', 'Wisner', 'Ray', '11719458', 'WisnerRay@gmail.com', 'Nu', '1998-09-01', 'Chemin 15F Vernier  Switzerland'),
+	('100022', 'Denturck', 'Bill', '11857457', 'DenturckBill@gmail.com', 'Nam', '1998-09-01', 'Septestraat 27 2640 MORTSEL  Belgium'),
+	('100023', 'Arnout', 'Marco', '11873306', 'ArnoutMarco@gmail.com', 'Nu', '1998-09-09', 'P.O. Box 4002 Basel  Switzerland'),
+	('100024', 'Kopp', 'Victor', '11862577', 'KoppVictor@gmail.com', 'Nu', '1998-09-23', 'Pez Austral 3625 45070 Guadalajara JAL Mexico'),
+	('100025', 'Villarruel Enriquez', 'Bep', '11629423', 'VillarruelBep@gmail.com', 'Nam', '1996-09-28', '303 - 615 North Road Coquitlam BC Canada'),
+	('100026', 'Marchant', 'René', '11794424', 'MarchantRene@gmail.com', 'Nam', '1996-09-28', 'Emilio Arrieta 23 Pamplona  Spain'),
+	('100027', 'de Alava Casado', 'Christophe', '11860677', 'deAlavaCasadoChristophe@gmail.com', 'Nam', '1996-09-09', '383 Elgin St Brantford ON Canada'),
+	('100028', 'Boaz', 'Isobel', '11572376', 'BoazIsobel@gmail.com', 'Nam', '1996-09-23', '8 Temasek Boulevard #7 Singapore  Singapore'),
+	('100029', 'Koshy', 'Rene', '11824050', 'KoshyRene@gmail.com', 'Nam', '1996-09-01', 'P O Box 112-066 Auckland  New Zealand'),
+	('100030', 'Lee', 'Chie Shin', '11759559', 'LeeChieShin@gmail.com', 'Nu', '1996-09-09', '5 rue de la Division Leclerc 78350 LES LOGES EN JOSAS  France'),
+	('100031', 'Sanseau', 'Jose', '11811561', 'SanseauJose@gmail.com', 'Nam', '1996-09-09', '775 Steeles Ave West Apt. 1111 Toronto ON Canada'),
+	('100032', 'Ciorma', 'Frans', '11570183', 'CiormaFrans@gmail.com', 'Nu', '1996-09-23', 'Rue des Saars 87 Neuchâtel  Switzerland'),
+	('100033', 'Peron', 'Jasja', '11872554', 'PeronJasja@gmail.com', 'Nam', '1992-09-01', '45 Kensington Rd Essex  United Kingdom'),
+	('100034', 'Worrell', 'Travis', '11611010', 'WorrellTravis@gmail.com', 'Nam', '1992-09-28', '13459 Cedar Way Maple Ridge BC Canada'),
+	('100035', 'Bianco', 'Richard', '11707845', 'BiancoRichard@gmail.com', 'Nam', '1992-09-23', 'Rossinistraat 18 4561 VP Hulst  Netherlands'),
+	('100036', 'McKnight', 'Gangesh', '11814905', 'McKnightGangesh@gmail.com', 'Nu', '1992-09-23', '1370 Don Mills Rd Toronto ON Canada'),
+	('100037', 'Bricks', 'Shari', '11849781', 'BricksShari@gmail.com', 'Nu', '1992-09-28', '1502-1901 Hosumaeul Humansia APT Dongbaek-dong Kiheung-gu Yongin-shi  Korea, Republic of'),
+	('100038', 'Kim', 'Nam-Su', '11875178', 'KimNamSu@gmail.com', 'Nam', '1980-09-28', '105 Vars Fantasy Bangalore Karnataka India'),
+	('100039', 'Venghatachari', 'Ramachandharan', '11569278', 'VenghatachariRamachandharan@gmail.com', 'Nam', '1980-09-28', 'A-6-08 Sri Teratai Apartment 47100 Bandar Puchong Jaya Selangor Malaysia'),
+	('100040', 'Lim', 'SooChing', '11561051', 'LimSooChing@gmail.com', 'Nam', '1980-09-28', 'Softwareweg 4 3821 BC Amersfoort  Netherlands'),
+	('100041', 'Hagen', 'Rien', '11859915', 'HagenRien@gmail.com', 'Nu', '1980-09-23', 'Emilio Arrieta 23 Pamplona  Spain')
 GO 
 INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennhuyeupham, gianhuyeupham, tennguyenlieu, gianhapnguyenlieu)
 VALUES
-	('2024-09-20', 'ban', '200000', 'khan', '10000', 'thit bo', '20000'),
-	('2024-09-20', 'ban', '200000', 'khan', '10000', 'thit bo', '20000'),
-	('2024-09-20', 'ghe', '100000', 'nem', '100000', 'thit bo', '20000'),
-	('2024-09-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
-	('2024-09-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
-	('2024-10-20', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000'),
-	('2024-10-22', 'ghe', '100000', 'nem', '100000', 'thit bo', '10000')
+	('2024-01-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-01-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-01-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-02-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-02-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-02-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-03-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-03-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-03-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-04-22', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-04-22', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-04-22', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-05-22', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-05-22', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-05-22', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-06-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-06-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-06-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-07-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-07-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-07-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-08-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-08-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-08-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-09-20', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-09-20', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-09-20', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-10-22', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-10-22', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-10-22', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000'),
+	('2024-11-22', 'ban', '100000', 'khan', '50000', 'thit bo', '2000000'),
+	('2024-11-22', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
+	('2024-11-22', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000')
 
 GO 
 CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @cccd_em NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
@@ -728,6 +810,17 @@ SELECT
 SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
 FROM Bookings
 INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
+
+
+SELECT 
+    (SELECT SUM(total_booking) 
+     FROM (
+         SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
+         FROM Bookings
+         INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus
+     ) AS total) 
+    +
+    (SELECT COUNT(*) * 100000 FROM Chitieu) AS grand_total;
 ---chi
 SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) + SUM(CAST(gianhapnguyenlieu AS INT)) AS total_chitieu FROM Chitieu
 ---luongnv
@@ -951,3 +1044,161 @@ SELECT date_ci
 
 
 SELECT image_room FROM Room
+
+
+-- Tính tổng thu từ Bookings
+WITH TotalBookings AS (
+    SELECT 
+        YEAR(date_co) AS year,
+        MONTH(date_co) AS month,
+        SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
+    FROM 
+        Bookings
+    GROUP BY 
+        YEAR(date_co), MONTH(date_co)
+),
+
+-- Tính tổng chi tiêu từ Chitieu
+TotalChitieu AS (
+    SELECT 
+        YEAR(ngay) AS year,
+        MONTH(ngay) AS month,
+        SUM(gianhapdogiadung) + SUM(gianhuyeupham) + SUM(soluong_nguyenlieu * 100000) AS total_chitieu
+    FROM 
+        Chitieu
+    GROUP BY 
+        YEAR(ngay), MONTH(ngay)
+)
+
+-- Kết hợp kết quả từ Bookings và Chitieu
+SELECT 
+    COALESCE(tb.year, tc.year) AS year,
+    COALESCE(tb.month, tc.month) AS month,
+    COALESCE(tb.total_booking, 0) AS total_booking,
+    COALESCE(tc.total_chitieu, 0) AS total_chitieu,
+    COALESCE(tb.total_booking, 0) - COALESCE(tc.total_chitieu, 0) AS net_income
+FROM 
+    TotalBookings AS tb
+FULL OUTER JOIN 
+    TotalChitieu AS tc ON tb.year = tc.year AND tb.month = tc.month
+ORDER BY 
+    year, month;
+
+
+
+
+
+
+
+
+
+-- Tạo CTE để liệt kê các tháng có dữ liệu từ Bookings
+WITH MonthYear AS (
+    SELECT 
+        YEAR(date_co) AS year,
+        MONTH(date_co) AS month
+    FROM 
+        Bookings
+    GROUP BY 
+        YEAR(date_co), MONTH(date_co)
+),
+
+-- Tính tổng thu từ Bookings cho từng tháng
+TotalBookings AS (
+    SELECT 
+        my.year,
+        my.month,
+        COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
+    FROM 
+        MonthYear AS my
+    LEFT JOIN 
+        Bookings ON MONTH(Bookings.date_co) = my.month AND YEAR(Bookings.date_co) = my.year
+    LEFT JOIN 
+        Serve ON Bookings.cccd_cus = Serve.cccd_cus
+    GROUP BY 
+        my.year, my.month
+),
+
+-- Tính tổng chi tiêu từ Chitieu cho từng tháng
+TotalChitieu AS (
+    SELECT 
+        YEAR(ngay) AS year,
+        MONTH(ngay) AS month,
+        SUM(gianhapdogiadung) + SUM(gianhuyeupham) + SUM(COUNT(*) * 100000) AS total_chitieu
+    FROM 
+        Chitieu
+    GROUP BY 
+        YEAR(ngay), MONTH(ngay)
+)
+
+-- Kết hợp tổng thu từ Bookings và tổng chi từ Chitieu
+SELECT 
+    COALESCE(tb.year, tc.year) AS year,
+    COALESCE(tb.month, tc.month) AS month,
+    COALESCE(tb.total_booking, 0) AS total_booking,
+    COALESCE(tc.total_chitieu, 0) AS total_chitieu,
+    COALESCE(tb.total_booking, 0) - COALESCE(tc.total_chitieu, 0) AS net_income
+FROM 
+    TotalBookings AS tb
+FULL OUTER JOIN 
+    TotalChitieu AS tc ON tb.year = tc.year AND tb.month = tc.month
+ORDER BY 
+    year, month;
+
+
+----------------------------------------
+WITH MonthYear AS (
+    SELECT 
+        MONTH(date_co) AS month,
+        YEAR(date_co) AS year
+    FROM 
+        Bookings
+    GROUP BY 
+        MONTH(date_co), YEAR(date_co)
+)
+
+SELECT 
+    my.month,
+    my.year,
+    COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) + 
+    COALESCE(SUM(material_count.material_cost), 0) AS total_booking
+FROM 
+    MonthYear AS my
+LEFT JOIN 
+    Bookings ON MONTH(Bookings.date_co) = my.month AND YEAR(Bookings.date_co) = my.year
+LEFT JOIN 
+    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+LEFT JOIN 
+    (
+        SELECT 
+            MONTH(ngay) AS month,
+            YEAR(ngay) AS year,
+            COUNT(tennguyenlieu) * 70000 AS material_cost
+        FROM 
+            Chitieu
+        GROUP BY 
+            MONTH(ngay), YEAR(ngay)
+    ) AS material_count ON my.month = material_count.month AND my.year = material_count.year
+GROUP BY 
+    my.month, my.year
+ORDER BY 
+    my.year, my.month;
+
+
+	-------------------
+
+	SELECT 
+    COALESCE(SUM(CAST(price AS INT)), 0) + 
+    COALESCE(SUM(CAST(cost AS INT)), 0) + 
+    COALESCE(SUM(material_count.material_cost), 0) AS total_income
+FROM 
+    Bookings
+INNER JOIN 
+    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+LEFT JOIN 
+    (
+        SELECT 
+            COUNT(tennguyenlieu) * 70000 AS material_cost
+        FROM 
+            Chitieu
+    ) AS material_count ON 1 = 1;

@@ -88,7 +88,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["luong"].HeaderText = "Lương";
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView1.Columns[DataGridView1.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                    DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 
                     DataGridView1.Refresh(); // Refresh the grid view

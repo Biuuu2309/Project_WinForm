@@ -1085,8 +1085,8 @@ namespace WindowsForm_Project.All_User_Control
         {
             int em = 0;
             string connectionString = DatabaseConnection.Connection();
-            string query = @"   SELECT COUNT(cccd_em) as em
-                                FROM Employee";
+            string query = @"   SELECT COUNT(cccd_cus) as em
+                                FROM Checkout";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();

@@ -36,26 +36,40 @@ namespace WindowsForm_Project.All_User_Control
             string query2 = @"  
                                 	WITH MonthYear AS (
                                         SELECT 
-                                            MONTH(date_co) AS month
+                                            MONTH(date_co) AS month,
+                                            YEAR(date_co) AS year
                                         FROM 
                                             Bookings
                                         GROUP BY 
-                                            MONTH(date_co)
+                                            MONTH(date_co), YEAR(date_co)
                                     )
                                     
                                     SELECT 
                                         my.month,
-                                        COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
+                                        my.year,
+                                        COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) + 
+                                        COALESCE(SUM(material_count.material_cost), 0) AS total_booking
                                     FROM 
                                         MonthYear AS my
                                     LEFT JOIN 
-                                        Bookings ON MONTH(Bookings.date_co) = my.month
+                                        Bookings ON MONTH(Bookings.date_co) = my.month AND YEAR(Bookings.date_co) = my.year
                                     LEFT JOIN 
                                         Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                                    LEFT JOIN 
+                                        (
+                                            SELECT 
+                                                MONTH(ngay) AS month,
+                                                YEAR(ngay) AS year,
+                                                COUNT(tennguyenlieu) * 70000 AS material_cost
+                                            FROM 
+                                                Chitieu
+                                            GROUP BY 
+                                                MONTH(ngay), YEAR(ngay)
+                                        ) AS material_count ON my.month = material_count.month AND my.year = material_count.year
                                     GROUP BY 
-                                        my.month
+                                        my.month, my.year
                                     ORDER BY 
-                                        my.month;";
+                                        my.year, my.month;";
 
             string query3 = @"  	SELECT 
                                         month,
@@ -98,9 +112,21 @@ namespace WindowsForm_Project.All_User_Control
                                         month
                                     ORDER BY 
                                         month;";
-            string query4 = @"  SELECT SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)) AS total_booking
-                                FROM Bookings
-                                INNER JOIN Serve ON Bookings.cccd_cus = Serve.cccd_cus";
+            string query4 = @"  SELECT 
+                                    COALESCE(SUM(CAST(price AS INT)), 0) + 
+                                    COALESCE(SUM(CAST(cost AS INT)), 0) + 
+                                    COALESCE(SUM(material_count.material_cost), 0) AS total_income
+                                FROM 
+                                    Bookings
+                                INNER JOIN 
+                                    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                                LEFT JOIN 
+                                    (
+                                        SELECT 
+                                            COUNT(tennguyenlieu) * 70000 AS material_cost
+                                        FROM 
+                                            Chitieu
+                                    ) AS material_count ON 1 = 1;";
             string query5 = @"  SELECT SUM(CAST(gianhapdogiadung AS INT)) + SUM(CAST(gianhuyeupham AS INT)) + SUM(CAST(gianhapnguyenlieu AS INT)) AS total_chitieu FROM Chitieu";
             string query6 = @"  SELECT SUM(CAST(total_salary AS INT)) AS grand_total_salary
                                 FROM (
@@ -195,7 +221,7 @@ namespace WindowsForm_Project.All_User_Control
                                 if (reader.FieldCount > 1) 
                                 {
                                     month.Add(reader.GetInt32(0));
-                                    total_booking.Add(reader.GetInt32(1));
+                                    total_booking.Add(reader.GetInt32(2));
                                 }
                             }
                         }
