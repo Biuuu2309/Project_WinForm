@@ -115,13 +115,14 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView1.Columns["stt"].HeaderText = "STT";
                     DataGridView1.Columns["cccd_cus"].HeaderText = "Mã CCCD";
                     DataGridView1.Columns["maphong"].HeaderText = "Mã Phòng";
-                    DataGridView1.Columns["other_booking"].HeaderText = "Đặt phòng khác";
+                    DataGridView1.Columns["other_booking"].HeaderText = "Đặt dịch vụ khác";
                     DataGridView1.Columns["anuong"].HeaderText = "Ăn uống";
                     DataGridView1.Columns["call_serve"].HeaderText = "Gọi dịch vụ";
-                    DataGridView1.Columns["cost"].HeaderText = "Phi dich vu";
-                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView1.Columns["cost"].HeaderText = "Phí dich vu";
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView1.Columns["call_serve"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    DataGridView1.Columns[DataGridView1.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                     DataGridView1.Refresh(); // Refresh the grid view
                 }
@@ -151,6 +152,7 @@ namespace WindowsForm_Project.All_User_Control
                     DataGridView2.Columns["image_room"].HeaderText = "Anh phong";
                     DataGridView2.Columns["price"].HeaderText = "Giá cả";
                     DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    DataGridView2.Columns[DataGridView2.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
                     DataGridView2.Refresh(); // Refresh the grid view
                 }

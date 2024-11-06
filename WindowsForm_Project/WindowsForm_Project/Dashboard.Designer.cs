@@ -557,7 +557,7 @@
             this.btnserve.Name = "btnserve";
             this.btnserve.Size = new System.Drawing.Size(217, 45);
             this.btnserve.TabIndex = 30;
-            this.btnserve.Text = "Serve";
+            this.btnserve.Text = "Service";
             this.btnserve.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // guna2Panel1
