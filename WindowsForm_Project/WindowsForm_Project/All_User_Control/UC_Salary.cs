@@ -505,5 +505,10 @@ namespace WindowsForm_Project.All_User_Control
             }
             guna2Panel5.BringToFront();
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -330,7 +330,7 @@ GO
 CREATE OR ALTER PROC sp_addtongchi @ngay DATETIME, @tendogiadung NVARCHAR(200), @gianhapdogiadung INT, @tennguyenlieu NVARCHAR(200), @gianhapnguyenlieu INT, @tennhuyeupham NVARCHAR(200), @gianhuyeupham INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
-	INSERT INTO Tongchi(ngay, tendogiadung, gianhapdogiadung, tennguyenlieu, gianhapnguyenlieu, tennhuyeupham, gianhuyeupham) VALUES (@ngay, @tendogiadung, @gianhapdogiadung, @tennguyenlieu, @gianhapnguyenlieu, @tennhuyeupham, @gianhuyeupham)
+	INSERT INTO Chitieu(ngay, tendogiadung, gianhapdogiadung, tennguyenlieu, gianhapnguyenlieu, tennhuyeupham, gianhuyeupham) VALUES (@ngay, @tendogiadung, @gianhapdogiadung, @tennguyenlieu, @gianhapnguyenlieu, @tennhuyeupham, @gianhuyeupham)
 	SET @ErrorMessage = 'Successfully'
 END
 GO
