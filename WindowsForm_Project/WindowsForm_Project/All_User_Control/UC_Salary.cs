@@ -181,16 +181,18 @@ namespace WindowsForm_Project.All_User_Control
 	                                    Employee.cccd_em, first_name, last_name, luong
 	                            ) AS per_employee_salary);";
 
+            
             List<string> fullname = new List<string>();
             List<int> counthour = new List<int>();
-            List<int> month = new List<int>();
-            List<int> total_booking = new List<int>();
+            List<int> month = new List<int>();//
+            List<int> total_booking = new List<int>();///
             List<int> month1 = new List<int>();
-            List<int> total_chitieu = new List<int>();
+            List<int> total_chitieu = new List<int>();//
+            List<int> year = new List<int>();//
             int income = 0;
             int chitieu = 0;
             int luongnv = 0;
-            int loinhuan = 0;
+            int loinhuan = 0;//
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -221,6 +223,7 @@ namespace WindowsForm_Project.All_User_Control
                                 if (reader.FieldCount > 1) 
                                 {
                                     month.Add(reader.GetInt32(0));
+                                    year.Add(reader.GetInt32(1));
                                     total_booking.Add(reader.GetInt32(2));
                                 }
                             }
@@ -410,6 +413,23 @@ namespace WindowsForm_Project.All_User_Control
                 point.Label = $"{point.AxisLabel}: #PERCENT";
             }
 
+
+            for (int i = 0; i < month.Count; i++)
+            {
+                Salary salary = new Salary
+                {
+                    month = month[i],
+                    year = year[i],
+                    tongthu = total_booking[i],
+                    tongchi = total_chitieu[i],
+                    loinhuandoanhnghiep = total_booking[i] - total_chitieu[i]
+                };
+                DAL dal = new DAL();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    Response response = dal.AddSalary(salary, conn);
+                }
+            }
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
@@ -473,6 +493,7 @@ namespace WindowsForm_Project.All_User_Control
         {
             clearAll();
             LoadTongChi();
+            LoadTotal();
         }
         public void clearAll()
         {
@@ -507,12 +528,39 @@ namespace WindowsForm_Project.All_User_Control
                     guna2DataGridView1.Columns["gianhapnhuyeupham"].HeaderText = "Gia nhap nhu yeu pham";
                     guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                     guna2DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-
                     guna2DataGridView1.Refresh(); // Refresh the grid view
                 }
                 else
                 {
                     MessageBox.Show("No data available or " + response.statusmessage);
+                }
+            }
+        }
+        private void LoadTotal()
+        {
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response1 = dal.Getsalary(conn);
+                if ((response1.list13 != null && response1.list13.Count > 0))
+                {
+                    guna2DataGridView2.DataSource = null;
+                    guna2DataGridView2.DataSource = response1.list13;
+                    guna2DataGridView2.ColumnHeadersHeight = 25;
+                    guna2DataGridView2.Columns["stt"].HeaderText = "STT";
+                    guna2DataGridView2.Columns["month"].HeaderText = "Thang";
+                    guna2DataGridView2.Columns["year"].HeaderText = "Nam";
+                    guna2DataGridView2.Columns["tongthu"].HeaderText = "Tong thu";
+                    guna2DataGridView2.Columns["tongchi"].HeaderText = "Tong chi";
+                    guna2DataGridView2.Columns["loinhuandoanhnghiep"].HeaderText = "Loi nhuan doanh nghiep";
+                    guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    guna2DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+                    guna2DataGridView2.Refresh(); // Refresh the grid view
+                }
+                else
+                {
+                    MessageBox.Show("No data available or " + response1.statusmessage);
                 }
             }
         }
@@ -544,6 +592,65 @@ namespace WindowsForm_Project.All_User_Control
                 guna2Button4.Image = null;
             }
             guna2Panel5.BringToFront();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            paneltotal.Visible = !paneltotal.Visible;
+            if (paneltotal.Visible)
+            {
+                guna2Button2.Image = Properties.Resources.logout;
+                guna2Button2.Text = "";
+            }
+            else
+            {
+                guna2Button2.Text = "Details total";
+                guna2Button2.Image = null;
+            }
+            paneltotal.BringToFront();
+        }
+
+        private void guna2DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView2_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2DataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView2_Enter_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadTotal();
+                guna2DataGridView2.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

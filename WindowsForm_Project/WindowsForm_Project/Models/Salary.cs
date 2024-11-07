@@ -8,7 +8,12 @@ namespace WindowsForm_Project.Models
 {
     public class Salary
     {
-
+        public int stt { get; set; }
+        public int month { get; set; }
+        public int year { get; set; }
+        public int tongthu { get; set; }
+        public int tongchi { get; set; }
+        public int loinhuandoanhnghiep { get; set; }
     }
     public class Chitieu
     {

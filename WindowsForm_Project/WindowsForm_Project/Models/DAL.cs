@@ -13,6 +13,72 @@ namespace WindowsForm_Project.Models
 {
     public class DAL
     {
+        public Response Getsalary(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Salary> list = new List<Salary>();
+            try
+            {
+                string query = @"SELECT * FROM Salary";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Salary salary = new Salary
+                            {
+                                stt = int.Parse(reader["stt"].ToString()),
+                                month = int.Parse(reader["month"].ToString()),
+                                year = int.Parse(reader["year"].ToString()),
+                                tongthu = int.Parse(reader["tongthu"].ToString()),
+                                tongchi = int.Parse(reader["tongchi"].ToString()),
+                                loinhuandoanhnghiep = int.Parse(reader["loinhuandoanhnghiep"].ToString()),
+                            };
+                            list.Add(salary);
+                        }
+                    }
+                }
+                response.list13 = list;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return response;
+        }
+        public Response AddSalary(Salary salary, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addsalary", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@month", salary.month);
+                cmd.Parameters.AddWithValue("@year", salary.year);
+                cmd.Parameters.AddWithValue("@tongthu", salary.tongthu);
+                cmd.Parameters.AddWithValue("@tongchi", salary.tongchi);
+                cmd.Parameters.AddWithValue("@loinhuandoanhnghiep", salary.loinhuandoanhnghiep);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.statusmessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.statusmessage = ex.Message;
+            }
+            return response;
+        }
         public Response Addroom(Room room, SqlConnection conn)
         {
             Response response = new Response();

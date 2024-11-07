@@ -22,6 +22,7 @@ namespace WindowsForm_Project.Models
         public List<DetailRoom> list10 { get; set; }
         public List<Checkout> list11 { get; set; }
         public List<Chitieu> list12 { get; set; }
+        public List<Salary> list13 { get; set; }
 
     }
 }

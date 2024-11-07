@@ -133,11 +133,13 @@ CREATE TABLE Chitieu (
 GO
 CREATE TABLE Salary (
 	stt INT IDENTITY(1, 1) PRIMARY KEY,
-	ngay DATETIME,
+	month INT,
+	year INT,
 	tongthu INT,
 	tongchi INT,
 	loinhuandoanhnghiep INT,
 )
+
 
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
@@ -312,6 +314,18 @@ VALUES
 	('2024-11-22', 'ghe', '200000', 'men', '70000', 'thit heo', '1000000'),
 	('2024-11-22', 'bat', '100000', 'nem', '50000', 'thit ga', '1000000')
 
+
+GO
+CREATE OR ALTER PROC sp_addsalary @month INT, @year INT, @tongthu INT, @tongchi INT, @loinhuandoanhnghiep INT, @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+	IF NOT EXISTS (	SELECT 1 FROM Salary
+					WHERE month = @month AND year = @year AND loinhuandoanhnghiep = @loinhuandoanhnghiep)
+	BEGIN
+		INSERT INTO Salary(month, year, tongthu, tongchi, loinhuandoanhnghiep) VALUES (@month, @year, @tongthu, @tongchi, @loinhuandoanhnghiep)
+		SET @ErrorMessage = 'Successfully'
+	END
+END
 GO 
 CREATE OR ALTER PROC sp_addbooking @cccd_cus NVARCHAR(200), @status_room NVARCHAR(200), @house_keeping NVARCHAR(200), @roomtype NVARCHAR(200), @numbed INT, @view_room NVARCHAR(200), @maphong INT, @roomnumber INT, @group_customer INT, @date_ci DATETIME, @date_co DATETIME, @cccd_em NVARCHAR(200), @price INT, @ErrorMessage NVARCHAR(200) OUTPUT
 AS 
