@@ -99,7 +99,6 @@ namespace WindowsForm_Project.All_User_Control
 
             if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
-                query0 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
@@ -110,7 +109,6 @@ namespace WindowsForm_Project.All_User_Control
             {
                 if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
                 {
-                    query0 += $" AND Update_room.status_room = '{statusCon1}'";
                     query1 += $" AND Update_room.status_room = '{statusCon1}'";
                     query2 += $" AND Update_room.status_room = '{statusCon1}'";
                     query3 += $" AND Update_room.status_room = '{statusCon1}'";
@@ -119,17 +117,12 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
                 {
-                    query0 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query4 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
                 }
-            }
-            else
-            {
-                query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1";
             }
 
             int count = 0;
@@ -203,8 +196,8 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-
-            for (int i = 0; i < count; i++)
+            int dem = 0;
+            for (int i = 0; i < roomnumber.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -235,7 +228,6 @@ namespace WindowsForm_Project.All_User_Control
                 guna2Panel.Height = 50;
                 guna2Panel.BackColor = Color.White;
                 guna2Panel.Dock = DockStyle.Bottom;
-
                 if (statusroom[i] == "Available")
                 {
                     pictureBox1.Image = Properties.Resources.check__5_;
@@ -261,15 +253,16 @@ namespace WindowsForm_Project.All_User_Control
                     pictureBox1.Location = new Point(50, 57);
                     pictureBox1.BringToFront();
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
-                    guna2HtmlLabel1.Text = fullname[i];
+                    guna2HtmlLabel1.Text = fullname[dem];
                     guna2HtmlLabel1.Location = new Point(95, 56);
                     childPanel.BackgroundImage = Properties.Resources.Untitled_design__4_;
                     guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50__1_;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                    guna2HtmlLabel3.Text = demngay[i].ToString();
+                    guna2HtmlLabel3.Text = demngay[dem].ToString();
                     guna2HtmlLabel3.Location = new Point(50, 10);
                     guna2HtmlLabel3.BringToFront();
+                    dem++;
                 }
 
 
@@ -334,6 +327,7 @@ namespace WindowsForm_Project.All_User_Control
 
                 x += childPanel.Width + spacing;
             }
+            dem = 0;
         }
         
         private void guna2Panel1_Click(object sender, EventArgs e)
@@ -491,8 +485,8 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-
-            for (int i = 0; i < count; i++)
+            int dem = 0;
+            for (int i = 0; i < roomnumber.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -544,15 +538,16 @@ namespace WindowsForm_Project.All_User_Control
                     pictureBox1.Location = new Point(50, 57);
                     pictureBox1.BringToFront();
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
-                    guna2HtmlLabel1.Text = fullname[i];
+                    guna2HtmlLabel1.Text = fullname[dem];
                     guna2HtmlLabel1.Location = new Point(95, 56);
                     childPanel.BackgroundImage = Properties.Resources.Untitled_design__4_;
                     guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50__1_;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                    guna2HtmlLabel3.Text = demngay[i].ToString();
+                    guna2HtmlLabel3.Text = demngay[dem].ToString();
                     guna2HtmlLabel3.Location = new Point(50, 10);
                     guna2HtmlLabel3.BringToFront();
+                    dem++;
                 }
 
 
@@ -774,8 +769,8 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-
-            for (int i = 0; i < count; i++)
+            int dem = 0;
+            for (int i = 0; i < roomnumber.Count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -827,18 +822,17 @@ namespace WindowsForm_Project.All_User_Control
                     pictureBox1.Location = new Point(50, 57);
                     pictureBox1.BringToFront();
                     guna2HtmlLabel1.Font = new Font("Segoe UI", 15, FontStyle.Bold | FontStyle.Italic);
-                    guna2HtmlLabel1.Text = fullname[i];
+                    guna2HtmlLabel1.Text = fullname[dem];
                     guna2HtmlLabel1.Location = new Point(95, 56);
                     childPanel.BackgroundImage = Properties.Resources.Untitled_design__4_;
                     guna2Panel.BackgroundImage = Properties.Resources.wallhaven_4lxwoq_360x50__1_;
                     guna2HtmlLabel1.BringToFront();
                     guna2HtmlLabel3.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                    guna2HtmlLabel3.Text = demngay[i].ToString();
+                    guna2HtmlLabel3.Text = demngay[dem].ToString();
                     guna2HtmlLabel3.Location = new Point(50, 10);
                     guna2HtmlLabel3.BringToFront();
+                    dem++;
                 }
-
-
 
                 PictureBox pictureBox2 = new PictureBox();
                 pictureBox2.Image = Properties.Resources.spring_calendar;

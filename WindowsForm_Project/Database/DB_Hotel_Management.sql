@@ -1219,6 +1219,5 @@ LEFT JOIN
             Chitieu
     ) AS material_count ON 1 = 1;
 
+SELECT COUNT(roomnumber) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1
 
-	SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1 
-	AND Update_room.status_room = 'Available' AND Update_room.house_keeping = 'Clean'
