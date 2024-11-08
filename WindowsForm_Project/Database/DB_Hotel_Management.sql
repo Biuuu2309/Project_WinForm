@@ -986,19 +986,19 @@ ORDER BY
         MONTH(date_co)
 )
 
-SELECT 
-    my.month,
-    COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
-FROM 
-    MonthYear AS my
-LEFT JOIN 
-    Bookings ON MONTH(Bookings.date_co) = my.month
-LEFT JOIN 
-    Serve ON Bookings.cccd_cus = Serve.cccd_cus
-GROUP BY 
-    my.month
-ORDER BY 
-    my.month;
+--SELECT 
+--    my.month,
+--    COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
+--FROM 
+--    MonthYear AS my
+--LEFT JOIN 
+--    Bookings ON MONTH(Bookings.date_co) = my.month
+--LEFT JOIN 
+--    Serve ON Bookings.cccd_cus = Serve.cccd_cus
+--GROUP BY 
+--    my.month
+--ORDER BY 
+--    my.month;
 
 
 
