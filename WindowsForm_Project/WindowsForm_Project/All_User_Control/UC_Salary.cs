@@ -302,28 +302,18 @@ namespace WindowsForm_Project.All_User_Control
                 Salary.Series[fullname[i]].Points.AddXY(i, counthour[i]);
             }
 
-            // Xóa tất cả các series trước khi thêm mới
             chart1.Series.Clear();
-
-            // Series cho Monthly Income (Thu nhập hàng tháng)
             Series salesSeries = new Series("Monthly Income");
             salesSeries.ChartType = SeriesChartType.Spline;
             salesSeries.BorderWidth = 2;
             salesSeries.Color = System.Drawing.Color.Blue;
-
-            // Series cho Monthly Expenses (Chi tiêu hàng tháng)
             Series expensesSeries = new Series("Monthly Expenses");
             expensesSeries.ChartType = SeriesChartType.Spline;
             expensesSeries.BorderWidth = 2;
             expensesSeries.Color = System.Drawing.Color.Red;
-
             string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
-            // Tạo từ điển cho các tháng và giá trị của hai series
             Dictionary<int, int> incomeData = new Dictionary<int, int>();
             Dictionary<int, int> expensesData = new Dictionary<int, int>();
-
-            // Đưa dữ liệu vào từ điển thu nhập
             for (int i = 0; i < month.Count; i++)
             {
                 if (i < total_booking.Count)
@@ -335,8 +325,6 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-
-            // Đưa dữ liệu vào từ điển chi tiêu
             for (int i = 0; i < month1.Count; i++)
             {
                 if (i < total_chitieu.Count)
@@ -348,8 +336,6 @@ namespace WindowsForm_Project.All_User_Control
                     }
                 }
             }
-
-            // Thêm điểm dữ liệu vào Series, đồng bộ các tháng
             for (int monthNumber = 1; monthNumber <= 12; monthNumber++)
             {
                 string monthName = monthNames[monthNumber - 1];
@@ -361,11 +347,9 @@ namespace WindowsForm_Project.All_User_Control
                 expensesSeries.Points.AddXY(monthName, expense);
             }
 
-            // Thêm series vào chart
             chart1.Series.Add(salesSeries);
             chart1.Series.Add(expensesSeries);
 
-            // Cài đặt tiêu đề và các thông số cho trục
             chart1.Titles.Clear();
             Title title1 = new Title("Month Income Expenses");
             title1.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
@@ -376,20 +360,13 @@ namespace WindowsForm_Project.All_User_Control
             chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.ChartAreas[0].AxisY.Interval = 500;
 
-            // Hiển thị các mốc chia chính trên trục Y
             chart1.ChartAreas[0].AxisY.MajorTickMark.Enabled = true;
 
-            // Hiển thị các mốc chia phụ trên trục Y (nếu muốn)
             chart1.ChartAreas[0].AxisY.MinorTickMark.Enabled = true;
 
-            // Tùy chỉnh các mốc nhãn trên trục Y để dễ đọc
-            chart1.ChartAreas[0].AxisY.LabelStyle.Format = "N0"; // Định dạng số nguyên
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash; // Đường lưới kiểu gạch ngang
+            chart1.ChartAreas[0].AxisY.LabelStyle.Format = "N0"; 
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash; 
             chart1.ChartAreas[0].RecalculateAxesScale();
-
-
-
-
 
 
             Title title2 = new Title("Total Income Expenses Breakdown");

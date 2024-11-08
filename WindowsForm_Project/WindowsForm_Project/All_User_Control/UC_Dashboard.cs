@@ -77,6 +77,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
+            string query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1";
             string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
@@ -98,6 +99,7 @@ namespace WindowsForm_Project.All_User_Control
 
             if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
+                query0 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
@@ -108,6 +110,7 @@ namespace WindowsForm_Project.All_User_Control
             {
                 if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
                 {
+                    query0 += $" AND Update_room.status_room = '{statusCon1}'";
                     query1 += $" AND Update_room.status_room = '{statusCon1}'";
                     query2 += $" AND Update_room.status_room = '{statusCon1}'";
                     query3 += $" AND Update_room.status_room = '{statusCon1}'";
@@ -116,6 +119,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
                 {
+                    query0 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
@@ -123,7 +127,12 @@ namespace WindowsForm_Project.All_User_Control
                     query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
                 }
             }
-            
+            else
+            {
+                query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 1";
+            }
+
+            int count = 0;
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -133,6 +142,16 @@ namespace WindowsForm_Project.All_User_Control
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                using (SqlCommand command = new SqlCommand(query0, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            count = reader.GetInt32(0);
+                        }
+                    }
+                }
                 using (SqlCommand command = new SqlCommand(query1, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -185,7 +204,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -346,6 +365,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
+            string query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 2";
             string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 2";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
@@ -367,6 +387,7 @@ namespace WindowsForm_Project.All_User_Control
 
             if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
+                query0 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
@@ -377,6 +398,7 @@ namespace WindowsForm_Project.All_User_Control
             {
                 if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
                 {
+                    query0 += $" AND Update_room.status_room = '{statusCon1}'";
                     query1 += $" AND Update_room.status_room = '{statusCon1}'";
                     query2 += $" AND Update_room.status_room = '{statusCon1}'";
                     query3 += $" AND Update_room.status_room = '{statusCon1}'";
@@ -385,6 +407,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
                 {
+                    query0 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
@@ -392,7 +415,12 @@ namespace WindowsForm_Project.All_User_Control
                     query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
                 }
             }
+            else
+            {
+                query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 2";
 
+            }
+            int count = 0;
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -402,6 +430,16 @@ namespace WindowsForm_Project.All_User_Control
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                using (SqlCommand command = new SqlCommand(query0, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            count = reader.GetInt32(0);
+                        }
+                    }
+                }
                 using (SqlCommand command = new SqlCommand(query1, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -454,7 +492,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
@@ -610,6 +648,7 @@ namespace WindowsForm_Project.All_User_Control
             int y = 120;
 
             string connectionString = DatabaseConnection.Connection();
+            string query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 3";
             string query1 = @"  SELECT roomnumber FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 3";
             string query2 = @"  SELECT status_room 
                                 FROM Update_room
@@ -631,6 +670,7 @@ namespace WindowsForm_Project.All_User_Control
 
             if (!string.IsNullOrEmpty(statusCon1) && !string.IsNullOrEmpty(statusCon2))
             {
+                query0 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query1 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query2 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
                 query3 += $" AND Update_room.status_room = '{statusCon1}' AND Update_room.house_keeping = '{statusCon2}'";
@@ -641,6 +681,7 @@ namespace WindowsForm_Project.All_User_Control
             {
                 if (statusCon1 == "Reserved" || statusCon1 == "Occupied" || statusCon1 == "Available" || statusCon1 == "Check Out")
                 {
+                    query0 += $" AND Update_room.status_room = '{statusCon1}'";
                     query1 += $" AND Update_room.status_room = '{statusCon1}'";
                     query2 += $" AND Update_room.status_room = '{statusCon1}'";
                     query3 += $" AND Update_room.status_room = '{statusCon1}'";
@@ -649,6 +690,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
                 else if (statusCon1 == "Clean" || statusCon1 == "Not Clean" || statusCon1 == "In Progress" || statusCon1 == "Repair")
                 {
+                    query0 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query1 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query2 += $" AND Update_room.house_keeping = '{statusCon1}'";
                     query3 += $" AND Update_room.house_keeping = '{statusCon1}'";
@@ -656,7 +698,12 @@ namespace WindowsForm_Project.All_User_Control
                     query5 += $" AND Update_room.house_keeping = '{statusCon1}'";
                 }
             }
+            else
+            {
+                query0 = @"  SELECT COUNT(*) FROM Room INNER JOIN Update_room ON Room.maphong = Update_room.maphong WHERE numbed = 3";
+            }
 
+            int count = 0;
             List<int> roomnumber = new List<int>();
             List<string> statusroom = new List<string>();
             List<string> fullname = new List<string>();
@@ -666,6 +713,16 @@ namespace WindowsForm_Project.All_User_Control
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                using (SqlCommand command = new SqlCommand(query0, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            count = reader.GetInt32(0);
+                        }
+                    }
+                }
                 using (SqlCommand command = new SqlCommand(query1, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -718,7 +775,7 @@ namespace WindowsForm_Project.All_User_Control
                 }
             }
 
-            for (int i = 0; i < roomnumber.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 Guna2Panel childPanel = new Guna2Panel();
                 childPanel.Size = new Size(270, 180);
