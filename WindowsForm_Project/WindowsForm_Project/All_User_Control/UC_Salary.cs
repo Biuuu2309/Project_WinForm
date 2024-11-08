@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -651,6 +652,114 @@ namespace WindowsForm_Project.All_User_Control
             {
                 MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        int countt = 0;
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            string connectionString = DatabaseConnection.Connection();
+            string query = @"
+                                WITH MonthYear AS (
+                                    SELECT 
+                                        YEAR(date_co) AS year,
+                                        MONTH(date_co) AS month
+                                    FROM 
+                                        Bookings
+                                    GROUP BY 
+                                        YEAR(date_co), MONTH(date_co)
+                                ),
+                                
+                                -- Calculate total income from Bookings for each month
+                                TotalBookings AS (
+                                    SELECT 
+                                        my.year,
+                                        my.month,
+                                        COALESCE(SUM(CAST(price AS INT)) + SUM(CAST(cost AS INT)), 0) AS total_booking
+                                    FROM 
+                                        MonthYear AS my
+                                    LEFT JOIN 
+                                        Bookings ON MONTH(Bookings.date_co) = my.month AND YEAR(Bookings.date_co) = my.year
+                                    LEFT JOIN 
+                                        Serve ON Bookings.cccd_cus = Serve.cccd_cus
+                                    GROUP BY 
+                                        my.year, my.month
+                                ),
+                                
+                                -- Calculate total expenses from Chitieu for each month
+                                TotalChitieu AS (
+                                    SELECT 
+                                        YEAR(ngay) AS year,
+                                        MONTH(ngay) AS month,
+                                        SUM(gianhapdogiadung) + SUM(gianhuyeupham) + COUNT(*) * 100000 AS total_chitieu
+                                    FROM 
+                                        Chitieu
+                                    GROUP BY 
+                                        YEAR(ngay), MONTH(ngay)
+                                )
+                                
+                                -- Combine total income from Bookings and total expenses from Chitieu
+                                SELECT 
+                                    COALESCE(tb.year, tc.year) AS year,
+                                    COALESCE(tb.month, tc.month) AS month,
+                                    COALESCE(tb.total_booking, 0) AS total_booking,
+                                    COALESCE(tc.total_chitieu, 0) AS total_chitieu,
+                                    COALESCE(tb.total_booking, 0) - COALESCE(tc.total_chitieu, 0) AS net_income
+                                FROM 
+                                    TotalBookings AS tb
+                                FULL OUTER JOIN 
+                                    TotalChitieu AS tc ON tb.year = tc.year AND tb.month = tc.month
+                                ORDER BY 
+                                    year, month;";
+
+            int count = 1;  
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                List<Salary> salaries = new List<Salary>();
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                if (reader.FieldCount > 1)
+                                {
+                                    salaries.Add(new Salary
+                                    {
+                                        stt = count++,
+                                        year = reader.GetInt32(0),
+                                        month = reader.GetInt32(1),
+                                        tongthu = reader.GetInt32(2),
+                                        tongchi = reader.GetInt32(3),
+                                        loinhuandoanhnghiep = reader.GetInt32(4)
+                                    });
+                                }
+                            }
+                        }
+                    }
+
+                    string filePath = $@"E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\File CSV\Salary\Salary_{countt++}.csv";
+                    using (StreamWriter sw = new StreamWriter(filePath, true))
+                    {
+                        sw.WriteLine("STT, Year, Month, Income, Expenses, Profit");
+                        foreach (var salary in salaries)
+                        {
+                            sw.WriteLine($"{salary.stt}, {salary.year}, {salary.month}, {salary.tongthu}, {salary.tongchi}, {salary.loinhuandoanhnghiep}");
+                        }
+                    }
+                    MessageBox.Show("File exported successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Completed file writing.");
+                }
+            }
+
         }
     }
 }

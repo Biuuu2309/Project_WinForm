@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Project.Models;
 using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsForm_Project.All_User_Control
 {
@@ -585,5 +588,40 @@ namespace WindowsForm_Project.All_User_Control
         {
 
         }
+        int count = 0;
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response = dal.Getbooking(conn);
+                List<Bookings> bookings = response.list9;  
+
+                try
+                {
+                    string filePath = $@"E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\File CSV\Booking\Booking_{count++}.csv";
+                    using (StreamWriter sw = new StreamWriter(filePath, true))
+                    {
+                        sw.WriteLine("STT, CCCD_Customer, Status_Room, House_Keeping, Room_Type, NumBed, View_Room, Date_CheckIn, Date_CheckOut, Group_Customer, RoomID, Room_Number, CCCD_Em, Price");
+                        foreach (var booking in bookings)
+                        {
+                            sw.WriteLine($"{booking.stt}, {booking.cccd_cus}, {booking.status_room}, {booking.house_keeping}, {booking.roomtype}, {booking.numbed}, {booking.view_room}, {booking.date_ci}, {booking.date_co}, {booking.group_customer}, {booking.maphong}, {booking.roomnumber}, {booking.cccd_em}, {booking.price}");
+                        }
+                    }
+                    MessageBox.Show("File exported successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Completed file writing.");
+                }
+            }
+        }
+
     }
 }

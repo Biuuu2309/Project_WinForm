@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -409,6 +410,40 @@ namespace WindowsForm_Project.All_User_Control
         private void guna2HtmlLabel1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        int count = 0;
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            DAL dal = new DAL();
+            string connectionString = DatabaseConnection.Connection();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                Response response = dal.Getcustomer(conn);
+                List<Customer> customers = response.list1;
+
+                try
+                {
+                    string filePath = $@"E:\App.NET\WindowsForms_Project\Project_WinForm\WindowsForm_Project\File CSV\Customer\Customer_{count++}.csv";
+                    using (StreamWriter sw = new StreamWriter(filePath, true))
+                    {
+                        sw.WriteLine("CCCD_Customer, First_Name, Last_Name, SDT, Email, GioiTinh, NgaySinh, Address");
+                        foreach (var customer in customers)
+                        {
+                            sw.WriteLine($"{customer.cccd_cus}, {customer.first_name}, {customer.last_name}, {customer.sdt}, {customer.email}, {customer.gioitinh}, {customer.ngaysinh}, {customer.address_cus}");
+                        }
+                    }
+                    MessageBox.Show("File exported successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Completed file writing.");
+                }
+            }
         }
     }
 }

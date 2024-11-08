@@ -140,7 +140,7 @@ CREATE TABLE Salary (
 	loinhuandoanhnghiep INT,
 )
 
-
+SELECT * FROM Salary
 GO
 INSERT INTO Room (maphong, roomnumber, roomtype, numbed, view_room, price)
 VALUES
@@ -332,7 +332,7 @@ AS
 BEGIN
 	IF NOT EXISTS (	SELECT 1 FROM Bookings
 					WHERE cccd_cus = @cccd_cus AND maphong = @maphong)
-	BEGIN
+	BEGIN 
 		INSERT INTO Bookings (cccd_cus, status_room, house_keeping, roomtype, numbed, view_room, maphong, roomnumber, group_customer, date_ci, date_co, cccd_em, price) VALUES (@cccd_cus, @status_room, @house_keeping, @roomtype, @numbed, @view_room, @maphong, @roomnumber, @group_customer, @date_ci, @date_co, @cccd_em, @price)
 		SET @ErrorMessage = 'Successfully'
 	END
@@ -1139,7 +1139,7 @@ TotalChitieu AS (
     SELECT 
         YEAR(ngay) AS year,
         MONTH(ngay) AS month,
-        SUM(gianhapdogiadung) + SUM(gianhuyeupham) + SUM(COUNT(*) * 100000) AS total_chitieu
+        SUM(gianhapdogiadung) + SUM(gianhuyeupham) + COUNT(*) * 100000 AS total_chitieu
     FROM 
         Chitieu
     GROUP BY 
@@ -1159,6 +1159,7 @@ FULL OUTER JOIN
     TotalChitieu AS tc ON tb.year = tc.year AND tb.month = tc.month
 ORDER BY 
     year, month;
+
 
 
 ----------------------------------------
